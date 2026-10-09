@@ -49,6 +49,7 @@ def main() -> None:
     ap.add_argument("--ckpt", required=True)
     ap.add_argument("--config", default="configs/sam2.1/sam2.1_hiera_s.yaml")
     ap.add_argument("--shard", default="0/1")
+    ap.add_argument("--prompt", default="box", choices=["box", "box_point"])
     ap.add_argument("--claim-dir", help="shared directory: a worker claims a job by creating <dir>/<id> first, so any number "
                                          "of workers can run the same job list without repeating work")
     args = ap.parse_args()
@@ -81,7 +82,12 @@ def main() -> None:
                     state = predictor.init_state(video_path=tmp, offload_video_to_cpu=True)
                     names = list(job["objects"])
                     for k, name in enumerate(names):
-                        predictor.add_new_points_or_box(state, frame_idx=0, obj_id=k + 1, box=np.asarray(job["objects"][name], dtype=np.float32))
+                        box = np.asarray(job["objects"][name], dtype=np.float32)
+                        extra = {}
+                        if args.prompt == "box_point":  # also a positive click at the box centre
+                            extra = dict(points=np.array([[(box[0] + box[2]) / 2, (box[1] + box[3]) / 2]], dtype=np.float32),
+                                         labels=np.array([1], dtype=np.int32))
+                        predictor.add_new_points_or_box(state, frame_idx=0, obj_id=k + 1, box=box, **extra)
                     for f, ids, logits in predictor.propagate_in_video(state):
                         masks = (logits[:, 0] > 0).cpu().numpy()
                         for oid, mask in zip(ids, masks):

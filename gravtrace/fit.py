@@ -116,8 +116,7 @@ class _Problem:
         self.x0 = np.asarray(obj["position"], dtype=float)
         self.g_dir = np.asarray(self.m.get("gravity_dir", [0.0, 0.0, -1.0]), dtype=float)
         self.g_dir /= np.linalg.norm(self.g_dir)
-        self.camera = Camera(sample["camera"]["matrix_world"], sample["camera"]["fx"], sample["camera"]["fy"],
-                             sample["image_size"])
+        self.camera = Camera.from_dict(sample["camera"], sample["image_size"])
         size = boxes[:, 2:] - boxes[:, :2]
         area = size.prod(axis=1)
         clipped = np.column_stack([boxes[:, 0] <= 1, boxes[:, 1] <= 1,

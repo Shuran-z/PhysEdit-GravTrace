@@ -37,9 +37,9 @@ def load_json(path: str) -> dict:
 def discover(root: Path) -> list[dict]:
     """One job per trajectory: id, physics metadata, videos and where each camera's view is recorded.
 
-    Physics records live in `metadata/` directories (`<id>__cam01.json[.gz]`); a camera's view comes from
-    `configs/<id>__camNN.json`, `configs/<id>/camNN.json` or that camera's own metadata record."""
-    videos, metas, views = {}, {}, {}
+    Physics records live in `metadata/` directories (`<id>__cam01.json[.gz]`); a camera's view comes from that
+    camera's own metadata record, else from `configs/<id>__camNN.json` or `configs/<id>/camNN.json`."""
+    videos, metas, views, configs = {}, {}, {}, {}
     pattern = re.compile(r"(.+)__(cam0[123])\.json(\.gz)?$")
     for dirpath, _, names in os.walk(root):
         parent = os.path.basename(dirpath)
@@ -53,10 +53,14 @@ def discover(root: Path) -> list[dict]:
                 sid, cam = m.group(1), m.group(2)
                 if parent == "metadata" and cam == "cam01":
                     metas[sid] = path
-                if parent == "configs" or (sid, cam) not in views:
+                # the camera's own render record is authoritative; configs can be stale (T08's differ from its videos)
+                if parent == "configs":
+                    configs[(sid, cam)] = path
+                if parent == "metadata" or (sid, cam) not in views:
                     views[(sid, cam)] = path
             elif parent != "configs" and re.fullmatch(r"cam0[123]\.json", name) and os.path.basename(os.path.dirname(dirpath)) == "configs":
-                views[(parent, name[:5])] = path
+                views.setdefault((parent, name[:5]), path)
+                configs[(parent, name[:5])] = path
     jobs = []
     for line in open(root / "metadata/trajectories.jsonl"):
         row = json.loads(line)
@@ -66,7 +70,8 @@ def discover(root: Path) -> list[dict]:
         rel = Path(path).relative_to(root)
         jobs.append({"id": sid, "source": "/".join(rel.parts[:2]), "meta": path,
                      "videos": {c: os.path.relpath(videos[f"{sid}__{c}"], root) for c in CAMERAS if f"{sid}__{c}" in videos},
-                     "views": {c: views.get((sid, c)) for c in CAMERAS}})
+                     "views": {c: views.get((sid, c)) for c in CAMERAS},
+                     "configs": {c: configs.get((sid, c)) for c in CAMERAS}})
     return jobs
 
 
@@ -83,12 +88,25 @@ def extract(job: dict, out_dir: Path) -> str:
                     if k in obj:
                         arrays[k][i, j] = obj[k]
     exp, render = meta["experiment"], meta["render"]
-    cameras = {}
+    cameras, issues = {}, []
     for cam, view_path in job["views"].items():
         if view_path is None and cam == "cam01":
             cameras[cam] = render.get("fixed_view")
         elif view_path:
             cameras[cam] = load_json(view_path)["render"].get("fixed_view")
+    # a camera known only from configs is trusted when this sample's cam01 config matches what the renderer recorded
+    configs = job.get("configs", {})
+    if configs.get("cam01") and cameras.get("cam01"):
+        cfg01 = load_json(configs["cam01"])["render"].get("fixed_view") or {}
+        rec01 = cameras["cam01"]
+        same = all(abs(a - b) < 1e-6 for a, b in zip(cfg01.get("position", []) + cfg01.get("look_at", []) + [cfg01.get("fov_deg", 0)],
+                                                        rec01["position"] + rec01["look_at"] + [rec01["fov_deg"]]))
+        if not same:
+            issues.append("configs differ from the rendered cam01")
+            for cam in ("cam02", "cam03"):
+                if job["views"].get(cam) and job["views"][cam] == configs.get(cam):  # only a config: unverified
+                    cameras[cam] = None
+                    issues.append(f"{cam} view known only from stale configs")
     gvec = exp.get("gravity_vector") or meta.get("scene_overrides", {}).get("gravity")
     header = {
         "sample_id": job["id"], "source": job["source"], "event": exp.get("template_id"), "background": exp.get("background_id"),
@@ -99,6 +117,7 @@ def extract(job: dict, out_dir: Path) -> str:
         "surface_z": exp.get("surface_z"), "event_sequence": exp.get("event_sequence"),
         "physics": {k: meta.get("scene_overrides", {}).get(k) for k in ("gravity", "dt", "substeps")},
         "time": meta.get("time_diagnostic"), "videos": job["videos"],  # relative to the data root
+        "camera_issues": issues,
     }
     out = out_dir / f"{job['id']}.npz"
     np.savez_compressed(out, names=np.array(names), **arrays)
@@ -116,7 +135,7 @@ def main() -> None:
     jobs = discover(args.root)
     todo = [j for j in jobs if os.path.exists(j["meta"]) and not (args.out / f"{j['id']}.json").exists()]
     print(f"{len(jobs)} trajectories found, {len(todo)} to extract", file=sys.stderr)
-    failed = 0
+    failed, failures = 0, {}
     with ProcessPoolExecutor(args.workers) as pool:
         futures = {pool.submit(extract, j, args.out): j["id"] for j in todo}
         for n, (fut, sid) in enumerate(futures.items(), 1):
@@ -124,9 +143,12 @@ def main() -> None:
                 fut.result()
             except Exception as exc:  # report and continue: one malformed record must not stop the rest
                 failed += 1
-                print(f"FAILED {sid}: {type(exc).__name__}: {exc}", file=sys.stderr)
+                failures[sid] = f"{type(exc).__name__}: {exc}"
+                print(f"FAILED {sid}: {failures[sid]}", file=sys.stderr)
             if n % 500 == 0:
                 print(f"{n}/{len(todo)}", file=sys.stderr)
+    if failures:
+        (args.out.parent / f"{args.out.name}_failed.json").write_text(json.dumps(failures, indent=1))
     print(f"done, {failed} failed", file=sys.stderr)
 
 

@@ -27,7 +27,8 @@ def main() -> None:
         width, height = s["image_size"]
         job = jobs[video]
         job["video"] = f"{args.video_root}/{video}"
-        job["K"] = [[s["camera"]["fx"] * width, 0, width / 2], [0, abs(s["camera"]["fy"]) * height, height / 2], [0, 0, 1]]
+        cam = s["camera"]
+        job["K"] = [[cam["fx"] * width, 0, cam.get("cx", 0.5) * width], [0, abs(cam["fy"]) * height, cam.get("cy", 0.5) * height], [0, 0, 1]]
         job["windows"].append({"id": s["id"], "frames": s["boxes"]["frames"], "boxes": s["boxes"]["xyxy"]})
     with open(args.out, "w") as f:
         for job in sorted(jobs.values(), key=lambda j: -sum(len(w["frames"]) for w in j["windows"])):

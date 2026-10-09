@@ -10,13 +10,17 @@ faithful video should imply the gravity it was asked to show.
 ## How it works
 
 1. **Observe.** Each frame's target mask becomes an image box.
-2. **Predict.** The 8 corners of the object's bounding box are carried along an analytic
-   trajectory, projected with the known camera, and the image box they span is taken. Trajectories:
-   free flight; sliding or rolling on a slope with friction, including leaving a ramp over its top
-   edge into free flight. The object keeps its initial orientation.
+2. **Predict.** Points on the object's outline (its 8 bounding-box corners, or the hull of its mesh)
+   are carried along an analytic trajectory, projected with the known camera, and the image box they
+   span is taken. Trajectories: free flight, with a declared linear drag; sliding or rolling on a
+   slope with friction, including leaving a ramp over its top edge into free flight. The object keeps
+   its initial orientation unless the sample declares its spin: then the outline turns by torque-free
+   rigid-body rotation (Euler's equations with the declared inertia and angular damping), which does
+   not depend on g.
 3. **Compare.** The residual is the displacement of each box edge since an anchor frame, predicted
    minus observed. Displacements cancel any constant offset between the declared geometry and the
-   mask (pivot, mesh scale, mask bias); an edge on the image border is ignored.
+   mask (pivot, mesh scale, mask bias); an edge on the image border, or one the sample declares hidden
+   behind another object, is ignored.
 4. **Fit.** Robust (soft-L1) bounded least squares over log g and whatever the sample leaves open,
    each inside its declared range: the time of the first frame after the initial state, the launch
    speed, elevation and azimuth of a projectile, or the along-slope speed and distance to the ramp
@@ -37,15 +41,16 @@ One JSON object per line. `truth` is read only by `score`.
 |---|---|
 | `id`, `scenario` | `freefall`, `projectile` or `incline` |
 | `fps`, `image_size` | frame rate; `[width, height]` in pixels |
-| `camera` | `matrix_world` (4×4 camera-to-world, camera looks along −Z), `fx`, `fy` (focal lengths in units of image width and height) |
-| `object` | `corners` (8×3 bounding-box corners in the object frame, metres, scale applied; omit if unknown), `position` (m), `quaternion` (xyzw) |
+| `camera` | `matrix_world` (4×4 camera-to-world, camera looks along −Z), `fx`, `fy` (focal lengths in units of image width and height), optional `cx`, `cy` (principal point, default 0.5) |
+| `object` | `corners` (outline points in the object frame, metres, scale applied: 8 box corners or a mesh hull; omit if unknown), `position` (m), `quaternion` (xyzw); optional spin: `angular_velocity` (rad/s, world), `inertia` (principal moments, kg m², object frame), `mass` (kg), `angular_damping` (N m s), `linear_damping` (N s/m) |
+| `features` | `box` (default) or `centre` (fit the box centre only) |
 | `motion.gravity_dir` | unit vector, default `[0, 0, -1]` |
 | `motion.t0` | `[lo, hi]` time (s) of the first fitted frame after the declared initial state |
 | `motion.v0` | known initial velocity (m/s); freefall defaults to rest |
 | `motion.speed`, `motion.angle_deg`, `motion.directions` | projectile with unknown launch: speed range, elevation range, optional azimuth seeds |
 | `motion.slopes`, `motion.speed` | incline: list of `{dir, angle_deg, mu, rolling, length}` hypotheses (`dir` points downslope, `length` is the ramp length) and the along-slope speed range (negative is upslope) |
 | `motion.ground_z` | height of the floor the object can land on (optional) |
-| `window` | `start_frame` (first frame of motion), `max_frames` (default 6 / 8 / 16 by scenario) |
+| `window` | `start_frame` (first frame of motion), `max_frames` (default 6 / 8 / 16 by scenario), optional `edges_visible` (frame → `[left, top, right, bottom]` booleans: edges hidden behind other declared objects) |
 | `masks` | `dir`, `pattern` (e.g. `mask_*.png`, `segmentation_*.npy`), `label` (id in a label map, or null for binary masks) |
 | `boxes` | instead of `masks`, boxes from any tracker: `frames`, `xyxy` (pixel edges), optional `times` (s) |
 | `truth.gravity` | m/s² |
@@ -94,6 +99,89 @@ Relative gravity error on the 260 rendered ground-truth videos with known object
 By scenario: freefall 3.1 % (n = 94), projectile 6.4 % (n = 126), incline 10.1 % (n = 40).
 Error tracks `sensitivity_px`: 17.9 % mean below 3 px (n = 12), 8.9 % at 3–10 px (n = 30),
 4.7 % above 10 px (n = 218).
+
+## PhyEditing
+
+PhyEditing (private Hugging Face dataset `phyeditingvideo/Phyediting`) renders rigid-body table-top
+scenes with Genesis at five gravities (1.62, 3.71, 9.81, 15 and 24 m/s²), three synchronised cameras,
+30 fps and 210 frames, with the simulator states of every object in every frame. Most of its motion
+is pushing, sliding and toppling; gravity shows cleanly where an object flies free (off a table edge,
+a shelf, a stack), and those flights are where it is measured.
+
+### Preparing the data
+
+```bash
+python scripts/phyediting_extract.py data/phyediting data/compact          # every release -> compact records
+python scripts/phyediting_calibrate.py data/compact --prefix T08V4F480 --apply  # measured image offsets
+python scripts/phyediting_windows.py data/compact runs/windows.jsonl        # free-flight windows
+python scripts/phyediting_samples.py data/compact runs/windows.jsonl runs/oracle_cam01.jsonl \
+    --camera cam01 --min-frames 4 --jobs runs/jobs_cam01.jsonl --video-root DATA   # samples + SAM2 jobs
+python scripts/track_sam2.py runs/jobs_cam01.jsonl runs/tracks.jsonl --sam2 SAM2 --ckpt sam2.1_hiera_small.pt
+python scripts/phyediting_samples.py ... --tracks runs/tracks.jsonl          # samples observed by SAM2
+python scripts/phyediting_benchmark.py runs/benchmark --oracle ... --oracle-pred ... --observed ...
+```
+
+- **Records.** The releases use different layouts; `phyediting_extract.py` reads them all. A camera's
+  view comes from that camera's render record. `configs/` files can be stale (T06, T08, T09 and T10
+  differ from what was rendered), so a camera known only from configs is used only when the same
+  trajectory's cam01 config matches its render record.
+- **Calibration.** Every T08 video sits 36–43 px lower than its recorded camera predicts (all
+  backgrounds and cameras, within 1.5 px per camera). `phyediting_calibrate.py` measures the shift that
+  aligns the projected moving objects with the pixels that change, and records it as a principal-point
+  offset. Other releases measure 0 px.
+- **Windows.** A flight is a run of frames whose acceleration equals the gravity vector (no contact
+  force). Its declared initial state is the simulator's at the first frame: position, orientation,
+  velocity and spin, with the collision proxy's inertia and the declared damping (Genesis damps the
+  angular velocity of free bodies, e.g. by 0.018 N m s on a book). Outlines are the visual meshes' hulls
+  where a copy is available, else the proxies'.
+- **Visibility.** Rays from the camera to the object's surface are tested against every other declared
+  object, giving for each frame which box edges are visible; hidden edges drop out of the fit.
+- **Items.** Per video, the window that best constrains g, provided it is observable and trackable:
+  in view in ≥ 4 frames with ≥ 2 visible edges, GravTrace's `sensitivity_px` on the true boxes ≥ 20 px,
+  and SAM2 (box prompt in the condition frame) following the object in the ground-truth video (no
+  visible edge more than 4 px off the projected true box once a constant offset is removed).
+- **Duplicates.** 10,726 extracted trajectories hold 6,767 distinct motions: background-only variants
+  (bg02/bg03/bg04, sometimes bg01), deterministic repeats and static trajectories share a physics group.
+
+### Ground-truth floor
+
+1,038 videos (events T03, T08, T17, T18, T19, T20; all five gravities; three cameras), SAM2 masks:
+
+| method | mean | median | p95 | max | failed |
+|---|---:|---:|---:|---:|---:|
+| GravTrace | 1.11 % | 0.83 % | 3.2 % | 6.2 % | 0 |
+| GravTrace, launch velocity free | 2.88 % | 2.20 % | 8.1 % | 19.1 % | 0 |
+| GravTrace, box centre only | 1.37 % | 1.01 % | 3.7 % | 29.3 % | 0 |
+| GravTrace, no spin model | 2.41 % | 1.14 % | 9.9 % | 36.1 % | 0 |
+| 2D parabola, scale from object size | 16.92 % | 14.13 % | 50.3 % | 165.1 % | 2 |
+| 2D parabola, scale from declared depth | 11.95 % | 7.18 % | 47.6 % | 199.9 % | 2 |
+| 2D, same information as GravTrace | 3.69 % | 2.11 % | 17.2 % | 37.1 % | 2 |
+| lifted with true depth | 5.11 % | 1.99 % | 22.0 % | 112.0 % | 2 |
+| lifted with true depth, declared velocity | 1.91 % | 0.67 % | 7.3 % | 55.7 % | 2 |
+
+By gravity (n, mean, max): 1.62: 512, 1.06 %, 6.2 %; 3.71: 205, 1.01 %, 5.2 %; 9.81: 140, 1.43 %,
+5.9 %; 15: 75, 0.90 %, 3.7 %; 24: 106, 1.31 %, 5.4 %. By camera: cam01 725, 1.01 %, 6.2 %; cam02 87,
+1.34 %, 6.1 %; cam03 226, 1.36 %, 5.9 %. With a 15 px sensitivity gate, 1,351 videos: mean 1.41 %,
+max 11.6 %.
+
+The baselines get the same windows, tracks and visibility. "Same information" means the camera, the
+declared position and velocity and the gravity direction, with the image track modelled as the declared
+flight under the projection linearised at the start; the lifted baselines back-project the box centre
+with the known intrinsics and fit g along the known gravity direction. `scripts/baselines.py` computes
+them; `scripts/depth_probe.py` adds monocular and multi-view depth models (DepthPro, Depth Anything V2
+metric, ZoeDepth, MoGe-2, UniDepthV2, VGGT) in the same way, raw or with their scale anchored to the
+declared initial state; `scripts/phyediting_report.py` prints the tables.
+
+### Generated videos (gravity editing)
+
+The first 24 frames of every PhyEditing video are static, so frame 23 is the same at all five
+gravities: it is the condition frame, and the prompt describes the event and the target gravity
+(`scripts/phyediting_gen.py build`). A generated video is tracked from its first frame with the
+declared boxes and fitted in the item's window, timed by the model's frame rate, with the declared
+state of the reference trajectory at the target gravity (`phyediting_gen.py jobs`, `score`). On the
+ground-truth videos this protocol reproduces the floor above (1.11 % mean, 6.2 % max); resampled to 15 fps,
+845 of the 1,038 windows keep ≥ 4 frames and score 1.05 % mean, 8.3 % max. `--v0 free` lets the launch
+velocity vary instead.
 
 ## Assumptions and limitations
 

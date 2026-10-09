@@ -23,9 +23,55 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from gravtrace.camera import Camera, lookat_camera, quat_to_matrix  # noqa: E402
 
 
+MESH_ROOT = Path(__file__).resolve().parents[1] / "third_party/meshes"  # copies of the rendered (visual) meshes
+_MESHES: dict = {}
+
+
+def mesh_outline(obj: dict) -> np.ndarray | None:
+    """Convex-hull vertices (object frame) of the object's visual mesh, when a copy is available and its extent matches
+    the declared size (same frame and scale); else None. The silhouette a tracker sees is the mesh's, not the proxy's."""
+    from scipy.spatial import ConvexHull
+    path = obj.get("visual_mesh_path")
+    if not path or obj.get("scale"):
+        return None
+    if path not in _MESHES:
+        local = MESH_ROOT / path.lstrip("/")
+        if not local.exists():  # the same asset under another release's directory
+            same = sorted(MESH_ROOT.rglob(Path(path).name)) if MESH_ROOT.exists() else []
+            local = same[0] if same else None
+        pts = None
+        if local is not None:
+            v = np.array([[float(x) for x in line.split()[1:4]] for line in open(local, errors="ignore") if line.startswith("v ")])
+            if len(v) >= 4:
+                pts = v[ConvexHull(v).vertices]
+                if len(pts) > 400:
+                    pts = pts[np.linspace(0, len(pts) - 1, 400).astype(int)]
+        _MESHES[path] = pts
+    pts = _MESHES[path]
+    size = obj.get("collision_proxy_size") or obj.get("size")
+    if pts is None:
+        return None
+    if not size:  # nothing to check the copy against beyond its existence
+        return pts
+    extent = pts.max(axis=0) - pts.min(axis=0)
+    return pts if np.allclose(extent, size, rtol=0.03, atol=0.002) else None
+
+
 def geometry(obj: dict) -> tuple[np.ndarray, list[float]]:
-    """Outline points (object frame) and principal moments of inertia (kg m^2) of the collision proxy:
-    a box, or a z-axis cylinder sampled on its two rims."""
+    """Outline points (object frame) and principal moments of inertia (kg m^2). The outline is the visual mesh's hull
+    when available, else the collision proxy's (a box, or a z-axis cylinder sampled on its two rims); the inertia is
+    always the proxy's, as in the simulation."""
+    mesh = mesh_outline(obj)
+    if not (obj.get("collision_proxy_size") or obj.get("size")):  # undeclared size: the mesh's extent, if any
+        if mesh is None:
+            return np.zeros((1, 3)), [1e-6, 1e-6, 1e-6]
+        obj = {**obj, "size": (mesh.max(axis=0) - mesh.min(axis=0)).tolist()}
+    points, inertia = proxy_geometry(obj)
+    return (mesh if mesh is not None else points), inertia
+
+
+def proxy_geometry(obj: dict) -> tuple[np.ndarray, list[float]]:
+    """Outline points and principal moments of inertia of the collision proxy."""
     size = np.asarray(obj.get("collision_proxy_size") or obj["size"], dtype=float)
     m = float(obj.get("mass") or 1.0)
     if obj.get("collision_proxy") == "cylinder":
@@ -39,9 +85,10 @@ def geometry(obj: dict) -> tuple[np.ndarray, list[float]]:
 
 
 def surface_points(obj: dict) -> np.ndarray:
-    """Points on the collision proxy (object frame): box corners, edge midpoints and face centres, or cylinder rims."""
+    """Points on the object's surface (object frame): the visual mesh hull, cylinder rims, or box corners, edge
+    midpoints and face centres."""
     pts, _ = geometry(obj)
-    if obj.get("collision_proxy") == "cylinder":
+    if mesh_outline(obj) is not None or obj.get("collision_proxy") == "cylinder":
         return pts
     h = np.abs(pts).max(axis=0)
     grid = np.array([[x, y, z] for x in (-1, 0, 1) for y in (-1, 0, 1) for z in (-1, 0, 1) if (x, y, z) != (0, 0, 0)])
@@ -100,7 +147,8 @@ def make_sample(header: dict, z, win: dict, camera_id: str, obs: str, v0_mode: s
     s, n = win["start"], win["frames"]
     width, height = header["resolution"]
     view = header["camera"][camera_id]
-    cam = lookat_camera(view["position"], view["look_at"], view["fov_deg"], (width, height))
+    cam = lookat_camera(view["position"], view["look_at"], view["fov_deg"], (width, height),
+                        principal_offset_px=view.get("principal_offset_px", (0.0, 0.0)))
     corners, inertia = geometry(obj)
     gdir = np.asarray(header["gravity_vector"], dtype=float)
     v0 = z["velocity"][s, j]
@@ -125,7 +173,7 @@ def make_sample(header: dict, z, win: dict, camera_id: str, obs: str, v0_mode: s
         sample["motion"].update(speed=[0.5 * speed, 1.5 * speed + 0.05], angle_deg=[-89.0, 89.0],
                                 directions=[(v0 / max(speed, 1e-9)).tolist()])
     if obs == "oracle":
-        camera = Camera(cam["matrix_world"], cam["fx"], cam["fy"], (width, height))
+        camera = Camera.from_dict(cam, (width, height))
         frames = np.arange(s, s + n)
         pts = np.stack([z["position"][k, j] + corners @ quat_to_matrix(z["quaternion_xyzw"][k, j]).T for k in frames])
         uv = camera.project(pts)
@@ -137,7 +185,7 @@ def make_sample(header: dict, z, win: dict, camera_id: str, obs: str, v0_mode: s
         sample["meta"]["visible_frames"] = int(visible.sum())
     # which box edges the declared scene leaves visible in each frame of the window (occlusion by other objects)
     frames_all = np.arange(s, s + n)
-    camera = Camera(cam["matrix_world"], cam["fx"], cam["fy"], (width, height))
+    camera = Camera.from_dict(cam, (width, height))
     sample["window"]["edges_visible"] = dict(zip(map(str, frames_all.tolist()), edge_visibility(header, z, j, frames_all, camera)))
     return sample
 
@@ -146,8 +194,9 @@ def prompt_boxes(header: dict, z, camera_id: str, frame: int = 0) -> dict:
     """Projected box of every movable object in the prompt frame (the declared state), if mostly in view."""
     width, height = header["resolution"]
     view = header["camera"][camera_id]
-    cam = lookat_camera(view["position"], view["look_at"], view["fov_deg"], (width, height))
-    camera = Camera(cam["matrix_world"], cam["fx"], cam["fy"], (width, height))
+    cam = lookat_camera(view["position"], view["look_at"], view["fov_deg"], (width, height),
+                        principal_offset_px=view.get("principal_offset_px", (0.0, 0.0)))
+    camera = Camera.from_dict(cam, (width, height))
     names = [str(n) for n in z["names"]]
     out = {}
     for obj in header["objects"]:

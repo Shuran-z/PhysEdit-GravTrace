@@ -27,7 +27,7 @@ def visible_sag(s: dict) -> tuple[float, int]:
     """(largest displacement gravity causes on an edge the declared scene leaves visible, px; frames with >= 2 visible
     edges). The image box is that of the declared corners on the declared flight with and without gravity."""
     from gravtrace.camera import quat_to_matrix
-    cam = Camera(s["camera"]["matrix_world"], s["camera"]["fx"], s["camera"]["fy"], s["image_size"])
+    cam = Camera.from_dict(s["camera"], s["image_size"])
     n = s["window"]["max_frames"]
     frames = np.arange(s["window"]["start_frame"], s["window"]["start_frame"] + n)
     t = (frames - frames[0]) / s["fps"]
@@ -46,7 +46,7 @@ def visible_sag(s: dict) -> tuple[float, int]:
 
 
 def sag_px(s: dict) -> float:
-    cam = Camera(s["camera"]["matrix_world"], s["camera"]["fx"], s["camera"]["fy"], s["image_size"])
+    cam = Camera.from_dict(s["camera"], s["image_size"])
     frames = np.asarray(s["boxes"]["frames"], dtype=int)
     if len(frames) < 2:
         return 0.0

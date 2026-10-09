@@ -36,7 +36,8 @@ def camera_frame(sample: dict):
     m = np.asarray(sample["camera"]["matrix_world"], dtype=float)
     w2c = np.linalg.inv(m)
     width, height = sample["image_size"]
-    K = np.array([[sample["camera"]["fx"] * width, 0, width / 2], [0, abs(sample["camera"]["fy"]) * height, height / 2], [0, 0, 1]])
+    cam = sample["camera"]
+    K = np.array([[cam["fx"] * width, 0, cam.get("cx", 0.5) * width], [0, abs(cam["fy"]) * height, cam.get("cy", 0.5) * height], [0, 0, 1]])
     return FLIP @ w2c[:3, :3], FLIP @ w2c[:3, 3], K
 
 
