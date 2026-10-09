@@ -14,13 +14,13 @@ def evaluate(job):
     return {**meta,'joint':joint_fit(samples)}
 
 
-def build_jobs():
+def build_jobs(all_eligible=False):
     read=lambda p:list(map(json.loads,open(p)))
     audit=json.loads(Path('docs/phyediting/cross_window_coverage15.json').read_text())['records']
     eligible=[r for r in audit if r['selected'] and r['primary_cause']=='at_least_four']
     tails=[r for r in eligible if r['primary_tail_over10']]
     controls=sorted([r for r in eligible if not r['primary_tail_over10']],key=lambda r:hashlib.sha256(('cross-window-v1:'+r['id']).encode()).hexdigest())[:8]
-    selected=tails+controls
+    selected=([r for r in audit if r["selected"]] if all_eligible else tails+controls)
     items={r['id']:r for r in read('runs/benchmark_gravity_v1/items.jsonl')}
     oracle={r['id']:r for r in read('runs/all_oracle.jsonl')}
     tracks=_read_tracks('runs/tracks_all.jsonl');primary_tracks=_read_tracks('runs/genfloor_tracks_15.jsonl')
