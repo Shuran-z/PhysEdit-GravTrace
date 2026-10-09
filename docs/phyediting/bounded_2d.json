@@ -1,0 +1,5180 @@
+{
+  "scope": "bounded 2D common-frame development control; not held out",
+  "bounds": "speed0-8m/s, elevation+-89deg, gravity0.1-80; direction free, no velocity truth",
+  "caveat": "linear projection and parabolic centre model; geometry/spin/drag representations differ from ours; SLSQP finite starts do not prove global optimality",
+  "input": 1038,
+  "common_eligible": 1036,
+  "ok": 1036,
+  "failed_or_missing": 2,
+  "mean_pct": 5.863465180037567,
+  "max_pct": 39.05865045379334,
+  "groups": {
+    "event": {
+      "T03": {
+        "attempted": 398,
+        "ok": 397,
+        "failed": 1,
+        "mean_pct": 4.5283526211326075,
+        "max_pct": 15.443100991473546
+      },
+      "T08": {
+        "attempted": 208,
+        "ok": 208,
+        "failed": 0,
+        "mean_pct": 7.274489627710514,
+        "max_pct": 27.24724642503147
+      },
+      "T17": {
+        "attempted": 261,
+        "ok": 261,
+        "failed": 0,
+        "mean_pct": 4.463110611606976,
+        "max_pct": 13.376070071821111
+      },
+      "T18": {
+        "attempted": 45,
+        "ok": 44,
+        "failed": 1,
+        "mean_pct": 4.7539853149911355,
+        "max_pct": 30.350539860090066
+      },
+      "T19": {
+        "attempted": 89,
+        "ok": 89,
+        "failed": 0,
+        "mean_pct": 5.628062061258926,
+        "max_pct": 39.05865045379334
+      },
+      "T20": {
+        "attempted": 37,
+        "ok": 37,
+        "failed": 0,
+        "mean_pct": 24.02041476822734,
+        "max_pct": 30.80118704227116
+      }
+    },
+    "gravity": {
+      "1.62": {
+        "attempted": 512,
+        "ok": 512,
+        "failed": 0,
+        "mean_pct": 5.649706441768205,
+        "max_pct": 34.404287231437515
+      },
+      "3.71": {
+        "attempted": 205,
+        "ok": 205,
+        "failed": 0,
+        "mean_pct": 5.801341603228183,
+        "max_pct": 39.05865045379334
+      },
+      "9.81": {
+        "attempted": 140,
+        "ok": 139,
+        "failed": 1,
+        "mean_pct": 5.790181475554157,
+        "max_pct": 25.271375618878878
+      },
+      "15.0": {
+        "attempted": 75,
+        "ok": 74,
+        "failed": 1,
+        "mean_pct": 4.988089894559873,
+        "max_pct": 27.24724642503147
+      },
+      "24.0": {
+        "attempted": 106,
+        "ok": 106,
+        "failed": 0,
+        "mean_pct": 7.723314362003408,
+        "max_pct": 21.599035788733477
+      }
+    },
+    "camera_id": {
+      "cam01": {
+        "attempted": 725,
+        "ok": 723,
+        "failed": 2,
+        "mean_pct": 5.83496564910466,
+        "max_pct": 39.05865045379334
+      },
+      "cam03": {
+        "attempted": 226,
+        "ok": 226,
+        "failed": 0,
+        "mean_pct": 5.593293264220924,
+        "max_pct": 23.47131637663018
+      },
+      "cam02": {
+        "attempted": 87,
+        "ok": 87,
+        "failed": 0,
+        "mean_pct": 6.8021320057738,
+        "max_pct": 19.16499987845741
+      }
+    },
+    "physics_group": {
+      "4bd3542df091": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.2961334030998,
+        "max_pct": 4.2961334030998
+      },
+      "1e945df3f122": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.912299030335706,
+        "max_pct": 12.912299030335706
+      },
+      "de4f3f1b8755": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.7062290736676653,
+        "max_pct": 2.7062290736676653
+      },
+      "46b8d6cdd3cc": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.13765742453247,
+        "max_pct": 4.13765742453247
+      },
+      "1b9018623d96": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.647335090368677,
+        "max_pct": 5.647335090368677
+      },
+      "bbc71029c351": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.925401582201881,
+        "max_pct": 2.925401582201881
+      },
+      "9613613322c4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.699835997776443,
+        "max_pct": 12.699835997776443
+      },
+      "a80452b766cf": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.719569138339427,
+        "max_pct": 12.719569138339427
+      },
+      "1c84a53d18c0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 13.865456863647685,
+        "max_pct": 13.865456863647685
+      },
+      "f542c7879ada": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.9887023163387965,
+        "max_pct": 0.9887023163387965
+      },
+      "31b24c04dec3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.9675199927378753,
+        "max_pct": 0.9675199927378753
+      },
+      "f76293c42466": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.7956120268346485,
+        "max_pct": 2.7956120268346485
+      },
+      "2131d6d06017": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.3572422826616517,
+        "max_pct": 0.3572422826616517
+      },
+      "ee1fd53f36d6": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.24956729101752728,
+        "max_pct": 0.24956729101752728
+      },
+      "960d3a8f5b4d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.8844599614821425,
+        "max_pct": 0.8844599614821425
+      },
+      "ae0bb208f56d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.6197034101346883,
+        "max_pct": 2.6197034101346883
+      },
+      "dbaee77085b4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.773367561001751,
+        "max_pct": 4.773367561001751
+      },
+      "edbc38502f56": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.5913814975723426,
+        "max_pct": 2.5913814975723426
+      },
+      "b0c31265cdaf": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.7550793648757881,
+        "max_pct": 0.7550793648757881
+      },
+      "9cbf4064059f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.3927749234310394,
+        "max_pct": 1.3927749234310394
+      },
+      "2562ede29fb2": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.454036895691482,
+        "max_pct": 4.454036895691482
+      },
+      "75332c53c3c9": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.8097278431717045,
+        "max_pct": 1.8097278431717045
+      },
+      "f4d27963cff6": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.464896341447841,
+        "max_pct": 1.464896341447841
+      },
+      "ec8c36f116e0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.8727668403788034,
+        "max_pct": 1.8727668403788034
+      },
+      "51afa1e4ac73": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.666140642539183,
+        "max_pct": 2.666140642539183
+      },
+      "0b7f8bb2e3d8": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.3838724679419045,
+        "max_pct": 1.3838724679419045
+      },
+      "6498bc36427f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.146784902135561,
+        "max_pct": 7.146784902135561
+      },
+      "f58c9e5eca04": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.1809916536890785,
+        "max_pct": 1.1809916536890785
+      },
+      "c4105899282a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.307490828087907,
+        "max_pct": 10.307490828087907
+      },
+      "71bb9dd83313": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.3612688099860715,
+        "max_pct": 1.3612688099860715
+      },
+      "ab7626e9d884": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.1095594172874765,
+        "max_pct": 2.1095594172874765
+      },
+      "16abace2b1bb": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.291015875996546,
+        "max_pct": 12.291015875996546
+      },
+      "f8badae14b0a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.0097877577509795,
+        "max_pct": 1.0097877577509795
+      },
+      "19afcda8f4c1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.8038671209793957,
+        "max_pct": 0.8038671209793957
+      },
+      "700e3082d4ec": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.5444792750564642,
+        "max_pct": 0.5444792750564642
+      },
+      "1758faf6930a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.69288346364749,
+        "max_pct": 4.69288346364749
+      },
+      "7d737df14d46": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.998627386125865,
+        "max_pct": 5.998627386125865
+      },
+      "1246138fb821": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.4162498321387385,
+        "max_pct": 1.4162498321387385
+      },
+      "ffd4fdcf17f4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.390643359859367,
+        "max_pct": 1.390643359859367
+      },
+      "6efcb8ff9b4f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 11.183803324753704,
+        "max_pct": 11.183803324753704
+      },
+      "8f5971af2016": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.73833040788956,
+        "max_pct": 7.73833040788956
+      },
+      "d0dae967eb2b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.192666614766456,
+        "max_pct": 12.192666614766456
+      },
+      "6a155c3d13b1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.913756656986813,
+        "max_pct": 5.913756656986813
+      },
+      "9ace9f318c09": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.07433463820321062,
+        "max_pct": 0.07433463820321062
+      },
+      "8e6cc78ad529": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.290517227721382,
+        "max_pct": 6.290517227721382
+      },
+      "938ca99b06e5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.587081969206348,
+        "max_pct": 12.587081969206348
+      },
+      "82421f6686a4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.10334577576216475,
+        "max_pct": 0.10334577576216475
+      },
+      "88fe1d87337b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.403226714648323,
+        "max_pct": 4.403226714648323
+      },
+      "a571f7a21644": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.8305815450774263,
+        "max_pct": 2.8305815450774263
+      },
+      "d9504668c2a9": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.513988833727976,
+        "max_pct": 2.513988833727976
+      },
+      "3d77cc523448": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.0580516324640095,
+        "max_pct": 3.0580516324640095
+      },
+      "8d335ede6ba2": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.8115729392335096,
+        "max_pct": 3.8115729392335096
+      },
+      "526312c40606": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.320639491072952,
+        "max_pct": 3.320639491072952
+      },
+      "2eecbeee7d0b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.373957801533368,
+        "max_pct": 4.373957801533368
+      },
+      "35f1af5cf22d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.462671746871051,
+        "max_pct": 5.462671746871051
+      },
+      "6b950ebf6482": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.136147632628651,
+        "max_pct": 4.136147632628651
+      },
+      "5b764bf60cd4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 11.891722670357542,
+        "max_pct": 11.891722670357542
+      },
+      "2d81dcde101e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.5657782190819582,
+        "max_pct": 0.5657782190819582
+      },
+      "033c6ce4ce20": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.980831339587332,
+        "max_pct": 3.980831339587332
+      },
+      "a80ea496d0fe": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.888353663627863,
+        "max_pct": 2.888353663627863
+      },
+      "cab579044052": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.322666228567727,
+        "max_pct": 2.322666228567727
+      },
+      "bebda8c9e58b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.7483163521105247,
+        "max_pct": 2.7483163521105247
+      },
+      "b0e682174b50": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.958107161722736,
+        "max_pct": 4.958107161722736
+      },
+      "3715bb0d5246": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.578132873809935,
+        "max_pct": 2.578132873809935
+      },
+      "c04538d96e8f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.5208862043800018,
+        "max_pct": 2.5208862043800018
+      },
+      "b4730d012e44": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.954894319973601,
+        "max_pct": 3.954894319973601
+      },
+      "570ea0a15a50": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.9352694014526106,
+        "max_pct": 1.9352694014526106
+      },
+      "a05829be9668": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.48957754671312,
+        "max_pct": 4.48957754671312
+      },
+      "397b2ea7e5f5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.835773499280105,
+        "max_pct": 4.835773499280105
+      },
+      "59881d47f8f6": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.993713629105545,
+        "max_pct": 4.993713629105545
+      },
+      "bd236511c412": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.118338535498787,
+        "max_pct": 2.118338535498787
+      },
+      "e3a24c532dfb": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.337984624578195,
+        "max_pct": 4.337984624578195
+      },
+      "40d1de0474a9": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.796072778827476,
+        "max_pct": 4.796072778827476
+      },
+      "fed34e086446": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.2813777420293557,
+        "max_pct": 2.2813777420293557
+      },
+      "b9d3602c6df9": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.7287482686724642,
+        "max_pct": 1.7287482686724642
+      },
+      "4a31de9b2203": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.3692149339935473,
+        "max_pct": 3.3692149339935473
+      },
+      "705e46c952cb": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.548095915977866,
+        "max_pct": 2.548095915977866
+      },
+      "9f441c97ba8a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.6497435897897548,
+        "max_pct": 2.6497435897897548
+      },
+      "47022ef69f49": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.726584013715286,
+        "max_pct": 5.726584013715286
+      },
+      "7c2985b981e5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.171674223107559,
+        "max_pct": 6.171674223107559
+      },
+      "87042f534a18": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.8893118643718916,
+        "max_pct": 3.8893118643718916
+      },
+      "b885c2f963cf": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.571584120030048,
+        "max_pct": 4.571584120030048
+      },
+      "dda4265d318d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.09836319181253383,
+        "max_pct": 0.09836319181253383
+      },
+      "6e0c1550cbb1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.013692983305296,
+        "max_pct": 5.013692983305296
+      },
+      "3df145d154a2": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.108415453602633,
+        "max_pct": 5.108415453602633
+      },
+      "debad643eff9": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.371636505207709,
+        "max_pct": 3.371636505207709
+      },
+      "510a28e26682": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.2740725545552722,
+        "max_pct": 1.2740725545552722
+      },
+      "010fead71392": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.2981995828399215,
+        "max_pct": 2.2981995828399215
+      },
+      "0938eec04c39": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.650475937028939,
+        "max_pct": 1.650475937028939
+      },
+      "1dfcb37504ed": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.160757339427181,
+        "max_pct": 6.160757339427181
+      },
+      "ceb1b3b8ece7": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.428660598027313,
+        "max_pct": 5.428660598027313
+      },
+      "34bcad7df390": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.8238265643693805,
+        "max_pct": 2.8238265643693805
+      },
+      "5da836294043": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.768086352710267,
+        "max_pct": 5.768086352710267
+      },
+      "6208efc3b5ca": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.471047291387721,
+        "max_pct": 5.471047291387721
+      },
+      "89dd5e793c67": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.972166915588893,
+        "max_pct": 3.972166915588893
+      },
+      "396c6ac3d8e2": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.877122401691471,
+        "max_pct": 8.242218434353921
+      },
+      "a9c9b2c3c88c": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.640180752201522,
+        "max_pct": 5.532511475634028
+      },
+      "78eeebe56560": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.343914805638878,
+        "max_pct": 6.4611265154074555
+      },
+      "6fc318bcb6b0": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.601982366063371,
+        "max_pct": 3.654029115201407
+      },
+      "85d7744aa7ad": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.504887399176393,
+        "max_pct": 3.8511422030584663
+      },
+      "26ecff7db90d": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.3584913825357656,
+        "max_pct": 4.0810624953325325
+      },
+      "a3b53ec19de2": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.9452736387876859,
+        "max_pct": 1.619758597959653
+      },
+      "91e24969a23c": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.9338155475155845,
+        "max_pct": 4.240051806318257
+      },
+      "bc687ab2321b": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.9959956803151269,
+        "max_pct": 2.3810337794839986
+      },
+      "fdb45efb1849": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.6341620574229045,
+        "max_pct": 0.9391331253023827
+      },
+      "3dddc09f75d7": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.8043098224708731,
+        "max_pct": 3.6083939279903054
+      },
+      "e375e8d3106d": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.6575883176686448,
+        "max_pct": 0.8356843081090304
+      },
+      "8a092244ee04": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.751409127135134,
+        "max_pct": 2.080482585109511
+      },
+      "83f2c749e86a": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.92487416622547,
+        "max_pct": 1.3432060216719055
+      },
+      "e67c49dc070f": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.170298705044244,
+        "max_pct": 5.757864742213814
+      },
+      "de1259fef496": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.7655026652773844,
+        "max_pct": 1.2882511539929364
+      },
+      "fd71ced1a2ca": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.6093833267252546,
+        "max_pct": 0.9034344820568085
+      },
+      "4e06e1fba94a": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.373833587288093,
+        "max_pct": 2.624902124538131
+      },
+      "95346202f1f7": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.5454662294179522,
+        "max_pct": 2.126416295186684
+      },
+      "3f29ba784418": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.0958767179099382,
+        "max_pct": 1.258041047146341
+      },
+      "1f69c29cd5dd": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.4633071925218224,
+        "max_pct": 0.7823345272099047
+      },
+      "fe8c71eb878b": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.7644914260261546,
+        "max_pct": 2.113496956873162
+      },
+      "a6f7c240899f": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.9299046392466592,
+        "max_pct": 1.4162401280395365
+      },
+      "1cbf470e19ae": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.2482193893905156,
+        "max_pct": 3.0485654796783557
+      },
+      "18613dcdc497": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.7342394594959796,
+        "max_pct": 4.547035275998368
+      },
+      "00238913c941": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.0590770478890066,
+        "max_pct": 1.3361540214509304
+      },
+      "dc639faf12c9": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 10.49245993527455,
+        "max_pct": 11.014240825358812
+      },
+      "372368712a75": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.342506973981747,
+        "max_pct": 6.735847911353887
+      },
+      "cd47c2c888f1": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.747003097202303,
+        "max_pct": 7.695244582636329
+      },
+      "5954818af442": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.8953984866062212,
+        "max_pct": 3.603121953468502
+      },
+      "99ec9d251c60": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.355419248935349,
+        "max_pct": 5.9505291670995275
+      },
+      "ecdc087312fe": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.939404480121721,
+        "max_pct": 4.075143874852882
+      },
+      "55720fbd4ecf": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.7749491751528024,
+        "max_pct": 4.135895869554085
+      },
+      "6bc1c151bdea": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.6701404855675746,
+        "max_pct": 5.611354542314517
+      },
+      "6f08cb6934dd": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.765854758885178,
+        "max_pct": 4.070332216903438
+      },
+      "bb633a2f99c9": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.1454107638501354,
+        "max_pct": 2.004468548511118
+      },
+      "a35c7a4f1339": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.6041607210781619,
+        "max_pct": 0.8302299702773519
+      },
+      "477e9869612d": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.242594563915167,
+        "max_pct": 2.2941017791050733
+      },
+      "5536e44da465": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.8497843057386127,
+        "max_pct": 6.28296368079202
+      },
+      "30ea675a8f5b": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.106918541297417,
+        "max_pct": 9.990582157068495
+      },
+      "d7bd2133a24a": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.7526524945554669,
+        "max_pct": 1.4841411309894692
+      },
+      "b2c248b13214": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.9980107901987556,
+        "max_pct": 1.5376274551972546
+      },
+      "7f976b6dc684": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.1854777828956626,
+        "max_pct": 4.031096715307081
+      },
+      "0e3ddd04380e": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.179466313688313,
+        "max_pct": 8.010297982905056
+      },
+      "19afda48855f": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 9.131224946569137,
+        "max_pct": 9.972327799842539
+      },
+      "4bcc6a9078f3": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 7.669285694020239,
+        "max_pct": 10.72681254372606
+      },
+      "780fbc24b5cb": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.303447005203463,
+        "max_pct": 8.828519206432162
+      },
+      "b3acda526267": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.923619049940159,
+        "max_pct": 9.758134750141567
+      },
+      "97e8ddb98d50": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.67760184304142,
+        "max_pct": 10.37264938503798
+      },
+      "8afce51f6617": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.999603462896807,
+        "max_pct": 8.7976634893009
+      },
+      "049d9a1e4040": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.582610158661666,
+        "max_pct": 12.582610158661666
+      },
+      "bf261ba5e0ff": {
+        "attempted": 2,
+        "ok": 1,
+        "failed": 1,
+        "mean_pct": 8.621809442896634,
+        "max_pct": 8.621809442896634
+      },
+      "febd8b9aa831": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.730551239853268,
+        "max_pct": 8.730551239853268
+      },
+      "201c76bda34b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 11.473599580068383,
+        "max_pct": 11.473599580068383
+      },
+      "942939e6f347": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.717638763445478,
+        "max_pct": 8.717638763445478
+      },
+      "9308a3195f47": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.5214094269338325,
+        "max_pct": 5.5214094269338325
+      },
+      "ec2e61a9a77a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.115978054289995,
+        "max_pct": 7.115978054289995
+      },
+      "44e63434250c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.243019545408037,
+        "max_pct": 8.243019545408037
+      },
+      "428bd8aa27fa": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.2742826995322,
+        "max_pct": 10.2742826995322
+      },
+      "8e590ddf1901": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.76375100020543,
+        "max_pct": 5.76375100020543
+      },
+      "ed6c9e4aa342": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.712759508895555,
+        "max_pct": 12.712759508895555
+      },
+      "68741147931b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 14.357571731420048,
+        "max_pct": 14.357571731420048
+      },
+      "ee70952e9ca4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 9.82140687775177,
+        "max_pct": 9.82140687775177
+      },
+      "1085724bb8c5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.102249253844718,
+        "max_pct": 8.102249253844718
+      },
+      "43b6fcd36cc5": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.789365469927981,
+        "max_pct": 5.894046147993337
+      },
+      "235b6d91b2ca": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.02044319296539,
+        "max_pct": 5.990842842021382
+      },
+      "bc0175b8c19a": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.066676177484681,
+        "max_pct": 8.706042360807675
+      },
+      "39116a308024": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.7896077674884658,
+        "max_pct": 1.7896077674884658
+      },
+      "7a652e410a36": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.512238592695218,
+        "max_pct": 11.820006497281387
+      },
+      "f64f4ec58552": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.265948482797861,
+        "max_pct": 6.1595573161897015
+      },
+      "67aed5772aa0": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.4635924412606471,
+        "max_pct": 2.279595563996173
+      },
+      "9216014bfce4": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.579168866172367,
+        "max_pct": 5.728792152758411
+      },
+      "0e8b7d8531a0": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.7753376348481287,
+        "max_pct": 2.6951565966158553
+      },
+      "861fdcb62b53": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.501097203788305,
+        "max_pct": 4.97636692907808
+      },
+      "ed867e7a1bbb": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.302164111745089,
+        "max_pct": 7.17891950159979
+      },
+      "e1d83f2fa922": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.487948829126514,
+        "max_pct": 5.699247538818797
+      },
+      "74ff8f77f447": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 4.2733328179451116,
+        "max_pct": 9.310335417173409
+      },
+      "32b560666632": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.766412970132202,
+        "max_pct": 0.766412970132202
+      },
+      "71d8a961b9e7": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.487223115659589,
+        "max_pct": 4.487223115659589
+      },
+      "a946817c1c07": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.005908613673156,
+        "max_pct": 6.584473614062414
+      },
+      "a3ed4f6b659e": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.299823668609034,
+        "max_pct": 9.32485974770696
+      },
+      "b27e1c1682d2": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.795310326852297,
+        "max_pct": 3.795310326852297
+      },
+      "9d4700f13aaa": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.965320246333338,
+        "max_pct": 6.39697986587433
+      },
+      "b6146d439fa7": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.674717671278268,
+        "max_pct": 8.76557030050228
+      },
+      "c58e0acf1dc1": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.7201656635147065,
+        "max_pct": 3.422060818656958
+      },
+      "2dee8e331f30": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.8671996527473436,
+        "max_pct": 4.04342375563872
+      },
+      "56fc85edef7e": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.670240848350114,
+        "max_pct": 3.587283925417606
+      },
+      "3443f9f86d07": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.406284647634896,
+        "max_pct": 6.406284647634896
+      },
+      "3dc133989af7": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.917455662166162,
+        "max_pct": 3.8140644944065216
+      },
+      "cc62c45ef1a5": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.535161295454813,
+        "max_pct": 3.3430770491067685
+      },
+      "dd8dee1b68a0": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.0783025628419707,
+        "max_pct": 1.714374715887479
+      },
+      "62ed0b1e8eda": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.387696860709623,
+        "max_pct": 6.5177817766381985
+      },
+      "c6df863612da": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.483104630440165,
+        "max_pct": 5.858368951849924
+      },
+      "68d822cbca0c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.707144192480086,
+        "max_pct": 6.707144192480086
+      },
+      "b649e36b804c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.8801316099131204,
+        "max_pct": 6.8801316099131204
+      },
+      "3282b00125f6": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.075507802635437,
+        "max_pct": 8.723527174969092
+      },
+      "6c44dc831dda": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.28933725081786,
+        "max_pct": 6.560089196645514
+      },
+      "e80be401b820": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.666195802258528,
+        "max_pct": 6.357496340500724
+      },
+      "6d811a8495ea": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 9.705152098124692,
+        "max_pct": 11.548084616709463
+      },
+      "33f902c7d5dd": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.773322741910885,
+        "max_pct": 9.245216504618703
+      },
+      "40e1f552c952": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.9385567701897655,
+        "max_pct": 5.264210201330933
+      },
+      "b0ba0a9a28fe": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.837839863928947,
+        "max_pct": 10.92067597148655
+      },
+      "b4d66836ec5e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.488561802839928,
+        "max_pct": 2.488561802839928
+      },
+      "a18cbe973b30": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.492549951716286,
+        "max_pct": 5.492549951716286
+      },
+      "4df2395b2e64": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.12378535110517,
+        "max_pct": 5.12378535110517
+      },
+      "ca9bf5aa1b4b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.9635598274940453,
+        "max_pct": 3.9635598274940453
+      },
+      "9003fca07e96": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.705055710968618,
+        "max_pct": 2.705055710968618
+      },
+      "1446bb6967ff": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.261494271746091,
+        "max_pct": 4.261494271746091
+      },
+      "965b261da736": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.0797888547394163,
+        "max_pct": 1.0797888547394163
+      },
+      "a088fc23d35c": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 11.936657591422106,
+        "max_pct": 14.841852234458198
+      },
+      "0ff52d320b56": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.188727831031556,
+        "max_pct": 2.188727831031556
+      },
+      "5cb924481600": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.3569508284327467,
+        "max_pct": 2.3569508284327467
+      },
+      "243cb2a7961a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.47901729823449,
+        "max_pct": 5.47901729823449
+      },
+      "096c08472e4c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.837667649815872,
+        "max_pct": 8.837667649815872
+      },
+      "aa17625c0c3e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.12694155304461,
+        "max_pct": 8.12694155304461
+      },
+      "5691a4dc0be3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.1969338567789811,
+        "max_pct": 1.1969338567789811
+      },
+      "d64bbbeab205": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.64544394530063,
+        "max_pct": 11.729746643791628
+      },
+      "ace69b5ad7bf": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.106139155028297,
+        "max_pct": 9.876743200687566
+      },
+      "f761b7b32146": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.074737639253653,
+        "max_pct": 8.907551249035993
+      },
+      "fdd5466d8295": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 7.741083359581869,
+        "max_pct": 15.024243575685892
+      },
+      "d8e9d9630c45": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.5032141874476506,
+        "max_pct": 6.757649342535299
+      },
+      "34062da0e33d": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 7.44772334488461,
+        "max_pct": 8.12595380295653
+      },
+      "af90e219c36a": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.458741089590023,
+        "max_pct": 6.111619839876159
+      },
+      "8e274eb4a03a": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.386135090605407,
+        "max_pct": 3.1721377473374335
+      },
+      "43c582b0207e": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.176865223839966,
+        "max_pct": 9.989825933091279
+      },
+      "bb9acb07d7c2": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.9553775860083067,
+        "max_pct": 4.328647490243831
+      },
+      "07c43d4587bf": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.3979810971655753,
+        "max_pct": 6.23729199420856
+      },
+      "d9afa6579db7": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.5945284854314559,
+        "max_pct": 0.6236164443494063
+      },
+      "6bcaceb4b225": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.59101026310627,
+        "max_pct": 4.089026261563
+      },
+      "3f7f102cff67": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.9295308913694011,
+        "max_pct": 1.0612751709470514
+      },
+      "87555e465ca8": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.4538756121107999,
+        "max_pct": 1.9912262423182225
+      },
+      "905e074baae1": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.8965587607472245,
+        "max_pct": 1.915732111848012
+      },
+      "818064492b22": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 7.271623394811478,
+        "max_pct": 8.986219596050105
+      },
+      "6f169eccc169": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.5154703609772966,
+        "max_pct": 3.5370375465699544
+      },
+      "2be4d5560b1e": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 7.763811126257153,
+        "max_pct": 11.757028016230775
+      },
+      "183544f9b4b0": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.236284401769666,
+        "max_pct": 9.976882806166476
+      },
+      "626b41d1d8ef": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.906338821274671,
+        "max_pct": 8.199746183669543
+      },
+      "84273d4b2f18": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.9728686286257235,
+        "max_pct": 3.6103905158369365
+      },
+      "452258f6ca92": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.902587485649735,
+        "max_pct": 6.000310900175876
+      },
+      "578e71987219": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.8003007529727344,
+        "max_pct": 4.672286563551598
+      },
+      "00e7b0ba7d75": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.1635815937845875,
+        "max_pct": 6.5123392359974215
+      },
+      "bf80f19caea4": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.4952898802515064,
+        "max_pct": 3.9620412706883545
+      },
+      "1bc46c842159": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.155658499052626,
+        "max_pct": 2.5686091832150204
+      },
+      "0dbec62e0502": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 7.862683868762488,
+        "max_pct": 11.402136194826973
+      },
+      "9a78ff73ae86": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.980436486195685,
+        "max_pct": 8.516132224599726
+      },
+      "21679e650db1": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.486961886636193,
+        "max_pct": 6.429754295425438
+      },
+      "7e85c42af5b2": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.8945847112084255,
+        "max_pct": 5.041701011699851
+      },
+      "048d489af0e8": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.622163548874962,
+        "max_pct": 9.603388899251996
+      },
+      "cedfa5e4b062": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.38315051953241,
+        "max_pct": 8.711544998806753
+      },
+      "338ab46cd09e": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 9.49921951305462,
+        "max_pct": 11.882970280470918
+      },
+      "2102a3a07443": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 7.072787040212775,
+        "max_pct": 7.073404810699813
+      },
+      "154aae7343f6": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.753326062832167,
+        "max_pct": 10.885186502359655
+      },
+      "8f296f0c19dd": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.833963599486958,
+        "max_pct": 7.229262954624149
+      },
+      "591d21d56da5": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.863381290517262,
+        "max_pct": 8.332697504043818
+      },
+      "c1bc0971422f": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.361571087581962,
+        "max_pct": 7.729044966228516
+      },
+      "96613baf3219": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.965724835250146,
+        "max_pct": 10.965724835250146
+      },
+      "4cc1cd5fcc77": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 11.294254499879496,
+        "max_pct": 11.294254499879496
+      },
+      "65061ab574a1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.8536083443275637,
+        "max_pct": 3.8536083443275637
+      },
+      "b18accfe6cc8": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.152865840550268,
+        "max_pct": 4.152865840550268
+      },
+      "56253ac95665": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.113903742981655,
+        "max_pct": 10.113903742981655
+      },
+      "6511d4fc6da8": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 9.653829036188332,
+        "max_pct": 9.653829036188332
+      },
+      "cd52d4f07d5a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 15.443100991473546,
+        "max_pct": 15.443100991473546
+      },
+      "fa73aa031530": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.637384530189859,
+        "max_pct": 4.637384530189859
+      },
+      "a1338159b6b7": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.384300061376578,
+        "max_pct": 4.384300061376578
+      },
+      "46014e23a469": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.732658801731008,
+        "max_pct": 7.732658801731008
+      },
+      "6ef36924b6b3": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 9.341650666738321,
+        "max_pct": 13.253055665784874
+      },
+      "16634fa8da73": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.164273776264707,
+        "max_pct": 8.164273776264707
+      },
+      "78634c27359d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.176012747072047,
+        "max_pct": 8.176012747072047
+      },
+      "9b9548b750f1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.892481289302086,
+        "max_pct": 4.892481289302086
+      },
+      "7fbebd273144": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.655773411909526,
+        "max_pct": 5.655773411909526
+      },
+      "999a6127a609": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.1722970619722606,
+        "max_pct": 1.1722970619722606
+      },
+      "91436346ac48": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.6256538175166471,
+        "max_pct": 0.6256538175166471
+      },
+      "41afe572d107": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.6884975200171413,
+        "max_pct": 2.6884975200171413
+      },
+      "5c9fdef5feb7": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.26330876072453435,
+        "max_pct": 0.26330876072453435
+      },
+      "b5da41d57800": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.1837941027865115,
+        "max_pct": 7.1837941027865115
+      },
+      "c9f43a9fb3b8": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.252212392350872,
+        "max_pct": 2.252212392350872
+      },
+      "977ee96b8753": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.5602563691213147,
+        "max_pct": 0.5602563691213147
+      },
+      "5b2bffd1801d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.4924015980183354,
+        "max_pct": 3.4924015980183354
+      },
+      "2ce329b77fad": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.7757789538474169,
+        "max_pct": 0.7757789538474169
+      },
+      "fd050f680036": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.0107511184027214,
+        "max_pct": 3.5914246167399577
+      },
+      "1eb235607198": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.40328380725560553,
+        "max_pct": 0.40328380725560553
+      },
+      "ea8c9a1df79c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.4620315525625625,
+        "max_pct": 4.4620315525625625
+      },
+      "dac0bf45caf4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 16.179884946091615,
+        "max_pct": 16.179884946091615
+      },
+      "f73d507522c6": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.898146264631935,
+        "max_pct": 11.66495411427051
+      },
+      "0ec02251a7d1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 19.16499987845741,
+        "max_pct": 19.16499987845741
+      },
+      "be8c23023f9b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.49077779366054,
+        "max_pct": 6.49077779366054
+      },
+      "496af9cb71e1": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 12.483414897934754,
+        "max_pct": 12.625871351948748
+      },
+      "06e9ef79400d": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 14.594527643379088,
+        "max_pct": 15.927393696254422
+      },
+      "7d3ce91d8b7f": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.49970055277397,
+        "max_pct": 15.540995773617716
+      },
+      "3f06e49c85ab": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 15.779937898608543,
+        "max_pct": 15.779937898608543
+      },
+      "8ae7affcffe2": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 16.26018260497817,
+        "max_pct": 16.26018260497817
+      },
+      "732c10019fe1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 23.47131637663018,
+        "max_pct": 23.47131637663018
+      },
+      "c9065bd0b2ad": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.8369507160985687,
+        "max_pct": 3.5004603445382143
+      },
+      "6d31af525562": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.182463517494874,
+        "max_pct": 6.182463517494874
+      },
+      "73af86a4cca5": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.301889522810377,
+        "max_pct": 11.543497407505132
+      },
+      "a7195c45b7ad": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.032862454840075,
+        "max_pct": 10.032862454840075
+      },
+      "b0c73f9f7c27": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 2.831583366299887,
+        "max_pct": 6.589841851959566
+      },
+      "c26e28fd8610": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.264240043487494,
+        "max_pct": 10.264240043487494
+      },
+      "3f3161e91507": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.001096126922099,
+        "max_pct": 5.950508310338066
+      },
+      "e2961d797038": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 10.399527746792469,
+        "max_pct": 11.904554204237726
+      },
+      "c31126a7c811": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 13.854922127798863,
+        "max_pct": 13.854922127798863
+      },
+      "5e5ba120aa7a": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 13.250480362663474,
+        "max_pct": 16.250316515180895
+      },
+      "9b8bf2f011ed": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 14.502614339929927,
+        "max_pct": 21.599035788733477
+      },
+      "e562b188da4c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.547289236289647,
+        "max_pct": 8.547289236289647
+      },
+      "7d8edd3e7a0d": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 6.443849214035313,
+        "max_pct": 11.88730269658027
+      },
+      "6974ffc183e9": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 9.66923855384878,
+        "max_pct": 10.16201129744363
+      },
+      "bc2688b85e3c": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.587983418251623,
+        "max_pct": 6.27480438349397
+      },
+      "8bc2a504d72c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.0073410134854335,
+        "max_pct": 5.0073410134854335
+      },
+      "e79e1afd0afd": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 9.764822082848411,
+        "max_pct": 9.764822082848411
+      },
+      "8ef2cf38119a": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 11.58549039278609,
+        "max_pct": 11.967677913260587
+      },
+      "60d81198e111": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.1651356515851807,
+        "max_pct": 1.2952354468930727
+      },
+      "970efd07242f": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.12829828850313,
+        "max_pct": 9.949812353928088
+      },
+      "0efbdfb43ad5": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.966950874471399,
+        "max_pct": 10.864522087740047
+      },
+      "fc0cfe013480": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 9.284418745470802,
+        "max_pct": 9.851190044942527
+      },
+      "b139c3097a92": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 2.654671802980013,
+        "max_pct": 4.165554257711179
+      },
+      "07460a1de751": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.22505163085707,
+        "max_pct": 8.87302445028002
+      },
+      "560a86513987": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 1.6655572236715248,
+        "max_pct": 4.406593404852077
+      },
+      "1b9cb7f346c5": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.0786256689675755,
+        "max_pct": 1.291082050805259
+      },
+      "9b983f0f7794": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 2.201399798461486,
+        "max_pct": 5.151243879248413
+      },
+      "3253d596f726": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.991990358001003,
+        "max_pct": 10.991990358001003
+      },
+      "12af82f9e532": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.1977192106455785,
+        "max_pct": 4.1977192106455785
+      },
+      "50c70e649d9b": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.1715590301306533,
+        "max_pct": 2.2465289153625445
+      },
+      "bf98dfe7aa10": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.2654752553569533,
+        "max_pct": 3.2654752553569533
+      },
+      "3cb96e275b61": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.806256401205296,
+        "max_pct": 12.806256401205296
+      },
+      "9164a5e32b00": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.2991821454881647,
+        "max_pct": 1.2991821454881647
+      },
+      "156085813658": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.147589682296071,
+        "max_pct": 4.147589682296071
+      },
+      "a90592c02006": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.103437484160032,
+        "max_pct": 3.103437484160032
+      },
+      "400fc4834bf6": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.40117431914707957,
+        "max_pct": 0.40117431914707957
+      },
+      "46467e6dd45b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 14.690915460445042,
+        "max_pct": 14.690915460445042
+      },
+      "430c6b6af829": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 11.494954156378645,
+        "max_pct": 11.494954156378645
+      },
+      "961300c6ba48": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.17885961324989,
+        "max_pct": 8.17885961324989
+      },
+      "5656525e9cf7": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 9.17648892253448,
+        "max_pct": 11.36920072305696
+      },
+      "7b5c306b90f9": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.8274353924982796,
+        "max_pct": 4.794189072594557
+      },
+      "1bafd0ff0478": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.644814178321704,
+        "max_pct": 10.644814178321704
+      },
+      "8ccc1404eafa": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 8.612712349294172,
+        "max_pct": 11.967375370362788
+      },
+      "342a898d7136": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.78158326327949,
+        "max_pct": 8.78158326327949
+      },
+      "d88b620e1a83": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.595144541525143,
+        "max_pct": 6.506654427973069
+      },
+      "ff29a192f8e2": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 7.0232371985745505,
+        "max_pct": 8.065944489396015
+      },
+      "f69290ae8c44": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 5.470897957327928,
+        "max_pct": 8.088091385905404
+      },
+      "684732c25751": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.930497922879237,
+        "max_pct": 12.930497922879237
+      },
+      "eb6c9f3d12c5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.257409605840514,
+        "max_pct": 6.257409605840514
+      },
+      "365d2fdb0aa0": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.6709497080054814,
+        "max_pct": 1.8469282409901644
+      },
+      "7c88a56246bf": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 14.572866630444747,
+        "max_pct": 14.572866630444747
+      },
+      "a4e441595179": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.883669304968109,
+        "max_pct": 7.290802940825047
+      },
+      "3a3dd0bcf8e8": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.525122171178331,
+        "max_pct": 4.525122171178331
+      },
+      "8fe6ed52c38b": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 12.603556214889034,
+        "max_pct": 21.43896044104776
+      },
+      "363e403f509b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.4677443420239715,
+        "max_pct": 4.4677443420239715
+      },
+      "65700169dbe7": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.702479766544654,
+        "max_pct": 4.702479766544654
+      },
+      "1a6b989e8ddf": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.920930740371355,
+        "max_pct": 6.432426226848264
+      },
+      "5cfc7b3004c5": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 4.790055837568086,
+        "max_pct": 6.25340838177546
+      },
+      "9a77e131e4a1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.04609552256954,
+        "max_pct": 8.04609552256954
+      },
+      "03adb68b9402": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.938003153898053,
+        "max_pct": 6.133427675240178
+      },
+      "e1ba8ceca02b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.2992284178400295,
+        "max_pct": 5.2992284178400295
+      },
+      "3743993af559": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.43492974943206,
+        "max_pct": 7.485008596697473
+      },
+      "8af7c8f359d4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.619070255871614,
+        "max_pct": 2.619070255871614
+      },
+      "ab7a65547e2d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.9918947355887506,
+        "max_pct": 1.9918947355887506
+      },
+      "f87c5f3a2b99": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.163789784983176,
+        "max_pct": 7.316522879263099
+      },
+      "dae237b10b48": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.690787488705602,
+        "max_pct": 0.690787488705602
+      },
+      "11374cc71dda": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.2995257226301229,
+        "max_pct": 0.2995257226301229
+      },
+      "7cb5930f96c7": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 6.319066098563656,
+        "max_pct": 8.8601582984716
+      },
+      "11f410f88219": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.241253071236985,
+        "max_pct": 6.581179360210376
+      },
+      "1618a5dfc465": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.251327253967208,
+        "max_pct": 5.251327253967208
+      },
+      "3da8b32f422f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 9.606583088731702,
+        "max_pct": 9.606583088731702
+      },
+      "52cfd53c946c": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.3504456526093833,
+        "max_pct": 2.211638476801281
+      },
+      "fd8f19ea444a": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.263008070808894,
+        "max_pct": 6.142104458273434
+      },
+      "e225d382aa16": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.6718463999975803,
+        "max_pct": 3.6718463999975803
+      },
+      "1b0c4c9bd9ec": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.3117907757138965,
+        "max_pct": 3.6298238194863774
+      },
+      "59a9ba0ce30b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.2646011091677742,
+        "max_pct": 2.2646011091677742
+      },
+      "68f38285e2bd": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.5048925669755593,
+        "max_pct": 3.625183617448058
+      },
+      "a584aa871332": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.042086893601052,
+        "max_pct": 8.042086893601052
+      },
+      "087af8ad08dd": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.9720666216788576,
+        "max_pct": 0.9720666216788576
+      },
+      "29625baeb773": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.53404579849015,
+        "max_pct": 5.53404579849015
+      },
+      "c5dc305f090e": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.4846887760026357,
+        "max_pct": 3.8992992520944014
+      },
+      "e270db9ee358": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 27.24724642503147,
+        "max_pct": 27.24724642503147
+      },
+      "5cd5dccb75df": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 3.6745903636544544,
+        "max_pct": 5.582583041633016
+      },
+      "38084d052a26": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.008275455756128,
+        "max_pct": 6.21970352011142
+      },
+      "91ec03ff823d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.618783191016167,
+        "max_pct": 10.618783191016167
+      },
+      "97fc7b1b350a": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 7.023086623651424,
+        "max_pct": 9.362383971978861
+      },
+      "511872764138": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.841760251596064,
+        "max_pct": 7.841760251596064
+      },
+      "4a5b0d1cd6c2": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.143637299729644,
+        "max_pct": 8.143637299729644
+      },
+      "16579e88c7dd": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.697209474506871,
+        "max_pct": 7.769421962195633
+      },
+      "b36056b4d974": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 10.316913268982763,
+        "max_pct": 12.481521133607965
+      },
+      "9fa3c6ae84d0": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 7.662881205511181,
+        "max_pct": 13.02004796041274
+      },
+      "c7048be71114": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.347398587446308,
+        "max_pct": 7.347398587446308
+      },
+      "04280dc4d34a": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 9.625029704971976,
+        "max_pct": 11.332421957309545
+      },
+      "08a25d59e271": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 9.889281411645046,
+        "max_pct": 11.473933739442533
+      },
+      "9e6ab045949d": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.770567623494846,
+        "max_pct": 4.841844731312017
+      },
+      "73bb1960db01": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.2353459212415485,
+        "max_pct": 1.2353459212415485
+      },
+      "04064e3950f2": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 21.071437470361843,
+        "max_pct": 21.071437470361843
+      },
+      "b42249da6567": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.768625451118914,
+        "max_pct": 5.768625451118914
+      },
+      "b394df3c8a0b": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 3.8283125390622956,
+        "max_pct": 6.088179698363138
+      },
+      "c78e6f5345f6": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 8.78343561546247,
+        "max_pct": 9.360685280095993
+      },
+      "7246dfc0dec7": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 16.90639093585553,
+        "max_pct": 19.69803265706027
+      },
+      "45b0a595fbe7": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.2564440883456216,
+        "max_pct": 2.2564440883456216
+      },
+      "f37099a180b2": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.160134828682651,
+        "max_pct": 6.160134828682651
+      },
+      "9e0c6c5df67a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.896422859928222,
+        "max_pct": 10.896422859928222
+      },
+      "140b8ded9144": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 9.5543280370199,
+        "max_pct": 9.5543280370199
+      },
+      "41fed4b260e7": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 12.916642398530199,
+        "max_pct": 17.267029916541432
+      },
+      "40c3ebad5274": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 4.333890000988479,
+        "max_pct": 7.657218142359412
+      },
+      "e8ddddf85454": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.5982845855772494,
+        "max_pct": 3.5982845855772494
+      },
+      "a34ae645d236": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 14.767490560542985,
+        "max_pct": 18.712430718743512
+      },
+      "f6d7f9e96b64": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 14.820487627107436,
+        "max_pct": 14.820487627107436
+      },
+      "481a0e859bfe": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 10.77840064137221,
+        "max_pct": 11.849266651466305
+      },
+      "794d5beb6933": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.166283676301841,
+        "max_pct": 4.166283676301841
+      },
+      "13e6a2cf4894": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 20.10926754812461,
+        "max_pct": 20.10926754812461
+      },
+      "88be1e43c2ae": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 16.189622502036784,
+        "max_pct": 18.90336652570945
+      },
+      "981fd68d0ec5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 11.118758336556422,
+        "max_pct": 11.118758336556422
+      },
+      "92319e41ff0c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 9.174997669039154,
+        "max_pct": 9.174997669039154
+      },
+      "11fbba8fa812": {
+        "attempted": 4,
+        "ok": 4,
+        "failed": 0,
+        "mean_pct": 3.0197332343497534,
+        "max_pct": 7.748039562074416
+      },
+      "3f6ef4fd86ad": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.777061473985071,
+        "max_pct": 8.777061473985071
+      },
+      "50944e99139f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.020149252179441,
+        "max_pct": 6.020149252179441
+      },
+      "efbdd206a6ec": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.9742867515552227,
+        "max_pct": 3.9742867515552227
+      },
+      "490c33787ffb": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.700373248263279,
+        "max_pct": 4.700373248263279
+      },
+      "77d94fe30074": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 9.891559411601225,
+        "max_pct": 9.891559411601225
+      },
+      "59b3771abafd": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.1887220981738684,
+        "max_pct": 3.1887220981738684
+      },
+      "e9da49ea2725": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.5604285691435562,
+        "max_pct": 0.5604285691435562
+      },
+      "ef2261032b79": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.0174415872065579,
+        "max_pct": 1.0174415872065579
+      },
+      "6e8a7978570b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.00726568932499,
+        "max_pct": 4.00726568932499
+      },
+      "e6de19c4fa1a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.3049996286999885,
+        "max_pct": 2.3049996286999885
+      },
+      "b0c9b95fbe53": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.650904166051075,
+        "max_pct": 6.650904166051075
+      },
+      "f5e01042cce0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.724544142958667,
+        "max_pct": 7.724544142958667
+      },
+      "11269fd0adcd": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 9.155309218930963,
+        "max_pct": 9.155309218930963
+      },
+      "19b2bf2a166c": {
+        "attempted": 5,
+        "ok": 5,
+        "failed": 0,
+        "mean_pct": 6.766815553168581,
+        "max_pct": 8.910826863124377
+      },
+      "aa8eccc7b739": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 9.33533014863407,
+        "max_pct": 9.33533014863407
+      },
+      "49012d236ead": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.505157524576179,
+        "max_pct": 8.505157524576179
+      },
+      "57e437860083": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.043789707169168,
+        "max_pct": 8.043789707169168
+      },
+      "1bd818418117": {
+        "attempted": 13,
+        "ok": 13,
+        "failed": 0,
+        "mean_pct": 7.192104394335248,
+        "max_pct": 8.849599993782864
+      },
+      "489baa548516": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.348892089496938,
+        "max_pct": 6.348892089496938
+      },
+      "540b4fdaf366": {
+        "attempted": 4,
+        "ok": 4,
+        "failed": 0,
+        "mean_pct": 5.438089804096071,
+        "max_pct": 7.462754408020644
+      },
+      "7795e8c5cc61": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.12481514207655,
+        "max_pct": 10.12481514207655
+      },
+      "e77925636437": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.804098918825585,
+        "max_pct": 6.804098918825585
+      },
+      "cc2ed6618d3f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.129831120571584,
+        "max_pct": 7.129831120571584
+      },
+      "d8cbc179bbe9": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 5.6573185443436484,
+        "max_pct": 7.23548998967053
+      },
+      "720a9a65fde3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.455706737181255,
+        "max_pct": 6.455706737181255
+      },
+      "7b7b950f0851": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.123444182981951,
+        "max_pct": 5.123444182981951
+      },
+      "c795226157b3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.00528933729848,
+        "max_pct": 6.00528933729848
+      },
+      "fe6cf44e3ffd": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.808651938330309,
+        "max_pct": 2.808651938330309
+      },
+      "9cb87daf2ee8": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.693758256341198,
+        "max_pct": 6.693758256341198
+      },
+      "2f15de607aec": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.496244879841905,
+        "max_pct": 5.496244879841905
+      },
+      "80a6122c6e2f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.0824016802099434,
+        "max_pct": 1.0824016802099434
+      },
+      "db485b737ae5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.455826544087957,
+        "max_pct": 1.455826544087957
+      },
+      "0fe89ba9f748": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.33628529287584,
+        "max_pct": 3.33628529287584
+      },
+      "5e02f63b2718": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.6274702822236984,
+        "max_pct": 2.6274702822236984
+      },
+      "3d9d75585843": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.391776499571987,
+        "max_pct": 4.391776499571987
+      },
+      "f89170a6b1f1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 13.376070071821111,
+        "max_pct": 13.376070071821111
+      },
+      "514e90a26566": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.7159743218694,
+        "max_pct": 5.7159743218694
+      },
+      "479341af0800": {
+        "attempted": 4,
+        "ok": 4,
+        "failed": 0,
+        "mean_pct": 4.081542581913681,
+        "max_pct": 4.992465295879855
+      },
+      "7221bdfe680f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.6164278044120834,
+        "max_pct": 6.6164278044120834
+      },
+      "fa0bcfe92e0c": {
+        "attempted": 4,
+        "ok": 4,
+        "failed": 0,
+        "mean_pct": 3.5880986092724,
+        "max_pct": 6.355742560114075
+      },
+      "d5a28738545d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.174283014587709,
+        "max_pct": 3.174283014587709
+      },
+      "e3d4cb98a4ed": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.117972705713268,
+        "max_pct": 3.117972705713268
+      },
+      "13f3f35c2d93": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.4023262286003835,
+        "max_pct": 4.4023262286003835
+      },
+      "454ca9b51c13": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.935208201894039,
+        "max_pct": 6.935208201894039
+      },
+      "dbe0e1ebc3e6": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.29839608635726655,
+        "max_pct": 0.29839608635726655
+      },
+      "87f6e87dab47": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.9380718481619836,
+        "max_pct": 3.9380718481619836
+      },
+      "f9b626c3282d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.3307563667066,
+        "max_pct": 4.3307563667066
+      },
+      "04a230b9174b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.2581108456915513,
+        "max_pct": 1.2581108456915513
+      },
+      "18f66e307d8c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.403612296599734,
+        "max_pct": 3.403612296599734
+      },
+      "4bfae8478fd4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.406041689775241,
+        "max_pct": 3.406041689775241
+      },
+      "1509ef8b9acc": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.479856397591765,
+        "max_pct": 5.479856397591765
+      },
+      "2b956902fc8a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.1396965965551193,
+        "max_pct": 3.1396965965551193
+      },
+      "96ac7f5b7ffb": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.1085784563415264,
+        "max_pct": 3.1085784563415264
+      },
+      "a95c23eb7f66": {
+        "attempted": 4,
+        "ok": 4,
+        "failed": 0,
+        "mean_pct": 3.731419071253245,
+        "max_pct": 6.443881828999132
+      },
+      "5af90a48f5f4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.319845350633424,
+        "max_pct": 6.319845350633424
+      },
+      "0e86e73ca2c3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.461201282093643,
+        "max_pct": 6.461201282093643
+      },
+      "12413fa476ac": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.503212548372005,
+        "max_pct": 5.503212548372005
+      },
+      "a3f1df22093d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 9.255292964104223,
+        "max_pct": 9.255292964104223
+      },
+      "e9bdfe6b748c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.074177863504106,
+        "max_pct": 8.074177863504106
+      },
+      "bba209e9bb6a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.7351108289884083,
+        "max_pct": 3.7351108289884083
+      },
+      "aca5385da496": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.493808944159085,
+        "max_pct": 6.493808944159085
+      },
+      "7df7f3433a2d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.252758852803142,
+        "max_pct": 6.252758852803142
+      },
+      "2331d5bbd4c5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.666834882691052,
+        "max_pct": 5.666834882691052
+      },
+      "86ec992a8419": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.8891280110654347,
+        "max_pct": 3.8891280110654347
+      },
+      "7814193b927b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.055195204088245,
+        "max_pct": 2.055195204088245
+      },
+      "2e2a2772d374": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.536588474339607,
+        "max_pct": 2.536588474339607
+      },
+      "4f669374371b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.8355208218907615,
+        "max_pct": 6.8355208218907615
+      },
+      "618db594de12": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.684295800183557,
+        "max_pct": 3.684295800183557
+      },
+      "ca54dcdb06f7": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.7609362597466816,
+        "max_pct": 1.7609362597466816
+      },
+      "5a8bc0f812b5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.7760656834701867,
+        "max_pct": 3.7760656834701867
+      },
+      "cfdd9d8e23dd": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 2.7135607730452356,
+        "max_pct": 5.899261851257109
+      },
+      "218f796ebb6d": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 1.2955741233045066,
+        "max_pct": 3.0262772168678786
+      },
+      "89aeb26e1403": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 5.134252766191049,
+        "max_pct": 8.238680343288218
+      },
+      "72988db498f5": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 3.1129825191281046,
+        "max_pct": 4.15052867668696
+      },
+      "f59297a598bc": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 4.43236587530322,
+        "max_pct": 4.738822353563609
+      },
+      "cc001c21f391": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 3.562488057652306,
+        "max_pct": 6.286139878881669
+      },
+      "b0cc35e0a458": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.161510198954865,
+        "max_pct": 4.161510198954865
+      },
+      "16471e95974a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.34873947767792846,
+        "max_pct": 0.34873947767792846
+      },
+      "788841770c85": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.1858833260588675,
+        "max_pct": 1.1858833260588675
+      },
+      "2fc213af65dd": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.5303468128486042,
+        "max_pct": 1.5303468128486042
+      },
+      "e4dcfd3784f8": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 0.8258830100640879,
+        "max_pct": 1.4935139515037443
+      },
+      "9fc544f60894": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.533698031492211,
+        "max_pct": 5.22887103742068
+      },
+      "2e4f0367439c": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 6.205014968424383,
+        "max_pct": 6.74355909916422
+      },
+      "52c38953d95a": {
+        "attempted": 4,
+        "ok": 4,
+        "failed": 0,
+        "mean_pct": 6.557650502303059,
+        "max_pct": 7.470850118613404
+      },
+      "4d2b7b1b61bc": {
+        "attempted": 6,
+        "ok": 6,
+        "failed": 0,
+        "mean_pct": 6.9039720252930366,
+        "max_pct": 8.616719679393924
+      },
+      "40bd7006d648": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.145373394969887,
+        "max_pct": 4.145373394969887
+      },
+      "09eda0b483f9": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.005247371706446,
+        "max_pct": 6.005247371706446
+      },
+      "5c9446a0190c": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 5.08207810068006,
+        "max_pct": 5.638906956166501
+      },
+      "a5c7e81d6322": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.6720607887772685,
+        "max_pct": 7.6720607887772685
+      },
+      "2518b3cae07e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.735825496649793,
+        "max_pct": 4.735825496649793
+      },
+      "f5aa8afe2058": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.32464469957763,
+        "max_pct": 5.32464469957763
+      },
+      "573a4f9af48b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.844416681600407,
+        "max_pct": 6.844416681600407
+      },
+      "3bdfd076729e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.962069542145541,
+        "max_pct": 3.962069542145541
+      },
+      "32fad2fc5597": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 3.1484890104222063,
+        "max_pct": 5.124688781481712
+      },
+      "6223f8269073": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 1.9101702222264667,
+        "max_pct": 2.6186164289812908
+      },
+      "5ef101bfcd18": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 1.5259680662546238,
+        "max_pct": 4.295128327104614
+      },
+      "805b4efce925": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 3.7182692035473934,
+        "max_pct": 4.572065730673613
+      },
+      "64a83e150878": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 2.91294124434431,
+        "max_pct": 4.298268420885276
+      },
+      "2138e836591b": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 5.066875174216753,
+        "max_pct": 7.331266510291579
+      },
+      "6ba8d518c93a": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 3.3289123167586623,
+        "max_pct": 4.966214526508339
+      },
+      "52c186ec7d10": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 3.551452517336388,
+        "max_pct": 6.8199015800929015
+      },
+      "6c4f2c481a39": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 4.2540669503938675,
+        "max_pct": 6.116289322435586
+      },
+      "7afe2eec4685": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 2.367941464680734,
+        "max_pct": 3.8458992603846998
+      },
+      "82a12b43df7b": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 2.56579298838265,
+        "max_pct": 2.939427105930581
+      },
+      "150d2aecc6ee": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 3.7020418461293487,
+        "max_pct": 4.375585374865154
+      },
+      "9e39b1cd3674": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 2.874968207682634,
+        "max_pct": 3.421390698649196
+      },
+      "a34c8a3b8be4": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 3.3902427181501857,
+        "max_pct": 5.032340489520736
+      },
+      "d5227b5083c7": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 4.720333408014979,
+        "max_pct": 5.68194252146994
+      },
+      "fec769a3e1c2": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 6.905161295799363,
+        "max_pct": 7.022531650738717
+      },
+      "8f71e539c9b2": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 6.537614318897089,
+        "max_pct": 10.676564514187014
+      },
+      "c9f3079d6845": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 5.566288617411971,
+        "max_pct": 10.558783964186292
+      },
+      "01b887a1ecdd": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 5.336841676952275,
+        "max_pct": 6.202961189434408
+      },
+      "239b68d7612e": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 2.047615287892901,
+        "max_pct": 3.925141623596018
+      },
+      "365cd26b8f09": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 4.354536824631631,
+        "max_pct": 5.658649555051132
+      },
+      "dd520e1f8c9d": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 2.7885226604160707,
+        "max_pct": 3.76953344181441
+      },
+      "e3d2292985fb": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 3.1991338541801553,
+        "max_pct": 3.7011745993723144
+      },
+      "e19175151ee4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.29087281090532,
+        "max_pct": 2.29087281090532
+      },
+      "a8f98058eb95": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.222124088943799,
+        "max_pct": 1.3022057632443351
+      },
+      "97e1b9ed2f76": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.09929608617136321,
+        "max_pct": 0.09929608617136321
+      },
+      "5e378d85c3b6": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.9039365376068753,
+        "max_pct": 0.9039365376068753
+      },
+      "eb213927115d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.707372898060023,
+        "max_pct": 2.707372898060023
+      },
+      "fe0b51c68d60": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.476614368168318,
+        "max_pct": 3.476614368168318
+      },
+      "0fbe607c4cba": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.23964410054134,
+        "max_pct": 4.23964410054134
+      },
+      "bfc8b0317596": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.598236156732648,
+        "max_pct": 3.598236156732648
+      },
+      "4c3b71e456a2": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 1.952882362097541,
+        "max_pct": 3.6111091171040943
+      },
+      "5d28b154f0ed": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.47248597031039896,
+        "max_pct": 0.47248597031039896
+      },
+      "7cbe6c3975b6": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 6.561162094366329,
+        "max_pct": 6.870862918133891
+      },
+      "4550b434b597": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.7204218631532386,
+        "max_pct": 3.2647970847569208
+      },
+      "808c8a52d807": {
+        "attempted": 2,
+        "ok": 2,
+        "failed": 0,
+        "mean_pct": 2.7088569274622554,
+        "max_pct": 2.918293264745153
+      },
+      "718cb9210285": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.903664649265716,
+        "max_pct": 5.903664649265716
+      },
+      "a7d7a36c483d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.8327566162344553,
+        "max_pct": 2.8327566162344553
+      },
+      "c9a09fc7f7a0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.676893395134659,
+        "max_pct": 0.676893395134659
+      },
+      "554b831e7515": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.48077896323333036,
+        "max_pct": 0.48077896323333036
+      },
+      "c1b00af6ddf4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.662594692699109,
+        "max_pct": 6.662594692699109
+      },
+      "fd383b6f34e0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.487071509352759,
+        "max_pct": 6.487071509352759
+      },
+      "e3b420b11136": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.758850069410971,
+        "max_pct": 6.758850069410971
+      },
+      "8eaf6f757a0a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.34516368457965,
+        "max_pct": 8.34516368457965
+      },
+      "55aabd33835a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.8366833826829945,
+        "max_pct": 5.8366833826829945
+      },
+      "b80a3e45f65f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.3166021835102524,
+        "max_pct": 2.3166021835102524
+      },
+      "ff09f956bdfc": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.3123991695530801,
+        "max_pct": 1.3123991695530801
+      },
+      "79339096e7b1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.0695979367263853,
+        "max_pct": 1.0695979367263853
+      },
+      "862982e29ffb": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.2787427336737673,
+        "max_pct": 3.2787427336737673
+      },
+      "ccb8a06d64c5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.055466368205905,
+        "max_pct": 2.055466368205905
+      },
+      "b0003eef48ca": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.292515114857656,
+        "max_pct": 6.292515114857656
+      },
+      "2cffdf3ee3d3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.991098361657041,
+        "max_pct": 2.991098361657041
+      },
+      "506983cf75e9": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.932920646171731,
+        "max_pct": 0.932920646171731
+      },
+      "023a4cc853b3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.813681812433845,
+        "max_pct": 4.813681812433845
+      },
+      "b5f84db40b5d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.034053489321154,
+        "max_pct": 4.034053489321154
+      },
+      "5cdc1361b3da": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.117377313235049,
+        "max_pct": 4.117377313235049
+      },
+      "61a91e16ca22": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.781113878086885,
+        "max_pct": 5.781113878086885
+      },
+      "a5f9e08bbe60": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.7383364226493114,
+        "max_pct": 1.7383364226493114
+      },
+      "5b47c402d912": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.6879869566459584,
+        "max_pct": 0.6879869566459584
+      },
+      "79db2805d1da": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.8866481415191863,
+        "max_pct": 0.8866481415191863
+      },
+      "f509f723898b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.8392762374378275,
+        "max_pct": 3.8392762374378275
+      },
+      "4560c0a91bc0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.71768660338536,
+        "max_pct": 1.71768660338536
+      },
+      "829274747610": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.549308272892392,
+        "max_pct": 2.549308272892392
+      },
+      "8092c607232a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.9911936277239519,
+        "max_pct": 0.9911936277239519
+      },
+      "07ee94e34851": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.05743155871769101,
+        "max_pct": 0.05743155871769101
+      },
+      "9762269e1a71": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.453458686338396,
+        "max_pct": 4.453458686338396
+      },
+      "f47851bb9942": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.16190881159682258,
+        "max_pct": 0.16190881159682258
+      },
+      "bc1a47858b1a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.483240510289141,
+        "max_pct": 1.483240510289141
+      },
+      "28aa72a8f78d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.9474862750809896,
+        "max_pct": 1.9474862750809896
+      },
+      "1970e8952d52": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.604853890110126,
+        "max_pct": 2.604853890110126
+      },
+      "6c07f5a9ad69": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.105029246869002,
+        "max_pct": 10.105029246869002
+      },
+      "7afdab606de8": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.9508754784277835,
+        "max_pct": 2.9508754784277835
+      },
+      "bf944a5784de": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.254352613934209,
+        "max_pct": 4.254352613934209
+      },
+      "e81d7b361419": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.0649262900165204,
+        "max_pct": 0.0649262900165204
+      },
+      "23bf5d7411ff": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 14.594853907728345,
+        "max_pct": 14.594853907728345
+      },
+      "6326717e0222": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.1071102106572361,
+        "max_pct": 1.1071102106572361
+      },
+      "7feea49f31ea": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.601447582165587,
+        "max_pct": 6.601447582165587
+      },
+      "08fe6d5ae9a0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.6642021813263232,
+        "max_pct": 0.6642021813263232
+      },
+      "7aa006fee228": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.6426914876728316,
+        "max_pct": 1.6426914876728316
+      },
+      "e75f7bfeefbf": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.163339476942793,
+        "max_pct": 1.163339476942793
+      },
+      "7228bd698ae5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.5806345449720038,
+        "max_pct": 1.5806345449720038
+      },
+      "2f86ecf3d888": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 21.015526393963558,
+        "max_pct": 21.015526393963558
+      },
+      "d69a79e66bca": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.913288615856128,
+        "max_pct": 6.913288615856128
+      },
+      "7cd143c499bc": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.2018206596169811,
+        "max_pct": 1.2018206596169811
+      },
+      "ef1aee1a0011": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.6675623411152354,
+        "max_pct": 0.6675623411152354
+      },
+      "0e1f7b76bc11": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.9044566086825911,
+        "max_pct": 0.9044566086825911
+      },
+      "fd27c5ad4753": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.2533343568354338,
+        "max_pct": 1.2533343568354338
+      },
+      "8a0c6bb5e3f0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.3727159066970076,
+        "max_pct": 0.3727159066970076
+      },
+      "1db9657f8b05": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 30.350539860090066,
+        "max_pct": 30.350539860090066
+      },
+      "f3ba123a4974": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.044350811399609,
+        "max_pct": 2.044350811399609
+      },
+      "56e143b806dd": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.535054726373692,
+        "max_pct": 8.535054726373692
+      },
+      "8b4dae6e701d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 20.969815655309,
+        "max_pct": 20.969815655309
+      },
+      "6b037226ec4e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 25.01321575673312,
+        "max_pct": 25.01321575673312
+      },
+      "d1729e50f818": {
+        "attempted": 1,
+        "ok": 0,
+        "failed": 1,
+        "mean_pct": null,
+        "max_pct": null
+      },
+      "40da65b060b5": {
+        "attempted": 3,
+        "ok": 3,
+        "failed": 0,
+        "mean_pct": 1.27638234043973,
+        "max_pct": 1.379203729084022
+      },
+      "359a716e2062": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.1738563915794984,
+        "max_pct": 2.1738563915794984
+      },
+      "e661d002f08c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.054855137843363,
+        "max_pct": 7.054855137843363
+      },
+      "0c85e7831b5e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.4141264713932955,
+        "max_pct": 1.4141264713932955
+      },
+      "64170a7eba68": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.558111739193993,
+        "max_pct": 5.558111739193993
+      },
+      "1752a34f2261": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.05529639050841,
+        "max_pct": 2.05529639050841
+      },
+      "72270edc4419": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 19.020945690769185,
+        "max_pct": 19.020945690769185
+      },
+      "04267fee7f0c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.290031533372112,
+        "max_pct": 10.290031533372112
+      },
+      "75a47d3dd5c0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.072701699524737,
+        "max_pct": 2.072701699524737
+      },
+      "1cfd4260ae64": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.9054294620298173,
+        "max_pct": 1.9054294620298173
+      },
+      "1465fad4af94": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.9289057224491581,
+        "max_pct": 0.9289057224491581
+      },
+      "0c17630c1b4b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 11.79489620650267,
+        "max_pct": 11.79489620650267
+      },
+      "3c679f961a7f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.2028705867689005,
+        "max_pct": 1.2028705867689005
+      },
+      "2ef1475feffa": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.617355541750449,
+        "max_pct": 8.617355541750449
+      },
+      "62a55ab7442b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.636043557802028,
+        "max_pct": 4.636043557802028
+      },
+      "e1501aead080": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.4590566372905558,
+        "max_pct": 0.4590566372905558
+      },
+      "48ffb39443ae": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.430541797019899,
+        "max_pct": 10.430541797019899
+      },
+      "b44910d691de": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.589442611126327,
+        "max_pct": 5.589442611126327
+      },
+      "fca8283f441f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.673519699260263,
+        "max_pct": 2.673519699260263
+      },
+      "f79d36672e3e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.864748061736756,
+        "max_pct": 3.864748061736756
+      },
+      "ccc86989d88d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.9075870803458645,
+        "max_pct": 3.9075870803458645
+      },
+      "92319416f382": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.37507315620310955,
+        "max_pct": 0.37507315620310955
+      },
+      "c0533832860f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.1909397889543714,
+        "max_pct": 2.1909397889543714
+      },
+      "8c3fde4776df": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.3703324278228513,
+        "max_pct": 1.3703324278228513
+      },
+      "9e694e897ed0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.37568669096657015,
+        "max_pct": 0.37568669096657015
+      },
+      "67e9f3eedfa3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.826579481035456,
+        "max_pct": 6.826579481035456
+      },
+      "f6ccc0526444": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.745113629816868,
+        "max_pct": 6.745113629816868
+      },
+      "c63ab7d587b3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.7505080194025293,
+        "max_pct": 0.7505080194025293
+      },
+      "f11b7fc153ce": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.10197633398350003,
+        "max_pct": 0.10197633398350003
+      },
+      "4fea0e1f65b1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 39.05865045379334,
+        "max_pct": 39.05865045379334
+      },
+      "7f8a3eaf7b3e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.693822742113716,
+        "max_pct": 2.693822742113716
+      },
+      "c458edb922c1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.809356153479016,
+        "max_pct": 4.809356153479016
+      },
+      "56d11fce5dcd": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 16.357437388732677,
+        "max_pct": 16.357437388732677
+      },
+      "a0599b41dce1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.413743217838781,
+        "max_pct": 1.413743217838781
+      },
+      "a32eaf565f33": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.4355548249168404,
+        "max_pct": 1.4355548249168404
+      },
+      "3cb12ccdd62f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.3648604595640768,
+        "max_pct": 1.3648604595640768
+      },
+      "542c4c54489d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.32706507981261623,
+        "max_pct": 0.32706507981261623
+      },
+      "970dd6e804e7": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.452176409414421,
+        "max_pct": 4.452176409414421
+      },
+      "f10c169ca340": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.207054062623257,
+        "max_pct": 12.207054062623257
+      },
+      "9082b6ef3639": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.9090583377607393,
+        "max_pct": 2.9090583377607393
+      },
+      "574a17bfad2d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.0531069952047574,
+        "max_pct": 3.0531069952047574
+      },
+      "f0ff3537dae5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.142153553145889,
+        "max_pct": 4.142153553145889
+      },
+      "183955633adb": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.5664221414515946,
+        "max_pct": 0.5664221414515946
+      },
+      "eed9eb0bdba9": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.509463524321102,
+        "max_pct": 6.509463524321102
+      },
+      "78def1ea12cc": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.533772042273632,
+        "max_pct": 4.533772042273632
+      },
+      "310c1886908d": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.7286470086252717,
+        "max_pct": 0.7286470086252717
+      },
+      "bd9c885d7afb": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.0816252785035618,
+        "max_pct": 1.0816252785035618
+      },
+      "f97160dcd827": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.8725876787063287,
+        "max_pct": 2.8725876787063287
+      },
+      "d4bb8484db93": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.3295224016352876,
+        "max_pct": 3.3295224016352876
+      },
+      "ee1815d62493": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 20.738133482343923,
+        "max_pct": 20.738133482343923
+      },
+      "a21734838df3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 29.185632998406753,
+        "max_pct": 29.185632998406753
+      },
+      "5bbc5ec386a3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 11.750456929548815,
+        "max_pct": 11.750456929548815
+      },
+      "cfb0a58b9ecb": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.947456464628261,
+        "max_pct": 1.947456464628261
+      },
+      "84b2d63ac2d7": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.6130956779083614,
+        "max_pct": 2.6130956779083614
+      },
+      "55861f0bb314": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 34.404287231437515,
+        "max_pct": 34.404287231437515
+      },
+      "16b66bd7981f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.169940042092795,
+        "max_pct": 10.169940042092795
+      },
+      "e77faa0e1f48": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.4009263845290025,
+        "max_pct": 4.4009263845290025
+      },
+      "0a56fbfe886a": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.4628579066224177,
+        "max_pct": 2.4628579066224177
+      },
+      "6fe59ad19d0e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.757692705922299,
+        "max_pct": 2.757692705922299
+      },
+      "d55ce5deaee7": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.6513158514765425,
+        "max_pct": 1.6513158514765425
+      },
+      "d540fa3223dd": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.6086063677448488,
+        "max_pct": 3.6086063677448488
+      },
+      "ac49f971192f": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.037570688111569,
+        "max_pct": 4.037570688111569
+      },
+      "34e53202da36": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.788090178533186,
+        "max_pct": 1.788090178533186
+      },
+      "406bb7a36f14": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.476573386145864,
+        "max_pct": 2.476573386145864
+      },
+      "60ba55ec00c7": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.6112130808857641,
+        "max_pct": 0.6112130808857641
+      },
+      "cc52f4ee95d1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 3.5420505318228157,
+        "max_pct": 3.5420505318228157
+      },
+      "4e795f097da4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.900559246640081,
+        "max_pct": 6.900559246640081
+      },
+      "15d89c471515": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.3639330885783165,
+        "max_pct": 0.3639330885783165
+      },
+      "32b875903323": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.4501057610924137,
+        "max_pct": 2.4501057610924137
+      },
+      "c5ed14a20605": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.5366847090147786,
+        "max_pct": 0.5366847090147786
+      },
+      "9a69d4a3daa5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.515349285065019,
+        "max_pct": 6.515349285065019
+      },
+      "7ff519aea1fe": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 12.829554808169064,
+        "max_pct": 12.829554808169064
+      },
+      "16949ce51668": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 33.10836750597667,
+        "max_pct": 33.10836750597667
+      },
+      "938184de9449": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.014188214776078567,
+        "max_pct": 0.014188214776078567
+      },
+      "bc9832a95448": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.515048239886834,
+        "max_pct": 6.515048239886834
+      },
+      "38d76e97b043": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 2.2629938795179827,
+        "max_pct": 2.2629938795179827
+      },
+      "8b544904624e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.9703543688471492,
+        "max_pct": 1.9703543688471492
+      },
+      "527be72cffa2": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.3124887987118639,
+        "max_pct": 1.3124887987118639
+      },
+      "af9a88398cca": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.645467424933418,
+        "max_pct": 10.645467424933418
+      },
+      "776a59cd58e4": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 8.472591575968892,
+        "max_pct": 8.472591575968892
+      },
+      "f8dfbfd70209": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 7.33926687674944,
+        "max_pct": 7.33926687674944
+      },
+      "8925206ad010": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.431569382648859,
+        "max_pct": 4.431569382648859
+      },
+      "180265f1c0d5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.091600712788551,
+        "max_pct": 10.091600712788551
+      },
+      "cd90c2513704": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 6.0218088641221135,
+        "max_pct": 6.0218088641221135
+      },
+      "ec270ecf7bef": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.3426632452670386,
+        "max_pct": 0.3426632452670386
+      },
+      "b0978cf1d8a1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.1160867721784262,
+        "max_pct": 1.1160867721784262
+      },
+      "99758649e682": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.835569577163934,
+        "max_pct": 4.835569577163934
+      },
+      "363349ead220": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 4.538704054500364,
+        "max_pct": 4.538704054500364
+      },
+      "b37e06f7c659": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.2698714576633297,
+        "max_pct": 1.2698714576633297
+      },
+      "9359c6a733fa": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 5.710572186522378,
+        "max_pct": 5.710572186522378
+      },
+      "0d6988f5dd74": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.6397399943830262,
+        "max_pct": 0.6397399943830262
+      },
+      "3d594d428fdb": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.4545560009361238,
+        "max_pct": 0.4545560009361238
+      },
+      "fda3fd58b534": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.6461413310263064,
+        "max_pct": 0.6461413310263064
+      },
+      "6a73f8a60a37": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 1.33113021178346,
+        "max_pct": 1.33113021178346
+      },
+      "fae2f8fcc393": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 0.10829079912086925,
+        "max_pct": 0.10829079912086925
+      },
+      "6681144083f2": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 25.760153340090376,
+        "max_pct": 25.760153340090376
+      },
+      "53a62e6d17f0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 26.927264283252818,
+        "max_pct": 26.927264283252818
+      },
+      "311e0020224c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 27.81056141895698,
+        "max_pct": 27.81056141895698
+      },
+      "95f140586840": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 28.042257763203605,
+        "max_pct": 28.042257763203605
+      },
+      "1b490b87f2e3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 21.673311940520957,
+        "max_pct": 21.673311940520957
+      },
+      "696e043796e9": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 21.638009807790393,
+        "max_pct": 21.638009807790393
+      },
+      "a95fef0d291c": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 16.313210680850553,
+        "max_pct": 16.313210680850553
+      },
+      "a0ce4e820691": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 13.307194897947339,
+        "max_pct": 13.307194897947339
+      },
+      "6d9b6c1921d6": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 19.8144873216223,
+        "max_pct": 19.8144873216223
+      },
+      "2b8b6bc109f1": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 18.633950969623136,
+        "max_pct": 18.633950969623136
+      },
+      "c1d46c94df04": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 27.614148229626355,
+        "max_pct": 27.614148229626355
+      },
+      "e1a292b902cd": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 25.051326618070124,
+        "max_pct": 25.051326618070124
+      },
+      "2f813d6bd2de": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 23.885044039170655,
+        "max_pct": 23.885044039170655
+      },
+      "42a8dde2e68e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 24.84547771156086,
+        "max_pct": 24.84547771156086
+      },
+      "72a6cffe3fdf": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 22.053679756658852,
+        "max_pct": 22.053679756658852
+      },
+      "937dfdd279b0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 30.80118704227116,
+        "max_pct": 30.80118704227116
+      },
+      "2ef9bdd846aa": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 25.33398329271881,
+        "max_pct": 25.33398329271881
+      },
+      "bc1153d666c5": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 20.280658568321584,
+        "max_pct": 20.280658568321584
+      },
+      "bf7b9a3d6322": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 21.09240761792004,
+        "max_pct": 21.09240761792004
+      },
+      "f366efccf994": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 26.326844077364576,
+        "max_pct": 26.326844077364576
+      },
+      "b22cb85152ef": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 27.09631885473319,
+        "max_pct": 27.09631885473319
+      },
+      "cb8721b01d78": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 27.866424060671502,
+        "max_pct": 27.866424060671502
+      },
+      "2717fe1fba01": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 25.849147260441807,
+        "max_pct": 25.849147260441807
+      },
+      "95089a4afa55": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 26.450380226466663,
+        "max_pct": 26.450380226466663
+      },
+      "58ea3fe55e57": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 29.233116962745022,
+        "max_pct": 29.233116962745022
+      },
+      "7d875fd2b856": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 27.325678418999544,
+        "max_pct": 27.325678418999544
+      },
+      "05c65ac79c31": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 25.68169753121773,
+        "max_pct": 25.68169753121773
+      },
+      "c19df4510c99": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 24.655106854576037,
+        "max_pct": 24.655106854576037
+      },
+      "3b5333e56357": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 27.040201114037256,
+        "max_pct": 27.040201114037256
+      },
+      "5fe90c5b0129": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 25.135161612265765,
+        "max_pct": 25.135161612265765
+      },
+      "23019c1d5cb0": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 27.586591615437317,
+        "max_pct": 27.586591615437317
+      },
+      "16f3ea7984c3": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 26.743028162940163,
+        "max_pct": 26.743028162940163
+      },
+      "b1b35c508afe": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 17.022425051519875,
+        "max_pct": 17.022425051519875
+      },
+      "72a41d19de6e": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 21.697023153548557,
+        "max_pct": 21.697023153548557
+      },
+      "21da894c3610": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 10.380161624117646,
+        "max_pct": 10.380161624117646
+      },
+      "955b8da2b31b": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 26.516348924273114,
+        "max_pct": 26.516348924273114
+      },
+      "c180750b0514": {
+        "attempted": 1,
+        "ok": 1,
+        "failed": 0,
+        "mean_pct": 25.271375618878878,
+        "max_pct": 25.271375618878878
+      }
+    }
+  }
+}
