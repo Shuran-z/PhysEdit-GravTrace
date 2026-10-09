@@ -1,0 +1,184 @@
+{
+  "scope": "existing selected 12-case pilot, auxiliary admission audit only; main windows and all items retained, no fitting or target-based selection",
+  "rule": "all four declared edges visible and observed box >1px from every border, at least four actual frames; uses the existing common-frame protocol",
+  "attempted": 12,
+  "with_eligible_auxiliary": 9,
+  "records": [
+    {
+      "id": "T03V5F480__bg04_library_shelf__g02_mars__global_A_02__A0504000__B0008000__C0006000__r014__cam03__t03v5_upper_edge_can__f109",
+      "cohort": "selected_tail",
+      "added_window": "T03V5F480__bg04_library_shelf__g02_mars__global_A_02__A0504000__B0008000__C0006000__r014__cam03__t03v5_upper_edge_can__f140",
+      "frames": 5,
+      "common_frames": 3,
+      "eligible": false,
+      "retained_frame_ids": [
+        141,
+        143,
+        145
+      ]
+    },
+    {
+      "id": "T08V4F480__bg01_home_ase__g01_moon__global_17__s0p6400__em0p0125__m0p2637__cam01__t08_upper_payload_book__f36",
+      "cohort": "selected_tail",
+      "added_window": "T08V4F480__bg01_home_ase__g01_moon__global_17__s0p6400__em0p0125__m0p2637__cam01__t08_upper_payload_book__f64",
+      "frames": 7,
+      "common_frames": 4,
+      "eligible": true,
+      "retained_frame_ids": [
+        65,
+        67,
+        69,
+        71
+      ]
+    },
+    {
+      "id": "T17__bg01_home_ase__g01_moon__lateral_offset__p007__cam01__t17_can__f24",
+      "cohort": "selected_tail",
+      "added_window": "T17__bg01_home_ase__g01_moon__lateral_offset__p007__cam01__t17_can__f53",
+      "frames": 6,
+      "common_frames": 6,
+      "eligible": true,
+      "retained_frame_ids": [
+        53,
+        55,
+        57,
+        59,
+        61,
+        63
+      ]
+    },
+    {
+      "id": "T17__bg04_library_shelf__g01_moon__lateral_offset__p023__cam01__t17_can__f52",
+      "cohort": "selected_tail",
+      "added_window": "T17__bg04_library_shelf__g01_moon__lateral_offset__p023__cam01__t17_can__f24",
+      "frames": 5,
+      "common_frames": 5,
+      "eligible": true,
+      "retained_frame_ids": [
+        25,
+        27,
+        29,
+        31,
+        33
+      ]
+    },
+    {
+      "id": "T03V5F480__bg04_library_shelf__g01_moon__global_C_01__A0550000__B0008000__C0006000__r014__cam03__t03v5_impulsed_book__f121",
+      "cohort": "hash_control",
+      "added_window": "T03V5F480__bg04_library_shelf__g01_moon__global_C_01__A0550000__B0008000__C0006000__r014__cam03__t03v5_impulsed_book__f157",
+      "frames": 6,
+      "common_frames": 1,
+      "eligible": false,
+      "retained_frame_ids": [
+        157
+      ]
+    },
+    {
+      "id": "T17__bg03_neutral_studio__g01_moon__lateral_offset__p011__cam01__t17_can__f52",
+      "cohort": "hash_control",
+      "added_window": "T17__bg03_neutral_studio__g01_moon__lateral_offset__p011__cam01__t17_can__f24",
+      "frames": 5,
+      "common_frames": 5,
+      "eligible": true,
+      "retained_frame_ids": [
+        25,
+        27,
+        29,
+        31,
+        33
+      ]
+    },
+    {
+      "id": "T03V5F480__bg01_home_ase__g01_moon__cfC_theta_plus_rep01__A0550000__B0008000__C0085000__r014__cam03__t03v5_impulsed_book__f120",
+      "cohort": "hash_control",
+      "added_window": "T03V5F480__bg01_home_ase__g01_moon__cfC_theta_plus_rep01__A0550000__B0008000__C0085000__r014__cam03__t03v5_impulsed_book__f164",
+      "frames": 6,
+      "common_frames": 0,
+      "eligible": false,
+      "retained_frame_ids": []
+    },
+    {
+      "id": "T08V4F480__bg01_home_ase__g04_high__cf_A_book_initial_speed_mps_theta_star__rep03__s2p2703__e0p0180__m0p3800__cam03__t08_lower_impactor_book__f64",
+      "cohort": "hash_control",
+      "added_window": "T08V4F480__bg01_home_ase__g04_high__cf_A_book_initial_speed_mps_theta_star__rep03__s2p2703__e0p0180__m0p3800__cam03__t08_lower_impactor_book__f40",
+      "frames": 9,
+      "common_frames": 9,
+      "eligible": true,
+      "retained_frame_ids": [
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57
+      ]
+    },
+    {
+      "id": "T17__bg04_library_shelf__g01_moon__lateral_offset__p003__cam01__t17_can__f24",
+      "cohort": "hash_control",
+      "added_window": "T17__bg04_library_shelf__g01_moon__lateral_offset__p003__cam01__t17_can__f52",
+      "frames": 5,
+      "common_frames": 5,
+      "eligible": true,
+      "retained_frame_ids": [
+        53,
+        55,
+        57,
+        59,
+        61
+      ]
+    },
+    {
+      "id": "T08V4F480__bg01_home_ase__g04_high__cf_A_book_initial_speed_mps_theta_star__rep01__s2p1813__e0p0180__m0p3800__cam02__t08_lower_impactor_book__f112",
+      "cohort": "hash_control",
+      "added_window": "T08V4F480__bg01_home_ase__g04_high__cf_A_book_initial_speed_mps_theta_star__rep01__s2p1813__e0p0180__m0p3800__cam02__t08_lower_impactor_book__f126",
+      "frames": 10,
+      "common_frames": 10,
+      "eligible": true,
+      "retained_frame_ids": [
+        127,
+        129,
+        131,
+        133,
+        135,
+        137,
+        139,
+        141,
+        143,
+        145
+      ]
+    },
+    {
+      "id": "T03V5F480__bg02_physics_lab__g01_moon__global_C_02__A0550000__B0008000__C0015000__r014__cam01__t03v5_upper_edge_can__f130",
+      "cohort": "hash_control",
+      "added_window": "T03V5F480__bg02_physics_lab__g01_moon__global_C_02__A0550000__B0008000__C0015000__r014__cam01__t03v5_upper_edge_can__f101",
+      "frames": 5,
+      "common_frames": 4,
+      "eligible": true,
+      "retained_frame_ids": [
+        101,
+        103,
+        105,
+        107
+      ]
+    },
+    {
+      "id": "T03V5F480__bg01_home_ase__g01_moon__cfB_theta_plus_rep03__A0550000__B0075000__C0006000__r014__cam03__t03v5_upper_edge_can__f98",
+      "cohort": "hash_control",
+      "added_window": "T03V5F480__bg01_home_ase__g01_moon__cfB_theta_plus_rep03__A0550000__B0075000__C0006000__r014__cam03__t03v5_upper_edge_can__f137",
+      "frames": 7,
+      "common_frames": 5,
+      "eligible": true,
+      "retained_frame_ids": [
+        137,
+        139,
+        141,
+        143,
+        145
+      ]
+    }
+  ]
+}

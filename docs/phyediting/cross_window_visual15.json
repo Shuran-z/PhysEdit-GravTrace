@@ -1,0 +1,32 @@
+{
+  "scope": "three existing error-selected auxiliary cases, diagnostic only",
+  "records": [
+    {
+      "id": "T08V4F480__bg01_home_ase__g01_moon__global_17__s0p6400__em0p0125__m0p2637__cam01__t08_upper_payload_book__f36",
+      "auxiliary": "T08V4F480__bg01_home_ase__g01_moon__global_17__s0p6400__em0p0125__m0p2637__cam01__t08_upper_payload_book__f64",
+      "frames": [
+        65,
+        71,
+        133
+      ]
+    },
+    {
+      "id": "T03V5F480__bg04_library_shelf__g01_moon__global_C_01__A0550000__B0008000__C0006000__r014__cam03__t03v5_impulsed_book__f121",
+      "auxiliary": "T03V5F480__bg04_library_shelf__g01_moon__global_C_01__A0550000__B0008000__C0006000__r014__cam03__t03v5_impulsed_book__f157",
+      "frames": [
+        157,
+        163,
+        167
+      ]
+    },
+    {
+      "id": "T03V5F480__bg01_home_ase__g01_moon__cfC_theta_plus_rep01__A0550000__B0008000__C0085000__r014__cam03__t03v5_impulsed_book__f120",
+      "auxiliary": "T03V5F480__bg01_home_ase__g01_moon__cfC_theta_plus_rep01__A0550000__B0008000__C0085000__r014__cam03__t03v5_impulsed_book__f164",
+      "frames": [
+        165,
+        171,
+        175
+      ]
+    }
+  ]
+}
