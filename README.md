@@ -76,7 +76,9 @@ misses. Then run `fit` and `score` as above.
 
 Compare models against the real videos passed through the same mask pipeline. With SAM2 masks on
 the PISA and NewtonBench release videos that floor is 7.7 % (PISA 2.1 %, NewtonBench 11.1 %),
-while nine current video models score 79–97 %.
+while nine current video models score 79–97 %. For the self-rendered scenes, whose free flights
+are short, the floor depends on the frame rate: 6.0 % at 30 fps, 8.5 % at 24, 26 % at 15–16 and
+60 % at 8 fps. Rank models against the floor at their own frame rate.
 
 ## Validation on ground-truth videos
 
