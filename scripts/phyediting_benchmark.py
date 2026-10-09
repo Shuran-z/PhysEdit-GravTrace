@@ -127,6 +127,12 @@ def main() -> None:
             quality["issues"]["camera parameters not recorded: " + ",".join(missing)].append(sid)
         if len(h["videos"]) < 3:
             quality["issues"]["fewer than three videos"].append(sid)
+        for issue in h.get("camera_issues", []):
+            quality["issues"][issue.split(" (")[0] if "image offset" in issue else issue].append(sid)
+    failed = args.compact.parent / f"{args.compact.name}_failed.json"
+    if failed.exists():
+        for sid, why in json.loads(failed.read_text()).items():
+            quality["issues"]["metadata unreadable: " + why.split(":")[0]].append(sid)
     quality["issues"] = {k: {"count": len(v), "examples": v[:5]} for k, v in quality["issues"].items()}
     quality["duplicate_groups"] = {str(k): v for k, v in sorted(quality["duplicate_groups"].items())}
     (args.out / "quality.json").write_text(json.dumps(quality, indent=1))

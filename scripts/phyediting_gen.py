@@ -53,6 +53,9 @@ NEGATIVE = "camera motion, cuts, blurry, distorted objects, objects appearing or
 
 def build(args) -> None:
     items = [json.loads(line) for line in open(args.items)]
+    # windows a model can see: enough frames at its frame rate, ending within its clip
+    items = [it for it in items if it["window"]["max_frames"] >= args.min_window_frames
+             and it["window"]["start_frame"] + it["window"]["max_frames"] <= args.max_end_frame]
     # scenes (background, camera and physics setup without gravity) seen at several gravities; one item per gravity
     by_scene = defaultdict(dict)
     for it in items:
@@ -117,6 +120,9 @@ def model_rows(args) -> None:
             out_dir = f"{args.out_root.rstrip('/')}/{args.model}/{row['sample_id']}"
             row.update(model_name=args.model, pipeline=args.model, num_frames=args.frames, output_fps=args.fps, out_dir=out_dir,
                        generated_video=f"{out_dir}/raw.mp4", generated_video_resized_to_source=f"{out_dir}/resized.mp4")
+            if args.canvas:  # the model's generation size (landscape; swapped for portrait sources)
+                w, h = map(int, args.canvas.lower().split("x"))
+                row["gen_width"], row["gen_height"] = (w, h) if row["source_width"] >= row["source_height"] else (h, w)
             f.write(json.dumps(row) + "\n")
 
 
@@ -183,6 +189,8 @@ def main() -> None:
     b.add_argument("--data-root", default="data/phyediting")
     b.add_argument("--source-root", required=True, help="where the reference videos are on the generation host")
     b.add_argument("--per-gravity", type=int, default=8)
+    b.add_argument("--min-window-frames", type=int, default=8, help="reference frames in the window (8: >= 4 frames at 16 fps)")
+    b.add_argument("--max-end-frame", type=int, default=170, help="window end (reference frame) a 5 s clip from frame 23 reaches")
     b.add_argument("--seed", type=int, default=20261008)
     s = sub.add_parser("score")
     s.add_argument("items")
@@ -197,6 +205,7 @@ def main() -> None:
     m.add_argument("--frames", type=int, default=81)
     m.add_argument("--fps", type=float, default=16.0)
     m.add_argument("--out-root", required=True)
+    m.add_argument("--canvas", help="generation size WxH, e.g. 832x480")
     t = sub.add_parser("jobs")
     t.add_argument("items")
     t.add_argument("rows")
