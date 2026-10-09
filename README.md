@@ -47,6 +47,7 @@ One JSON object per line. `truth` is read only by `score`.
 | `motion.ground_z` | height of the floor the object can land on (optional) |
 | `window` | `start_frame` (first frame of motion), `max_frames` (default 6 / 8 / 16 by scenario) |
 | `masks` | `dir`, `pattern` (e.g. `mask_*.png`, `segmentation_*.npy`), `label` (id in a label map, or null for binary masks) |
+| `boxes` | instead of `masks`, boxes from any tracker: `frames`, `xyxy` (pixel edges), optional `times` (s) |
 | `truth.gravity` | m/s² |
 
 ## Usage

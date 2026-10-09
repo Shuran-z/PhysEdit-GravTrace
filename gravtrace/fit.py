@@ -29,13 +29,17 @@ CONTACT_PX, CONTACT_SIGMA = 3.0, 3.0  # contact: a frame the preceding flight mi
 
 
 def fit_sample(sample: dict) -> dict:
+    if "boxes" in sample:  # observations supplied by any tracker, optionally with true timestamps
+        obs = sample["boxes"]
+        times = np.asarray(obs["times"], dtype=float) if obs.get("times") is not None else None
+        return fit_boxes(sample, np.asarray(obs["frames"], dtype=int), np.asarray(obs["xyxy"], dtype=float).reshape(-1, 4), times)
     masks = sample["masks"]
     frames, boxes = load_boxes(masks["dir"], masks["pattern"], masks.get("label"))
     return fit_boxes(sample, frames, boxes)
 
 
-def fit_boxes(sample: dict, frames: np.ndarray, boxes: np.ndarray) -> dict:
-    """Fit one sample from its observed boxes.
+def fit_boxes(sample: dict, frames: np.ndarray, boxes: np.ndarray, times: np.ndarray | None = None) -> dict:
+    """Fit one sample from its observed boxes (times default to frame index / fps).
 
     Returns the sample id, `status` ("ok"; "at_bound": g at a search limit, e.g. an object that
     never falls; "few_frames"/"no_track": too few usable observations), `gravity` (m/s^2), the
@@ -50,7 +54,7 @@ def fit_boxes(sample: dict, frames: np.ndarray, boxes: np.ndarray) -> dict:
     n = min(len(frames), int(max_frames))
     if n < MIN_FRAMES:
         return {**out, "status": "no_track", "frames": int(len(frames))}
-    t = (frames - frames[0]) / float(sample["fps"])
+    t = times[keep] - times[keep][0] if times is not None else (frames - frames[0]) / float(sample["fps"])
     problem = _Problem(sample, t[:n], boxes[:n])
     if problem.anchor is None:
         return {**out, "status": "few_frames", "frames": n}
