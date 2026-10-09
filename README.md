@@ -97,7 +97,12 @@ Error tracks `sensitivity_px`: 17.9 % mean below 3 px (n = 12), 8.9 % at 3–10 
 - **Rigid, non-rotating object.** A tumbling object changes its box in ways the model does not
   capture; tumbling objects on inclines produce the largest errors above.
 - **No collisions.** Motion is analytic; the fit window ends at the first contact.
-- **Time.** Frame times are frame index / fps. A video that plays in slow motion implies a smaller g.
+- **Time.** Frame times are frame index / fps, measured from the declared initial state. A video that
+  plays in slow motion implies a smaller g.
+- **Frame rate.** Short free flights need enough frames. The self-rendered scenes reach a contact
+  about 0.15 s after release; their ground-truth videos resampled to lower rates give a median error
+  of 4.6 % at 30 fps, 3.3 % at 24, 13 % at 16, 15 % at 15 and 68 % at 8 fps. Compare generated videos
+  against a control at the same frame rate, and do not score g from 8 fps clips of such scenes.
 - **Declared initial state.** Camera, geometry, initial pose and the declared velocity or its range
   come from the scene description; if the video's own first frame differs from that state (for
   example a different launch speed), the difference is absorbed into g.
