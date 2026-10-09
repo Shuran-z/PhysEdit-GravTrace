@@ -80,6 +80,27 @@ def test_static_object_hits_lower_bound():
     assert fit["status"] == "at_bound" and fit["gravity"] < 0.2
 
 
+def test_centred_offsets_reduce_noisy_anchor_bias_and_cancel_constant_offset():
+    s = sample("freefall", {"t0": [0.0, 0.0]}, 12)
+    boxes = render(ballistic(FRAMES / FPS, X0, np.zeros(3), 9.81, np.array([0., 0., -1.])))
+    boxes[0] += [2., -2., 2., -2.]  # one plausible two-pixel tracker error
+    anchor = fit_boxes(s, FRAMES, boxes)
+    centred = fit_boxes({**s, "offset_mode": "centred"}, FRAMES, boxes)
+    shifted = fit_boxes({**s, "offset_mode": "centred"}, FRAMES, boxes + [3., 4., 3., 4.])
+    assert centred["status"] == shifted["status"] == "ok"
+    assert abs(centred["gravity"] - 9.81) < abs(anchor["gravity"] - 9.81)
+    assert abs(centred["gravity"] - shifted["gravity"]) < 1e-5
+
+
+def test_fixed_comparison_window_does_not_remove_common_observations():
+    s = sample("freefall", {"t0": [0., 0.], "ground_z": .5}, 12)
+    boxes = render(ballistic(FRAMES / FPS, X0, np.zeros(3), 9.81, np.array([0., 0., -1.])))
+    regular = fit_boxes(s, FRAMES, boxes)
+    s["window"]["contact_check"] = False
+    fixed = fit_boxes(s, FRAMES, boxes)
+    assert regular["frames"] < fixed["frames"] == 12
+
+
 def test_fit_path_never_reads_truth():
     root = Path(gravtrace.__file__).parent
     for name in ("fit.py", "motion.py", "observe.py", "camera.py"):

@@ -1,0 +1,501 @@
+{
+  "scope": "full tuned development set; not held out; no frame or item exclusion by error",
+  "fps": {
+    "30": {
+      "anchor": {
+        "n": 1038,
+        "mean_pct": 2.8810808145044926,
+        "max_pct": 19.831976950917806,
+        "failed_or_bound": 0,
+        "attempted": 1038,
+        "p95_pct": 7.968453352899953,
+        "within10_all": 1016,
+        "within20_all": 1038,
+        "physics_group_mean_pct": 2.887418026399941,
+        "successful_physics_groups": 723,
+        "by_event": {
+          "T19": {
+            "n": 89,
+            "mean_pct": 1.7028975683638057,
+            "max_pct": 18.738263764635587
+          },
+          "T03": {
+            "n": 398,
+            "mean_pct": 2.9330176785302826,
+            "max_pct": 19.831976950917806
+          },
+          "T17": {
+            "n": 261,
+            "mean_pct": 3.0875375682297066,
+            "max_pct": 17.08009748671422
+          },
+          "T08": {
+            "n": 208,
+            "mean_pct": 3.1803317883911855,
+            "max_pct": 18.254495676455985
+          },
+          "T20": {
+            "n": 37,
+            "mean_pct": 1.833954602940078,
+            "max_pct": 8.478249100698786
+          },
+          "T18": {
+            "n": 45,
+            "mean_pct": 3.032229515869541,
+            "max_pct": 19.348264869286712
+          }
+        },
+        "by_gravity": {
+          "24.0": {
+            "n": 106,
+            "mean_pct": 2.6378112174953996,
+            "max_pct": 13.73808135352398
+          },
+          "3.71": {
+            "n": 205,
+            "mean_pct": 2.9746587979695382,
+            "max_pct": 19.348264869286712
+          },
+          "1.62": {
+            "n": 512,
+            "mean_pct": 2.7028164985164542,
+            "max_pct": 19.831976950917806
+          },
+          "9.81": {
+            "n": 140,
+            "mean_pct": 3.443192664891912,
+            "max_pct": 17.98495532327513
+          },
+          "15.0": {
+            "n": 75,
+            "mean_pct": 3.1367976332280425,
+            "max_pct": 17.014144322204295
+          }
+        },
+        "worst10": [
+          {
+            "id": "T03V5F480__bg03_neutral_studio__g01_moon__global_A_01__A0300000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f179",
+            "error_pct": 19.831976950917806,
+            "frames": 15
+          },
+          {
+            "id": "T18__bg01_home_ase__g02_mars__contact_friction__p011__cam01__t18_book_05__f24",
+            "error_pct": 19.348264869286712,
+            "frames": 6
+          },
+          {
+            "id": "T19__bg03_neutral_studio__g01_moon__impact_eccentricity__p005__cam01__t19_object_03__f28",
+            "error_pct": 18.738263764635587,
+            "frames": 9
+          },
+          {
+            "id": "T08V4F480__bg01_home_ase__g01_moon__cf_A_book_initial_speed_mps_theta_minus__rep03__s0p6217__e0p0180__m0p3800__cam02__t08_upper_payload_book__f43",
+            "error_pct": 18.254495676455985,
+            "frames": 21
+          },
+          {
+            "id": "T03V5F480__bg04_library_shelf__g03_earth__cfC_theta_minus_rep03__A0650000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f114",
+            "error_pct": 17.98495532327513,
+            "frames": 8
+          },
+          {
+            "id": "T17__bg01_home_ase__g02_mars__initial_speed__p007__cam01__t17_can__f24",
+            "error_pct": 17.08009748671422,
+            "frames": 7
+          },
+          {
+            "id": "T08V4F480__bg03_neutral_studio__g04_high__cf_A_book_initial_speed_mps_theta_star__rep01__s2p1813__e0p0180__m0p3800__cam02__t08_lower_impactor_book__f76",
+            "error_pct": 17.014144322204295,
+            "frames": 7
+          },
+          {
+            "id": "T03V5F480__bg03_neutral_studio__g03_earth__global_C_05__A0650000__B0008000__C0100000__r014__cam03__t03v5_upper_edge_can__f98",
+            "error_pct": 16.676310714357378,
+            "frames": 5
+          },
+          {
+            "id": "T17__bg01_home_ase__g01_moon__initial_speed__p003__cam01__t17_can__f24",
+            "error_pct": 15.455644792086565,
+            "frames": 9
+          },
+          {
+            "id": "T18__bg01_home_ase__g01_moon__contact_friction__p025__cam01__t18_book_05__f24",
+            "error_pct": 13.987112638399847,
+            "frames": 11
+          }
+        ]
+      },
+      "centred": {
+        "n": 1038,
+        "mean_pct": 2.636966185913892,
+        "max_pct": 21.055598689685606,
+        "failed_or_bound": 0,
+        "attempted": 1038,
+        "p95_pct": 7.011191026242218,
+        "within10_all": 1022,
+        "within20_all": 1037,
+        "physics_group_mean_pct": 2.603677355397076,
+        "successful_physics_groups": 723,
+        "by_event": {
+          "T19": {
+            "n": 89,
+            "mean_pct": 1.574479208042807,
+            "max_pct": 18.454738334175836
+          },
+          "T03": {
+            "n": 398,
+            "mean_pct": 2.571138632658679,
+            "max_pct": 21.055598689685606
+          },
+          "T17": {
+            "n": 261,
+            "mean_pct": 2.7644221423346638,
+            "max_pct": 16.40913956409711
+          },
+          "T08": {
+            "n": 208,
+            "mean_pct": 3.2250473212697908,
+            "max_pct": 15.942505299462395
+          },
+          "T20": {
+            "n": 37,
+            "mean_pct": 0.9404106133817483,
+            "max_pct": 6.185496114622868
+          },
+          "T18": {
+            "n": 45,
+            "mean_pct": 3.2579969110237204,
+            "max_pct": 19.63850253858005
+          }
+        },
+        "by_gravity": {
+          "24.0": {
+            "n": 106,
+            "mean_pct": 2.8438661558058986,
+            "max_pct": 13.4837896324414
+          },
+          "3.71": {
+            "n": 205,
+            "mean_pct": 2.6928614746579638,
+            "max_pct": 19.63850253858005
+          },
+          "1.62": {
+            "n": 512,
+            "mean_pct": 2.439921587586867,
+            "max_pct": 21.055598689685606
+          },
+          "9.81": {
+            "n": 140,
+            "mean_pct": 3.0001153935884166,
+            "max_pct": 16.467302105936476
+          },
+          "15.0": {
+            "n": 75,
+            "mean_pct": 2.8590463761527745,
+            "max_pct": 15.942505299462395
+          }
+        },
+        "worst10": [
+          {
+            "id": "T03V5F480__bg03_neutral_studio__g01_moon__global_A_01__A0300000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f179",
+            "error_pct": 21.055598689685606,
+            "frames": 15
+          },
+          {
+            "id": "T18__bg01_home_ase__g02_mars__contact_friction__p011__cam01__t18_book_05__f24",
+            "error_pct": 19.63850253858005,
+            "frames": 6
+          },
+          {
+            "id": "T19__bg03_neutral_studio__g01_moon__impact_eccentricity__p005__cam01__t19_object_03__f28",
+            "error_pct": 18.454738334175836,
+            "frames": 9
+          },
+          {
+            "id": "T03V5F480__bg03_neutral_studio__g03_earth__global_C_05__A0650000__B0008000__C0100000__r014__cam03__t03v5_upper_edge_can__f98",
+            "error_pct": 16.467302105936476,
+            "frames": 5
+          },
+          {
+            "id": "T17__bg01_home_ase__g02_mars__initial_speed__p007__cam01__t17_can__f24",
+            "error_pct": 16.40913956409711,
+            "frames": 7
+          },
+          {
+            "id": "T08V4F480__bg03_neutral_studio__g04_high__cf_A_book_initial_speed_mps_theta_star__rep01__s2p1813__e0p0180__m0p3800__cam02__t08_lower_impactor_book__f76",
+            "error_pct": 15.942505299462395,
+            "frames": 7
+          },
+          {
+            "id": "T03V5F480__bg04_library_shelf__g03_earth__cfC_theta_minus_rep03__A0650000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f114",
+            "error_pct": 14.628231915522305,
+            "frames": 8
+          },
+          {
+            "id": "T18__bg01_home_ase__g01_moon__contact_friction__p025__cam01__t18_book_05__f24",
+            "error_pct": 13.799421828574033,
+            "frames": 11
+          },
+          {
+            "id": "T08V4F480__bg02_physics_lab__g05_very_high__cf_A_book_initial_speed_mps_theta_star__rep01__s2p7591__e0p0180__m0p3800__cam02__t08_lower_impactor_book__f58",
+            "error_pct": 13.4837896324414,
+            "frames": 5
+          },
+          {
+            "id": "T03V5F480__bg03_neutral_studio__g03_earth__global_C_02__A0650000__B0008000__C0015000__r014__cam01__t03v5_upper_edge_can__f116",
+            "error_pct": 12.356915999498707,
+            "frames": 7
+          }
+        ]
+      }
+    },
+    "15": {
+      "anchor": {
+        "n": 845,
+        "mean_pct": 3.169288761113168,
+        "max_pct": 34.160621991824684,
+        "failed_or_bound": 193,
+        "attempted": 1038,
+        "p95_pct": 8.691632966707413,
+        "within10_all": 823,
+        "within20_all": 843,
+        "physics_group_mean_pct": 3.203521507663811,
+        "successful_physics_groups": 582,
+        "by_event": {
+          "T03": {
+            "n": 342,
+            "mean_pct": 3.0358769074728955,
+            "max_pct": 15.19167208197636
+          },
+          "T17": {
+            "n": 174,
+            "mean_pct": 3.4110356024941253,
+            "max_pct": 17.33349395567516
+          },
+          "T19": {
+            "n": 64,
+            "mean_pct": 2.2692767250517747,
+            "max_pct": 34.160621991824684
+          },
+          "T08": {
+            "n": 195,
+            "mean_pct": 3.653253056655847,
+            "max_pct": 22.253329244994347
+          },
+          "T20": {
+            "n": 37,
+            "mean_pct": 1.9567873864219176,
+            "max_pct": 8.956975941100165
+          },
+          "T18": {
+            "n": 33,
+            "mean_pct": 3.522415642488012,
+            "max_pct": 9.911201576786798
+          }
+        },
+        "by_gravity": {
+          "3.71": {
+            "n": 176,
+            "mean_pct": 3.1697293784052065,
+            "max_pct": 22.253329244994347
+          },
+          "1.62": {
+            "n": 512,
+            "mean_pct": 3.1056159220452564,
+            "max_pct": 34.160621991824684
+          },
+          "24.0": {
+            "n": 85,
+            "mean_pct": 3.629962769592892,
+            "max_pct": 13.328185872514354
+          },
+          "9.81": {
+            "n": 46,
+            "mean_pct": 3.0025099514154037,
+            "max_pct": 15.120130577445778
+          },
+          "15.0": {
+            "n": 26,
+            "mean_pct": 3.2091918182167376,
+            "max_pct": 9.174041631194353
+          }
+        },
+        "worst10": [
+          {
+            "id": "T19__bg03_neutral_studio__g01_moon__impact_eccentricity__p005__cam01__t19_object_03__f28",
+            "error_pct": 34.160621991824684,
+            "frames": 4
+          },
+          {
+            "id": "T08V4F480__bg04_library_shelf__g02_mars__cf_B_impact_eccentricity_m_theta_plus__rep01__s1p1069__e0p0380__m0p3800__cam02__t08_lower_impactor_book__f48",
+            "error_pct": 22.253329244994347,
+            "frames": 6
+          },
+          {
+            "id": "T08V4F480__bg01_home_ase__g01_moon__global_17__s0p6400__em0p0125__m0p2637__cam01__t08_upper_payload_book__f36",
+            "error_pct": 18.13162139599831,
+            "frames": 9
+          },
+          {
+            "id": "T17__bg01_home_ase__g01_moon__initial_speed__p004__cam01__t17_can__f24",
+            "error_pct": 17.33349395567516,
+            "frames": 5
+          },
+          {
+            "id": "T08V4F480__bg01_home_ase__g01_moon__cf_A_book_initial_speed_mps_theta_minus__rep03__s0p6217__e0p0180__m0p3800__cam02__t08_upper_payload_book__f43",
+            "error_pct": 16.126358898255045,
+            "frames": 11
+          },
+          {
+            "id": "T19__bg03_neutral_studio__g01_moon__impact_eccentricity__p009__cam01__t19_object_03__f28",
+            "error_pct": 15.924610500875925,
+            "frames": 6
+          },
+          {
+            "id": "T03V5F480__bg03_neutral_studio__g01_moon__global_A_01__A0300000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f179",
+            "error_pct": 15.19167208197636,
+            "frames": 8
+          },
+          {
+            "id": "T03V5F480__bg04_library_shelf__g03_earth__cfC_theta_minus_rep03__A0650000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f114",
+            "error_pct": 15.120130577445778,
+            "frames": 4
+          },
+          {
+            "id": "T17__bg01_home_ase__g01_moon__initial_speed__p003__cam01__t17_can__f24",
+            "error_pct": 14.778081766733365,
+            "frames": 4
+          },
+          {
+            "id": "T08V4F480__bg03_neutral_studio__g05_very_high__global_15__s2p7568__e0p0181__m0p5488__cam01__t08_upper_payload_book__f38",
+            "error_pct": 13.328185872514354,
+            "frames": 6
+          }
+        ]
+      },
+      "centred": {
+        "n": 845,
+        "mean_pct": 2.928184740096862,
+        "max_pct": 28.344415528372057,
+        "failed_or_bound": 193,
+        "attempted": 1038,
+        "p95_pct": 7.866950908010767,
+        "within10_all": 830,
+        "within20_all": 844,
+        "physics_group_mean_pct": 2.9140102543013104,
+        "successful_physics_groups": 582,
+        "by_event": {
+          "T03": {
+            "n": 342,
+            "mean_pct": 2.7990017993507896,
+            "max_pct": 15.749064060097595
+          },
+          "T17": {
+            "n": 174,
+            "mean_pct": 3.2264965885861527,
+            "max_pct": 14.166531104707513
+          },
+          "T19": {
+            "n": 64,
+            "mean_pct": 2.057899929915542,
+            "max_pct": 28.344415528372057
+          },
+          "T08": {
+            "n": 195,
+            "mean_pct": 3.479375677505537,
+            "max_pct": 14.428337137393665
+          },
+          "T20": {
+            "n": 37,
+            "mean_pct": 1.1338601962602473,
+            "max_pct": 6.476759201081183
+          },
+          "T18": {
+            "n": 33,
+            "mean_pct": 3.136678900002542,
+            "max_pct": 9.651092122538895
+          }
+        },
+        "by_gravity": {
+          "3.71": {
+            "n": 176,
+            "mean_pct": 2.9591960554244774,
+            "max_pct": 11.049013407183693
+          },
+          "1.62": {
+            "n": 512,
+            "mean_pct": 2.860633016518597,
+            "max_pct": 28.344415528372057
+          },
+          "24.0": {
+            "n": 85,
+            "mean_pct": 3.253304769668748,
+            "max_pct": 11.084596690735593
+          },
+          "9.81": {
+            "n": 46,
+            "mean_pct": 3.026577208379021,
+            "max_pct": 12.938859163673012
+          },
+          "15.0": {
+            "n": 26,
+            "mean_pct": 2.811539929320759,
+            "max_pct": 8.11961356768618
+          }
+        },
+        "worst10": [
+          {
+            "id": "T19__bg03_neutral_studio__g01_moon__impact_eccentricity__p005__cam01__t19_object_03__f28",
+            "error_pct": 28.344415528372057,
+            "frames": 4
+          },
+          {
+            "id": "T03V5F480__bg03_neutral_studio__g01_moon__global_A_01__A0300000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f179",
+            "error_pct": 15.749064060097595,
+            "frames": 8
+          },
+          {
+            "id": "T08V4F480__bg01_home_ase__g01_moon__global_17__s0p6400__em0p0125__m0p2637__cam01__t08_upper_payload_book__f36",
+            "error_pct": 14.428337137393665,
+            "frames": 9
+          },
+          {
+            "id": "T17__bg01_home_ase__g01_moon__initial_speed__p003__cam01__t17_can__f24",
+            "error_pct": 14.166531104707513,
+            "frames": 4
+          },
+          {
+            "id": "T17__bg01_home_ase__g01_moon__initial_speed__p004__cam01__t17_can__f24",
+            "error_pct": 13.389433468539004,
+            "frames": 5
+          },
+          {
+            "id": "T03V5F480__bg04_library_shelf__g03_earth__cfC_theta_minus_rep03__A0650000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f114",
+            "error_pct": 12.938859163673012,
+            "frames": 4
+          },
+          {
+            "id": "T17__bg01_home_ase__g01_moon__lateral_offset__p007__cam01__t17_can__f24",
+            "error_pct": 11.726457895726593,
+            "frames": 5
+          },
+          {
+            "id": "T08V4F480__bg04_library_shelf__g05_very_high__cf_B_impact_eccentricity_m_theta_star__rep01__s2p8154__e0p0160__m0p3800__cam01__t08_upper_payload_book__f39",
+            "error_pct": 11.084596690735593,
+            "frames": 6
+          },
+          {
+            "id": "T03V5F480__bg04_library_shelf__g02_mars__global_A_02__A0504000__B0008000__C0006000__r014__cam03__t03v5_upper_edge_can__f109",
+            "error_pct": 11.049013407183693,
+            "frames": 5
+          },
+          {
+            "id": "T08V4F480__bg03_neutral_studio__g05_very_high__global_15__s2p7568__e0p0181__m0p5488__cam01__t08_upper_payload_book__f38",
+            "error_pct": 10.757305136605167,
+            "frames": 6
+          }
+        ]
+      }
+    }
+  }
+}

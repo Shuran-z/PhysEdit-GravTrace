@@ -165,7 +165,7 @@ footer { color: var(--muted); font-size: var(--step--1); border-top: 1px solid v
 
   <section id="compare">
     <div class="section-head"><span class="num">3 · 对比实验</span><h2>当前筛选集与已测基线上的误差比较</h2></div>
-    <p>所有方法使用同样的窗口、SAM2 跟踪框、遮挡信息、相机内外参和声明的初始状态（位置与速度），差别只在模型本身。深度模型能接收内参的（MoGe-2、UniDepthV2）都给了已知内参；深度尺度按声明的初始位置校准。真值深度抬升用的是任何真实方法都拿不到的完美深度，只作上限参考。</p>
+    <p>旧对比提供同一窗口、跟踪框、遮挡声明及相机和初始状态，但实际采用的可见帧不同。新增共同帧表控制了这一差异；形状和转动信息的利用方式仍不同。深度模型能接收内参的（MoGe-2、UniDepthV2）都给了已知内参；深度尺度按声明的初始位置校准。真值深度抬升用的是任何真实方法都拿不到的完美深度，只作上限参考。</p>
     <div class="figure">
       <div class="legend">
         <span><span class="key-dot" style="background:var(--accent)"></span>我们</span>
@@ -203,7 +203,8 @@ footer { color: var(--muted); font-size: var(--step--1); border-top: 1px solid v
     <ul class="findings" id="issues"></ul>
   </section>
 
-  <section id="generation">
+  <section id="common-observations"><h2>新增：完全相同观测帧的对比</h2><p>1,036 / 1,038 条保留至少四个完整可见、未裁切帧；关闭我们独有的接触截断，确保实际使用的帧一致。均值仅计算成功条目，失败和缺失另列。仍是调优集。</p><table><thead><tr><th>方法</th><th>平均误差</th><th>最大误差</th><th>失败或缺失</th></tr></thead><tbody><tr><td>ours_centred_experimental</td><td>0.89%</td><td>8.99%</td><td>0 / 1036</td></tr><tr><td>ours</td><td>1.19%</td><td>15.62%</td><td>0 / 1036</td></tr><tr><td>lift_depthpro_anchored_v0</td><td>35.09%</td><td>521.90%</td><td>49 / 1036</td></tr><tr><td>lift_moge2_anchored_v0</td><td>32.64%</td><td>915.17%</td><td>34 / 1036</td></tr><tr><td>lift_unidepth_v2_anchored_v0</td><td>33.92%</td><td>1457.29%</td><td>20 / 1036</td></tr><tr><td>pixel2d_matched</td><td>3.10%</td><td>57.27%</td><td>0 / 1036</td></tr><tr><td>lift_zoedepth_anchored_v0</td><td>29.22%</td><td>949.76%</td><td>30 / 1036</td></tr><tr><td>lift_dav2_metric_anchored_v0</td><td>30.00%</td><td>751.47%</td><td>11 / 1036</td></tr><tr><td>lift_oracle_v0</td><td>0.87%</td><td>16.68%</td><td>0 / 1036</td></tr><tr><td>lift_vggt_anchored_v0</td><td>20.44%</td><td>169.56%</td><td>39 / 1036</td></tr></tbody></table><p>我们平均 1.19%，优于已测2D与预测深度模型；真实深度参考平均0.87%，更低。它使用额外真值信息。共同帧下默认方法最大15.62%；实验centred方法平均0.89%、最大8.99%，达到该已知初速度协议的目标。上方旧表使用原先各自的可见帧策略，不能混作本表结论。</p></section>
+<section id="offset-trial"><h2>全量调优：联合估计初速度</h2><p>同一批1,038条，没有删除高误差条目。30 fps：anchor平均2.88%、最大19.83%；centred平均2.64%、最大21.06%。15 fps：两者均845/1038条成功，anchor平均3.17%、最大34.16%；centred平均2.93%、最大28.34%。均值改善但尾部尚未全面达标，默认仍保留anchor。193条失败保留在分母。详见offset_comparison.json的分组与最差条目。</p></section><section id="generation">
     <div class="section-head"><span class="num">6 · 生成流水线</span><h2>重力编辑：模型能否生成指定的重力</h2></div>
     <p>前 24 帧是静止段，5 档重力下第 23 帧完全相同，以它作条件帧；提示词是事件描述加目标重力。从 1,038 个条目里每档重力抽 8 个，共 40 个，每个模型各生成 40 条。生成视频从第一帧起用声明的物体框提示 SAM2 跟踪，先把镜头运动补偿掉（每帧对第一帧估计相似变换），再按模型帧率计时，在条目窗口里拟合 g。</p>
     <p>生成视频的评分不用参考轨迹的速度：发射速度在 0–8 m/s 之间、方向任意，与 g 一起拟合，只沿用窗口起点的位置（定深度）和窗口时间。它在 1,038 个真值视频上平均误差 2.88%、最大 19.8%（重采样到 15 fps 时平均 3.17%），15 fps 仅 845 / 1,038 条成功拟合，最大误差 34.2%。仍沿用参考窗口的起点位置、姿态和时间，尚非完全从生成视频估计。</p>
@@ -223,7 +224,7 @@ footer { color: var(--muted); font-size: var(--step--1); border-top: 1px solid v
   <section id="next">
     <div class="section-head"><span class="num">7 · 下一步</span><h2>接下来做什么，需要什么算力</h2></div>
     <ol class="steps" id="next-steps">
-      <li>先按 physics_group 冻结独立测试集、相机标定和门槛，在未知初速度口径下调优并报告失败率及分组尾部误差。</li><li>把生成测试扩到全部 12 个模型和完整的条目集，按模型帧率筛选窗口（16 fps 模型要求窗口 ≥8 个原始帧）。</li>
+      <li>先冻结协议、相机标定和门槛，再在未用于调优的新物理设置上按 physics_group 做独立测试，在未知初速度口径下调优并报告失败率及分组尾部误差。</li><li>把生成测试扩到全部 12 个模型和完整的条目集，按模型帧率筛选窗口（16 fps 模型要求窗口 ≥8 个原始帧）。</li>
       <li>为 T16–T20 的 cam02/cam03 标定相机：规范子集没有记录这两个机位的参数，补上后可再增加约两倍的视频。</li>
       <li>训练：用 PhyEditing 训练集做重力条件的视频生成微调，用本基准评测。生成和训练是算力大头：A14B 一条约 14.5 分钟，微调 5B 级模型需要 8 卡 80G 节点连续跑数天。</li>
     </ol>
@@ -1219,7 +1220,7 @@ curve("#curve-max", "max", (v) => v + "%", 17, 10);
 (function () {
   const q = DATA.quality, iss = q.issues;
   const items = [
-    [q.trajectories.toLocaleString("en-US") + " → " + q.distinct.toLocaleString("en-US"), "条轨迹 → 物理上不同", "同一事件、重力、参数下只换背景（bg02/03/04，部分连 bg01）、确定性仿真的重复样本（rep01–03 完全相同）以及完全静止的轨迹，运动指纹一致。评测按物理分组统计，避免重复样本灌水。"],
+    [q.trajectories.toLocaleString("en-US") + " → " + q.distinct.toLocaleString("en-US"), "条轨迹 → 物理上不同", "同一事件、重力、参数下只换背景（bg02/03/04，部分连 bg01）、确定性仿真的重复样本（rep01–03 完全相同）以及完全静止的轨迹，运动指纹一致。已生成物理分组索引；主表仍按视频汇总，并非按物理组等权。独立测试需按组划分并补充组等权指标。"],
     [(iss["configs differ from the rendered cam01"] || 0).toLocaleString("en-US"), "条 configs 过期", "T06、T08、T09、T10 等存档 configs 里的相机与实际渲染不一致。改为以各机位自己的渲染记录为准；只有 configs 的 cam02/cam03 在 " + (iss["cam02 view known only from stale configs"] || 0).toLocaleString("en-US") + " 条轨迹上判为不可信，未使用。"],
     ["36–43 px", "T08 整体下移", "即使用渲染记录里的相机，T08 全部 880 条、3 个机位的画面仍比投影低 36–43 px（同组样本差异 ≤1.5 px）。用运动区域与投影轮廓对齐的方法逐「背景 × 机位」标定成主点偏移。其他存档测得 0 px；T06 的 cam01 错位不是固定平移，不可用。"],
     [(iss["camera parameters not recorded: cam02,cam03"] || 0).toLocaleString("en-US"), "条缺 cam02/03 参数", "规范子集（T03/T05/T16–T20）只记录了 cam01 的相机；这部分 cam02/cam03 视频目前不参与重力评测。"],
@@ -1296,7 +1297,7 @@ curve("#curve-max", "max", (v) => v + "%", 17, 10);
   const row = (m) => {
     const tr = document.createElement("tr");
     cell(tr, m.label); cell(tr, String(m.generated)); cell(tr, String(m.scored)); cell(tr, String(m.low));
-    cell(tr, `${m.within20} / ${m.scored}`); cell(tr, fmt(m.median_err, 0)); cell(tr, m.scan20 === null || m.scan20 === undefined ? "–" : `${m.scan20} / ${m.generated}（换目标 ${m.scan_other}%）`);
+    cell(tr, `${m.within20} / ${m.generated}`); cell(tr, fmt(m.median_err, 0)); cell(tr, m.scan20 === null || m.scan20 === undefined ? "–" : `${m.scan20} / ${m.generated}（换目标 ${m.scan_other}%）`);
     tb.appendChild(tr);
   };
   GEN.models.forEach(row);

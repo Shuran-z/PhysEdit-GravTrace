@@ -1,0 +1,91 @@
+{
+  "scope": "known-v0 development set; identical fully visible unclipped frames; contact truncation disabled",
+  "caveat": "models still use different representations and geometric/spin information; oracle depth is extra truth",
+  "coverage": {
+    "input": 1038,
+    "eligible": 1036,
+    "too_few_common_frames": 2
+  },
+  "methods": {
+    "ours": {
+      "n": 1036,
+      "ok": 1036,
+      "failed_or_missing": 0,
+      "mean_pct": 1.1897439144552442,
+      "max_pct": 15.617332237140591,
+      "coverage_penalised_pct": 1.1897439144552442
+    },
+    "ours_centred_experimental": {
+      "n": 1036,
+      "ok": 1036,
+      "failed_or_missing": 0,
+      "mean_pct": 0.8858108570875436,
+      "max_pct": 8.988520032706848,
+      "coverage_penalised_pct": 0.8858108570875436
+    },
+    "lift_depthpro_anchored_v0": {
+      "n": 1036,
+      "ok": 987,
+      "failed_or_missing": 49,
+      "mean_pct": 35.09273472011275,
+      "max_pct": 521.904886837628,
+      "coverage_penalised_pct": 34.30482271304221
+    },
+    "lift_moge2_anchored_v0": {
+      "n": 1036,
+      "ok": 1002,
+      "failed_or_missing": 34,
+      "mean_pct": 32.64057805150124,
+      "max_pct": 915.167737408391,
+      "coverage_penalised_pct": 28.886227602407246
+    },
+    "lift_unidepth_v2_anchored_v0": {
+      "n": 1036,
+      "ok": 1016,
+      "failed_or_missing": 20,
+      "mean_pct": 33.91826567970806,
+      "max_pct": 1457.2934097288116,
+      "coverage_penalised_pct": 26.94470138589587
+    },
+    "pixel2d_matched": {
+      "n": 1036,
+      "ok": 1036,
+      "failed_or_missing": 0,
+      "mean_pct": 3.0977200396342393,
+      "max_pct": 57.274782383365164,
+      "coverage_penalised_pct": 3.0977200396342393
+    },
+    "lift_zoedepth_anchored_v0": {
+      "n": 1036,
+      "ok": 1006,
+      "failed_or_missing": 30,
+      "mean_pct": 29.215744641313073,
+      "max_pct": 949.7638572636267,
+      "coverage_penalised_pct": 29.07619859134134
+    },
+    "lift_dav2_metric_anchored_v0": {
+      "n": 1036,
+      "ok": 1025,
+      "failed_or_missing": 11,
+      "mean_pct": 30.00470309131582,
+      "max_pct": 751.4676728419589,
+      "coverage_penalised_pct": 24.475993790505076
+    },
+    "lift_oracle_v0": {
+      "n": 1036,
+      "ok": 1036,
+      "failed_or_missing": 0,
+      "mean_pct": 0.8705648790002627,
+      "max_pct": 16.678599536263285,
+      "coverage_penalised_pct": 0.8705648790002627
+    },
+    "lift_vggt_anchored_v0": {
+      "n": 1036,
+      "ok": 997,
+      "failed_or_missing": 39,
+      "mean_pct": 20.444536857194507,
+      "max_pct": 169.5591495051095,
+      "coverage_penalised_pct": 23.27432342910223
+    }
+  }
+}

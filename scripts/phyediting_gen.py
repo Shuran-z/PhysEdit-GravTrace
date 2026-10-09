@@ -216,6 +216,7 @@ def score(args) -> None:
         to_first = motion_of.get(row["sample_id"], {})
         if not args.scan:
             sample = _sample(row, it, track, args.v0, to_first)
+            sample["offset_mode"] = args.offset_mode
             n = len(sample["boxes"]["xyxy"])
             pred = safe_fit(sample) if n >= 4 else {"id": row["sample_id"], "status": "no_track", "frames": n}
             out.write(json.dumps({**pred, "item_id": row["item_id"], "gravity_target": row["gravity_truth"]}) + "\n")
@@ -232,6 +233,7 @@ def score(args) -> None:
         scan = []
         for sh in shifts:
             sample = _sample(row, it, track, args.v0, to_first, shift=sh)
+            sample["offset_mode"] = args.offset_mode
             if len(sample["boxes"]["xyxy"]) >= 4:
                 pred = safe_fit(sample)
                 scan.append([round(sh, 4), pred.get("gravity"), pred.get("status")])
@@ -257,7 +259,9 @@ def main() -> None:
     s.add_argument("rows")
     s.add_argument("tracks")
     s.add_argument("out")
-    s.add_argument("--v0", default="declared", choices=["declared", "free", "agnostic"])
+    s.add_argument("--v0", default="agnostic", choices=["declared", "free", "agnostic"],
+                   help="agnostic avoids reference-velocity leakage; declared is only a conditional control")
+    s.add_argument("--offset-mode", default="anchor", choices=["anchor", "centred"])
     s.add_argument("--shard", default="0/1", help="i/n: score every n-th row starting at i")
     s.add_argument("--camera-motion", help="camera_motion.py output: boxes are mapped into frame 0 before fitting")
     s.add_argument("--scan", action="store_true", help="fit the item's window at every start over the whole clip")

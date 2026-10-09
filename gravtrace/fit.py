@@ -69,12 +69,13 @@ def fit_boxes(sample: dict, frames: np.ndarray, boxes: np.ndarray, times: np.nda
     if problem.anchor is None:
         return {**out, "status": "few_frames", "frames": n}
     best = problem.solve()
-    contact = problem.contact_frame(best)
+    check_contact = window.get("contact_check", True)
+    contact = problem.contact_frame(best) if check_contact else None
     if contact is not None and MIN_FRAMES <= contact < n:  # the analytic model ends at first contact
         n = contact
         problem = _Problem(sample, t[:n], boxes[:n], seen[:n])
         best = problem.solve() if problem.anchor is not None else best
-    while n > MIN_FRAMES:  # contact with anything undeclared: the flight so far fails to predict the last frame
+    while check_contact and n > MIN_FRAMES:  # contact with anything undeclared
         shorter = _Problem(sample, t[:n - 1], boxes[:n - 1], seen[:n - 1])
         if shorter.anchor is None:
             break
@@ -86,6 +87,7 @@ def fit_boxes(sample: dict, frames: np.ndarray, boxes: np.ndarray, times: np.nda
     g = float(np.exp(best["x"][0]))
     at_bound = not (G_RANGE[0] * 1.01 < g < G_RANGE[1] * 0.99)
     return {**out, "status": "at_bound" if at_bound else "ok", "gravity": g, "cost": best["cost"], "frames": n,
+            "offset_mode": problem.offset_mode,
             "features": "box" if problem.use_size else "centre", "hypothesis": best["hypothesis"],
             "params": dict(zip(best["names"], map(float, best["x"][1:]))), "sensitivity_px": problem.sensitivity(best)}
 
@@ -99,6 +101,9 @@ def _is_outlier(miss: float, errors: np.ndarray) -> bool:
 class _Problem:
     def __init__(self, sample: dict, t: np.ndarray, boxes: np.ndarray, seen: np.ndarray | None = None) -> None:
         self.m, self.t, self.scenario = sample["motion"], t, sample["scenario"]
+        self.offset_mode = sample.get("offset_mode", "anchor")
+        if self.offset_mode not in ("anchor", "centred"):
+            raise ValueError("offset_mode must be anchor or centred")
         obj = sample["object"]
         # without geometry (or when asked: a tumbling object) only the box centre is modelled
         self.use_size = obj.get("corners") is not None and sample.get("features", "box") != "centre"
@@ -197,7 +202,15 @@ class _Problem:
         pred = self.predict(h, x)
         if not np.isfinite(pred).all():
             return np.full(self.obs.size, 1e3)
-        diff = (pred - pred[self.anchor]) - (self.obs - self.obs[self.anchor])
+        if self.offset_mode == "centred":
+            # Estimate one constant offset per edge over all usable frames instead
+            # of propagating the noise of a single anchor to every residual.
+            diff = pred - self.obs
+            weights = self.weight ** 2
+            offset = (diff * weights).sum(axis=0) / np.maximum(weights.sum(axis=0), 1e-12)
+            diff = diff - offset
+        else:
+            diff = (pred - pred[self.anchor]) - (self.obs - self.obs[self.anchor])
         return (diff * self.weight).ravel()
 
     # --- fitting --------------------------------------------------------------------------
