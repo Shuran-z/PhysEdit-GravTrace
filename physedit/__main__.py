@@ -30,7 +30,8 @@ def main(argv=None):
         if name == "run":
             s.add_argument("--watch", type=float, metavar="MIN", help="repeat the pass every MIN minutes until done")
             s.add_argument("--dry-run", action="store_true", help="print what a pass would do, change nothing")
-            s.add_argument("--retry", action="store_true", help="also rerun failed evaluation stages")
+            s.add_argument("--retry", action="store_true",
+                           help="restart workers that hit the restart limit and rerun failed evaluation stages")
     sub.add_parser("models", help="list the registered models")
     a = p.parse_args(argv)
 

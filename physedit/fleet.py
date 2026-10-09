@@ -10,8 +10,8 @@ JOB = re.compile(re.escape(TAG) + r"([\w.-]+/[\w.-]+/[\w.-]+)@([\d,]*)")
 
 
 class Host:
-    def __init__(self, name, ssh=None, site=None, gpus=(), busy_mib=1500):
-        self.name, self.site, self.gpus, self.busy_mib = name, site, list(gpus), busy_mib
+    def __init__(self, name, ssh=None, site=None, gpus=(), busy_mib=1500, vars=None):
+        self.name, self.site, self.gpus, self.busy_mib, self.vars = name, site, list(gpus), busy_mib, vars or {}
         self.argv = shlex.split(ssh) if ssh else []          # no ssh: the hub itself
 
     def __repr__(self):

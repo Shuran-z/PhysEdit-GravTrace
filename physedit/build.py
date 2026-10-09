@@ -3,10 +3,12 @@
 usage: python build.py SPEC.json      (the spec is written by the driver)
 
 Every row comes from the benchmark's template row (same source, condition frame, prompt and seed); the model sets
-its frame count, frame rate, canvas and output paths. Writes {dir}/manifest.jsonl and manifest_rev.jsonl (the second
-worker walks the rows backwards), and when the model needs them per-orientation manifests, VideoGPA prompt files and
-16:9 letterboxed condition images.
+its frame count, frame rate, canvas and output paths. Writes {dir}/manifest.jsonl (all rows) and one manifest per
+worker: manifest_w0.jsonl walks the rows forwards and manifest_w1.jsonl backwards, so two workers meet in the middle;
+with `split` (runners that process their whole manifest as one batch) the workers get disjoint halves instead. When
+the model needs them: per-orientation manifests, VideoGPA prompt files and 16:9 letterboxed condition images.
 """
+FORMAT = 2              # bump when the files written here change: runs built by an older format are rebuilt
 import collections
 import json
 import os
@@ -83,15 +85,17 @@ def build(spec):
             raise SystemExit("%s: missing %s" % (sid, ", ".join(missing)))
         out.append(r)
     os.makedirs(d + "/logs", exist_ok=True)
-    for rev, rows_ in (("", out), ("_rev", out[::-1])):
-        dump("%s/manifest%s.jsonl" % (d, rev), rows_)
+    dump(d + "/manifest.jsonl", out)
+    half = (len(out) + 1) // 2
+    for w, rows_ in (("w0", out[:half] if spec.get("split") else out), ("w1", out[half:] if spec.get("split") else out[::-1])):
+        dump("%s/manifest_%s.jsonl" % (d, w), rows_)
         if spec.get("split_orientation"):
             for o in ("landscape", "portrait", "square"):
-                dump("%s/manifest_%s%s.jsonl" % (d, o, rev), [r for r in rows_ if r["orientation"] == o])
+                dump("%s/manifest_%s_%s.jsonl" % (d, w, o), [r for r in rows_ if r["orientation"] == o])
         if spec.get("prompts_json"):     # VideoGPA's script reads {id: {text_prompt, image_prompt}}
             prompts = {r["sample_id"]: {"text_prompt": open(r["prompt_file"], encoding="utf-8").read().strip(),
                                         "image_prompt": r["condition_image"]} for r in rows_}
-            with open("%s/prompts%s.json" % (d, rev), "w", encoding="utf-8") as f:
+            with open("%s/prompts_%s.json" % (d, w), "w", encoding="utf-8") as f:
                 json.dump(prompts, f, ensure_ascii=False, indent=0)
     return len(out)
 

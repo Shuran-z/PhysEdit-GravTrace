@@ -52,7 +52,14 @@ def test_rows_paths_and_order(tmp_path):
     assert r["generated_video_resized_to_source"] == str(tmp_path / "run" / "generated" / "m_pisa_0_coarse" / "resized.mp4")
     assert r["condition_image"] == str(tmp_path / "in" / "cond" / "pisa_0.png")      # remapped to the staged copy
     assert (r["gen_width"], r["gen_height"]) == (832, 480) and r["orientation"] == "landscape"
-    assert read(tmp_path / "run" / "manifest_rev.jsonl") == rows[::-1]
+    assert read(tmp_path / "run" / "manifest_w0.jsonl") == rows and read(tmp_path / "run" / "manifest_w1.jsonl") == rows[::-1]
+
+
+def test_split_gives_disjoint_halves(tmp_path):
+    build(spec(tmp_path, split=True))
+    run = tmp_path / "run"
+    w0, w1 = read(run / "manifest_w0.jsonl"), read(run / "manifest_w1.jsonl")
+    assert len(w0) == len(w1) == 4 and w0 + w1 == read(run / "manifest.jsonl")
 
 
 def test_fields_per_run_limit_and_missing_inputs(tmp_path):
@@ -77,8 +84,8 @@ def read_x1(tmp_path, fields):
 def test_orientation_split_and_prompt_files(tmp_path):
     build(spec(tmp_path, split_orientation=True, prompts_json=True))
     run = tmp_path / "run"
-    assert len(read(run / "manifest_landscape.jsonl")) == 8 and read(run / "manifest_portrait.jsonl") == []
-    prompts = json.load(open(run / "prompts_rev.json"))
+    assert len(read(run / "manifest_w0_landscape.jsonl")) == 8 and read(run / "manifest_w1_portrait.jsonl") == []
+    prompts = json.load(open(run / "prompts_w1.json"))
     assert list(prompts)[0] == "m_newton_1_fine" and prompts["m_pisa_0_coarse"]["text_prompt"] == "a ball falls"
 
 

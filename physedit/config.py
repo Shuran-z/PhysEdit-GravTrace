@@ -2,12 +2,12 @@
 
 A model's `cmd` maps a site to the shell command that generates the rows of one manifest there. Placeholders are
 filled from the site's `vars` and, per job, with
-    {manifest}  the worker's manifest: manifest.jsonl, or manifest_rev.jsonl for the second worker
-    {rev}       "" or "_rev", for commands that read other per-worker files ({dir}/prompts{rev}.json)
+    {manifest}  the worker's manifest, {dir}/manifest_{worker}.jsonl (w0 forwards, w1 backwards or the other half)
+    {worker}    w0 or w1, for commands that read other per-worker files ({dir}/prompts_{worker}.json)
     {dir}       the model's run directory on that site (manifests, generated/<row>/resized.mp4, logs/)
     {tools}     the deployed physedit runners on that site
     {gpu}       the job's GPU index(es), comma separated (also exported as CUDA_VISIBLE_DEVICES)
-    {run} {worker} {job}
+    {run} {job}
 Every runner skips rows whose resized.mp4 already exists, so any job can be stopped and started again.
 """
 import os
@@ -45,7 +45,7 @@ SITES = {
         wan5b_diffusers="/data1/zhangshuran/models/Wan2.2-TI2V-5B-Diffusers")),
     # the container's python3 needs the account's user site-packages, so no PYTHONNOUSERSITE here
     "nscc": dict(root="/XYAIFS00/HOME/sysu_xdliang/sysu_xdliang_3/HDD_POOL/zhangshuran/physedit", env=ENV, vars=dict(
-        python=f"{Z}/envs/cosmos3_diffusers_py310/bin/python",
+        python="python3",                                    # the driver's helpers need only the standard library
         wan_code=f"{Z}/wan22_a14b_a800_smoke_20260831/code/Wan2.2-official",
         wan_a14b=f"{Z}/Wan2.2-I2V-A14B-official-bf16",
         physalign=f"{Z}/PhysAlign-Wan2.2-I2V-A14B-community/adapter",
@@ -54,12 +54,18 @@ SITES = {
 }
 
 # GPUs a job may take. A GPU is free when it holds at most `busy_mib` and runs none of our jobs (other users'
-# small processes, e.g. Isaac Sim's ~0.9 GB on every wangzijun GPU, are tolerated).
+# small processes, e.g. Isaac Sim's ~0.9 GB on every wangzijun GPU, are tolerated). A host's `vars` override its
+# site's: the NSCC pods share one disk but run two container images. On the pytorch-ng (NGC) image the container's
+# python3 3.12 has torch 2.7 and the H3 bundle's diffusers 0.40-dev (Cosmos3OmniPipeline, ModularPipeline); the
+# uv venv below links to /usr/bin/python3 and only works on the deeplearni image (Python 3.10), where Cosmos3 ran in
+# September.
+NGC = dict(py_models="python3")
+DEEPLEARNI = dict(py_models=f"{Z}/envs/cosmos3_diffusers_py310/bin/python")
 HOSTS = {
     "hupanwen": dict(site="hupanwen", ssh=SSH + " hupanwen_t_server", gpus=[0, 3, 4, 5], busy_mib=1500),  # 1/2/6/7: others
     "wangzijun": dict(site="wangzijun", ssh=SSH + " wangzijun_p25_server", gpus=range(6), busy_mib=3000),
-    # a800-4 and a800-5 are left to the Qwen judge (~/judge_a800.sh)
-    **{n: dict(site="nscc", ssh=NSCC_SSH + " " + n, gpus=[0], busy_mib=1500)
+    # the deeplearni pods a800-4 and a800-5 (vars=DEEPLEARNI) are left to the Qwen judge (~/judge_a800.sh)
+    **{n: dict(site="nscc", ssh=NSCC_SSH + " " + n, gpus=[0], busy_mib=1500, vars=NGC)
        for n in ("a800-1", "a800-2", "a800-3", "h100-1", "a100-1")},
 }
 
@@ -78,12 +84,16 @@ A14B = ("cd {wan_code} && python3 {tools}/wan22_a14b.py --code-dir {wan_code} --
 
 # name: label in the result tables; frames/fps: what the model generates; canvas: generation size per source
 # orientation (else the runner's own); mode: which benchmark template the rows come from (i2v or v2v); gpus: per job;
+# split: the runner takes its whole manifest as one batch, so the two workers get disjoint halves;
 # fields: extra manifest fields, optionally per run (strings are formatted with the row and {inputs[name]});
 # sec_per_row: expected generation time, for ETAs before the first rows finish.
 MODELS = {
-    "ltx_i2v": dict(name="LTX-Video-2B", frames=81, fps=16, sec_per_row=46, cmd={"hupanwen": diffusers(
+    # LTX and CogVideoX need sides divisible by 32: aspect-preserving canvases as in September
+    "ltx_i2v": dict(name="LTX-Video-2B", frames=81, fps=16, sec_per_row=46,
+        canvas={"landscape": (704, 480), "portrait": (480, 704), "square": (480, 480)}, cmd={"hupanwen": diffusers(
         "{python}", "{models}/LTX-Video-diffusers", "ltx_i2v", "--num-inference-steps 30 --guidance-scale 3.0 --num-frames 81")}),
-    "cogvideox_i2v": dict(name="CogVideoX1.5-5B-I2V", frames=81, fps=16, sec_per_row=514, cmd={"hupanwen": diffusers(
+    "cogvideox_i2v": dict(name="CogVideoX1.5-5B-I2V", frames=81, fps=16, sec_per_row=514,
+        canvas={"landscape": (768, 480), "portrait": (480, 768), "square": (480, 480)}, cmd={"hupanwen": diffusers(
         "{python}", "{models}/CogVideoX1.5-5B-I2V", "cogvideox_i2v", "--num-inference-steps 50 --guidance-scale 6.0 --num-frames 81")}),
     "wan_ti2v5b": dict(name="Wan2.2-TI2V-5B", frames=81, fps=16, sec_per_row=210, cmd={"hupanwen": diffusers(
         "{py_wan}", "{models}/Wan2.2-TI2V-5B-Diffusers", "wan_i2v", "--num-inference-steps 40 --guidance-scale 3.5"
@@ -94,38 +104,39 @@ MODELS = {
     "hunyuan15_i2v": dict(name="HunyuanVideo-1.5-I2V", frames=121, fps=24, canvas=CANVAS_848, sec_per_row=900,
         cmd=dict.fromkeys(("hupanwen", "wangzijun"), diffusers("{py_hunyuan}", "{hunyuan}", "hunyuan15_i2v",
             "--num-frames 121 --num-inference-steps 12 --guidance-scale 1.0 --offload-mode sequential"))),
-    "dynamicrafter_i2v": dict(name="DynamiCrafter-1024", frames=16, fps=8, letterbox=True, sec_per_row=60, cmd={"wangzijun":
+    "dynamicrafter_i2v": dict(name="DynamiCrafter-1024", frames=16, fps=8, letterbox=True, split=True, sec_per_row=60,
+        cmd={"wangzijun":
         "{py_dc} {tools}/dynamicrafter.py --generation-manifest {manifest} --repo-dir {dc_repo} --checkpoint {dc_ckpt}"
         " --cuda-visible-devices {gpu} --ddim-steps 50 --skip-existing && {python} {tools}/crop_letterbox.py {manifest}"}),
     "videogpa_ti2v5b": dict(name="VideoGPA-Wan2.2-TI2V-5B", frames=49, fps=15, prompts_json=True, sec_per_row=150, cmd={"wangzijun":
         "PYTHONPATH={physics}/repos/VideoGPA/Wan2.2:{physics}/deps/videogpa {py_lora} {tools}/videogpa_wan22.py"
-        " --model_path {wan5b} --prompt_json {dir}/prompts{rev}.json --output_dir {dir}/raw"
+        " --model_path {wan5b} --prompt_json {dir}/prompts_{worker}.json --output_dir {dir}/raw"
         " --lora_path {physics}/weights/VideoGPA-Wan2.2TI2V-lora --lora_weight 0.2 --gpu_id 0 --seed 20260920"
         " --frame_num 49 --max_area 399360 --sampling_steps 20 --fps 15 --offload_model"
         " && {python} {tools}/videogpa_finalize.py {manifest} {dir}/raw 20260920"}),
     # PhysRVG takes one canvas per process; x5 conditions on the 5 source frames ending at the condition frame
     "physrvg_ti2v5b": dict(name="PhysRVG-Wan2.2-TI2V-5B", frames=49, fps=15, canvas=CANVAS_832, split_orientation=True,
         sec_per_row=150, fields={"x5": {"source_video": "{inputs[prefix5]}/{source_sample_id}.mp4"}}, cmd={"wangzijun":
-        "for o in landscape portrait square; do [ -s {dir}/manifest_$o{rev}.jsonl ] || continue;"
+        "for o in landscape portrait square; do [ -s {dir}/manifest_{worker}_$o.jsonl ] || continue;"
         " case $o in landscape) H=480 W=832;; portrait) H=832 W=480;; square) H=640 W=640;; esac;"
         " PYTHONPATH={physics}/repos/PhysRVG:{physics}/deps/physrvg {py_lora} {tools}/physrvg.py"
-        " --manifest {dir}/manifest_$o{rev}.jsonl --model-id {wan5b_diffusers}"
+        " --manifest {dir}/manifest_{worker}_$o.jsonl --model-id {wan5b_diffusers}"
         " --lora-checkpoint {physics}/weights/PhysRVG/lora/checkpoint --model-label PhysRVG-Wan2.2-TI2V-5B"
         " --output-root {dir} --status-jsonl {dir}/logs/{worker}_status_$o.jsonl --device 0 --height $H --width $W"
         " --num-frames 49 --num-inference-steps 16 --fps 15 --offload-mode model"
         " --condition-policy $([ {run} = x5 ] && echo source_history5 || echo static_frame) || exit 1; done"}),
     "cosmos3_nano": dict(name="Cosmos3-Nano", frames=81, fps=16, canvas=CANVAS_832, sec_per_row=480,
         fields={"cosmos_num_inference_steps": 35, "cosmos_guidance_scale": 6.0}, cmd={"nscc":
-        "{python} {tools}/cosmos3.py --model {cosmos3} --manifest {manifest} --node {job}"
+        "{py_models} {tools}/cosmos3.py --model {cosmos3} --manifest {manifest} --node {job}"
         " --status-jsonl {dir}/logs/{worker}_status.jsonl --state-json {dir}/logs/{worker}_state.json"
-        " --ffmpeg $({python} -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')"}),
+        " --ffmpeg $({py_models} -c 'import imageio_ffmpeg; print(imageio_ffmpeg.get_ffmpeg_exe())')"}),
     "wan22_i2v_a14b": dict(name="Wan2.2-I2V-A14B", frames=81, fps=16, sec_per_row=870, fields={"sample_steps": 40},
         cmd={"nscc": A14B}),
     "physalign_wan22_i2v_a14b": dict(name="PhysAlign-Wan2.2-I2V-A14B", frames=81, fps=16, sec_per_row=870,
         fields={"sample_steps": 40}, cmd={"nscc": A14B + " --physalign-adapter-dir {physalign}"}),
     "minimax_h3": dict(name="MiniMax-H3", frames=124, fps=24, gpus=2, sec_per_row=1200,
         canvas={"landscape": (896, 512), "portrait": (512, 896), "square": (640, 640)}, cmd={"nscc":
-        "{python} {tools}/minimax_h3.py --source-manifest {manifest} --out-root {dir}/logs/{worker} --model {h3} --steps 50"}),
+        "{py_models} {tools}/minimax_h3.py --source-manifest {manifest} --out-root {dir}/logs/{worker} --model {h3} --steps 50"}),
 }
 
 # A benchmark: the site holding its inputs (the evaluation host), the template rows every model's manifest is

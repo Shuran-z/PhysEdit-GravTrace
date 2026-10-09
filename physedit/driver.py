@@ -13,6 +13,7 @@ import os
 import time
 
 from . import config
+from .build import FORMAT
 from .fleet import Host, copy, mirror
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -148,27 +149,40 @@ class Driver:
             self.evaluate(items)
         return items
 
-    def prepare(self, it):
-        """Pin an unstarted run to the candidate site with most free GPUs; deploy, stage inputs, build its manifest."""
-        if it["site"]:
-            return
-        cands = [s for s in config.MODELS[it["model"]]["cmd"] if self.placeable(s)]
-        if not cands:
-            self.notes[(it["model"], it["run"])] = "no usable host on %s" % "/".join(config.MODELS[it["model"]]["cmd"])
-            return
-        site = max(cands, key=lambda s: sum(len(self.free(h)) for h in self.placeable(s)))
-        self.deploy(site)
-        self.stage(site)
+    def spec(self, it, site):
+        """What build.py needs to write this run's manifests on `site` (JSON-normalised, so it compares with the stored one)."""
         m = config.MODELS[it["model"]]
         mode, home = m.get("mode", "i2v"), site == self.home
         spec = dict(dir=self.rundir(site, it["run"], it["model"]), run=it["run"], model=it["model"], name=m["name"],
                     frames=m["frames"], fps=m["fps"], canvas=m.get("canvas"), fields=m.get("fields", {}),
-                    letterbox=m.get("letterbox"), prompts_json=m.get("prompts_json"),
-                    split_orientation=m.get("split_orientation"), limit=self.limit,
+                    letterbox=m.get("letterbox"), prompts_json=m.get("prompts_json"), split=m.get("split"),
+                    split_orientation=m.get("split_orientation"), limit=self.limit, format=FORMAT,
                     template=self.b["templates"][mode][it["run"]] if home else
                     "%s/templates/%s_%s.jsonl" % (self.inputs(site), mode, it["run"]),
                     inputs={n: p if home else "%s/%s" % (self.inputs(site), n) for n, p in self.b["inputs"].items()},
                     remap=[] if home else [[p, "%s/%s" % (self.inputs(site), n)] for n, p in self.b["inputs"].items()])
+        return json.loads(json.dumps(spec))
+
+    def prepare(self, it):
+        """Pin an unstarted run to the candidate site with most free GPUs; deploy, stage inputs, build its manifest.
+        A started run whose model settings changed is rebuilt while it has no videos, and reported otherwise."""
+        if it["site"]:
+            site, spec = it["site"], self.spec(it, it["site"])
+            if it.get("spec") == spec:
+                return
+            if it["done"]:
+                self.notes[(it["model"], it["run"])] = ("model settings changed after %d videos were made; remove %s to "
+                                                         "start this run again" % (it["done"], spec["dir"]))
+                return
+        else:
+            cands = [s for s in config.MODELS[it["model"]]["cmd"] if self.placeable(s)]
+            if not cands:
+                self.notes[(it["model"], it["run"])] = "no usable host on %s" % "/".join(config.MODELS[it["model"]]["cmd"])
+                return
+            site = max(cands, key=lambda s: sum(len(self.free(h)) for h in self.placeable(s)))
+            spec = self.spec(it, site)
+        self.deploy(site)
+        self.stage(site)
         h = self.host(site)
 
         def build():
@@ -215,7 +229,7 @@ class Driver:
                         or w in it["live"]:
                     continue
                 ev = it["events"].get(w, [])
-                if sum(1 for e in ev if e[0] == "start" and now - float(e[1]) < RESTART_WINDOW) >= RESTARTS:
+                if not self.retry and sum(1 for e in ev if e[0] == "start" and now - float(e[1]) < RESTART_WINDOW) >= RESTARTS:
                     self.notes[(it["model"], it["run"], w)] = "started %d times in %d h; see %s/logs/%s.log" % (
                         RESTARTS, RESTART_WINDOW // 3600, self.rundir(it["site"], it["run"], it["model"]), w)
                     continue
@@ -232,9 +246,10 @@ class Driver:
             self.notes[(it["model"], it["run"], "w%d" % k)] = "waiting for %d free GPU%s on %s" % (n, "s" * (n > 1), site)
             return
         gpus = self.free(host)[:n]
-        gpu, rev, d = ",".join(map(str, gpus)), "_rev" if k else "", self.rundir(site, it["run"], it["model"])
+        gpu, d = ",".join(map(str, gpus)), self.rundir(site, it["run"], it["model"])
         job = "%s/%s/%s.w%d" % (self.bench, it["model"], it["run"], k)
-        values = dict(config.SITES[site]["vars"], manifest="%s/manifest%s.jsonl" % (d, rev), rev=rev, dir=d,
+        values = dict(config.SITES[site]["vars"], **self.hosts[host].vars)
+        values.update(manifest="%s/manifest_w%d.jsonl" % (d, k), dir=d,
                       tools=self.tools(site), gpu=gpu, run=it["run"], worker="w%d" % k, job=job.replace("/", "."))
         cmd = "export CUDA_VISIBLE_DEVICES=%s %s; %s" % (gpu, config.SITES[site]["env"], m["cmd"][site].format(**values))
         self.taken[host] |= set(gpus)

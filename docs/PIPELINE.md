@@ -29,9 +29,10 @@ continues from what is on disk.
    and `build.py` writes the model's manifests from the benchmark's template rows: same sources, condition frames,
    prompts and seeds for every model; the model sets frame count, frame rate, canvas and output paths.
 3. **Generate.** Every unfinished run keeps up to two workers on free GPUs: one walks the manifest forwards, one
-   backwards, and every runner skips rows whose video exists, so they meet in the middle without coordination. A GPU
+   backwards, and every runner skips rows whose video exists, so they meet in the middle without coordination
+   (DynamiCrafter's runner takes its whole manifest as one batch, so its workers get disjoint halves: `split`). A GPU
    is free when it holds less than the host's `busy_mib` and runs none of our jobs. A worker that dies is restarted
-   on the next pass; one started three times within three hours is left alone and reported.
+   on the next pass; one started three times within three hours is left alone and reported (`--retry` overrides).
 4. **Copy home.** Videos made on a site the home host cannot read (NSCC) are copied to it as parallel tar streams
    through the hub. wangzijun's root is on the NFS share that hupanwen mounts, so its videos are read in place.
 5. **Evaluate.** A finished run is published where the benchmark's evaluation scripts read it, and every stage whose
@@ -48,22 +49,25 @@ videos, ETA and live workers; per model the evaluation stages; and notes (waitin
 <root>/tools/                                  runners/*.py and build.py, deployed by the driver
 <root>/<bench>/input/                          benchmark inputs copied from the home host (not on the home host)
 <root>/<bench>[-<tag>]/<run>/<model>/
-    spec.json  manifest.jsonl  manifest_rev.jsonl    (+ per-orientation manifests, prompts.json when needed)
+    spec.json  manifest.jsonl  manifest_w0.jsonl  manifest_w1.jsonl   (+ per-orientation manifests, prompts)
     generated/<row>/resized.mp4                       the video at the source resolution
     logs/w0.log  logs/w0.events                       runner output; start/end lines with time and exit code
 <home root>/<bench>/eval/<model>/<stage>.log|.events  evaluation jobs
 ```
 
-`--tag` (implied by `--limit`) gives a trial its own namespace; trials are generation only.
+`--tag` (implied by `--limit`) gives a trial its own namespace; trials are generation only. `spec.json` records what
+the manifests were built from: when a model's settings change, a run without videos is rebuilt and a run with videos
+is reported (remove its directory to start it again), so settings are never mixed within a run.
 
 ## Configuration: `physedit/config.py`
 
 - `SITES`: a filesystem (root, environment variables, and `vars` used in commands: interpreters, weights, code).
 - `HOSTS`: ssh target, site, the GPUs physedit may use and the memory below which a GPU counts as idle. hupanwen GPUs
   1, 2, 6 and 7 are left to other users; NSCC `a800-4`/`a800-5` to the Qwen judge.
-- `MODELS`: display name, frames, fps, canvas per orientation, template mode (i2v or v2v), GPUs per job, extra
-  manifest fields, and per site the command that generates one manifest (`{manifest}`, `{dir}`, `{gpu}`, `{tools}`,
-  `{rev}`, `{run}`, `{worker}` plus the site's `vars`).
+- `MODELS`: display name, frames, fps, canvas per orientation, template mode (i2v or v2v), GPUs per job, `split`,
+  extra manifest fields, and per site the command that generates one worker's manifest (`{manifest}`, `{dir}`,
+  `{gpu}`, `{tools}`, `{run}`, `{worker}` plus the site's and the host's `vars`; the NSCC pods run two container
+  images, so their interpreter is a host variable).
 - `BENCHMARKS`: home site, runs, template manifests per mode and run, inputs to copy, where finished runs are
   published, the evaluation stages (command, prerequisite, GPUs, exclusive, hub or home) and the table command.
 

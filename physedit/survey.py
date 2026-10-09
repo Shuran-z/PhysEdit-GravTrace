@@ -1,6 +1,7 @@
 """What one site holds for a benchmark, as JSON. Run by the driver as `python - ARGS < survey.py` (read-only).
 
-items:     per run/model directory: manifest rows, finished videos, their newest modification times, worker events
+items:     per run/model directory: manifest rows, finished videos, their newest modification times, worker events,
+           and the spec its manifest was built from
 eval:      per model/stage (and the table): start/end events of the evaluation jobs
 published: per run/model: whether the evaluation manifest was written by physedit or predates it
 """
@@ -23,11 +24,12 @@ for d in glob.glob(args["dir"] + "/*/*/"):
     run, model = d.rstrip("/").split("/")[-2:]
     if run in ("eval", "input"):
         continue
-    manifest = d + "manifest.jsonl"
+    manifest, spec = d + "manifest.jsonl", d + "spec.json"
     times = sorted((os.path.getmtime(p) for p in glob.glob(d + "generated/*/resized.mp4") if os.path.getsize(p)), reverse=True)
     out["items"][run + "/" + model] = dict(
         rows=sum(1 for _ in open(manifest)) if os.path.exists(manifest) else None, done=len(times), recent=times[:21],
-        events={w: events("%slogs/%s.events" % (d, w)) for w in ("w0", "w1")})
+        events={w: events("%slogs/%s.events" % (d, w)) for w in ("w0", "w1")},
+        spec=json.load(open(spec)) if os.path.exists(spec) else None)
 for f in glob.glob(args["dir"] + "/eval/*.events") + glob.glob(args["dir"] + "/eval/*/*.events"):
     out["eval"][os.path.relpath(f, args["dir"] + "/eval")[:-len(".events")]] = events(f)
 for key, path in args.get("publish", {}).items():

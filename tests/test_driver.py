@@ -72,7 +72,7 @@ def fleet_setup(tmp_path, monkeypatch):
     return tmp_path
 
 
-def test_generate_copy_publish_evaluate(fleet_setup):
+def test_generate_copy_publish_evaluate(fleet_setup, monkeypatch):
     tmp = fleet_setup
     d = driver.Driver("t", ["m1", "m2"], log=lambda *a: None)
     for _ in range(80):
@@ -96,3 +96,6 @@ def test_generate_copy_publish_evaluate(fleet_setup):
     for m in ("m1", "m2"):
         assert line("vp %s gpu=" % m) < line("judge %s" % m) and line("inversion %s gpu=" % m) >= 0
     assert [l for l in trace if l.startswith("table")] == ["table m1,m2"] and trace[-2].startswith("table")
+    monkeypatch.setitem(config.MODELS["m1"], "frames", 10)       # settings changed after the videos were made:
+    d.step()                                                     # reported, never mixed into the finished run
+    assert "settings changed after 4 videos" in d.notes[("m1", "x5")]
