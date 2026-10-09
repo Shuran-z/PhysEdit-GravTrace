@@ -35,6 +35,13 @@ def fit_sample(sample: dict) -> dict:
 
 
 def fit_boxes(sample: dict, frames: np.ndarray, boxes: np.ndarray) -> dict:
+    """Fit one sample from its observed boxes.
+
+    Returns the sample id, `status` ("ok"; "at_bound": g at a search limit, e.g. an object that
+    never falls; "few_frames"/"no_track": too few usable observations), `gravity` (m/s^2), the
+    `frames` used, the fitted nuisances (`params`) and `sensitivity_px`, the image change between
+    g/2 and 2g: a few pixels or less means this video barely constrains g.
+    """
     out = {"id": sample["id"], "scenario": sample["scenario"]}
     window = sample.get("window", {})
     keep = frames >= window.get("start_frame", 0)  # frames before the declared motion start are not modelled
@@ -143,7 +150,7 @@ class _Problem:
     def predict(self, h: dict, x: np.ndarray) -> np.ndarray:
         """Image box [x0, y0, x1, y1] spanned by the projected corners in each frame."""
         g, t0, extras = np.exp(x[0]), x[1], x[2:]
-        centres = h["centres"](self.t + t0, g, extras)
+        centres = h["centres"](np.maximum(self.t + t0, 0.0), g, extras)  # held in the initial state until release
         uv = self.camera.project(centres[:, None, :] + self.corners[None])
         return np.hstack([uv.min(axis=1), uv.max(axis=1)])
 
@@ -183,7 +190,8 @@ class _Problem:
         if ground is None:
             return None
         g, t0 = np.exp(best["x"][0]), best["x"][1]
-        z = (best["h"]["centres"](self.t + t0, g, best["x"][2:])[:, None, :] + self.corners[None])[..., 2].min(axis=1)
+        centres = best["h"]["centres"](np.maximum(self.t + t0, 0.0), g, best["x"][2:])
+        z = (centres[:, None, :] + self.corners[None])[..., 2].min(axis=1)
         below = np.flatnonzero((z < ground) & (np.arange(len(z)) > 0))
         return int(below[0]) if below.size and z[0] >= ground else None
 

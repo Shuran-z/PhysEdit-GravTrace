@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gravtrace"
+version = "0.1.0"
+description = "Recover the gravity a video shows from a tracked object's image box"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["numpy", "scipy", "opencv-python-headless"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[project.scripts]
+gravtrace = "gravtrace.__main__:main"
+
+[tool.setuptools]
+packages = ["gravtrace"]

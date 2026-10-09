@@ -67,6 +67,13 @@ def test_incline_launch_over_the_top_edge():
     assert fit["status"] == "ok" and abs(fit["gravity"] / g - 1) < 0.05 and abs(fit["params"]["top"] - 0.4) < 0.05
 
 
+def test_clip_starting_before_release():
+    g, lead = 9.81, 0.25  # the object is held for the first 0.25 s of the clip
+    boxes = render(ballistic(np.maximum(FRAMES / FPS - lead, 0.0), X0, np.zeros(3), g, np.array([0.0, 0.0, -1.0])))
+    fit = fit_boxes(sample("freefall", {"t0": [-lead, -lead]}, 12), FRAMES, boxes)
+    assert fit["status"] == "ok" and abs(fit["gravity"] / g - 1) < 0.05
+
+
 def test_static_object_hits_lower_bound():
     boxes = render(np.repeat(X0[None], len(FRAMES), axis=0))
     fit = fit_boxes(sample("freefall", {"t0": [0.0, 0.0]}, 6), FRAMES, boxes)
