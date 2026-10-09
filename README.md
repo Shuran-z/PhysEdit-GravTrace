@@ -319,3 +319,5 @@ See [paired results](docs/phyediting/subpixel_pilot.json) and
 [work status](docs/phyediting/WORK_STATUS.md).
 
 Edge-level development diagnostics are available in [edge_diagnosis.json](docs/phyediting/edge_diagnosis.json). They separate constant/linear bias from quadratic observation error at the original timestamps. Simulator geometry is used only for diagnosis, never to correct fitted observations.
+
+Fixed-axis ablation on the ten-video development pilot did not improve the tail; the default still uses all visible edges. All ablation modes disable contact trimming to isolate the axis change. See [edge_ablation.json](docs/phyediting/edge_ablation.json). The full 15 fps contact-off control (`phyediting_offset_trial.py --no-contact-check`) completed: 845/1038 successful fits, mean 2.917%, maximum 24.654%. The contact-on control is 2.928% / 28.344% with identical coverage. This limited improvement does not meet the tail target; defaults are unchanged. See [contact comparison](docs/phyediting/contact_comparison15.json).

@@ -35,6 +35,7 @@ def main():
     p.add_argument("--out", required=True)
     p.add_argument("--mode", choices=("both", "anchor", "centred"), default="both")
     p.add_argument("--all-items", action="store_true", help="retain camera/background repeats; report as development data")
+    p.add_argument("--no-contact-check", action="store_true", help="use the full declared flight window; paired contact-trimming diagnostic")
     a = p.parse_args()
     items = {r["id"]: r for r in map(json.loads, open("runs/benchmark_gravity_v1/items.jsonl"))}
     tracks = _read_tracks(f"runs/genfloor_tracks_{a.fps}.jsonl")
@@ -49,6 +50,8 @@ def main():
             continue
         seen.add(group)
         sample = _sample(row, it, tracks.get(row["sample_id"], {}), "agnostic", {})
+        if a.no_contact_check:
+            sample["window"]["contact_check"] = False
         modes = ("anchor", "centred") if a.mode == "both" else (a.mode,)
         jobs.append((sample, {"id": it["id"], "physics_group": group,
                               "gravity_target": it["gravity"], "event": it["event"], "camera": it["camera_id"]}, modes))
@@ -63,7 +66,7 @@ def main():
             f.write(json.dumps(rec) + "\n")
             f.flush()
     summary = {"scope": "development pilot, not independent validation", "fps": a.fps,
-               "selected": len(jobs), "selection": "all items" if a.all_items else "fixed SHA256 order, one item per physics_group", "methods": {}}
+               "contact_check": not a.no_contact_check, "selected": len(jobs), "selection": "all items" if a.all_items else "fixed SHA256 order, one item per physics_group", "methods": {}}
     for mode in modes:
         good = [r for r in records if r["predictions"][mode].get("status") == "ok"]
         errors = np.array([abs(r["predictions"][mode]["gravity"] / r["gravity_target"] - 1) for r in good])
