@@ -1,0 +1,886 @@
+{
+  "scope": "fixed-hash pilot among auxiliary-eligible development videos; not whole-benchmark or held out",
+  "caveat": "extra object observations and simulator-declared windows/geometry; not information-matched to earlier single-object baselines; joint hypotheses seeded by independent fits",
+  "summary": {
+    "baseline": {
+      "attempted": 24,
+      "ok": 24,
+      "failed_or_bound": 0,
+      "mean_pct": 2.209260089408681,
+      "max_pct": 6.7214549261696455
+    },
+    "prediction": {
+      "attempted": 24,
+      "ok": 24,
+      "failed_or_bound": 0,
+      "mean_pct": 2.3527140530820536,
+      "max_pct": 8.209679673685088
+    }
+  },
+  "records": [
+    {
+      "id": "T19__bg03_neutral_studio__g01_moon__mass_ratio__p008__cam01__t19_object_00__f25",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.6229179075268054,
+        "cost": 14.876717873658745,
+        "objects": 2,
+        "frame_counts": [
+          17,
+          15
+        ],
+        "independent_gravities": [
+          1.6224313241577961,
+          1.6241750890048383
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T19__bg03_neutral_studio__g01_moon__mass_ratio__p008__cam01__t19_object_00__f25",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.6224313241577961,
+        "cost": 6.662160499454485,
+        "frames": 17,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 5,
+        "params": {
+          "t0": 0.0,
+          "speed": 0.9368482222445824,
+          "angle": 1.3761801178173996,
+          "azimuth": 0.8016468392648051
+        },
+        "sensitivity_px": 199.8437382698463
+      }
+    },
+    {
+      "id": "T03V5F480__bg03_neutral_studio__g01_moon__cfA_theta_star_rep01__A0550000__B0008000__C0006000__r014__cam03__t03v5_upper_edge_can__f130",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.6442819329333882,
+        "cost": 45.57617722400658,
+        "objects": 2,
+        "frame_counts": [
+          7,
+          4
+        ],
+        "independent_gravities": [
+          1.6251764109385127,
+          11.849635422972865
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg03_neutral_studio__g01_moon__cfA_theta_star_rep01__A0550000__B0008000__C0006000__r014__cam03__t03v5_upper_edge_can__f130",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.6251764109385127,
+        "cost": 9.759048890045902,
+        "frames": 7,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 0,
+        "params": {
+          "t0": 0.0333333333333341,
+          "speed": 0.3722019261698157,
+          "angle": -0.37013210962547055,
+          "azimuth": -6.218558646323714
+        },
+        "sensitivity_px": 16.58393188569611
+      }
+    },
+    {
+      "id": "T19__bg02_physics_lab__g02_mars__restitution__p009__cam01__t19_object_00__f25",
+      "prediction": {
+        "status": "ok",
+        "gravity": 3.6970915229879613,
+        "cost": 11.400511009348627,
+        "objects": 2,
+        "frame_counts": [
+          6,
+          6
+        ],
+        "independent_gravities": [
+          3.718473457810037,
+          3.681061565595785
+        ]
+      },
+      "gravity_target": 3.71,
+      "baseline": {
+        "id": "T19__bg02_physics_lab__g02_mars__restitution__p009__cam01__t19_object_00__f25",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 3.718473457810037,
+        "cost": 1.537049038742818,
+        "frames": 6,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 5,
+        "params": {
+          "t0": 0.0,
+          "speed": 0.8126191797417316,
+          "angle": 1.0172160260741923,
+          "azimuth": 0.23726381161682747
+        },
+        "sensitivity_px": 56.72144362543835
+      }
+    },
+    {
+      "id": "T08V4F480__bg01_home_ase__g01_moon__cf_C_mug_total_mass_kg_theta_star__rep02__s0p7315__e0p0180__m0p3800__cam02__t08_lower_impactor_book__f45",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.6036049427490018,
+        "cost": 15.610678340717373,
+        "objects": 2,
+        "frame_counts": [
+          12,
+          12
+        ],
+        "independent_gravities": [
+          1.6399352733490733,
+          1.5504592677294196
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T08V4F480__bg01_home_ase__g01_moon__cf_C_mug_total_mass_kg_theta_star__rep02__s0p7315__e0p0180__m0p3800__cam02__t08_lower_impactor_book__f45",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.6399352733490733,
+        "cost": 8.886924400019065,
+        "frames": 12,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 6,
+        "params": {
+          "t0": 0.0,
+          "speed": 0.665553287090751,
+          "angle": 1.234278037182897,
+          "azimuth": 4.588251857541352
+        },
+        "sensitivity_px": 21.941930783199222
+      }
+    },
+    {
+      "id": "T08V4F480__bg04_library_shelf__g01_moon__cf_A_book_initial_speed_mps_theta_star__rep03__s0p7461__e0p0180__m0p3800__cam02__t08_lower_impactor_book__f53",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.5918570724492385,
+        "cost": 60.981480285991815,
+        "objects": 2,
+        "frame_counts": [
+          11,
+          11
+        ],
+        "independent_gravities": [
+          1.6306925398388668,
+          1.1516974998302705
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T08V4F480__bg04_library_shelf__g01_moon__cf_A_book_initial_speed_mps_theta_star__rep03__s0p7461__e0p0180__m0p3800__cam02__t08_lower_impactor_book__f53",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.6306925398388668,
+        "cost": 7.049611511425153,
+        "frames": 11,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 2,
+        "params": {
+          "t0": 0.0,
+          "speed": 0.753729499769516,
+          "angle": 1.3482887426667995,
+          "azimuth": -1.5324828717077
+        },
+        "sensitivity_px": 21.079279131412864
+      }
+    },
+    {
+      "id": "T18__bg01_home_ase__g01_moon__contact_friction__p016__cam01__t18_book_04__f24",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.5977629820324746,
+        "cost": 15.063048402868757,
+        "objects": 2,
+        "frame_counts": [
+          8,
+          5
+        ],
+        "independent_gravities": [
+          1.594324978167201,
+          1.7691475513705035
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T18__bg01_home_ase__g01_moon__contact_friction__p016__cam01__t18_book_04__f24",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.594324978167201,
+        "cost": 3.2020296755063202,
+        "frames": 8,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 0,
+        "params": {
+          "t0": 0.033333333333333326,
+          "speed": 0.4117327810150078,
+          "angle": 1.084638765548751,
+          "azimuth": -3.1878399355869798
+        },
+        "sensitivity_px": 54.365591818662324
+      }
+    },
+    {
+      "id": "T03V5F480__bg02_physics_lab__g01_moon__cfA_theta_star_rep02__A0550000__B0008000__C0006000__r014__cam03__t03v5_impulsed_book__f121",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.6146680245177185,
+        "cost": 44.08674649603168,
+        "objects": 2,
+        "frame_counts": [
+          10,
+          7
+        ],
+        "independent_gravities": [
+          1.5907491755522476,
+          1.9814911525876546
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg02_physics_lab__g01_moon__cfA_theta_star_rep02__A0550000__B0008000__C0006000__r014__cam03__t03v5_impulsed_book__f121",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.5907491755522476,
+        "cost": 4.576366810320807,
+        "frames": 10,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 1,
+        "params": {
+          "t0": 0.0,
+          "speed": 0.24100182918593366,
+          "angle": 0.08409320277346742,
+          "azimuth": 0.008461447403526421
+        },
+        "sensitivity_px": 27.196224550697732
+      }
+    },
+    {
+      "id": "T03V5F480__bg03_neutral_studio__g01_moon__cfA_theta_star_rep01__A0550000__B0008000__C0006000__r014__cam01__t03v5_impulsed_book__f116",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.6526101925849717,
+        "cost": 7.556343152957984,
+        "objects": 2,
+        "frame_counts": [
+          10,
+          5
+        ],
+        "independent_gravities": [
+          1.664591219175406,
+          1.4621979894146482
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg03_neutral_studio__g01_moon__cfA_theta_star_rep01__A0550000__B0008000__C0006000__r014__cam01__t03v5_impulsed_book__f116",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.664591219175406,
+        "cost": 6.319519139164795,
+        "frames": 10,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 1,
+        "params": {
+          "t0": 0.033333333333333215,
+          "speed": 0.2630633876591807,
+          "angle": 0.5936978653944595,
+          "azimuth": 0.04094052229995412
+        },
+        "sensitivity_px": 23.945986346523398
+      }
+    },
+    {
+      "id": "T19__bg02_physics_lab__g01_moon__restitution__p018__cam01__t19_object_00__f24",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.6255294494882495,
+        "cost": 7.29829920078918,
+        "objects": 2,
+        "frame_counts": [
+          14,
+          5
+        ],
+        "independent_gravities": [
+          1.6253394354144861,
+          1.663852996329978
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T19__bg02_physics_lab__g01_moon__restitution__p018__cam01__t19_object_00__f24",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.6253394354144861,
+        "cost": 5.578781790289133,
+        "frames": 14,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 7,
+        "params": {
+          "t0": 0.033333333333333326,
+          "speed": 0.8304853904742348,
+          "angle": 1.1193613872962163,
+          "azimuth": 1.134040957576217
+        },
+        "sensitivity_px": 132.7568883266144
+      }
+    },
+    {
+      "id": "T08V4F480__bg03_neutral_studio__g04_high__global_16__s2p7204__e0p0400__m0p4062__cam01__t08_lower_impactor_book__f43",
+      "prediction": {
+        "status": "ok",
+        "gravity": 14.403337659926994,
+        "cost": 21.886367139377374,
+        "objects": 2,
+        "frame_counts": [
+          9,
+          4
+        ],
+        "independent_gravities": [
+          14.391018877384623,
+          25.106476591297096
+        ]
+      },
+      "gravity_target": 15.0,
+      "baseline": {
+        "id": "T08V4F480__bg03_neutral_studio__g04_high__global_16__s2p7204__e0p0400__m0p4062__cam01__t08_lower_impactor_book__f43",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 14.391018877384623,
+        "cost": 7.836099909604675,
+        "frames": 9,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 3,
+        "params": {
+          "t0": 0.0,
+          "speed": 4.1360157432616615,
+          "angle": 1.3791701052845677,
+          "azimuth": -0.7654234844106378
+        },
+        "sensitivity_px": 159.20441058858356
+      }
+    },
+    {
+      "id": "T03V5F480__bg02_physics_lab__g01_moon__cfB_theta_minus_rep03__A0550000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f130",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.6596451412118776,
+        "cost": 9.272988637975839,
+        "objects": 2,
+        "frame_counts": [
+          9,
+          6
+        ],
+        "independent_gravities": [
+          1.638024292896696,
+          1.8524226201300553
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg02_physics_lab__g01_moon__cfB_theta_minus_rep03__A0550000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f130",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.638024292896696,
+        "cost": 4.166816462827974,
+        "frames": 9,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 4,
+        "params": {
+          "t0": 0.0333333333333341,
+          "speed": 0.3901903432872959,
+          "angle": -0.3380205280134796,
+          "azimuth": -0.02612200354570512
+        },
+        "sensitivity_px": 21.083680800343817
+      }
+    },
+    {
+      "id": "T19__bg03_neutral_studio__g01_moon__restitution__p009__cam01__t19_object_03__f25",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.6669464092334993,
+        "cost": 9.33740075482389,
+        "objects": 2,
+        "frame_counts": [
+          6,
+          6
+        ],
+        "independent_gravities": [
+          1.6396056544145996,
+          1.694785482962573
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T19__bg03_neutral_studio__g01_moon__restitution__p009__cam01__t19_object_03__f25",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.6396056544145996,
+        "cost": 5.203827384917596,
+        "frames": 6,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 5,
+        "params": {
+          "t0": 0.0,
+          "speed": 1.418935332491548,
+          "angle": 0.22943500710448825,
+          "azimuth": 3.1461413931398097
+        },
+        "sensitivity_px": 20.90936946582012
+      }
+    },
+    {
+      "id": "T03V5F480__bg02_physics_lab__g01_moon__cfC_theta_minus_rep02__A0550000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f130",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.7529968107136984,
+        "cost": 9.147025934535659,
+        "objects": 2,
+        "frame_counts": [
+          9,
+          6
+        ],
+        "independent_gravities": [
+          1.7288875698039483,
+          1.9784583982730657
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg02_physics_lab__g01_moon__cfC_theta_minus_rep02__A0550000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f130",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.7288875698039483,
+        "cost": 3.0400089977916203,
+        "frames": 9,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 0,
+        "params": {
+          "t0": 0.0333333333333341,
+          "speed": 0.37715599181247966,
+          "angle": -0.34908489475697796,
+          "azimuth": -6.180219412323371
+        },
+        "sensitivity_px": 22.302101699163273
+      }
+    },
+    {
+      "id": "T03V5F480__bg03_neutral_studio__g01_moon__cfC_theta_minus_rep03__A0550000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f130",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.5688863084415068,
+        "cost": 11.56365442665461,
+        "objects": 2,
+        "frame_counts": [
+          9,
+          6
+        ],
+        "independent_gravities": [
+          1.5779338426480025,
+          1.5011102223985673
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg03_neutral_studio__g01_moon__cfC_theta_minus_rep03__A0550000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f130",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.5779338426480025,
+        "cost": 6.7194050900698095,
+        "frames": 9,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 5,
+        "params": {
+          "t0": 0.0333333333333341,
+          "speed": 0.38200231283566527,
+          "angle": -0.301397015741996,
+          "azimuth": -0.09563508913479814
+        },
+        "sensitivity_px": 21.030603604803172
+      }
+    },
+    {
+      "id": "T03V5F480__bg02_physics_lab__g01_moon__cfA_theta_minus_rep01__A0370000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f179",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.5879737268146425,
+        "cost": 4.716255246453609,
+        "objects": 2,
+        "frame_counts": [
+          9,
+          6
+        ],
+        "independent_gravities": [
+          1.5793476189491422,
+          1.661965341403413
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg02_physics_lab__g01_moon__cfA_theta_minus_rep01__A0370000__B0008000__C0006000__r014__cam01__t03v5_upper_edge_can__f179",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.5793476189491422,
+        "cost": 3.0344088463098107,
+        "frames": 9,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 5,
+        "params": {
+          "t0": 0.0,
+          "speed": 0.3281362699083805,
+          "angle": -0.24144299204156341,
+          "azimuth": -0.19680600651765737
+        },
+        "sensitivity_px": 21.171116499917918
+      }
+    },
+    {
+      "id": "T03V5F480__bg01_home_ase__g01_moon__cfA_theta_star_rep03__A0550000__B0008000__C0006000__r014__cam03__t03v5_impulsed_book__f120",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.6670476805347778,
+        "cost": 39.52516174978657,
+        "objects": 2,
+        "frame_counts": [
+          11,
+          7
+        ],
+        "independent_gravities": [
+          1.6526738963957985,
+          2.398930924146779
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg01_home_ase__g01_moon__cfA_theta_star_rep03__A0550000__B0008000__C0006000__r014__cam03__t03v5_impulsed_book__f120",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.6526738963957985,
+        "cost": 4.085876116821932,
+        "frames": 11,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 5,
+        "params": {
+          "t0": 0.033333333333333215,
+          "speed": 0.250001711680834,
+          "angle": 0.8024210477242757,
+          "azimuth": 0.2228546449043357
+        },
+        "sensitivity_px": 44.28701937737284
+      }
+    },
+    {
+      "id": "T03V5F480__bg01_home_ase__g01_moon__global_A_05__A0596000__B0008000__C0006000__r014__cam03__t03v5_impulsed_book__f114",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.6052935034577551,
+        "cost": 24.820738814147496,
+        "objects": 2,
+        "frame_counts": [
+          7,
+          5
+        ],
+        "independent_gravities": [
+          1.5573354319123747,
+          1.8135985025416121
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg01_home_ase__g01_moon__global_A_05__A0596000__B0008000__C0006000__r014__cam03__t03v5_impulsed_book__f114",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.5573354319123747,
+        "cost": 1.1354360760771267,
+        "frames": 7,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 5,
+        "params": {
+          "t0": 0.03333333333333366,
+          "speed": 0.33433097664992684,
+          "angle": -0.759611830781593,
+          "azimuth": -0.08006014841888529
+        },
+        "sensitivity_px": 12.100683671230248
+      }
+    },
+    {
+      "id": "T03V5F480__bg02_physics_lab__g01_moon__cfC_theta_plus_rep03__A0550000__B0008000__C0085000__r014__cam01__t03v5_upper_edge_can__f133",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.5527552669242608,
+        "cost": 5.982366172871645,
+        "objects": 2,
+        "frame_counts": [
+          9,
+          6
+        ],
+        "independent_gravities": [
+          1.5703427608937617,
+          1.4532765846801976
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg02_physics_lab__g01_moon__cfC_theta_plus_rep03__A0550000__B0008000__C0085000__r014__cam01__t03v5_upper_edge_can__f133",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.5703427608937617,
+        "cost": 4.385893289610742,
+        "frames": 9,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 7,
+        "params": {
+          "t0": 0.0,
+          "speed": 0.39049634820130236,
+          "angle": -0.18776321778391072,
+          "azimuth": -0.29176119133267175
+        },
+        "sensitivity_px": 21.183023617654055
+      }
+    },
+    {
+      "id": "T08V4F480__bg03_neutral_studio__g01_moon__cf_B_impact_eccentricity_m_theta_star__rep01__s0p7315__e0p0160__m0p3800__cam02__t08_upper_payload_book__f46",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.538305483107739,
+        "cost": 129.1109281355317,
+        "objects": 2,
+        "frame_counts": [
+          22,
+          10
+        ],
+        "independent_gravities": [
+          1.540625044558408,
+          0.8446585177633337
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T08V4F480__bg03_neutral_studio__g01_moon__cf_B_impact_eccentricity_m_theta_star__rep01__s0p7315__e0p0160__m0p3800__cam02__t08_upper_payload_book__f46",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.540625044558408,
+        "cost": 16.763979590476897,
+        "frames": 22,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 5,
+        "params": {
+          "t0": 0.03333333333333344,
+          "speed": 0.9719541937851386,
+          "angle": 1.04226825113088,
+          "azimuth": 1.5754339155010448
+        },
+        "sensitivity_px": 49.05179887011009
+      }
+    },
+    {
+      "id": "T03V5F480__bg02_physics_lab__g01_moon__cfB_theta_star_rep02__A0550000__B0025000__C0006000__r014__cam01__t03v5_upper_edge_can__f131",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.611915938881121,
+        "cost": 4.6172217369326045,
+        "objects": 2,
+        "frame_counts": [
+          9,
+          6
+        ],
+        "independent_gravities": [
+          1.626813501141772,
+          1.526942684762158
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg02_physics_lab__g01_moon__cfB_theta_star_rep02__A0550000__B0025000__C0006000__r014__cam01__t03v5_upper_edge_can__f131",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.626813501141772,
+        "cost": 3.684605712040007,
+        "frames": 9,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 6,
+        "params": {
+          "t0": 8.881784197001252e-16,
+          "speed": 0.41058949322339355,
+          "angle": -0.4099234108856039,
+          "azimuth": -0.006173358209680427
+        },
+        "sensitivity_px": 19.23125888768192
+      }
+    },
+    {
+      "id": "T08V4F480__bg01_home_ase__g05_very_high__cf_C_mug_total_mass_kg_theta_star__rep02__s2p8154__e0p0180__m0p3800__cam01__t08_upper_payload_book__f42",
+      "prediction": {
+        "status": "ok",
+        "gravity": 23.474806457767926,
+        "cost": 6.904193430986943,
+        "objects": 2,
+        "frame_counts": [
+          5,
+          4
+        ],
+        "independent_gravities": [
+          23.09189237444621,
+          25.03223173969931
+        ]
+      },
+      "gravity_target": 24.0,
+      "baseline": {
+        "id": "T08V4F480__bg01_home_ase__g05_very_high__cf_C_mug_total_mass_kg_theta_star__rep02__s2p8154__e0p0180__m0p3800__cam01__t08_upper_payload_book__f42",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 23.09189237444621,
+        "cost": 3.0345914385557866,
+        "frames": 5,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 7,
+        "params": {
+          "t0": 0.03333333333333344,
+          "speed": 3.8262275841261166,
+          "angle": 1.4082968120907702,
+          "azimuth": -0.10856805067454954
+        },
+        "sensitivity_px": 57.11584405869668
+      }
+    },
+    {
+      "id": "T03V5F480__bg04_library_shelf__g01_moon__global_C_01__A0550000__B0008000__C0006000__r014__cam01__t03v5_impulsed_book__f121",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.5873204764610203,
+        "cost": 6.625907695512948,
+        "objects": 2,
+        "frame_counts": [
+          11,
+          9
+        ],
+        "independent_gravities": [
+          1.5780449746504641,
+          1.6050478807012722
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg04_library_shelf__g01_moon__global_C_01__A0550000__B0008000__C0006000__r014__cam01__t03v5_impulsed_book__f121",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.5780449746504641,
+        "cost": 4.373271910080427,
+        "frames": 11,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 7,
+        "params": {
+          "t0": 0.0,
+          "speed": 0.25414000506754564,
+          "angle": 0.4405687025533557,
+          "azimuth": 0.0018781471481454945
+        },
+        "sensitivity_px": 23.3404392417802
+      }
+    },
+    {
+      "id": "T03V5F480__bg02_physics_lab__g01_moon__global_C_05__A0550000__B0008000__C0100000__r014__cam01__t03v5_impulsed_book__f121",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.667569607570199,
+        "cost": 5.752029917098926,
+        "objects": 2,
+        "frame_counts": [
+          11,
+          4
+        ],
+        "independent_gravities": [
+          1.6647483330036235,
+          1.907575612393788
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg02_physics_lab__g01_moon__global_C_05__A0550000__B0008000__C0100000__r014__cam01__t03v5_impulsed_book__f121",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.6647483330036235,
+        "cost": 4.236381477438224,
+        "frames": 11,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 6,
+        "params": {
+          "t0": 0.0,
+          "speed": 0.2773468644155913,
+          "angle": 0.5574724596699333,
+          "azimuth": -0.030926797906971195
+        },
+        "sensitivity_px": 24.33352336582675
+      }
+    },
+    {
+      "id": "T03V5F480__bg04_library_shelf__g01_moon__cfB_theta_plus_rep03__A0550000__B0075000__C0006000__r014__cam03__t03v5_impulsed_book__f128",
+      "prediction": {
+        "status": "ok",
+        "gravity": 1.6900071353993023,
+        "cost": 44.07844398085101,
+        "objects": 2,
+        "frame_counts": [
+          10,
+          7
+        ],
+        "independent_gravities": [
+          1.6579774731504242,
+          2.0060932575006776
+        ]
+      },
+      "gravity_target": 1.62,
+      "baseline": {
+        "id": "T03V5F480__bg04_library_shelf__g01_moon__cfB_theta_plus_rep03__A0550000__B0075000__C0006000__r014__cam03__t03v5_impulsed_book__f128",
+        "scenario": "projectile",
+        "status": "ok",
+        "gravity": 1.6579774731504242,
+        "cost": 2.666471097574502,
+        "frames": 10,
+        "offset_mode": "centred",
+        "features": "box",
+        "hypothesis": 5,
+        "params": {
+          "t0": 0.033333333333333215,
+          "speed": 0.18716320210081383,
+          "angle": 0.2916305047191931,
+          "azimuth": 0.16559676781712773
+        },
+        "sensitivity_px": 30.251803759825766
+      }
+    }
+  ]
+}
