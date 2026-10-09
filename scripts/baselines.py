@@ -90,6 +90,15 @@ def methods_for(sample: dict, depths: dict[str, dict], true_centre_depth) -> dic
     extent_px = np.median(np.maximum(boxes[:3, 2] - boxes[:3, 0], boxes[:3, 3] - boxes[:3, 1]))
     out["pixel2d_size"] = a_px * size / extent_px if extent_px > 0 else None
     out["pixel2d_depth"] = a_px * centre0[2] / (0.5 * (K[0, 0] + K[1, 1]))
+    # Unknown velocity: free image-plane linear terms, scalar acceleration
+    # constrained to the projected declared gravity direction (no reference v0).
+    J = projection_jacobian(centre0, K) @ R
+    g_px = J @ np.asarray(sample["motion"]["gravity_dir"], dtype=float)
+    A = np.zeros((uv.size, 5))
+    A[0::2, 0], A[1::2, 1] = 1., 1.
+    A[0::2, 2], A[1::2, 3] = t, t
+    A[:, 4] = np.outer(.5*t*t, g_px).ravel()
+    out["pixel2d_agnostic"] = float(np.linalg.lstsq(A, uv.ravel(), rcond=None)[0][4])
     if "v0" in sample["motion"]:  # same information as GravTrace, 2D model: projection linearised at the declared position
         J = projection_jacobian(centre0, K) @ R  # pixels per metre of world displacement
         v_px, g_px = J @ np.asarray(sample["motion"]["v0"], dtype=float), J @ np.asarray(sample["motion"]["gravity_dir"], dtype=float)
@@ -105,6 +114,8 @@ def methods_for(sample: dict, depths: dict[str, dict], true_centre_depth) -> dic
         """g along the known gravity direction from the lifted track; `declared` fixes the track's initial velocity
         to the declared one (its position offset stays free, as tracks and declarations differ by a constant)."""
         ok = np.isfinite(depth) & (depth > 0)
+        if sample["window"].get("depth_require_all_frames", False) and not ok.all():
+            return None
         if ok.sum() < 3:
             return None
         rays = np.column_stack([(uv[ok, 0] - K[0, 2]) / K[0, 0], (uv[ok, 1] - K[1, 2]) / K[1, 1], np.ones(ok.sum())])
@@ -126,7 +137,16 @@ def methods_for(sample: dict, depths: dict[str, dict], true_centre_depth) -> dic
         if not rec.get("relative"):
             out[f"lift_{model}_raw"] = lift(d)
         first = d[np.isfinite(d) & (d > 0)]
-        out[f"lift_{model}_anchored"] = lift(d * z_surface0 / first[0]) if first.size else None
+        anchor_depth = first[0] if first.size else None
+        if sample["window"].get("depth_anchor_extrapolate", False):
+            finite = np.isfinite(d) & (d > 0)
+            if finite.sum() >= 3:
+                design = np.column_stack([np.ones(finite.sum()), t[finite], .5*t[finite]**2])
+                anchor_depth = float(np.linalg.lstsq(design, d[finite], rcond=None)[0][0])
+            else:
+                anchor_depth = None
+        valid_anchor = anchor_depth is not None and anchor_depth > 0
+        out[f"lift_{model}_anchored"] = lift(d * z_surface0 / anchor_depth) if valid_anchor else None
         if v_cam is not None and first.size:
             out[f"lift_{model}_anchored_v0"] = lift(d * z_surface0 / first[0], declared=True)
     return out
