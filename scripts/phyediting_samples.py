@@ -38,6 +38,61 @@ def geometry(obj: dict) -> tuple[np.ndarray, list[float]]:
     return pts, [m * (size[1] ** 2 + size[2] ** 2) / 12, m * (size[0] ** 2 + size[2] ** 2) / 12, m * (size[0] ** 2 + size[1] ** 2) / 12]
 
 
+def surface_points(obj: dict) -> np.ndarray:
+    """Points on the collision proxy (object frame): box corners, edge midpoints and face centres, or cylinder rims."""
+    pts, _ = geometry(obj)
+    if obj.get("collision_proxy") == "cylinder":
+        return pts
+    h = np.abs(pts).max(axis=0)
+    grid = np.array([[x, y, z] for x in (-1, 0, 1) for y in (-1, 0, 1) for z in (-1, 0, 1) if (x, y, z) != (0, 0, 0)])
+    return grid * h
+
+
+def occluded(cam_centre: np.ndarray, points: np.ndarray, boxes: list[tuple]) -> np.ndarray:
+    """For each world point, whether the segment from the camera to it passes through any of the oriented boxes
+    (centre, rotation, half-extents) before reaching it."""
+    hidden = np.zeros(len(points), dtype=bool)
+    d = points - cam_centre
+    for centre, rot, half in boxes:
+        o, dd = (cam_centre - centre) @ rot, d @ rot  # in the box frame
+        with np.errstate(divide="ignore", invalid="ignore"):
+            t1, t2 = (-half - o) / dd, (half - o) / dd
+        t_in = np.nanmax(np.minimum(t1, t2), axis=1)
+        t_out = np.nanmin(np.maximum(t1, t2), axis=1)
+        hidden |= (t_in < t_out) & (t_out > 0) & (t_in < 0.995)
+    return hidden
+
+
+def edge_visibility(header: dict, z, j: int, frames: np.ndarray, camera: Camera) -> list[list[bool]]:
+    """Per frame, whether the left/top/right/bottom edge of the target's image box is seen, i.e. some surface point that
+    attains it is not hidden behind another declared object (static fixtures or the other moving objects)."""
+    names = [str(n) for n in z["names"]]
+    target = next(o for o in header["objects"] if o["name"] == names[j])
+    surf = surface_points(target)
+    cam_centre = np.asarray(camera.world_to_cam, dtype=float)
+    cam_centre = -np.linalg.inv(cam_centre[:3, :3]) @ cam_centre[:3, 3]
+    out = []
+    for k in frames:
+        others = []
+        for i, o in enumerate(header["objects"]):
+            if i == j or names[i] != o["name"]:
+                continue
+            size = np.asarray(o.get("collision_proxy_size") or o.get("size") or [0, 0, 0], dtype=float)
+            if size.min() <= 0 or not np.isfinite(z["position"][k, i]).all():
+                continue
+            others.append((z["position"][k, i], quat_to_matrix(z["quaternion_xyzw"][k, i]), size / 2.0))
+        pts = z["position"][k, j] + surf @ quat_to_matrix(z["quaternion_xyzw"][k, j]).T
+        uv = camera.project(pts)
+        hidden = occluded(cam_centre, pts, others)
+        vis = []
+        for axis, sign in ((0, -1), (1, -1), (0, 1), (1, 1)):  # left, top, right, bottom
+            value = sign * uv[:, axis]
+            extreme = value >= np.nanmax(value) - 1.5
+            vis.append(bool((extreme & ~hidden).any()))
+        out.append(vis)
+    return out
+
+
 def make_sample(header: dict, z, win: dict, camera_id: str, obs: str, v0_mode: str) -> dict:
     names = [str(n) for n in z["names"]]
     j = names.index(win["object"])
@@ -80,6 +135,10 @@ def make_sample(header: dict, z, win: dict, camera_id: str, obs: str, v0_mode: s
         visible = np.isfinite(full).all(axis=1) & (area(boxes) >= 0.5 * area(full))  # at least half the box in view
         sample["boxes"] = {"frames": frames[visible].tolist(), "xyxy": boxes[visible].tolist()}
         sample["meta"]["visible_frames"] = int(visible.sum())
+    # which box edges the declared scene leaves visible in each frame of the window (occlusion by other objects)
+    frames_all = np.arange(s, s + n)
+    camera = Camera(cam["matrix_world"], cam["fx"], cam["fy"], (width, height))
+    sample["window"]["edges_visible"] = dict(zip(map(str, frames_all.tolist()), edge_visibility(header, z, j, frames_all, camera)))
     return sample
 
 
@@ -141,8 +200,8 @@ def main() -> None:
                 cache.clear()
                 cache[sid] = (json.loads((args.compact / f"{sid}.json").read_text()), np.load(args.compact / f"{sid}.npz"))
             header, z = cache[sid]
-            if args.camera not in header["camera"] or not header["camera"][args.camera]:
-                continue
+            if not header["camera"].get(args.camera) or not header["videos"].get(args.camera):
+                continue  # no recorded view or no video for this camera
             sample = make_sample(header, z, win, args.camera, args.obs, args.v0)
             job_id = f"{sid}__{args.camera}"
             if args.tracks:

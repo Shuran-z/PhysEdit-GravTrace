@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import contextlib
 import json
+import os
 import sys
 import tempfile
 from pathlib import Path
@@ -48,6 +49,8 @@ def main() -> None:
     ap.add_argument("--ckpt", required=True)
     ap.add_argument("--config", default="configs/sam2.1/sam2.1_hiera_s.yaml")
     ap.add_argument("--shard", default="0/1")
+    ap.add_argument("--claim-dir", help="shared directory: a worker claims a job by creating <dir>/<id> first, so any number "
+                                         "of workers can run the same job list without repeating work")
     args = ap.parse_args()
     sys.path.insert(0, args.sam2)
     import torch
@@ -65,6 +68,11 @@ def main() -> None:
         for job in jobs:
             if job["id"] in done:
                 continue
+            if args.claim_dir:
+                try:
+                    os.close(os.open(os.path.join(args.claim_dir, job["id"]), os.O_CREAT | os.O_EXCL))
+                except FileExistsError:
+                    continue
             with tempfile.TemporaryDirectory() as tmp:
                 first = int(job.get("prompt_frame", 0))
                 n, fps, size = read_frames(job["video"], first, int(job.get("last_frame", 10 ** 6)), Path(tmp))

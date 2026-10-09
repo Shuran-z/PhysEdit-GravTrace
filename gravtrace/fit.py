@@ -63,17 +63,19 @@ def fit_boxes(sample: dict, frames: np.ndarray, boxes: np.ndarray, times: np.nda
     if n < MIN_FRAMES:
         return {**out, "status": "no_track", "frames": int(len(frames))}
     t = times[keep] - times[keep][0] if times is not None else (frames - frames[0]) / float(sample["fps"])
-    problem = _Problem(sample, t[:n], boxes[:n])
+    declared = window.get("edges_visible") or {}  # per frame [left, top, right, bottom]: hidden edges drop out
+    seen = np.array([declared.get(str(int(f)), [True] * 4) for f in frames], dtype=bool).reshape(-1, 4)
+    problem = _Problem(sample, t[:n], boxes[:n], seen[:n])
     if problem.anchor is None:
         return {**out, "status": "few_frames", "frames": n}
     best = problem.solve()
     contact = problem.contact_frame(best)
     if contact is not None and MIN_FRAMES <= contact < n:  # the analytic model ends at first contact
         n = contact
-        problem = _Problem(sample, t[:n], boxes[:n])
+        problem = _Problem(sample, t[:n], boxes[:n], seen[:n])
         best = problem.solve() if problem.anchor is not None else best
     while n > MIN_FRAMES:  # contact with anything undeclared: the flight so far fails to predict the last frame
-        shorter = _Problem(sample, t[:n - 1], boxes[:n - 1])
+        shorter = _Problem(sample, t[:n - 1], boxes[:n - 1], seen[:n - 1])
         if shorter.anchor is None:
             break
         short_best = shorter.solve()
@@ -95,7 +97,7 @@ def _is_outlier(miss: float, errors: np.ndarray) -> bool:
 
 
 class _Problem:
-    def __init__(self, sample: dict, t: np.ndarray, boxes: np.ndarray) -> None:
+    def __init__(self, sample: dict, t: np.ndarray, boxes: np.ndarray, seen: np.ndarray | None = None) -> None:
         self.m, self.t, self.scenario = sample["motion"], t, sample["scenario"]
         obj = sample["object"]
         # without geometry (or when asked: a tumbling object) only the box centre is modelled
@@ -120,13 +122,18 @@ class _Problem:
         area = size.prod(axis=1)
         clipped = np.column_stack([boxes[:, 0] <= 1, boxes[:, 1] <= 1,
                                    boxes[:, 2] >= self.camera.width - 1, boxes[:, 3] >= self.camera.height - 1])
+        if seen is not None:  # an edge hidden behind another declared object is as unusable as one cut by the border
+            clipped |= ~seen
         if not self.use_size:  # centre only: a clipped edge displaces the centre on that axis
             clipped = np.tile(clipped[:, :2] | clipped[:, 2:], 2)
             boxes = np.tile(0.5 * (boxes[:, :2] + boxes[:, 2:]), 2)
         tiny = (size < 6).any(axis=1) | (area < 36)
         median = np.median(area[~tiny]) if (~tiny).any() else 1.0
         reliable = np.flatnonzero(~tiny & (area >= 0.35 * median))
-        self.anchor = int(reliable[0]) if reliable.size else None
+        # anchor: the reliable frame sharing the most usable edges with the others (the earliest one on a tie)
+        usable = ~clipped & ~tiny[:, None]
+        shared = [(usable & usable[a]).sum() for a in reliable]
+        self.anchor = int(reliable[int(np.argmax(shared))]) if reliable.size else None
         # per-edge weights: small boxes count less; an edge on the image border (here or in the anchor) not at all
         frame_weight = np.where(tiny, 0.0, np.sqrt(np.minimum(area / median, 1.0)))
         self.weight = frame_weight[:, None] * ~clipped

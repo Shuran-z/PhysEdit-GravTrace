@@ -14,6 +14,7 @@ import argparse
 import gzip
 import json
 import os
+import re
 import sys
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
@@ -34,28 +35,38 @@ def load_json(path: str) -> dict:
 
 
 def discover(root: Path) -> list[dict]:
-    """One job per trajectory: id, physics metadata, videos and where each camera's view is recorded."""
-    files: dict[str, str] = {}
+    """One job per trajectory: id, physics metadata, videos and where each camera's view is recorded.
+
+    Physics records live in `metadata/` directories (`<id>__cam01.json[.gz]`); a camera's view comes from
+    `configs/<id>__camNN.json`, `configs/<id>/camNN.json` or that camera's own metadata record."""
+    videos, metas, views = {}, {}, {}
+    pattern = re.compile(r"(.+)__(cam0[123])\.json(\.gz)?$")
     for dirpath, _, names in os.walk(root):
+        parent = os.path.basename(dirpath)
+        if os.path.basename(os.path.dirname(dirpath)) == "metadata":  # metadata/<id>/<id>__cam01.json.gz
+            parent = "metadata"
         for name in names:
-            files.setdefault(name, os.path.join(dirpath, name))
+            path = os.path.join(dirpath, name)
+            if name.endswith(".mp4"):
+                videos[name[:-4]] = path
+            elif (m := pattern.match(name)) and parent in ("metadata", "configs"):
+                sid, cam = m.group(1), m.group(2)
+                if parent == "metadata" and cam == "cam01":
+                    metas[sid] = path
+                if parent == "configs" or (sid, cam) not in views:
+                    views[(sid, cam)] = path
+            elif parent != "configs" and re.fullmatch(r"cam0[123]\.json", name) and os.path.basename(os.path.dirname(dirpath)) == "configs":
+                views[(parent, name[:5])] = path
     jobs = []
     for line in open(root / "metadata/trajectories.jsonl"):
         row = json.loads(line)
         jobs.append({"id": row["sample_id"], "source": "canonical", "meta": str(root / row["trajectory_metadata"]),
                      "videos": dict(row["videos"]), "views": {"cam01": None}})
-    for name, path in files.items():
-        if not name.endswith("__cam01.json.gz"):
-            continue
-        sid = name[: -len("__cam01.json.gz")]
+    for sid, path in metas.items():
         rel = Path(path).relative_to(root)
-        views = {}
-        for cam in CAMERAS:
-            config = Path(path).parents[2] / "configs" / sid / f"{cam}.json"  # formal archives with configs/<id>/camNN.json
-            views[cam] = files.get(f"{sid}__{cam}.json.gz") or files.get(f"{sid}__{cam}.json") or (str(config) if config.exists() else None)
         jobs.append({"id": sid, "source": "/".join(rel.parts[:2]), "meta": path,
-                     "videos": {c: os.path.relpath(files[f"{sid}__{c}.mp4"], root) for c in CAMERAS if f"{sid}__{c}.mp4" in files},
-                     "views": views})
+                     "videos": {c: os.path.relpath(videos[f"{sid}__{c}"], root) for c in CAMERAS if f"{sid}__{c}" in videos},
+                     "views": {c: views.get((sid, c)) for c in CAMERAS}})
     return jobs
 
 
