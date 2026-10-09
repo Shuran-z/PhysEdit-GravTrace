@@ -14,7 +14,7 @@ def evaluate(job):
     return {**meta,'joint':joint_fit(samples)}
 
 
-def main():
+def build_jobs():
     read=lambda p:list(map(json.loads,open(p)))
     audit=json.loads(Path('docs/phyediting/cross_window_coverage15.json').read_text())['records']
     eligible=[r for r in audit if r['selected'] and r['primary_cause']=='at_least_four']
@@ -40,6 +40,11 @@ def main():
         row=rows[it['id']];primary=_sample(row,it,primary_tracks[row['sample_id']],'agnostic',{})
         primary['offset_mode']='centred';primary['window']['contact_check']=False
         jobs.append(({'id':it['id'],'cohort':'selected_tail' if record['primary_tail_over10'] else 'hash_control'},[primary,sample]))
+    return jobs,items,baseline
+
+
+def main():
+    jobs,items,baseline=build_jobs()
     records=[]
     with ProcessPoolExecutor(max_workers=6) as pool,open('runs/cross_window_pilot15.jsonl','w') as f:
         for r in pool.map(evaluate,jobs):

@@ -157,3 +157,7 @@ Next: audit additional non-simultaneous free-flight windows of the same object, 
 对4条可用尾部加8条固定哈希对照完成配对开发试验：各窗口速度独立、g共享，不提供参考速度；12/12拟合返回ok。原均值5.804%、最大14.428%；联合均值8.217%、最大60.905%。尾部4条均值11.884%→19.694%；哈希对照8条均值2.764%→2.478%。这是依赖已知误差的诊断，不是总体或独立测试；有限方向假设及优化器仍沿用实验joint_fit，不保证全局收敛。cross_window_pilot15.json保留完整逐条。没有按结果回退、删除难例，也没有改变默认。
 
 3项相关测试通过，所有本地试验已退出，无GPU任务。跨窗口联合不能作为尾部修复，暂不扩大全量或重新跟踪。下一步检查联合60.9%案例的辅助窗口观测残差及声明初始姿态/自旋时刻一致性，先用相同时刻的投影真值框作诊断控制，区分新窗口模型误差与分割偏差；真值不得进入正式预测。之后才决定改模型或观测损失，保留失败方案和覆盖分母。
+
+## Cross-flight oracle control (2026-10-09)
+
+On the same previously selected 12-case pilot, projected boxes at identical times give joint maximum error 0.174108%, with all 12 ok. Independent-window maximum is 0.822801%. Declared initial position/rotation/angular velocity match compact states exactly. This diagnostic supports observation bias, not a formal improvement; no target gravity or reference velocity enters the fitter. Some windows retain up to two tiny/offscreen frames. See cross_window_diagnosis15.json. Default predictions remain unchanged; three relevant tests passed and local jobs ended.
