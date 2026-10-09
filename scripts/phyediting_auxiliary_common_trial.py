@@ -37,8 +37,11 @@ def main():
         done={r['id'] for r in records}
         records.extend({'id':i,'cohort':'no_auxiliary','auxiliary_admitted':False,'auxiliary_common_frames':0,'prediction':baseline[i]} for i in items if i not in done)
     for r in records:r.update(target=items[r['id']]['gravity'],baseline=baseline[r['id']])
+    if args.all_items:
+        for r in records:
+            if r['cohort']=='hash_control':r['cohort']='eligible_non_tail'
     summary={}
-    for cohort in ['all','selected_tail','hash_control']:
+    for cohort in (['all','selected_tail','eligible_non_tail'] if args.all_items else ['all','selected_tail','hash_control']):
         rs=[r for r in records if cohort=='all' or r['cohort']==cohort];summary[cohort]={}
         for method in ['baseline','prediction']:
             es=[abs(r[method]['gravity']/r['target']-1)*100 for r in rs if r[method]['status']=='ok']
