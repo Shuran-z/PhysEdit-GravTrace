@@ -149,3 +149,11 @@ All five single-image depth models match retained video/frame/box/intrinsics inp
 At 15fps, 191/1038 declared windows cannot contain four cadence frames, two additional windows lack tracked frames, and 845 contain at least four. All failures remain in the denominator. sampling_audit15.json retains event/gravity/camera/physics-group statistics. No interpolation, refitting or GPU job was used.
 
 Next: audit additional non-simultaneous free-flight windows of the same object, with independent velocities and shared gravity, providing identical added information to baselines. Freeze any rules before unseen physics-setting validation. Existing sufficient-frame tails still require observation improvements.
+
+## 跨窗口开发控制（2026-10-09）
+
+同一对象的非同时自由飞行窗口覆盖502/1038条，按真实15fps帧数最多、ID固定排序选择，未按g或误差选择窗口。191条采样容量不足中仅8条存在额外窗口；14条既有>10%尾部中仅4条有额外窗口。跨窗口声明位置、姿态、可见性仍来自仿真，不能声称video-only；新增信息应同步提供基线。覆盖及全部分组见cross_window_coverage15.json。
+
+对4条可用尾部加8条固定哈希对照完成配对开发试验：各窗口速度独立、g共享，不提供参考速度；12/12拟合返回ok。原均值5.804%、最大14.428%；联合均值8.217%、最大60.905%。尾部4条均值11.884%→19.694%；哈希对照8条均值2.764%→2.478%。这是依赖已知误差的诊断，不是总体或独立测试；有限方向假设及优化器仍沿用实验joint_fit，不保证全局收敛。cross_window_pilot15.json保留完整逐条。没有按结果回退、删除难例，也没有改变默认。
+
+3项相关测试通过，所有本地试验已退出，无GPU任务。跨窗口联合不能作为尾部修复，暂不扩大全量或重新跟踪。下一步检查联合60.9%案例的辅助窗口观测残差及声明初始姿态/自旋时刻一致性，先用相同时刻的投影真值框作诊断控制，区分新窗口模型误差与分割偏差；真值不得进入正式预测。之后才决定改模型或观测损失，保留失败方案和覆盖分母。
