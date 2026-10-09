@@ -113,6 +113,10 @@ Error tracks `sensitivity_px`: 17.9 % mean below 3 px (n = 12), 8.9 % at 3–10 
   whose meshes were unavailable).
 - WorldBench is not covered yet: its object meshes and initial poses are not available.
 
+## License
+
+MIT, see [LICENSE](LICENSE).
+
 ## Converting the earlier manifests
 
 `scripts/convert_v22.py` turns a GravTrace v22 manifest (PISA, NewtonBench and the self-rendered
