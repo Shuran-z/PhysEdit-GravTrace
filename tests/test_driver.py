@@ -2,6 +2,7 @@
 readable from home, so its videos are copied), a runner that crashes once, and evaluation stages that log to a file."""
 import json
 import os
+import shutil
 import sys
 import time
 
@@ -72,6 +73,7 @@ def fleet_setup(tmp_path, monkeypatch):
     return tmp_path
 
 
+@pytest.mark.skipif(shutil.which("setsid") is None, reason="the fleet runs Linux hosts (setsid); not on this system")
 def test_generate_copy_publish_evaluate(fleet_setup, monkeypatch):
     tmp = fleet_setup
     d = driver.Driver("t", ["m1", "m2"], log=lambda *a: None)

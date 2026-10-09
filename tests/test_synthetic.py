@@ -85,3 +85,34 @@ def test_fit_path_never_reads_truth():
     for name in ("fit.py", "motion.py", "observe.py", "camera.py"):
         text = (root / name).read_text(encoding="utf-8")
         assert '"truth"' not in text and "'truth'" not in text
+
+
+def test_spinning_flat_box_with_declared_damping():
+    """A thin tumbling plate changes its image box a lot; the declared spin, inertia and damping carry it exactly."""
+    from gravtrace.camera import quat_to_matrix
+    from gravtrace.motion import torque_free
+    g, mass, damping, drag = 1.62, 0.38, 0.018, 0.002
+    plate = np.array([[x, y, z] for x in (-0.105, 0.105) for y in (-0.074, 0.074) for z in (-0.007, 0.007)])
+    extent = plate.max(axis=0) - plate.min(axis=0)
+    inertia = mass / 12 * np.array([extent[1] ** 2 + extent[2] ** 2, extent[0] ** 2 + extent[2] ** 2, extent[0] ** 2 + extent[1] ** 2])
+    v0, omega = np.array([0.6, 0.0, 0.4]), np.array([0.5, 3.0, 0.2])
+    tau = FRAMES / FPS
+    rot = torque_free(tau, quat_to_matrix(None), omega, inertia, damping=damping)
+    pts = ballistic(tau, X0, v0, g, [0.0, 0.0, -1.0], drag / mass)[:, None, :] + np.einsum("kij,cj->kci", rot, plate)
+    uv = Camera(CAMERA["matrix_world"], CAMERA["fx"], CAMERA["fy"], IMAGE).project(pts)
+    boxes = np.hstack([uv.min(axis=1), uv.max(axis=1)])
+    s = sample("projectile", {"t0": [0.0, 0.0], "v0": v0.tolist()}, 10)
+    s["object"].update(corners=plate.tolist(), angular_velocity=omega.tolist(), mass=mass, inertia=inertia.tolist(),
+                       angular_damping=damping, linear_damping=drag)
+    fit = fit_boxes(s, FRAMES, boxes)
+    error = abs(fit["gravity"] / g - 1)
+    assert fit["status"] == "ok" and error < 0.002
+    s["object"].pop("angular_velocity")  # the same track read as a non-rotating box is clearly worse
+    assert abs(fit_boxes(s, FRAMES, boxes)["gravity"] / g - 1) > 5 * error
+
+
+def test_lookat_camera_projects_the_target_to_the_image_centre():
+    from gravtrace.camera import lookat_camera
+    cam = lookat_camera([3.55, 0.95, 1.56], [3.55, 2.25, 1.16], 44.0, (1280, 720))
+    uv = Camera(cam["matrix_world"], cam["fx"], cam["fy"], (1280, 720)).project(np.array([[3.55, 2.25, 1.16]]))
+    assert np.allclose(uv, [[640, 360]], atol=1e-6)

@@ -27,6 +27,20 @@ class Camera:
         return uv
 
 
+def lookat_camera(position, look_at, fov_deg: float, image_size, up=(0.0, 0.0, 1.0)) -> dict:
+    """`matrix_world`, `fx`, `fy` of a camera at `position` looking at `look_at` with vertical field of view
+    `fov_deg` (the Genesis convention, as in PhyEditing)."""
+    pos = np.asarray(position, dtype=float)
+    forward = np.asarray(look_at, dtype=float) - pos
+    forward /= np.linalg.norm(forward)
+    right = np.cross(forward, up)
+    right /= np.linalg.norm(right)
+    matrix = np.eye(4)
+    matrix[:3, 0], matrix[:3, 1], matrix[:3, 2], matrix[:3, 3] = right, np.cross(right, forward), -forward, pos
+    fy = 0.5 / np.tan(np.radians(fov_deg) / 2.0)
+    return {"matrix_world": matrix.tolist(), "fx": fy * image_size[1] / image_size[0], "fy": fy}
+
+
 def quat_to_matrix(q) -> np.ndarray:
     """Rotation matrix of an xyzw quaternion (identity for None)."""
     if q is None:

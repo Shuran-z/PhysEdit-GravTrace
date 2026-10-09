@@ -17,7 +17,7 @@ import numpy as np
 from scipy.optimize import least_squares
 
 from .camera import Camera, quat_to_matrix
-from .motion import ballistic, incline
+from .motion import ballistic, incline, torque_free
 from .observe import load_boxes
 
 G_RANGE = (0.1, 80.0)
@@ -36,6 +36,14 @@ def fit_sample(sample: dict) -> dict:
     masks = sample["masks"]
     frames, boxes = load_boxes(masks["dir"], masks["pattern"], masks.get("label"))
     return fit_boxes(sample, frames, boxes)
+
+
+def safe_fit(sample: dict) -> dict:
+    """`fit_sample` that reports an exception as an `error` status (importable, so spawned workers can use it)."""
+    try:
+        return fit_sample(sample)
+    except Exception as exc:  # one bad sample must not stop a benchmark run
+        return {"id": sample["id"], "status": "error", "error": f"{type(exc).__name__}: {exc}"}
 
 
 def fit_boxes(sample: dict, frames: np.ndarray, boxes: np.ndarray, times: np.ndarray | None = None) -> dict:
@@ -90,9 +98,19 @@ class _Problem:
     def __init__(self, sample: dict, t: np.ndarray, boxes: np.ndarray) -> None:
         self.m, self.t, self.scenario = sample["motion"], t, sample["scenario"]
         obj = sample["object"]
-        self.use_size = obj.get("corners") is not None  # without geometry only the box centre is modelled
+        # without geometry (or when asked: a tumbling object) only the box centre is modelled
+        self.use_size = obj.get("corners") is not None and sample.get("features", "box") != "centre"
         corners = np.asarray(obj["corners"], dtype=float) if self.use_size else np.zeros((1, 3))
-        self.corners = corners @ quat_to_matrix(obj.get("quaternion")).T
+        self.rotation0 = quat_to_matrix(obj.get("quaternion"))
+        self.corners = corners @ self.rotation0.T
+        # a declared spin turns the corners by torque-free rotation (box inertia unless given); it does not depend on g
+        self.body_corners, self.omega = corners, obj.get("angular_velocity") if self.use_size else None
+        extent = corners.max(axis=0) - corners.min(axis=0)
+        self.inertia = obj.get("inertia") or [extent[1] ** 2 + extent[2] ** 2, extent[0] ** 2 + extent[2] ** 2,
+                                              extent[0] ** 2 + extent[1] ** 2]
+        self.spin_damping = float(obj.get("angular_damping", 0.0)) if obj.get("inertia") else 0.0  # N m s, needs inertia
+        self.drag = float(obj.get("linear_damping", 0.0)) / float(obj["mass"]) if obj.get("mass") else 0.0  # 1/s
+        self._spin_cache: dict = {}
         self.x0 = np.asarray(obj["position"], dtype=float)
         self.g_dir = np.asarray(self.m.get("gravity_dir", [0.0, 0.0, -1.0]), dtype=float)
         self.g_dir /= np.linalg.norm(self.g_dir)
@@ -136,7 +154,7 @@ class _Problem:
             return hyps
         if "v0" in m or self.scenario == "freefall":
             v0 = np.asarray(m.get("v0", [0.0, 0.0, 0.0]), dtype=float)
-            return [dict(names=[], bounds=[], t0=t0, centres=lambda tau, g, e: ballistic(tau, self.x0, v0, g, self.g_dir))]
+            return [dict(names=[], bounds=[], t0=t0, centres=lambda tau, g, e: ballistic(tau, self.x0, v0, g, self.g_dir, self.drag))]
 
         # unknown launch: speed and elevation within the declared ranges, azimuth free (seeded by any declared directions)
         e1 = np.eye(3)[0] if abs(up[0]) < 0.9 else np.eye(3)[1]
@@ -145,7 +163,7 @@ class _Problem:
 
         def launch(tau, g, e):
             d = np.cos(e[2]) * e1 + np.sin(e[2]) * e2
-            return ballistic(tau, self.x0, e[0] * (np.cos(e[1]) * d + np.sin(e[1]) * up), g, self.g_dir)
+            return ballistic(tau, self.x0, e[0] * (np.cos(e[1]) * d + np.sin(e[1]) * up), g, self.g_dir, self.drag)
         seeds = [np.arctan2(np.dot(d, e2), np.dot(d, e1)) for d in m.get("directions", [])]
         angle = np.radians(m["angle_deg"])
         return [dict(names=["speed", "angle", "azimuth"], bounds=[m["speed"], angle, [phi - np.pi, phi + np.pi]], t0=t0,
@@ -154,9 +172,19 @@ class _Problem:
     def predict(self, h: dict, x: np.ndarray) -> np.ndarray:
         """Image box [x0, y0, x1, y1] spanned by the projected corners in each frame."""
         g, t0, extras = np.exp(x[0]), x[1], x[2:]
-        centres = h["centres"](np.maximum(self.t + t0, 0.0), g, extras)  # held in the initial state until release
-        uv = self.camera.project(centres[:, None, :] + self.corners[None])
+        tau = np.maximum(self.t + t0, 0.0)  # held in the initial state until release
+        uv = self.camera.project(self.points(tau, h["centres"](tau, g, extras)))
         return np.hstack([uv.min(axis=1), uv.max(axis=1)])
+
+    def points(self, tau: np.ndarray, centres: np.ndarray) -> np.ndarray:
+        """World corners (frames, corners, 3) at times tau given the centre trajectory."""
+        if self.omega is None:
+            return centres[:, None, :] + self.corners[None]
+        key = tuple(np.round(tau, 9))
+        if key not in self._spin_cache:
+            rot = torque_free(tau, self.rotation0, self.omega, self.inertia, damping=self.spin_damping)
+            self._spin_cache[key] = np.einsum("kij,cj->kci", rot, self.body_corners)
+        return centres[:, None, :] + self._spin_cache[key]
 
     def residual(self, h: dict, x: np.ndarray) -> np.ndarray:
         """Edge displacements since the anchor frame, predicted minus observed (px, weighted)."""
@@ -194,8 +222,8 @@ class _Problem:
         if ground is None:
             return None
         g, t0 = np.exp(best["x"][0]), best["x"][1]
-        centres = best["h"]["centres"](np.maximum(self.t + t0, 0.0), g, best["x"][2:])
-        z = (centres[:, None, :] + self.corners[None])[..., 2].min(axis=1)
+        tau = np.maximum(self.t + t0, 0.0)
+        z = self.points(tau, best["h"]["centres"](tau, g, best["x"][2:]))[..., 2].min(axis=1)
         below = np.flatnonzero((z < ground) & (np.arange(len(z)) > 0))
         return int(below[0]) if below.size and z[0] >= ground else None
 

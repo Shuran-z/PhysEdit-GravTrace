@@ -12,7 +12,7 @@ import json
 from multiprocessing import Pool
 
 from . import score
-from .fit import fit_sample
+from .fit import safe_fit
 
 
 def load(path: str, root: str | None = None) -> list[dict]:
@@ -22,13 +22,6 @@ def load(path: str, root: str | None = None) -> list[dict]:
         for s in samples:
             s["masks"]["dir"] = s["masks"]["dir"].replace(old, new, 1)
     return samples
-
-
-def safe_fit(sample: dict) -> dict:
-    try:
-        return fit_sample(sample)
-    except Exception as exc:  # one bad sample must not stop a benchmark run
-        return {"id": sample["id"], "status": "error", "error": f"{type(exc).__name__}: {exc}"}
 
 
 def main() -> None:
