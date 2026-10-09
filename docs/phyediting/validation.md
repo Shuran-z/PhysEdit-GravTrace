@@ -141,3 +141,11 @@ scripts/phyediting_identifiability.py读取15fps已完成的contact-off centred�
 502条重推理完成，h100-1进程退出，GPU0已释放。与534条完全同输入缓存合并，核验1036唯一ID、模型名、完整有序帧号及深度长度；不按深度质量或目标误差决定复用。共同帧未知速度有界基线：981/1038成功（94.51%），54条边界、1条缺有效深度、2条无共同帧；成功均值46.881%、最大576.514%。旧缓存有界均值42.860%仅作为历史结果保留。完整事件/重力/相机/物理组统计vggt_common_result.json；并未改动我们的估计，也不能证明全局最优。
 
 下一步：审计单帧深度输入及窗口协议剩余差异，冻结声明几何/速度边界/实际帧协议，再检验尚未调优物理设置；未知速度低帧率尾部仍需独立观测改进。不要重跑已完成VGGT任务。网络维护团队旧标识无效，新列表未找到同名任务，GPU现已释放，通知仍未声称送达。
+
+## Observation capacity audit (2026-10-09)
+
+All five single-image depth models match retained video/frame/box/intrinsics inputs on 1036/1036 records. Extra cached frames are independently inferred; numerical validity is still checked by the fitter. See single_depth_input_audit.json. VGGT alignment is already complete; representation and loss-unit differences remain.
+
+At 15fps, 191/1038 declared windows cannot contain four cadence frames, two additional windows lack tracked frames, and 845 contain at least four. All failures remain in the denominator. sampling_audit15.json retains event/gravity/camera/physics-group statistics. No interpolation, refitting or GPU job was used.
+
+Next: audit additional non-simultaneous free-flight windows of the same object, with independent velocities and shared gravity, providing identical added information to baselines. Freeze any rules before unseen physics-setting validation. Existing sufficient-frame tails still require observation improvements.
