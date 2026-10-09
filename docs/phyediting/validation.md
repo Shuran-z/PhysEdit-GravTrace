@@ -161,3 +161,7 @@ Next: audit additional non-simultaneous free-flight windows of the same object, 
 ## Cross-flight oracle control (2026-10-09)
 
 On the same previously selected 12-case pilot, projected boxes at identical times give joint maximum error 0.174108%, with all 12 ok. Independent-window maximum is 0.822801%. Declared initial position/rotation/angular velocity match compact states exactly. This diagnostic supports observation bias, not a formal improvement; no target gravity or reference velocity enters the fitter. Some windows retain up to two tiny/offscreen frames. See cross_window_diagnosis15.json. Default predictions remain unchanged; three relevant tests passed and local jobs ended.
+
+## Auxiliary observation control (2026-10-09)
+
+On the existing 12 selected development pairs, video-box quadratic smoothness does not reliably identify gravity bias: one auxiliary error is 21.68% with only 0.454px maximum smoothness RMS; another error is 0.023% with 5.245px RMS. Two T03 auxiliary errors exceed 180% without offscreen or declared hidden edges. A fixed independent-physics-residual RMS scale, floored at 1px, keeps every observation but gives 7.563% mean / 51.052% maximum, worse than original single-window 5.804% / 14.428%. All 12 return ok. These scales are not calibrated uncertainties. Default unchanged; see cross_window_edges15.json and cross_window_weighted15.json.

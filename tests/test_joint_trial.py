@@ -1,3 +1,4 @@
+import pytest
 import numpy as np
 from scripts.phyediting_joint_coverage import observed_frames
 from scripts.phyediting_joint_trial import joint_fit
@@ -9,7 +10,8 @@ def test_auxiliary_subsampling_uses_actual_condition_grid():
     assert [f for f,b in observed_frames(tr,24,27)]==[25,27]
 
 
-def test_joint_recovers_shared_gravity_with_independent_velocities():
+@pytest.mark.parametrize("noise_weighted",[False,True])
+def test_joint_recovers_shared_gravity_with_independent_velocities(noise_weighted):
     samples=[]
     for velocity in [[1.,0.,.6],[-.4,.1,.3]]:
         s=sample('projectile',{'t0':[0.,0.],'speed':[0.,8.],'angle_deg':[-89.,89.]},8)
@@ -18,6 +20,6 @@ def test_joint_recovers_shared_gravity_with_independent_velocities():
                     'xyxy':render(ballistic(FRAMES[:8]/FPS,X0,np.array(velocity),3.71,np.array([0.,0.,-1.]))).tolist()}
         s['truth']={'gravity':70.}
         samples.append(s)
-    fit=joint_fit(samples)
+    fit=joint_fit(samples,noise_weighted=noise_weighted)
     assert fit['status']=='ok' and abs(fit['gravity']/3.71-1)<.06
     assert fit['objects']==2

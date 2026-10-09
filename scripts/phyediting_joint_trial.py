@@ -12,7 +12,7 @@ from gravtrace.fit import _Problem, G_RANGE, G_SEEDS, LOSS_SCALE_PX
 from scripts.phyediting_gen import _read_tracks, _sample
 
 
-def joint_fit(samples):
+def joint_fit(samples, noise_weighted=False):
     problems=[];solutions=[]
     for sample in samples:
         boxes=sample['boxes'];n=min(len(boxes['frames']),sample['window']['max_frames'])
@@ -23,6 +23,7 @@ def joint_fit(samples):
                          np.array([seen.get(str(f),[True]*4) for f in boxes['frames'][:n]]))
         if problem.anchor is None:return {'status':'few_frames'}
         problems.append(problem);solutions.append(problem.solve())
+    noise_scales=[max(LOSS_SCALE_PX,float(np.sqrt(np.mean(p.residual(s["h"],s["x"])**2)))) if noise_weighted else 1. for p,s in zip(problems,solutions)]
     lower=[np.log(G_RANGE[0])];upper=[np.log(G_RANGE[1])];initial=[solutions[0]['x'][0]];slices=[]
     for solution in solutions:
         h=solution['h'];bounds=[h['t0']]+h['bounds'];start=len(initial)
@@ -30,7 +31,7 @@ def joint_fit(samples):
         slices.append(slice(start,len(initial)))
     lower,upper,initial=map(np.asarray,(lower,upper,initial));free=np.flatnonzero(upper-lower>1e-12)
     def residual(x):
-        return np.concatenate([p.residual(s['h'],np.r_[x[0],x[sl]]) for p,s,sl in zip(problems,solutions,slices)])
+        return np.concatenate([p.residual(s['h'],np.r_[x[0],x[sl]])/scale for p,s,sl,scale in zip(problems,solutions,slices,noise_scales)])
     best=None
     for gravity in G_SEEDS+(float(np.exp(initial[0])),):
         seed=initial.copy();seed[0]=np.log(gravity)
@@ -42,7 +43,7 @@ def joint_fit(samples):
     gravity=float(np.exp(best[1][0]))
     return {'status':'ok' if G_RANGE[0]*1.01<gravity<G_RANGE[1]*.99 else 'at_bound','gravity':gravity,
             'cost':float(best[0]),'objects':len(samples),'frame_counts':[len(p.t) for p in problems],
-            'independent_gravities':[float(np.exp(s['x'][0])) for s in solutions]}
+            'independent_gravities':[float(np.exp(s['x'][0])) for s in solutions],'noise_scales_px':noise_scales,'noise_weighted':noise_weighted}
 
 
 def evaluate(job):
