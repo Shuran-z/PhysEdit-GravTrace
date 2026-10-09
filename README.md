@@ -4,8 +4,8 @@ GravTrace measures the gravity a video shows. Given a single-view video of an ob
 is thrown, or slides down a ramp, together with what is known about the scene before the motion
 starts (camera, the object's shape and initial pose, the direction of gravity, any declared
 initial velocity), it recovers the gravitational acceleration g, in m/s², that best explains the
-object's image motion. It is the inversion metric of UniversalPhysicsEval: a physically faithful
-video should imply the gravity it was asked to show.
+object's image motion. It is the gravity-inversion metric of the PhysEdit benchmark: a physically
+faithful video should imply the gravity it was asked to show.
 
 ## How it works
 
