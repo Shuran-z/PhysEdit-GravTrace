@@ -25,6 +25,37 @@ import cv2
 import numpy as np
 
 
+def logit_box(logits: np.ndarray, mode: str = "pixel") -> list | None:
+    """Box of the positive logit region in pixel-edge coordinates.
+
+    The subpixel variant interpolates the zero crossing of each axis envelope.
+    Pixel centres are at i + .5; clipped image edges stay exactly 0 / size.
+    It adds no observations and uses no reference geometry or gravity.
+    """
+    if mode not in ("pixel", "subpixel"):
+        raise ValueError("box mode must be pixel or subpixel")
+    logits = np.asarray(logits, dtype=float)
+    if logits.ndim != 2 or not logits.size:
+        raise ValueError("logits must be a nonempty 2D array")
+    logits = np.where(np.isfinite(logits), logits, -1e6)
+    ys, xs = np.nonzero(logits > 0)
+    if not xs.size:
+        return None
+    if mode == "pixel":
+        return [int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1]
+
+    def bounds(profile):
+        positive = np.flatnonzero(profile > 0)
+        lo, hi = int(positive[0]), int(positive[-1])
+        left = 0.0 if lo == 0 else lo - .5 + (-profile[lo - 1]) / (profile[lo] - profile[lo - 1])
+        right = float(len(profile)) if hi == len(profile) - 1 else hi + .5 + profile[hi] / (profile[hi] - profile[hi + 1])
+        return float(left), float(right)
+
+    x0, x1 = bounds(logits.max(axis=0))
+    y0, y1 = bounds(logits.max(axis=1))
+    return [x0, y0, x1, y1]
+
+
 def read_frames(path: str, first: int, last: int, folder: Path) -> tuple[int, float, tuple[int, int]]:
     cap = cv2.VideoCapture(path)
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -50,6 +81,8 @@ def main() -> None:
     ap.add_argument("--config", default="configs/sam2.1/sam2.1_hiera_s.yaml")
     ap.add_argument("--shard", default="0/1")
     ap.add_argument("--prompt", default="box", choices=["box", "box_point"])
+    ap.add_argument("--box-mode", default="pixel", choices=["pixel", "subpixel", "both"],
+                    help="both writes pixel tracks and tracks_subpixel from the same logits; use a separate output file")
     ap.add_argument("--claim-dir", help="shared directory: a worker claims a job by creating <dir>/<id> first, so any number "
                                          "of workers can run the same job list without repeating work")
     args = ap.parse_args()
@@ -61,7 +94,11 @@ def main() -> None:
     jobs = [json.loads(line) for i, line in enumerate(open(args.jobs)) if i % count == index]
     done = set()
     if Path(args.out).exists():
-        done = {json.loads(line)["id"] for line in open(args.out)}
+        for line in open(args.out):
+            rec = json.loads(line)
+            if rec.get("box_mode", "pixel") != args.box_mode:
+                raise ValueError("output contains a different box mode; use a separate output file")
+            done.add(rec["id"])
     device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
     predictor = build_sam2_video_predictor(args.config, args.ckpt, device=device)
     autocast = torch.autocast("cuda", dtype=torch.bfloat16) if device == "cuda" else contextlib.nullcontext()
@@ -78,6 +115,7 @@ def main() -> None:
                 first = int(job.get("prompt_frame", 0))
                 n, fps, size = read_frames(job["video"], first, int(job.get("last_frame", 10 ** 6)), Path(tmp))
                 tracks = {name: {"frames": [], "xyxy": []} for name in job["objects"]}
+                subpixel_tracks = {name: {"frames": [], "xyxy": []} for name in job["objects"]}
                 if n:
                     state = predictor.init_state(video_path=tmp, offload_video_to_cpu=True)
                     names = list(job["objects"])
@@ -89,15 +127,21 @@ def main() -> None:
                                          labels=np.array([1], dtype=np.int32))
                         predictor.add_new_points_or_box(state, frame_idx=0, obj_id=k + 1, box=box, **extra)
                     for f, ids, logits in predictor.propagate_in_video(state):
-                        masks = (logits[:, 0] > 0).cpu().numpy()
-                        for oid, mask in zip(ids, masks):
-                            ys, xs = np.nonzero(mask)
-                            if xs.size:
+                        maps = logits[:, 0].float().cpu().numpy()
+                        for oid, logit_map in zip(ids, maps):
+                            box = logit_box(logit_map, "pixel" if args.box_mode == "both" else args.box_mode)
+                            if box is not None:
                                 t = tracks[names[oid - 1]]
                                 t["frames"].append(first + int(f))
-                                t["xyxy"].append([int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1])
+                                t["xyxy"].append(box)
+                                if args.box_mode == "both":
+                                    sub = subpixel_tracks[names[oid - 1]]
+                                    sub["frames"].append(first + int(f))
+                                    sub["xyxy"].append(logit_box(logit_map, "subpixel"))
                     predictor.reset_state(state)
-            out.write(json.dumps({"id": job["id"], "fps": fps, "image_size": list(size), "tracks": tracks}) + "\n")
+            out.write(json.dumps({"id": job["id"], "fps": fps, "image_size": list(size),
+                                  "box_mode": args.box_mode, "tracks": tracks,
+                                  **({"tracks_subpixel": subpixel_tracks} if args.box_mode == "both" else {})}) + "\n")
             out.flush()
 
 

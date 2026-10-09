@@ -305,3 +305,15 @@ MIT, see [LICENSE](LICENSE).
 `scripts/convert_v22.py` turns a GravTrace v22 manifest (PISA, NewtonBench and the self-rendered
 scenes) into this format, resolving the target from the declared segmentation label and reading
 object geometry from Google Scanned Objects or the primitive's dimensions.
+
+### Experimental subpixel SAM2 boxes
+
+`python scripts/track_sam2.py --help` exposes `--box-mode pixel|subpixel|both`.
+The default remains `pixel`. `both` extracts integer boxes and interpolated zero-crossing
+boxes from the **same logits**, saving `tracks` and `tracks_subpixel` for paired analysis.
+A ten-video development pilot (five error-selected cases, five fixed-hash controls)
+did not meet the unknown-velocity tail target: subpixel maxima were 20.49% at 30 fps
+and 21.93% at 15 fps, with coverage 10/10 and 8/10 respectively.
+This is diagnostic evidence, not a benchmark-wide improvement or held-out result.
+See [paired results](docs/phyediting/subpixel_pilot.json) and
+[work status](docs/phyediting/WORK_STATUS.md).
