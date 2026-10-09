@@ -1,43 +1,89 @@
-# One-command generation and evaluation (design draft)
+# physedit: generating and evaluating models with one command
 
-Goal: generate and evaluate any set of video models on a PhysEdit benchmark with one command,
+`physedit` runs any set of registered video models on a PhysEdit benchmark, from manifests to the results table:
 
 ```bash
-python -m physedit run --benchmark public211 --models ltx_i2v,cosmos3_nano   # or --models all
-python -m physedit status --benchmark public211                              # per model and stage, with ETA
+python3 -m physedit models                                              # the registered models and where they run
+python3 -m physedit status public211 --models all                       # progress, ETAs, evaluation stages
+python3 -m physedit run public211 --models ltx_i2v,cosmos3_nano         # one pass: start whatever can start
+python3 -m physedit run public211 --models all --watch 10               # repeat every 10 min until all is done
+python3 -m physedit run public211 --models ltx_i2v --limit 4            # trial: 4 rows per run, own namespace
+python3 -m physedit run public211 --models all --dry-run                # print the plan, change nothing
 ```
 
-replacing the per-group launch scripts used so far (hupanwen launch/scheduler scripts, wangzijun
-`run_gpu_job.sh`, A800 `run_node.sh`, the hupanwen evaluation orchestrator, and the WSL sync and judge
-daemons). The `gravtrace` package stays a standalone metric library; `physedit` is the driver.
+Run it on the hub, the WSL environment of the workstation: it is the only machine that reaches every host
+(hupanwen and wangzijun directly, the NSCC Starlight pods through the proxy in `~/.ssh/a800_fleet.conf`). It needs
+only the Python 3 standard library there. For a long run, detach it:
+`setsid nohup python3 -m physedit run public211 --models all --watch 10 > ~/.physedit/public211.log 2>&1 &`.
 
-## Pieces
+## What a pass does
 
-| piece | content |
-|---|---|
-| benchmark | samples, prompts (coarse / fine), conditioning frames, ground truth. **Data layout follows the PhysEditing dataset on the Hub (`phyeditingvideo/Phyediting`)**; an adapter turns it into canonical rows. |
-| model registry | per model: runner (diffusers, official repo, LoRA), parameters (steps, guidance, frames, fps, size), GPUs needed (H3: 2), conditioning mode (i2v frame, v2v prefix), weights and environment per host |
-| host registry | per host: how to reach it (ssh alias, through WSL for the NSCC proxy), GPUs and which ones may be used, scratch and data roots, Python environments |
-| runs | `x5` (V/P conditioning, aligned with self100) and `x1` (first-visible-frame conditioning for inversion) |
-| stages | `manifests -> generate -> sync -> vp (SAM2, 1-s metrics, judge clips) -> judge (Qwen-VL) -> inversion (SAM2 masks + gravtrace) -> table` |
+Each pass reads the state of every host, then acts on it; nothing is kept on the hub except a lock file, so a pass
+can be repeated at any time, and a run interrupted anywhere (a reboot, a recreated pod, a dropped connection)
+continues from what is on disk.
 
-## Behaviour
+1. **Survey.** Every host reports its GPUs' memory use and the physedit jobs it runs (each job's process carries its
+   name); every site reports its run directories: manifest size, finished videos, worker start and end events.
+2. **Prepare.** A model run that has not started is placed on the candidate site with the most free GPUs. The
+   runners are deployed to `<site root>/tools`, the benchmark inputs (condition frames, prompts) are copied there once,
+   and `build.py` writes the model's manifests from the benchmark's template rows: same sources, condition frames,
+   prompts and seeds for every model; the model sets frame count, frame rate, canvas and output paths.
+3. **Generate.** Every unfinished run keeps up to two workers on free GPUs: one walks the manifest forwards, one
+   backwards, and every runner skips rows whose video exists, so they meet in the middle without coordination. A GPU
+   is free when it holds less than the host's `busy_mib` and runs none of our jobs. A worker that dies is restarted
+   on the next pass; one started three times within three hours is left alone and reported.
+4. **Copy home.** Videos made on a site the home host cannot read (NSCC) are copied to it as parallel tar streams
+   through the hub. wangzijun's root is on the NFS share that hupanwen mounts, so its videos are read in place.
+5. **Evaluate.** A finished run is published where the benchmark's evaluation scripts read it, and every stage whose
+   input is ready starts: for public-211, V/P (segmentation, 1-s metrics, judge clips) after x5, the Qwen judge
+   after V/P, the inversion masks after x1, then GravTrace. Stages marked exclusive run for one model at a time.
+   When every stage of every model is done, the table is rebuilt.
 
-- A model is placed on a host that has its weights and enough free GPUs (`--hosts` overrides). One model per GPU,
-  shards over several GPUs when available.
-- Every stage is idempotent: finished rows are skipped, so `run` can be repeated after any interruption, and a
-  `--watch` mode advances each model to its next stage as soon as the previous one completes.
-- Remote jobs run detached (tmux / setsid) and write status files the driver reads for `status`.
-- `--dry-run` prints the placement and every command without running anything.
+`status` prints the same survey: per model and run the site, finished rows, seconds per row over the last 20
+videos, ETA and live workers; per model the evaluation stages; and notes (waiting for GPUs, errors, restarts).
 
-## Existing pieces it reuses
+## Layout on every site
 
-| stage | script today |
-|---|---|
-| manifests | hupanwen `make_eval_manifests.py`, `build_inv_x1.py` |
-| generate | hupanwen `run_diffusers_i2v_batch_strict_perrow.py`, `run_worldbench_cosmos_batch.py`; Hunyuan `run_diffusers_perrow.py`; wangzijun `run_dynamicrafter.py`, `run_physrvg.py`, VideoGPA script + `finalize_videogpa.py`; A800 `run_single_a800_manifest.py`, `run_cosmos3_perrow.py`, `run_h3_perrow.py` |
-| sync | WSL `sync_to_hupanwen.sh` |
-| vp | hupanwen `vp_port/build_jobs_public211.py`, `run_repair_public211.py`, `score_window_1s_public211.py`, `build_qwen_proxy_public211.py` |
-| judge | WSL `judge_a800.sh` (Qwen3-VL on A800) |
-| inversion | hupanwen `prepare_sharded.sh` (SAM2 masks) + `gravtrace` (replaces the old evaluator) |
-| table | `vp_port/summarize_public211.py`, `make_table.py` |
+```
+<root>/tools/                                  runners/*.py and build.py, deployed by the driver
+<root>/<bench>/input/                          benchmark inputs copied from the home host (not on the home host)
+<root>/<bench>[-<tag>]/<run>/<model>/
+    spec.json  manifest.jsonl  manifest_rev.jsonl    (+ per-orientation manifests, prompts.json when needed)
+    generated/<row>/resized.mp4                       the video at the source resolution
+    logs/w0.log  logs/w0.events                       runner output; start/end lines with time and exit code
+<home root>/<bench>/eval/<model>/<stage>.log|.events  evaluation jobs
+```
+
+`--tag` (implied by `--limit`) gives a trial its own namespace; trials are generation only.
+
+## Configuration: `physedit/config.py`
+
+- `SITES`: a filesystem (root, environment variables, and `vars` used in commands: interpreters, weights, code).
+- `HOSTS`: ssh target, site, the GPUs physedit may use and the memory below which a GPU counts as idle. hupanwen GPUs
+  1, 2, 6 and 7 are left to other users; NSCC `a800-4`/`a800-5` to the Qwen judge.
+- `MODELS`: display name, frames, fps, canvas per orientation, template mode (i2v or v2v), GPUs per job, extra
+  manifest fields, and per site the command that generates one manifest (`{manifest}`, `{dir}`, `{gpu}`, `{tools}`,
+  `{rev}`, `{run}`, `{worker}` plus the site's `vars`).
+- `BENCHMARKS`: home site, runs, template manifests per mode and run, inputs to copy, where finished runs are
+  published, the evaluation stages (command, prerequisite, GPUs, exclusive, hub or home) and the table command.
+
+To add a model, add an entry to `MODELS` (and its runner to `physedit/runners/` if no existing one fits); to add a
+machine, a `HOSTS` entry (and a `SITES` entry for a new filesystem).
+
+## Runners (`physedit/runners/`)
+
+The generation scripts used for the September runs, collected here and deployed by the driver: `diffusers_i2v.py`
+(LTX, CogVideoX, Wan 2.2 5B, HunyuanVideo 1.5), `cosmos_predict2.py`, `dynamicrafter.py` + `crop_letterbox.py`,
+`videogpa_wan22.py` + `videogpa_finalize.py`, `physrvg.py`, `cosmos3.py`, `wan22_a14b.py` (Wan 2.2 A14B and PhysAlign),
+`minimax_h3.py`. Each reads a manifest row's condition image, prompt and seed and writes `resized.mp4` at the source
+size. Changes from the September copies: `wan22_a14b.py` records a failed row and continues (a single corrupt write
+had stopped a run), `minimax_h3.py` takes the model path as an argument and writes where the manifest says.
+
+## Status and limitations
+
+- public-211 evaluation calls the UniversalPhysicsEval port on hupanwen (`/data2/zhangshuran/tmp/public211_20260920`),
+  whose paths are fixed to the public-211 run directories. Models evaluated before physedit are recognised and left
+  untouched; a new model is evaluated next to them, but the table script lists only the September 12 models.
+- The PhysEditing dataset (`phyeditingvideo/Phyediting` on the Hub) will become a benchmark entry: its template rows,
+  inputs and evaluation stages, in the dataset's own format.
+- MiniMax-H3 needs a host with two GPUs; none is configured yet.

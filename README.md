@@ -116,6 +116,19 @@ Error tracks `sensitivity_px`: 17.9 % mean below 3 px (n = 12), 8.9 % at 3–10 
   whose meshes were unavailable).
 - WorldBench is not covered yet: its object meshes and initial poses are not available.
 
+## Generating and evaluating models: `physedit`
+
+The repository also holds the driver that runs the PhysEdit benchmark end to end for any set of registered video
+models: it builds each model's manifests, generates on free GPUs across the machines it knows, collects the videos,
+runs the evaluation stages (V/P metrics, Qwen judge, SAM2 masks, GravTrace) and rebuilds the table.
+
+```bash
+python3 -m physedit run public211 --models ltx_i2v,cosmos3_nano --watch 10
+python3 -m physedit status public211
+```
+
+Models, machines and benchmarks are declared in `physedit/config.py`; see [docs/PIPELINE.md](docs/PIPELINE.md).
+
 ## License
 
 MIT, see [LICENSE](LICENSE).
