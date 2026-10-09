@@ -10,7 +10,7 @@ A protocol that measures the video reports about 0.1 (the search bound) for `sta
 (where the sibling is in flight during the item's window), whatever the target; one that echoes the declared
 state follows the target.
 
-    python scripts/phyediting_gen_nulls.py ITEMS OUT_DIR [--fps 16] [--compact data/compact]
+    python scripts/phyediting_gen_nulls.py ITEMS OUT_DIR [--fps 16] [--frames 81] [--only ROWS.jsonl] [--compact data/compact]
 """
 from __future__ import annotations
 
@@ -38,16 +38,21 @@ def main() -> None:
     ap.add_argument("out", type=Path)
     ap.add_argument("--fps", type=float, default=16.0)
     ap.add_argument("--compact", type=Path, default=Path("data/compact"))
+    ap.add_argument("--frames", type=int, help="clip length in generated frames (default: to the window's end)")
+    ap.add_argument("--only", help="a model's rows file: only its items")
     args = ap.parse_args()
+    only = {json.loads(l)["item_id"] for l in open(args.only)} if args.only else None
     args.out.mkdir(parents=True, exist_ok=True)
     rows = {k: open(args.out / f"rows_{k}.jsonl", "w") for k in ("static", "earth")}
     tracks = {k: open(args.out / f"tracks_{k}.jsonl", "w") for k in ("static", "earth")}
     missing = 0
     for line in open(args.items):
         it = json.loads(line)
+        if only is not None and it["id"] not in only:
+            continue
         ref_fps = float(it["fps"])
         end = it["window"]["start_frame"] + it["window"]["max_frames"] - 1
-        n = int(np.ceil((end - CONDITION_FRAME) / ref_fps * args.fps)) + 2
+        n = args.frames or int(np.ceil((end - CONDITION_FRAME) / ref_fps * args.fps)) + 2
         times = CONDITION_FRAME / ref_fps + np.arange(n) / args.fps
         name, cam = it["object_name"], it["camera_id"]
         header = json.loads((args.compact / f"{it['trajectory']}.json").read_text())

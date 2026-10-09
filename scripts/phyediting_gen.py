@@ -143,21 +143,68 @@ def track_jobs(args) -> None:
                                 "last_frame": int(row["num_frames"]) - 1}) + "\n")
 
 
-def score(args) -> None:
-    items = {json.loads(l)["id"]: json.loads(l) for l in open(args.items)}
+def _read_tracks(path) -> dict:
     tracks = {}
-    for line in open(args.tracks):  # the last complete record per video (resumed trackers may repeat or cut one)
+    for line in open(path):  # the last complete record per video (resumed trackers may repeat or cut one)
         try:
             rec = json.loads(line)
         except json.JSONDecodeError:
             continue
         tracks[rec["id"]] = rec
+    return tracks
+
+
+def _read_camera_motion(path) -> dict:
     motion_of = {}
-    if args.camera_motion:  # per-frame similarity onto frame 0 (scripts/camera_motion.py)
-        for line in open(args.camera_motion):
+    if path:  # per-frame similarity onto frame 0 (scripts/camera_motion.py)
+        for line in open(path):
             rec = json.loads(line)
             if "affine" in rec:
                 motion_of[rec["id"]] = dict(zip(rec["frames"], (np.asarray(a) for a in rec["affine"])))
+    return motion_of
+
+
+def _sample(row: dict, it: dict, track: dict, v0: str, to_first: dict, shift: float = 0.0) -> dict:
+    """GravTrace sample of a generated video in the item's window, moved by `shift` seconds (0: the reference
+    window, whose declared edge visibility then applies)."""
+    tr = track.get("tracks", {}).get(it["object_name"])
+    fps_gen = float(row.get("output_fps") or track.get("fps") or 16.0)
+    t_cond = row["condition_frame_index"] / float(it["fps"])
+    w0, n = it["window"]["start_frame"] / float(it["fps"]) + shift, it["window"]["max_frames"]
+    w1 = w0 + (n - 1) / float(it["fps"])
+    frames, boxes, times = [], [], []
+    for f, b in zip(tr["frames"] if tr else [], tr["xyxy"] if tr else []):
+        if f in to_first:  # undo the generated camera's motion: the box in frame 0's image
+            corners = np.array([[b[0], b[1], 1.0], [b[2], b[1], 1.0], [b[0], b[3], 1.0], [b[2], b[3], 1.0]]) @ to_first[f].T
+            b = [*corners.min(axis=0).tolist(), *corners.max(axis=0).tolist()]
+        t = t_cond + f / fps_gen
+        if w0 - 1e-6 <= t <= w1 + 1e-6:
+            frames.append(int(round((t - shift) * it["fps"])))
+            boxes.append(b)
+            times.append(t - w0)
+    motion = dict(it["motion"])
+    if times:  # GravTrace times the first fitted frame from the declared state by t0
+        motion["t0"] = [times[0], times[0]]
+    if v0 == "free":  # robustness variant: launch speed within +-50 %, direction free
+        speed = float(np.linalg.norm(motion.pop("v0")))
+        motion.update(speed=[0.5 * speed, 1.5 * speed + 0.05], angle_deg=[-89.0, 89.0],
+                      directions=[(np.asarray(it["motion"]["v0"]) / max(speed, 1e-9)).tolist()])
+    elif v0 == "agnostic":  # nothing from the reference velocity: any speed up to MAX_SPEED, any direction
+        motion.pop("v0")
+        motion.update(speed=[0.0, MAX_SPEED], angle_deg=[-89.0, 89.0])
+    # the declared visibility of each edge, at the reference frame nearest in time (all edges when shifted)
+    seen = it["window"].get("edges_visible", {}) if abs(shift) < 1e-9 else {}
+    window = {"max_frames": len(frames), "start_frame": 0,
+              "edges_visible": {str(i): seen.get(str(f), [True] * 4) for i, f in enumerate(frames)}}
+    return {"id": row["sample_id"], "scenario": "projectile", "fps": it["fps"], "image_size": it["image_size"],
+            "camera": it["camera"], "object": it["object"], "motion": motion, "window": window,
+            "boxes": {"frames": list(range(len(frames))), "xyxy": boxes, "times": times}}
+
+
+def score(args) -> None:
+    items = {json.loads(l)["id"]: json.loads(l) for l in open(args.items)}
+    tracks = _read_tracks(args.tracks)
+    motion_of = _read_camera_motion(args.camera_motion)
     out = open(args.out, "w")
     shard, shards = (int(v) for v in args.shard.split("/"))
     for k, line in enumerate(open(args.rows)):
@@ -165,41 +212,31 @@ def score(args) -> None:
             continue
         row = json.loads(line)
         it = items[row["item_id"]]
-        tr = tracks.get(row["sample_id"], {}).get("tracks", {}).get(it["object_name"])
-        fps_gen = float(row.get("output_fps") or tracks.get(row["sample_id"], {}).get("fps") or 16.0)
-        t_cond = row["condition_frame_index"] / float(it["fps"])
-        w0, n = it["window"]["start_frame"] / float(it["fps"]), it["window"]["max_frames"]
-        w1 = (it["window"]["start_frame"] + n - 1) / float(it["fps"])
-        frames, boxes, times = [], [], []
+        track = tracks.get(row["sample_id"], {})
         to_first = motion_of.get(row["sample_id"], {})
-        for f, b in zip(tr["frames"] if tr else [], tr["xyxy"] if tr else []):
-            if f in to_first:  # undo the generated camera's motion: the box in frame 0's image
-                corners = np.array([[b[0], b[1], 1.0], [b[2], b[1], 1.0], [b[0], b[3], 1.0], [b[2], b[3], 1.0]]) @ to_first[f].T
-                b = [*corners.min(axis=0).tolist(), *corners.max(axis=0).tolist()]
-            t = t_cond + f / fps_gen
-            if w0 - 1e-6 <= t <= w1 + 1e-6:
-                frames.append(int(round(t * it["fps"])))
-                boxes.append(b)
-                times.append(t - w0)
-        motion = dict(it["motion"])
-        if times:  # GravTrace times the first fitted frame from the declared state by t0
-            motion["t0"] = [times[0], times[0]]
-        if args.v0 == "free":  # robustness variant: launch speed within +-50 %, direction free
-            speed = float(np.linalg.norm(motion.pop("v0")))
-            motion.update(speed=[0.5 * speed, 1.5 * speed + 0.05], angle_deg=[-89.0, 89.0],
-                          directions=[(np.asarray(it["motion"]["v0"]) / max(speed, 1e-9)).tolist()])
-        elif args.v0 == "agnostic":  # nothing from the reference velocity: any speed up to MAX_SPEED, any direction
-            motion.pop("v0")
-            motion.update(speed=[0.0, MAX_SPEED], angle_deg=[-89.0, 89.0])
-        # the declared visibility of each edge, at the reference frame nearest in time
-        seen = it["window"].get("edges_visible", {})
-        window = {"max_frames": len(frames), "start_frame": 0,
-                  "edges_visible": {str(i): seen.get(str(f), [True] * 4) for i, f in enumerate(frames)}}
-        sample = {"id": row["sample_id"], "scenario": "projectile", "fps": it["fps"], "image_size": it["image_size"],
-                  "camera": it["camera"], "object": it["object"], "motion": motion, "window": window,
-                  "boxes": {"frames": list(range(len(frames))), "xyxy": boxes, "times": times}}
-        pred = safe_fit(sample) if len(frames) >= 4 else {"id": row["sample_id"], "status": "no_track", "frames": len(frames)}
-        out.write(json.dumps({**pred, "item_id": row["item_id"], "gravity_target": row["gravity_truth"]}) + "\n")
+        if not args.scan:
+            sample = _sample(row, it, track, args.v0, to_first)
+            n = len(sample["boxes"]["xyxy"])
+            pred = safe_fit(sample) if n >= 4 else {"id": row["sample_id"], "status": "no_track", "frames": n}
+            out.write(json.dumps({**pred, "item_id": row["item_id"], "gravity_target": row["gravity_truth"]}) + "\n")
+            continue
+        # scan: the item's window slid over the whole clip, --scan-step generated frames at a time
+        fps_gen = float(row.get("output_fps") or track.get("fps") or 16.0)
+        tr = track.get("tracks", {}).get(it["object_name"])
+        last = (max(tr["frames"]) if tr and tr["frames"] else 0) / fps_gen
+        t_cond = row["condition_frame_index"] / float(it["fps"])
+        w0 = it["window"]["start_frame"] / float(it["fps"])
+        span = (it["window"]["max_frames"] - 1) / float(it["fps"])
+        shifts = [t_cond + j / fps_gen - w0 for j in range(0, int(last * fps_gen) + 1, args.scan_step)
+                  if j / fps_gen + span <= last + 1e-6]
+        scan = []
+        for sh in shifts:
+            sample = _sample(row, it, track, args.v0, to_first, shift=sh)
+            if len(sample["boxes"]["xyxy"]) >= 4:
+                pred = safe_fit(sample)
+                scan.append([round(sh, 4), pred.get("gravity"), pred.get("status")])
+        out.write(json.dumps({"id": row["sample_id"], "item_id": row["item_id"], "gravity_target": row["gravity_truth"],
+                              "scan": scan}) + "\n")
 
 
 def main() -> None:
@@ -223,6 +260,8 @@ def main() -> None:
     s.add_argument("--v0", default="declared", choices=["declared", "free", "agnostic"])
     s.add_argument("--shard", default="0/1", help="i/n: score every n-th row starting at i")
     s.add_argument("--camera-motion", help="camera_motion.py output: boxes are mapped into frame 0 before fitting")
+    s.add_argument("--scan", action="store_true", help="fit the item's window at every start over the whole clip")
+    s.add_argument("--scan-step", type=int, default=2, help="generated frames between scanned window starts")
     m = sub.add_parser("rows")
     m.add_argument("template")
     m.add_argument("out")
