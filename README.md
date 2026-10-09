@@ -317,3 +317,5 @@ and 21.93% at 15 fps, with coverage 10/10 and 8/10 respectively.
 This is diagnostic evidence, not a benchmark-wide improvement or held-out result.
 See [paired results](docs/phyediting/subpixel_pilot.json) and
 [work status](docs/phyediting/WORK_STATUS.md).
+
+Edge-level development diagnostics are available in [edge_diagnosis.json](docs/phyediting/edge_diagnosis.json). They separate constant/linear bias from quadratic observation error at the original timestamps. Simulator geometry is used only for diagnosis, never to correct fitted observations.

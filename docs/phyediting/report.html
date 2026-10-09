@@ -1311,3 +1311,4 @@ curve("#curve-max", "max", (v) => v + "%", 17, 10);
   box.appendChild(note);
 })();
 </script>
+<section><h2>观测误差诊断进展</h2><p>10视频同logits亚像素配对试验未解决尾部：30fps最大20.49%，15fps最大21.93%，覆盖分别10/10与8/10。默认仍用整数框。</p><p>20条既有尾部逐边诊断中，T19若干案例左右边误差曲率约12–36像素，底边约0.2–0.4像素。仅为开发诊断，真值未用于修正拟合，尚无新的总体成绩。</p><p><a href="subpixel_pilot.json">配对结果</a> · <a href="edge_diagnosis.json">逐边诊断</a></p></section>
