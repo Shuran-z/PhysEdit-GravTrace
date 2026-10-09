@@ -8,3 +8,4 @@ data/
 logs/
 third_party/
 .venv311/
+.claude/
