@@ -25,7 +25,7 @@ G_SEEDS = (1.0, 4.0, 16.0, 50.0)
 DEFAULT_FRAMES = {"freefall": 6, "projectile": 8, "incline": 16}
 MIN_FRAMES = 4
 LOSS_SCALE_PX = 1.0  # soft-L1 knee: residuals beyond about a pixel count linearly
-CONTACT_PX, CONTACT_SIGMA = 3.0, 2.0  # contact: last frame missed by > max(3 px, 2 x the other frames' median miss)
+CONTACT_PX, CONTACT_SIGMA = 3.0, 3.0  # contact: a frame the preceding flight misses by > max(3 px, 3 x its median error)
 
 
 def fit_sample(sample: dict) -> dict:
@@ -53,11 +53,15 @@ def fit_boxes(sample: dict, frames: np.ndarray, boxes: np.ndarray) -> dict:
         n = contact
         problem = _Problem(sample, t[:n], boxes[:n])
         best = problem.solve() if problem.anchor is not None else best
-    while n > MIN_FRAMES and _contact_at_end(problem.frame_error(best)):  # contact with anything undeclared
-        trimmed = _Problem(sample, t[:n - 1], boxes[:n - 1])
-        if trimmed.anchor is None:
+    while n > MIN_FRAMES:  # contact with anything undeclared: the flight so far fails to predict the last frame
+        shorter = _Problem(sample, t[:n - 1], boxes[:n - 1])
+        if shorter.anchor is None:
             break
-        n, problem, best = n - 1, trimmed, trimmed.solve()
+        short_best = shorter.solve()
+        miss = problem.frame_error({"h": problem.hypotheses()[short_best["hypothesis"]], "x": short_best["x"]})[-1]
+        if not _is_outlier(miss, shorter.frame_error(short_best)):
+            break
+        n, problem, best = n - 1, shorter, short_best
     g = float(np.exp(best["x"][0]))
     at_bound = not (G_RANGE[0] * 1.01 < g < G_RANGE[1] * 0.99)
     return {**out, "status": "at_bound" if at_bound else "ok", "gravity": g, "cost": best["cost"], "frames": n,
@@ -65,10 +69,10 @@ def fit_boxes(sample: dict, frames: np.ndarray, boxes: np.ndarray) -> dict:
             "params": dict(zip(best["names"], map(float, best["x"][1:]))), "sensitivity_px": problem.sensitivity(best)}
 
 
-def _contact_at_end(error: np.ndarray) -> bool:
-    """The last frame is an outlier of the fitted flight: an unmodelled contact has begun."""
-    others = error[:-1][error[:-1] > 0]  # the anchor frame fits exactly by construction
-    return error[-1] > max(CONTACT_PX, CONTACT_SIGMA * (np.median(others) if others.size else 0.0))
+def _is_outlier(miss: float, errors: np.ndarray) -> bool:
+    """A predicted-frame miss beyond max(CONTACT_PX, CONTACT_SIGMA x the fitted frames' median error)."""
+    fitted = errors[errors > 0]  # the anchor frame fits exactly by construction
+    return miss > max(CONTACT_PX, CONTACT_SIGMA * (np.median(fitted) if fitted.size else 0.0))
 
 
 class _Problem:
