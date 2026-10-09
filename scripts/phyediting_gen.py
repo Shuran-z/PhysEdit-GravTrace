@@ -31,6 +31,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from gravtrace.fit import safe_fit  # noqa: E402
 
 CONDITION_FRAME = 23  # the prelude is static for 24 frames, so this frame is the same at every gravity
+MAX_SPEED = 8.0  # m/s, the launch-speed bound of `score --v0 agnostic` (tabletop pushes stay well below)
 EVENTS = {
     "T03": "On a table, a thin book slides into a soda can standing at the table edge; the can falls off onto a lower shelf and a phone drops to the floor.",
     "T05": "A soda can slides across a table toward two objects with a gap between them.",
@@ -144,9 +145,24 @@ def track_jobs(args) -> None:
 
 def score(args) -> None:
     items = {json.loads(l)["id"]: json.loads(l) for l in open(args.items)}
-    tracks = {json.loads(l)["id"]: json.loads(l) for l in open(args.tracks)}
+    tracks = {}
+    for line in open(args.tracks):  # the last complete record per video (resumed trackers may repeat or cut one)
+        try:
+            rec = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        tracks[rec["id"]] = rec
+    motion_of = {}
+    if args.camera_motion:  # per-frame similarity onto frame 0 (scripts/camera_motion.py)
+        for line in open(args.camera_motion):
+            rec = json.loads(line)
+            if "affine" in rec:
+                motion_of[rec["id"]] = dict(zip(rec["frames"], (np.asarray(a) for a in rec["affine"])))
     out = open(args.out, "w")
-    for line in open(args.rows):
+    shard, shards = (int(v) for v in args.shard.split("/"))
+    for k, line in enumerate(open(args.rows)):
+        if k % shards != shard:
+            continue
         row = json.loads(line)
         it = items[row["item_id"]]
         tr = tracks.get(row["sample_id"], {}).get("tracks", {}).get(it["object_name"])
@@ -155,7 +171,11 @@ def score(args) -> None:
         w0, n = it["window"]["start_frame"] / float(it["fps"]), it["window"]["max_frames"]
         w1 = (it["window"]["start_frame"] + n - 1) / float(it["fps"])
         frames, boxes, times = [], [], []
+        to_first = motion_of.get(row["sample_id"], {})
         for f, b in zip(tr["frames"] if tr else [], tr["xyxy"] if tr else []):
+            if f in to_first:  # undo the generated camera's motion: the box in frame 0's image
+                corners = np.array([[b[0], b[1], 1.0], [b[2], b[1], 1.0], [b[0], b[3], 1.0], [b[2], b[3], 1.0]]) @ to_first[f].T
+                b = [*corners.min(axis=0).tolist(), *corners.max(axis=0).tolist()]
             t = t_cond + f / fps_gen
             if w0 - 1e-6 <= t <= w1 + 1e-6:
                 frames.append(int(round(t * it["fps"])))
@@ -168,6 +188,9 @@ def score(args) -> None:
             speed = float(np.linalg.norm(motion.pop("v0")))
             motion.update(speed=[0.5 * speed, 1.5 * speed + 0.05], angle_deg=[-89.0, 89.0],
                           directions=[(np.asarray(it["motion"]["v0"]) / max(speed, 1e-9)).tolist()])
+        elif args.v0 == "agnostic":  # nothing from the reference velocity: any speed up to MAX_SPEED, any direction
+            motion.pop("v0")
+            motion.update(speed=[0.0, MAX_SPEED], angle_deg=[-89.0, 89.0])
         # the declared visibility of each edge, at the reference frame nearest in time
         seen = it["window"].get("edges_visible", {})
         window = {"max_frames": len(frames), "start_frame": 0,
@@ -197,7 +220,9 @@ def main() -> None:
     s.add_argument("rows")
     s.add_argument("tracks")
     s.add_argument("out")
-    s.add_argument("--v0", default="declared", choices=["declared", "free"])
+    s.add_argument("--v0", default="declared", choices=["declared", "free", "agnostic"])
+    s.add_argument("--shard", default="0/1", help="i/n: score every n-th row starting at i")
+    s.add_argument("--camera-motion", help="camera_motion.py output: boxes are mapped into frame 0 before fitting")
     m = sub.add_parser("rows")
     m.add_argument("template")
     m.add_argument("out")

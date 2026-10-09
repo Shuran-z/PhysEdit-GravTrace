@@ -177,11 +177,25 @@ declared initial state; `scripts/phyediting_report.py` prints the tables.
 The first 24 frames of every PhyEditing video are static, so frame 23 is the same at all five
 gravities: it is the condition frame, and the prompt describes the event and the target gravity
 (`scripts/phyediting_gen.py build`). A generated video is tracked from its first frame with the
-declared boxes and fitted in the item's window, timed by the model's frame rate, with the declared
-state of the reference trajectory at the target gravity (`phyediting_gen.py jobs`, `score`). On the
-ground-truth videos this protocol reproduces the floor above (1.11 % mean, 6.2 % max); resampled to 15 fps,
-845 of the 1,038 windows keep ≥ 4 frames and score 1.05 % mean, 8.3 % max. `--v0 free` lets the launch
-velocity vary instead.
+declared boxes (`phyediting_gen.py jobs`); its camera motion is estimated per frame as a similarity onto
+frame 0 (ORB features, RANSAC; `scripts/camera_motion.py`) and removed from the boxes, which are then
+fitted in the item's window, timed by the model's frame rate (`phyediting_gen.py score --camera-motion`).
+
+Generated videos are scored with `--v0 agnostic`: launch speed (0–8 m/s) and direction are fitted with g,
+and only the declared position at the window start (for depth) and the window times come from the
+reference trajectory. On the ground-truth videos this scores 2.88 % mean, 19.8 % max (none above 20 %);
+resampled to 15 fps, 845 windows score 3.17 % mean. The declared-velocity protocol of the floor above
+(`--v0 declared`: 1.11 % mean, 6.2 % max) must not be used for generated videos, because the reference
+velocity at the window start carries the target gravity. `scripts/phyediting_gen_nulls.py` shows this with
+two synthetic generators scored like a model:
+
+| generator | `--v0 declared` | `--v0 agnostic` |
+|---|---|---|
+| object never moves | 11.8, 17.3, 32.8 m/s² at targets 9.81, 15, 24 | 0.1 (search bound) at every target |
+| always Earth gravity (same scene at 9.81) | 2.78 and 13.5 at targets 3.71 and 15 | 10.1 at target 9.81, 0.1 elsewhere (landed) |
+
+`--v0 free` (speed within ±50 % of the reference, any direction) is in between: it reads the bound for the
+static generator but still takes the speed range from the reference.
 
 ## Assumptions and limitations
 
