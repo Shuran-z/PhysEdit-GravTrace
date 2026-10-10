@@ -25,7 +25,7 @@ Samples declare camera, object geometry/pose, gravity direction, motion window a
 
 ## Method and evaluation
 
-GravTrace projects an analytic 3D trajectory and rotating object outline into the camera, then fits gravity and unknown motion parameters with robust bounded least squares. Hidden and clipped edges are masked.
+GravTrace projects an analytic 3D trajectory and rotating object outline into the camera, clips the outline to the image, then fits gravity and unknown motion parameters with robust bounded least squares. Hidden and clipped edges are masked.
 
 Comparisons include 2D inversion and DepthPro, DA-V2 Metric, ZoeDepth, MoGe-2, UniDepthV2 and VGGT. Retained observation frames and velocity bounds are aligned; forward-model representations and loss units still differ. Current evidence does not establish global optimality.
 

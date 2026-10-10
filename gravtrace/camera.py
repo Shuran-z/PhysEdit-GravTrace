@@ -33,6 +33,59 @@ class Camera:
         uv[depth <= 1e-9] = np.nan
         return uv
 
+    def project_box(self, points: np.ndarray) -> np.ndarray:
+        """Bounds of the projected convex outline visible inside the image.
+
+        Clipping a bounding rectangle is insufficient: a vertex above the
+        image can determine its left edge, while the visible silhouette's
+        left edge is an intersection with the top border. Clip the projected
+        outline itself. Entirely off-screen hypotheses retain their original
+        bounds as a continuous optimisation extension; no observation exists
+        there. Point/centre projections retain their original behaviour.
+        """
+        uv = self.project(points)
+        lo, hi = uv.min(axis=-2), uv.max(axis=-2)
+        bounds = np.concatenate([lo, hi], axis=-1)
+        if uv.shape[-2] < 3:
+            return bounds
+        flat_uv = uv.reshape(-1, uv.shape[-2], 2)
+        flat_bounds = bounds.reshape(-1, 4)
+        cut = ((flat_bounds[:, 0] < 0) | (flat_bounds[:, 1] < 0)
+               | (flat_bounds[:, 2] > self.width) | (flat_bounds[:, 3] > self.height))
+        if not cut.any():
+            return bounds
+        import cv2
+
+        for i in np.flatnonzero(cut):
+            vertices = flat_uv[i]
+            if not np.isfinite(vertices).all():
+                continue
+            # OpenCV supplies only hull indices. Keep the original float64
+            # coordinates so finite-difference optimisation retains precision.
+            indices = cv2.convexHull(vertices.astype(np.float32), returnPoints=False)
+            if indices is None or len(indices) < 3:
+                continue
+            polygon = vertices[indices.ravel()]
+            for axis, limit, lower in ((0, 0., True), (0, self.width, False),
+                                       (1, 0., True), (1, self.height, False)):
+                clipped = []
+                for a, b in zip(polygon, np.roll(polygon, -1, axis=0)):
+                    a_in = a[axis] >= limit if lower else a[axis] <= limit
+                    b_in = b[axis] >= limit if lower else b[axis] <= limit
+                    if a_in:
+                        clipped.append(a)
+                    if a_in != b_in:
+                        t = (limit - a[axis]) / (b[axis] - a[axis])
+                        cross = a + t * (b - a)
+                        cross[axis] = limit
+                        clipped.append(cross)
+                polygon = np.asarray(clipped, dtype=float).reshape(-1, 2)
+                if not len(polygon):
+                    break
+            if len(polygon):
+                flat_bounds[i] = np.concatenate([polygon.min(axis=0), polygon.max(axis=0)])
+        return bounds
+
 
 def lookat_camera(position, look_at, fov_deg: float, image_size, up=(0.0, 0.0, 1.0), principal_offset_px=(0.0, 0.0)) -> dict:
     """`matrix_world`, `fx`, `fy` of a camera at `position` looking at `look_at` with vertical field of view
