@@ -1,0 +1,23 @@
+{
+  "event_type": "T16",
+  "depth": 1,
+  "nodes": [
+    {
+      "id": "folder_rotation",
+      "time_s": 5.366666666666666,
+      "evidence": "folder plane angle decreases at least 15 degrees from initial",
+      "parents": []
+    }
+  ],
+  "physics_qa_status": "PASS",
+  "contact_sample_dt_s": 0.0020833333333333333,
+  "state_sample_dt_s": 0.03333333333333333,
+  "definition": [
+    "supported",
+    "folder rotates after support withdrawal",
+    "folder transfers to upright book",
+    "book transfers to upright can"
+  ],
+  "causality_evidence": "measured temporal contacts and motion; counterfactual evidence is validated at group level",
+  "source_config_sha256": "fa40a830425b1bafb03d6714789a5a9bdf378f697e8f1ce9d5c9b28e6efcbae9"
+}

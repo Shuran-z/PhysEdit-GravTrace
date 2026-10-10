@@ -1,0 +1,528 @@
+FILES t16_layout_probe_20260912_v2 ['run_config.json', 'completed.txt', 'supervisor.lock', 'input_studio_B.json', 'watchdog_launch.log', 'input_library_A.json', 'probe_plan.json', 'ACTIVE_SOURCE.txt', 'probe_status.json', 'run_layout_repair_probe.py.supervisor.log', 'supervisor.pid', 'run_layout_repair_probe.py.watchdog.pid', 'run_layout_repair_probe.py.watchdog_status.json', 'failed.txt', 'manifest.jsonl', 'run_layout_repair_probe.py.watchdog.lock', 'plan_validation.json']
+FILES t16_layout_probe_20260914_v5 ['run_config.json', 'completed.txt', 'supervisor.lock', 'probe_plan.json', 'ACTIVE_SOURCE.txt', 'probe_status.json', 'run_layout_repair_probe.py.supervisor.log', 'supervisor.pid', 'detached_watchdog.log', 'run_layout_repair_probe.py.watchdog.pid', 'run_layout_repair_probe.py.watchdog_status.json', 'launch.lock', 'staging_validation.json', 'manifest.jsonl', 'input_library_C.json', 'launch.json', 'run_layout_repair_probe.py.watchdog.lock']
+FILES t16_20260910_v1 ['run_config.r17.json', 'watchdog_launch_r18.log', 'repair_diagnostic_20260912_1120.json', 'runtime_regression_r10.txt', 'run_config.json', 'run_config.r15.json', 'run_config.pending_r16.json', 'rig_precheck.log', 'parser_regression_r08.txt', 'completed.txt', 'camera_repair_regression_r11.txt', 'run_config.r01.json', 'rig_precheck_v2.log', 'parameter_proposal_regression_r16.txt', 'library_C_engineering_case_20260915.json', 'run_config.r02.json', 'supervisor.lock', 'offline_t16.pending_r18.py', 'proposal_validation_r17.json', 'prior_candidate_regression_r13.txt', 'run_config.r12.json', 'run_config.r16.json', 'run_config.r14.json', 'layout_proposal_high_studio_20260912.json', 'parameter_proposal_high_studio_B_20260912.json', 'task_plan.json', 'watchdog_launch.log', 'camera_repair_scan_20260911.json', 'ACTIVE_SOURCE.txt', 'run_config.pending_r17.json', 'run_config.r10.json', 'run_config.r18.json', 'watchdog_launch_r19.log', 'run_config.r06.json', 'solver_regression_r07.txt', 'offline_t16.py.watchdog_status.json', 'supervisor.pid', 'scheduler_regression_r06.txt', 'parameter_proposal_high_studio_C_20260914.json', 'run_config.pending_r14.json', 'layout_proposal_regression_r15.txt', 'deployment_r17.json', 'run_config.pending_r19.json', 'run_config.pending_r15.json', 'summary.json', 'run_config.r03.json', 'parameter_proposal_high_library_B_20260914.json', 'failed.txt', 'run_config.r09.json', 'run_config.r08.json', 'manifest.jsonl', 'run_config.r07.json', 'deployment_r18.json', 'deployment_r19.json', 'regression_r19.txt', 'layout_proposal_high_library_20260912.json', 'parameter_proposal_high_library_C_20260915.json', 'watchdog_launch_r17.log', 'proposal_validation_r19.json', 'layout_proposal_regression_r14.txt', 'scheduler_regression_r18.txt', 'cell_repair_regression_r09.txt', 'run_config.r04.json', 'offline_t16.py.watchdog.lock', 'run_config.r11.json', 'resource_measurement_r18.json', 'offline_t16.py.supervisor.log', 'offline_t16.py.watchdog.pid', 'run_config.r13.json', 'background_repair_regression_r12.txt', 'run_config.r05.json', 'run_config.pending_r18.json']
+FILES t16_layout_probe_20260913_v4 ['run_config.json', 'completed.txt', 'input_library_B.json', 'supervisor.lock', 'probe_plan.json', 'ACTIVE_SOURCE.txt', 'probe_status.json', 'run_layout_repair_probe.py.supervisor.log', 'supervisor.pid', 'detached_watchdog.log', 'run_layout_repair_probe.py.watchdog.pid', 'run_layout_repair_probe.py.watchdog_status.json', 'launch.lock', 'staging_validation.json', 'manifest.jsonl', 'launch.json', 'run_layout_repair_probe.py.watchdog.lock', 'input_studio_C.json']
+FILES t17_t18_engineering_20260910_v1 ['run_config.json', 'completed.txt', 'run_config.r01.json', 'supervisor.lock', 'watchdog_launch.log', 'ACTIVE_SOURCE.txt', 'supervisor.pid', 'offline_t17_t18.py.watchdog.lock', 'summary.json', 'failed.txt', 'manifest.jsonl', 'T17_engineering_result.json', 'T18_engineering_result.json', 'offline_t17_t18.py.watchdog_status.json', 'offline_t17_t18.py.watchdog.pid', 'offline_t17_t18.py.supervisor.log']
+FILES t16_layout_probe_20260912_v3 ['run_config.json', 'completed.txt', 'supervisor.lock', 'input_studio_B.json', 'watchdog_launch.log', 'probe_plan.json', 'ACTIVE_SOURCE.txt', 'probe_status.json', 'run_layout_repair_probe.py.supervisor.log', 'supervisor.pid', 'run_layout_repair_probe.py.watchdog.pid', 'run_layout_repair_probe.py.watchdog_status.json', 'manifest.jsonl', 'run_layout_repair_probe.py.watchdog.lock', 'plan_validation.json']
+FILES t16_layout_probe_20260912_v1 ['input_calibration.json', 'run_config.json', 'completed.txt', 'supervisor.lock', 'watchdog_launch.log', 'probe_plan.json', 'ACTIVE_SOURCE.txt', 'probe_status.json', 'run_layout_repair_probe.py.supervisor.log', 'supervisor.pid', 'run_layout_repair_probe.py.watchdog.pid', 'run_layout_repair_probe.py.watchdog_status.json', 'failed.txt', 'manifest.jsonl', 'run_layout_repair_probe.py.watchdog.lock', 'plan_validation.json']
+FILES t17_t18_boundaries_20260910_v1 ['run_config.json', 'completed.txt', 'supervisor.lock', 'watchdog_launch.log', 'ACTIVE_SOURCE.txt', 'supervisor.pid', 'offline_t17_t18.py.watchdog.lock', 'summary.json', 'manifest.jsonl', 'T17_engineering_result.json', 'T18_engineering_result.json', 'offline_t17_t18.py.watchdog_status.json', 'offline_t17_t18.py.watchdog.pid', 'offline_t17_t18.py.supervisor.log']
+DOCUMENT /home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/AGENTS.md MTIME 2026-08-28T15:52:32.154342+00:00 # AGENTS.md
+
+## highpoly home living gravity video generation
+
+- Current task: highpoly home living gravity video generation.
+- Must reuse `preview_highpoly_obj_home_living_layoutfix_20260423` / `output/generated_scene_v1/scene_manifest_highpoly_obj_home_living_layoutfix_20260423.json`.
+- Do not replace this with a low-poly scene.
+- Do not damage or overwrite existing high-poly meshes, materials, textures, camera settings, or layoutfix results.
+- Do not use `sudo`.
+- Do not upgrade system `glibc`.
+- Always inspect the existing pipeline first.
+- Run a smoke test before batch generation.
+- Multi-GPU runs must use one process per GPU with `CUDA_VISIBLE_DEVICES=<gpu_id>`.
+- Do not force one process to consume multiple GPUs.
+- New outputs must go into new timestamped directories such as `outputs_gravity_highpoly_YYYYMMDD_HHMMSS`.
+- Never overwrite existing output videos.
+- Every rendered sample must have metadata, logs, and a manifest entry.
+- Batch jobs must tolerate per-sample failures and write `manifest.jsonl`, `completed.txt`, `failed.txt`, and `summary.json`.
+
+## canonical realistic asset policy
+
+- The only supported entry point for realistic scene assets is `/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets`.
+- New scripts, configs, registries, and render jobs must resolve background and everyday-object assets through `realistic_assets/catalog.json`; do not introduce new hard-coded references to `assets_library`, `assets_generated`, or `assets_external`.
+- Existing legacy asset paths are compatibility targets only. They may remain readable for old jobs, but they are not valid entry points for new work.
+- New realistic assets must be stored under `realistic_assets/store/backgrounds` or `realistic_assets/store/everyday_objects` and registered in `catalog.json` before use.
+- Only cataloged realistic/high-quality meshes, materials, textures, and collision proxies may be used. Do not silently fall back to primitives, low-poly placeholders, or unregistered assets.
+- Human hand/arm/body meshes are prohibited. The removed `everyday_life_v1/hands` asset must not be recreated, downloaded, registered, or referenced by new configs.
+- The background root is physically frozen at `realistic_assets/backgrounds`. It must contain exactly `bg01_home_ase`, `bg02_physics_lab`, `bg03_neutral_studio`, and `bg04_library_shelf`; no fifth background is allowed without explicit user approval.
+- Background generators and legacy V1-V6 background directories are historical only. Do not run generators that recreate them, do not restore deleted background assets, and do not add fallback paths.
+- All T01 and downstream render configs must use `configs/frozen_backgrounds_v1/registry.json` or `realistic_assets/backgrounds/catalog.json`. The four scene directories and their `asset_lock.sha256` are read-only production inputs.
+
+DOCUMENT /home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/reports/repair_final_audit_20260908.json MTIME 2026-09-08T13:55:14.368414+00:00 {
+  "timestamp": "2026-09-08T21:55:14.369071",
+  "scope": "repair_validation_only_not_official_pilot",
+  "trajectory_count": 8,
+  "final_video_count": 24,
+  "trajectories": [
+    {
+      "stage": "repair_framed_v2",
+      "sample_id": "T16R2__BW03__g03_earth__s2110874605__repair_framed_v2__r03_rev2_repair_20260908",
+      "scene_id": "T16",
+      "side": null,
+      "pair_id": null,
+      "qa_pass": true,
+      "outcome": "tips_without_downstream",
+      "config_revision": "r03_rev2_repair_20260908",
+      "source_sha256": "7a2b9bd23b0d1529ccf7585b92c58347fb6df9e59f441eb31cca62cbfcc9c5fd"
+    },
+    {
+      "stage": "repair_framed_v3",
+      "sample_id": "T19R2__BW15__g03_earth__T19_repair_pair001__A__s3325200432__repair_framed_v3__r03_rev2_repair_20260908",
+      "scene_id": "T19",
+      "side": "A",
+      "pair_id": "T19_repair_pair001",
+      "qa_pass": true,
+      "outcome": "direct_transfer",
+      "config_revision": "r03_rev2_repair_20260908",
+      "source_sha256": "32912eba381a0d4c3bcf9d830a8bf6eea4347acbeda0e2bd969f9098cbc739e6"
+    },
+    {
+      "stage": "repair_framed_v3",
+      "sample_id": "T19R2__BW15__g03_earth__T19_repair_pair001__B__s3325200432__repair_framed_v3__r03_rev2_repair_20260908",
+      "scene_id": "T19",
+      "side": "B",
+      "pair_id": "T19_repair_pair001",
+      "qa_pass": true,
+      "outcome": "miss",
+      "config_revision": "r03_rev2_repair_20260908",
+      "source_sha256": "62a696b691544e05db6a26372e73c59e37664d60f9d938d12d7b29487cd7bc63"
+    },
+    {
+      "stage": "repair_t17_video",
+      "sample_id": "T17_repair_t17_video_01",
+      "scene_id": "T17",
+      "side": "A",
+      "pair_id": "T17_repair_t17_video_pair",
+      "qa_pass": true,
+      "outcome": "glances_target",
+      "config_revision": "r03_rev2_repair_20260908",
+      "source_sha256": "a4cde0b2e78d3285c30a1b3b511f711835ded935618ad0416f40b5ca0929a2b4"
+    },
+    {
+      "stage": "repair_t17_video",
+      "sample_id": "T17_repair_t17_video_02",
+      "scene_id": "T17",
+      "side": "B",
+      "pair_id": "T17_repair_t17_video_pair",
+      "qa_pass": true,
+      "outcome": "bypasses_target",
+      "config_revision": "r03_rev2_repair_20260908",
+      "source_sha256": "50af635f887294b8118e41aff6d7f492931f123c3bc10841f1f9ec6c9ac63939"
+    },
+    {
+      "stage": "repair_t18_video",
+      "sample_id": "T18_repair_t18_video_01",
+      "scene_id": "T18",
+      "side": "A",
+      "pair_id": "T18_repair_t18_video_pair",
+      "qa_pass": true,
+      "outcome": "static_friction_holds",
+      "config_revision": "r04_rev2_bounded_actuation",
+      "source_sha256": "de791d55f17ecc758bc28b74aecd3d9e92adba9da6c60d06452aed36eb1f2bc0"
+    },
+    {
+      "stage": "repair_t18_video",
+      "sample_id": "T18_repair_t18_video_02",
+      "scene_id": "T18",
+      "side": "B",
+      "pair_id": "T18_repair_t18_video_pair",
+      "qa_pass": true,
+      "outcome": "multi_book_cascade",
+      "config_revision": "r04_rev2_bounded_actuation",
+      "source_sha256": "e88a5901c8280e5dd235ac597c0f6657330560ad9b5e96f30033ef612c1069d0"
+    },
+    {
+      "stage": "repair_t20_video",
+      "sample_id": "T20_repair_t20_video_01",
+      "scene_id": "T20",
+      "side": null,
+      "pair_id": null,
+      "qa_pass": true,
+      "outcome": "complete_propagation",
+      "config_revision": "r03_rev2_repair_20260908",
+      "source_sha256": "c6b0f0a103a682d5e6b61d11b75c33a9adf566253639e8ec42c2c1f04c62c2cd"
+    }
+  ],
+  "pairs": [
+    {
+      "pair_id": "T17_repair_t17_video_pair",
+      "shared_cameras_and_background": true,
+      "different_outcomes": true
+    },
+    {
+      "pair_id": "T18_repair_t18_video_pair",
+      "shared_cameras_and_background": true,
+      "different_outcomes": true
+    },
+    {
+      "pair_id": "T19_repair_pair001",
+      "shared_cameras_and_background": true,
+      "different_outcomes": true
+    }
+  ],
+  "regression_tests_pass": true,
+  "outstanding": [
+    "T16 strong withdrawal penetration",
+    "T17 direct hit not validated",
+    "full 20 BaseWorld x 5 gravity calibration and pilot not completed"
+  ]
+}
+DOCUMENT /home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/reports/live_status.json MTIME 2026-09-07T16:53:09.044846+00:00 {
+  "updated_at_unix": 1788799989.0457463,
+  "active_stage": "pilot_calibration_complete",
+  "gpus": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "calibration_only": true
+}
+
+DOCUMENT /home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_physics_v3_bg4_integrated/reports/live_status.json MTIME 2026-08-31T13:58:06.439150+00:00 {
+  "updated_at_unix": 1788184686.439089,
+  "active_stage": "smoke",
+  "gpus": [
+    0,
+    1,
+    2
+  ],
+  "worker_pids": [
+    2021084,
+    2021085,
+    2021086
+  ],
+  "counts": {
+    "planned": 5,
+    "completed": 3,
+    "failed": 0,
+    "quarantine": 1,
+    "locked": 1,
+    "pending": 0
+  }
+}
+
+DOCUMENT /data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/ready_index.json MTIME 2026-09-14T16:15:54.514810+00:00 {
+  "classification": "verified_outputs; formal status must be read from release_audit.json",
+  "rows": [
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam03_f095.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam03_f095.png",
+      "size": 227865,
+      "sha256": "4c94a7299b20f05c60e60a01f85bffbb50fc5b9828aa2ac90c32a0ab64fc819d"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam03_f000.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam03_f000.png",
+      "size": 221075,
+      "sha256": "aecf93c1a3c28a54ed8ca71b5aa1662b7dfff731c7586a58694cef6bd7410e23"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam02_f095.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam02_f095.png",
+      "size": 242984,
+      "sha256": "4764fc1eb99ce4a1a6ec03f89779d53275b21f5a619f238bca451c25c48538ca"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam01_f209.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam01_f209.png",
+      "size": 199801,
+      "sha256": "ecbe5e059eca4d67b8130d2e80658fff0380dc0ad5adfe94ff6415b9d310e0a3"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam03_f209.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam03_f209.png",
+      "size": 228083,
+      "sha256": "36617578de7d15ab7ac39d98e48deb0e06515229ca2121303389e8e8b9ddbd0e"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam02_f209.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam02_f209.png",
+      "size": 242675,
+      "sha256": "5966ba62fd4db06cf42eaae9943aaade10d505371900ef21958ed8419bd05232"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/event_graph.json",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/event_graph.json",
+      "size": 723,
+      "sha256": "39b22bd1db36b7f4d28a3b0c86bff19efc7d9934128768c78f221c94b9eca023"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam02_f000.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam02_f000.png",
+      "size": 231105,
+      "sha256": "fec2497216e21ca1787692a58366dc663272086aaade07185b21d6368a6600f6"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam03.mp4",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam03.mp4",
+      "size": 109046,
+      "sha256": "62834cd86e23932f41bcf103b9d40442a454e97f9ae20c261fb5efa1c3c7ae08"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam01_f000.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam01_f000.png",
+      "size": 197859,
+      "sha256": "2586137a9dfa5adbe11ebd8f92797e2ecb9ad87396a29658a4b5497423632951"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/media_qa.json",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/media_qa.json",
+      "size": 1899,
+      "sha256": "4a3c9e1d9368a616c8a40715720b5ae70267b162613264d733c1327bcdb595f7"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam02.mp4",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam02.mp4",
+      "size": 143126,
+      "sha256": "3e57ae995f9c340406499339804b80b0c26b48412d5a14aab59c2e32f296a918"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/metadata.json",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/metadata.json",
+      "size": 20648,
+      "sha256": "818fc54ca66cabac49114a5efd10bf264f285f6bb917df8c0e5a325bbc92a8c4"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam01.mp4",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam01.mp4",
+      "size": 105549,
+      "sha256": "4376351ebb46d92a3517082d89dba21e5c9d6edaacb118b9ff84d89b3004519f"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam01_f095.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/cam01_f095.png",
+      "size": 200273,
+      "sha256": "0d56357bc8a7a5e81db93bbe25b8f9db97163ba83e35a492e26eb048c9d7ff76"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/camera_visibility.json",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g01_moon__target-x_r0_plus/camera_visibility.json",
+      "size": 536,
+      "sha256": "ce18f50fe746ade8914d280be3ad4c5616ed0b19d07ee92a65ba41e03535f784"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam03_f095.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam03_f095.png",
+      "size": 220053,
+      "sha256": "f39d8827b0133241b457d1360060cd16b3b4046ef49dfab9f945f98d87407d4a"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam03_f000.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam03_f000.png",
+      "size": 222296,
+      "sha256": "77c65352a887b984d60f42968dd961e89fee6eb381b7f6014bd9114570b45626"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam02_f095.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam02_f095.png",
+      "size": 230653,
+      "sha256": "821127affcbcded613160fa8ae26dc8d1f2afd06e9ec705a2d0ea493c25cb977"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam01_f209.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam01_f209.png",
+      "size": 199290,
+      "sha256": "51f7452a807e199d0cb8ba8a0a10441017f52b3bc8796f508cac523a3d1ac8a8"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam03_f209.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam03_f209.png",
+      "size": 222060,
+      "sha256": "268a53b2c57eb1e940cbcff2046a764ce9403a3a25fd32de64c77596519f78d8"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam02_f209.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam02_f209.png",
+      "size": 231515,
+      "sha256": "738d64b26d0daafe44b178f066d1f6a03e8298d8a381ae30626c17628270e3e8"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g04_high__distance_r2_minus/event_graph.json",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g04_high__distance_r2_minus/event_graph.json",
+      "size": 553,
+      "sha256": "6107484fa848e1c0ab0bc0aaa13ea3fcce4e029096edb1edbf4eb3316fd26ef4"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam02_f000.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam02_f000.png",
+      "size": 232819,
+      "sha256": "aee7621813989b334c5f7a42d94ef640a1c645f0dd4035bcd1475a0b6bfbd002"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam03.mp4",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam03.mp4",
+      "size": 79729,
+      "sha256": "813756cba2a483e49fcfdc23c79108adefcc69a6bff201ac76257472adcf57d0"
+    },
+    {
+      "remote_path": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam01_f000.png",
+      "relative_path": "t16_20260910_v1/T16__bg03_neutral_studio__g04_high__distance_r2_minus/cam01_f000.png",
+      "size": 1
+DOCUMENT /data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/summary.json MTIME 2026-09-14T17:03:51.618832+00:00 {
+  "run": "t16_20260910_v1",
+  "phase": "NEEDS_REPAIR",
+  "target_trajectories": 880,
+  "target_videos": 2640,
+  "gpus": [
+    "0",
+    "1",
+    "2",
+    "3"
+  ],
+  "active_jobs": {},
+  "states": {
+    "g01_moon": {
+      "phase": "COMPLETE"
+    },
+    "g02_mars": {
+      "phase": "COMPLETE"
+    },
+    "g03_earth": {
+      "phase": "COMPLETE"
+    },
+    "g04_high": {
+      "phase": "SEARCH_FULL_CHAIN",
+      "tested": 2,
+      "latest_depth": 1,
+      "latest_qa": "PASS"
+    },
+    "g05_very_high": {
+      "phase": "COMPLETE"
+    },
+    "preproduction": {
+      "phase": "COMPLETE"
+    },
+    "bg03_neutral_studio__g01_moon": {
+      "phase": "COMPLETE"
+    },
+    "bg01_home_ase__g01_moon": {
+      "phase": "COMPLETE"
+    },
+    "bg02_physics_lab__g01_moon": {
+      "phase": "COMPLETE"
+    },
+    "bg04_library_shelf__g01_moon": {
+      "phase": "COMPLETE"
+    },
+    "bg03_neutral_studio__g02_mars": {
+      "phase": "COMPLETE"
+    },
+    "bg01_home_ase__g02_mars": {
+      "phase": "COMPLETE"
+    },
+    "bg02_physics_lab__g02_mars": {
+      "phase": "COMPLETE"
+    },
+    "bg04_library_shelf__g02_mars": {
+      "phase": "COMPLETE"
+    },
+    "bg03_neutral_studio__g03_earth": {
+      "phase": "NEEDS_REPAIR",
+      "error": "bg03_neutral_studio__g03_earth: no robust candidate endpoint for receiver2-x minus"
+    },
+    "bg01_home_ase__g03_earth": {
+      "phase": "NEEDS_REPAIR",
+      "error": "bg01_home_ase__g03_earth: no robust candidate endpoint for target-x minus"
+    },
+    "bg02_physics_lab__g03_earth": {
+      "phase": "COMPLETE"
+    },
+    "bg04_library_shelf__g03_earth": {
+      "phase": "COMPLETE"
+    },
+    "bg03_neutral_studio__g04_high": {
+      "phase": "COMPLETE"
+    },
+    "bg01_home_ase__g04_high": {
+      "phase": "NEEDS_REPAIR",
+      "error": "g04_high: receiver2-x failed bounded solver search: [{'substeps': 8, 'constraint_timeconst': 0.003, 'error': 'g04_high: no independently repeatable endpoints for receiver2-x'}, {'substeps': 8, 'constraint_timeconst': 0.0015, 'error': 'g04_high: no independently repeatable endpoints for receiver2-x'}, {'substeps': 16, 'constraint_timeconst': 0.0015, 'error': 'g04_high: no independently repeatable endpoints for receiver2-x'}, {'substeps': 16, 'constraint_timeconst': 0.00075, 'error': 'g04_high: no independently repeatable endpoints for receiver2-x'}]"
+    },
+    "bg02_physics_lab__g04_high": {
+      "phase": "COMPLETE"
+    },
+    "bg04_library_shelf__g04_high": {
+      "phase": "NEEDS_REPAIR",
+      "error": "bg04_library_shelf__g04_high: no measured coverage replacement for global_14"
+    },
+    "bg03_neutral_studio__g05_very_high": {
+      "phase": "NEEDS_REPAIR",
+      "error": "bg03_neutral_studio__g05_very_high: no admissible candidate theta-star for distance"
+    },
+    "bg01_home_ase__g05_very_high": {
+      "phase": "COMPLETE"
+    },
+    "bg02_physics_lab__g05_very_high": {
+      "phase": "COMPLETE"
+    },
+    "bg04_library_shelf__g05_very_high": {
+      "phase": "NEEDS_REPAIR",
+      "error": "bg04_library_shelf__g05_very_high: no admissible candidate theta-star for distance"
+    }
+  },
+  "updated_at_unix": 1789405431.619714,
+  "pid": 3457438,
+  "calibration_trajectories": 4241,
+  "candidate_trajectories": 857,
+  "candidate_videos": 1848,
+  "formal_videos": 0,
+  "failed_jobs": 23
+}
+
+DOCUMENT /data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_engineering_20260910_v1/summary.json MTIME 2026-09-09T18:37:03.565999+00:00 {
+  "run": "t17_t18_engineering_20260910_v1",
+  "phase": "ENGINEERING_COMPLETE",
+  "events": [
+    "T17",
+    "T18"
+  ],
+  "gpus": [
+    "3"
+  ],
+  "active_jobs": {},
+  "states": {
+    "T17": {
+      "phase": "COMPLETE"
+    },
+    "T18": {
+      "phase": "COMPLETE"
+    }
+  },
+  "pid": 37362,
+  "planned_engineering_trajectories": 30,
+  "finished_engineering_trajectories": 30,
+  "physics_pass": 20,
+  "physics_fail": 10,
+  "preview_videos": {
+    "T17": 3,
+    "T18": 3
+  },
+  "formal_video_count": 0,
+  "formal_target_per_event": 2640,
+  "updated_at_unix": 1788979023.5662556,
+  "next_required": "validate three adjacent boundaries, all prefixes and four backgrounds for each event before formal production"
+}
+
+DOCUMENT /data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/summary.json MTIME 2026-09-10T00:10:57.919568+00:00 {
+  "run": "t17_t18_boundaries_20260910_v1",
+  "phase": "ENGINEERING_COMPLETE",
+  "events": [
+    "T17",
+    "T18"
+  ],
+  "gpus": [
+    "3"
+  ],
+  "active_jobs": {},
+  "states": {
+    "T17": {
+      "phase": "COMPLETE"
+    },
+    "T18": {
+      "phase": "COMPLETE"
+    }
+  },
+  "pid": 1720562,
+  "planned_engineering_trajectories": 80,
+  "finished_engineering_trajectories": 80,
+  "physics_pass": 80,
+  "physics_fail": 0,
+  "preview_videos": {
+    "T17": 3,
+    "T18": 3
+  },
+  "formal_video_count": 0,
+  "formal_target_per_event": 2640,
+  "updated_at_unix": 1788999057.9207058,
+  "next_required": "validate three adjacent boundaries, all prefixes and four backgrounds for each event before formal production"
+}
+

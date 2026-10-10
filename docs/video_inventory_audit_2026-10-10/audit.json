@@ -1,0 +1,354 @@
+{
+  "scope": "Local snapshots only; no media decoding or remote server QA verification",
+  "routing": {
+    "rows": 22801,
+    "video_references": 68403,
+    "duplicate_record_ids": 0,
+    "cross_pool_group_conflicts": 0,
+    "qa_status": {
+      "release_specific_not_reaudited": 16401,
+      "ENGINEERING_COMPLETE_VISUAL_QA_PENDING": 2327,
+      "VIDEO_FILES_COMPLETE": 1193,
+      "visual_qa_pending": 2880
+    },
+    "release_status": {
+      "published_release_qa_not_reaudited": 14474,
+      "completed_engineering_export_not_formal_qa_certified": 3520,
+      "legacy_scan_not_52800_contract": 4807
+    },
+    "verified_trajectory_records": 0,
+    "by_event": [
+      {
+        "event": "T01",
+        "genesis_videos": 2640,
+        "isaac_videos": 960,
+        "pool": "train_pool",
+        "trajectories": 1200
+      },
+      {
+        "event": "T02",
+        "genesis_videos": 2640,
+        "isaac_videos": 960,
+        "pool": "train_pool",
+        "trajectories": 1200
+      },
+      {
+        "event": "T03",
+        "genesis_videos": 1422,
+        "isaac_videos": 960,
+        "pool": "test_ood_1",
+        "trajectories": 794
+      },
+      {
+        "event": "T04",
+        "genesis_videos": 2640,
+        "isaac_videos": 960,
+        "pool": "train_pool",
+        "trajectories": 1200
+      },
+      {
+        "event": "T05",
+        "genesis_videos": 2640,
+        "isaac_videos": 960,
+        "pool": "train_pool",
+        "trajectories": 1200
+      },
+      {
+        "event": "T06",
+        "genesis_videos": 2640,
+        "isaac_videos": 960,
+        "pool": "train_pool",
+        "trajectories": 1200
+      },
+      {
+        "event": "T07",
+        "genesis_videos": 2640,
+        "isaac_videos": 960,
+        "pool": "train_pool",
+        "trajectories": 1200
+      },
+      {
+        "event": "T08",
+        "genesis_videos": 2640,
+        "isaac_videos": 960,
+        "pool": "train_pool",
+        "trajectories": 1200
+      },
+      {
+        "event": "T09",
+        "genesis_videos": 2640,
+        "isaac_videos": 960,
+        "pool": "train_pool",
+        "trajectories": 1200
+      },
+      {
+        "event": "T10",
+        "genesis_videos": 2640,
+        "isaac_videos": 960,
+        "pool": "train_pool",
+        "trajectories": 1200
+      },
+      {
+        "event": "T11",
+        "genesis_videos": 720,
+        "isaac_videos": 0,
+        "pool": "test_ood_2",
+        "trajectories": 240
+      },
+      {
+        "event": "T12",
+        "genesis_videos": 2640,
+        "isaac_videos": 0,
+        "pool": "train_pool",
+        "trajectories": 880
+      },
+      {
+        "event": "T13",
+        "genesis_videos": 0,
+        "isaac_videos": 0,
+        "pool": "train_pool",
+        "trajectories": 0
+      },
+      {
+        "event": "T14",
+        "genesis_videos": 2640,
+        "isaac_videos": 0,
+        "pool": "train_pool",
+        "trajectories": 880
+      },
+      {
+        "event": "T15",
+        "genesis_videos": 2640,
+        "isaac_videos": 0,
+        "pool": "train_pool",
+        "trajectories": 880
+      },
+      {
+        "event": "T16",
+        "genesis_videos": 3588,
+        "isaac_videos": 2640,
+        "pool": "train_pool",
+        "trajectories": 2076
+      },
+      {
+        "event": "T17",
+        "genesis_videos": 3237,
+        "isaac_videos": 2640,
+        "pool": "train_pool",
+        "trajectories": 1959
+      },
+      {
+        "event": "T18",
+        "genesis_videos": 1890,
+        "isaac_videos": 2640,
+        "pool": "train_pool",
+        "trajectories": 1510
+      },
+      {
+        "event": "T19",
+        "genesis_videos": 2136,
+        "isaac_videos": 2640,
+        "pool": "test_ood_2",
+        "trajectories": 1592
+      },
+      {
+        "event": "T20",
+        "genesis_videos": 3570,
+        "isaac_videos": 0,
+        "pool": "test_ood_1",
+        "trajectories": 1190
+      }
+    ]
+  },
+  "main_repo_catalog": {
+    "date": "2026-10-10",
+    "revision": "e2f2e4cdff26cdc26a6dc4ae545d589fd9005de6",
+    "files": 148297,
+    "mp4_paths": 46153,
+    "unique_mp4_paths": 46153,
+    "zero_byte_mp4": 0,
+    "mp4_bytes": 10627338306,
+    "release_sum_mp4": 46153,
+    "release_sum_three_view_sets": 14490,
+    "release_sum_incomplete_camera_sets": 42
+  },
+  "catalog_special_cases": {
+    "T02": {
+      "releases": [
+        {
+          "scene": "T02",
+          "simulator": "见批次元数据",
+          "prefix": "staging/t02/t02_formal_880_r010_480p_20260903",
+          "files": 16794,
+          "bytes": 9159802841,
+          "mp4_files": 2653,
+          "complete_three_view_sets": 884,
+          "incomplete_camera_sets": 1,
+          "other_mp4_files": 0,
+          "note": "远端文件盘点；质量以该批次 QA/manifest 为准；存在缺机位样本"
+        }
+      ],
+      "example_paths": [
+        "staging/t02/t02_formal_880_r010_480p_20260903/samples/T02V2F52K__bg01_home_ase__g01_moon__cfA_theta_minus_rep01__vs0202198__x0190000__vp0250000__r010/videos/T02V2F52K__bg01_home_ase__g01_moon__cfA_theta_minus_rep01__vs0202198__x0190000__vp0250000__r010__cam01.mp4",
+        "staging/t02/t02_formal_880_r010_480p_20260903/samples/T02V2F52K__bg01_home_ase__g01_moon__cfA_theta_minus_rep01__vs0202198__x0190000__vp0250000__r010/videos/T02V2F52K__bg01_home_ase__g01_moon__cfA_theta_minus_rep01__vs0202198__x0190000__vp0250000__r010__cam02.mp4",
+        "staging/t02/t02_formal_880_r010_480p_20260903/samples/T02V2F52K__bg01_home_ase__g01_moon__cfA_theta_minus_rep01__vs0202198__x0190000__vp0250000__r010/videos/T02V2F52K__bg01_home_ase__g01_moon__cfA_theta_minus_rep01__vs0202198__x0190000__vp0250000__r010__cam03.mp4",
+        "staging/t02/t02_formal_880_r010_480p_20260903/samples/T02V2F52K__bg01_home_ase__g01_moon__cfA_theta_minus_rep02__vs0202198__x0190000__vp0250000__r010/videos/T02V2F52K__bg01_home_ase__g01_moon__cfA_theta_minus_rep02__vs0202198__x0190000__vp0250000__r010__cam01.mp4"
+      ]
+    },
+    "T03": {
+      "releases": [
+        {
+          "scene": "T03",
+          "simulator": "见批次元数据",
+          "prefix": "data/T01_T05/T03",
+          "files": 189,
+          "bytes": 44862819,
+          "mp4_files": 141,
+          "complete_three_view_sets": 47,
+          "incomplete_camera_sets": 0,
+          "other_mp4_files": 0,
+          "note": "历史 canonical 子集；使用 metadata/trajectories.jsonl 选样"
+        },
+        {
+          "scene": "T03",
+          "simulator": "Genesis",
+          "prefix": "data/T03/formal_480p_fullsim_r014_delta_pass001_revalidated_20260909",
+          "files": 15,
+          "bytes": 6004021,
+          "mp4_files": 3,
+          "complete_three_view_sets": 1,
+          "incomplete_camera_sets": 0,
+          "other_mp4_files": 0,
+          "note": "历史 T03 批次，不代表新的 880 条重生成版本；跨版本不可直接相加"
+        },
+        {
+          "scene": "T03",
+          "simulator": "Genesis",
+          "prefix": "data/T03/formal_480p_fullsim_r014_pass318_20260908",
+          "files": 4444,
+          "bytes": 2237986086,
+          "mp4_files": 954,
+          "complete_three_view_sets": 318,
+          "incomplete_camera_sets": 0,
+          "other_mp4_files": 0,
+          "note": "历史 T03 批次，不代表新的 880 条重生成版本；跨版本不可直接相加"
+        },
+        {
+          "scene": "T03",
+          "simulator": "Genesis",
+          "prefix": "data/T03/formal_480p_fullsim_r032_r034_completion_20260914",
+          "files": 2800,
+          "bytes": 1532129068,
+          "mp4_files": 465,
+          "complete_three_view_sets": 155,
+          "incomplete_camera_sets": 0,
+          "other_mp4_files": 0,
+          "note": "历史 T03 批次，不代表新的 880 条重生成版本；跨版本不可直接相加"
+        },
+        {
+          "scene": "T03",
+          "simulator": "Genesis",
+          "prefix": "data/T03/formal_480p_fullsim_r032_r034_delta_pass561_20260920",
+          "files": 1160,
+          "bytes": 9639723,
+          "mp4_files": 42,
+          "complete_three_view_sets": 0,
+          "incomplete_camera_sets": 41,
+          "other_mp4_files": 0,
+          "note": "不完整上传：目录名含 561，实际仅 42 个 MP4；不可作为完整 561 条使用；存在缺机位样本"
+        }
+      ],
+      "example_paths": [
+        "data/T01_T05/T03/videos/T03__bg01_home_ase__g01_moon__com_edge_distance__p001__cam01.mp4",
+        "data/T01_T05/T03/videos/T03__bg01_home_ase__g01_moon__com_edge_distance__p001__cam02.mp4",
+        "data/T01_T05/T03/videos/T03__bg01_home_ase__g01_moon__com_edge_distance__p001__cam03.mp4",
+        "data/T01_T05/T03/videos/T03__bg01_home_ase__g01_moon__com_edge_distance__p002__cam01.mp4"
+      ]
+    },
+    "T12": {
+      "releases": [
+        {
+          "scene": "T12",
+          "simulator": "见批次元数据",
+          "prefix": "data/T12/formal_r002_480p_20260913",
+          "files": 7926,
+          "bytes": 303766489,
+          "mp4_files": 2640,
+          "complete_three_view_sets": 0,
+          "incomplete_camera_sets": 0,
+          "other_mp4_files": 2640,
+          "note": "远端文件盘点；质量以该批次 QA/manifest 为准"
+        }
+      ],
+      "example_paths": [
+        "data/T12/formal_r002_480p_20260913/videos/T12F880R002__bg01_home_ase__p000__cam01_mechanism_side.mp4",
+        "data/T12/formal_r002_480p_20260913/videos/T12F880R002__bg01_home_ase__p000__cam02_context_oblique.mp4",
+        "data/T12/formal_r002_480p_20260913/videos/T12F880R002__bg01_home_ase__p000__cam03_critical_close.mp4",
+        "data/T12/formal_r002_480p_20260913/videos/T12F880R002__bg01_home_ase__p001__cam01_mechanism_side.mp4"
+      ]
+    }
+  },
+  "t03_historical_repair": {
+    "samples": 17,
+    "reasons": {
+      "RuntimeError: physics audit failed: ['runtime_penetration_gt_5mm']": 14,
+      "RuntimeError: physics audit failed: ['physical_event_chain_too_short']": 3
+    },
+    "note": "Repair queue is not a final acceptance receipt."
+  },
+  "source_sha256": {
+    "PhysEdit-GravTrace\\docs\\joint_split_v3\\event_pool_routing.jsonl": "25adc2e81aa3f48d2644d820ebeca1a5d939315253871cc2a618e4879bd9d9cc",
+    "_remote_work\\hf_docs_20261010\\phyeditingvideo__Phyediting\\catalog\\releases.json": "f9e8a9798fff8894cbf3955fc5d8ff6b30dd2eaf1a85286fbdc62df63689dde8",
+    "_remote_work\\hf_docs_20261010\\phyeditingvideo__Phyediting\\catalog\\files.jsonl.gz": "38934bf90a01f30bdc3bee394f88bf230f687299faab567a6077e8e8fa19ce54"
+  },
+  "camera_suffix_aware_audit": {
+    "by_event": {
+      "T02": {
+        "complete_groups": 884,
+        "incomplete_groups": 1
+      },
+      "T03": {
+        "complete_groups": 521,
+        "incomplete_groups": 41
+      },
+      "T12": {
+        "complete_groups": 880,
+        "incomplete_groups": 0
+      }
+    },
+    "total_complete_groups": 15370,
+    "total_incomplete_groups": 42,
+    "unmatched_mp4_count": 0
+  },
+  "sidecar_catalog_examples": {
+    "T06": {
+      "extensions": {
+        ".json": 2641,
+        ".gz": 880,
+        ".png": 1760
+      },
+      "examples": [
+        "data/T06/production_2640_480p_20260904/BATCH_MANIFEST.json",
+        "data/T06/production_2640_480p_20260904/configs/PROD_T06_bg01_home_ase_g01_moon_J_p00__cam01.json",
+        "data/T06/production_2640_480p_20260904/configs/PROD_T06_bg01_home_ase_g01_moon_J_p00__cam02.json",
+        "data/T06/production_2640_480p_20260904/configs/PROD_T06_bg01_home_ase_g01_moon_J_p00__cam03.json",
+        "data/T06/production_2640_480p_20260904/configs/PROD_T06_bg01_home_ase_g01_moon_J_p01__cam01.json"
+      ]
+    },
+    "T12": {
+      "extensions": {
+        ".json": 2644,
+        ".jsonl": 1,
+        ".gz": 2640,
+        ".md": 1
+      },
+      "examples": [
+        "data/T12/formal_r002_480p_20260913/BATCH_MANIFEST.json",
+        "data/T12/formal_r002_480p_20260913/configs/T12F880R002__bg01_home_ase__p000__cam01_mechanism_side.json",
+        "data/T12/formal_r002_480p_20260913/configs/T12F880R002__bg01_home_ase__p000__cam02_context_oblique.json",
+        "data/T12/formal_r002_480p_20260913/configs/T12F880R002__bg01_home_ase__p000__cam03_critical_close.json",
+        "data/T12/formal_r002_480p_20260913/configs/T12F880R002__bg01_home_ase__p001__cam01_mechanism_side.json"
+      ]
+    }
+  }
+}

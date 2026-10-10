@@ -1,0 +1,610 @@
+{
+  "purpose": "CAMERA_REVIEW_ONLY",
+  "formal_video_count": 0,
+  "source_trajectory": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/calibration/eng_t17_563abbba994fb6ed/trajectory.json.gz",
+  "source_sha256": "64b79fade4f7d342d144ab2e6c27b9d8f9b9d131400476ad3b39836d68c89227",
+  "source_config": {
+    "revision": "t17_t18_engineering_r02",
+    "event_type": "T17",
+    "classification": "CALIBRATION_ONLY",
+    "formal_video_count": 0,
+    "seed": 160911,
+    "background_id": "bg03_neutral_studio",
+    "gravity_id": "g03_earth",
+    "gravity": 9.81,
+    "background_entry": {
+      "display_name": "neutral studio / clean beige cyclorama and black table",
+      "reference_order": 3,
+      "reference_image": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/reference_images/03_studio_T01V2_initial.png",
+      "reference_image_sha256": "a78ce95649605cca9562f856cc12c27da523369394404e208f3952fff97f924a",
+      "reference_source_config": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T01_v2_7s/configs/visual_preview2/T01V2__bg03_neutral_studio__g03_earth__slope_chain__a150__mu260__u320__r001/cam01.json",
+      "reference_source_manifest": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/backgrounds_v1/manifests/neutral_studio_v1.json",
+      "profile": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/candidates/floor_realism_v3/profiles/bg03_neutral_studio.json",
+      "profile_sha256": "bc397da52e6ea3645346d433310f19ba9bf8d253a2cb2d32eaa334084b154df6",
+      "manifest": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/manifests/neutral_studio_v1.json",
+      "manifest_sha256": "bab6526b250813b8524ab8ef5e1caa70fd9b35da569bed3efaf949dbd634247d",
+      "asset_lock": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/candidates/floor_realism_v3/locks/bg03_neutral_studio.lock.json",
+      "asset_lock_sha256": "79cad1e74b61357d84121be622325483c5d37a176790688a5a391490afda029e",
+      "geometry_revision": "neutral_studio_v1_reference_layout",
+      "geometry_sha256": "b139a4ae02be854cc5b9f83c031f5fb5d648012ed992e360c158b3997a52d5f3",
+      "material_revision": "neutral_studio_v1",
+      "default_background_anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "background_anchor": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "parameters": {
+      "name": "release_lateral_offset",
+      "value": -0.03,
+      "unit": "m"
+    },
+    "objects": [
+      {
+        "name": "tabletop_collision_slab",
+        "shape": "box",
+        "size": [
+          1.42,
+          0.76,
+          0.064
+        ],
+        "pose": {
+          "position": [
+            0.0,
+            0.0,
+            -0.032
+          ],
+          "euler_xyz": [
+            0,
+            0,
+            0
+          ]
+        },
+        "fixed": true,
+        "motion": {
+          "type": "none"
+        },
+        "visualization": false,
+        "collision": true,
+        "friction": 0.52,
+        "restitution": 0.01,
+        "camera_focus": false
+      },
+      {
+        "name": "t17_ramp",
+        "asset_id": "folder_ramp_01",
+        "asset_catalog_family": "t06_t10_realism_v8",
+        "category": "folder_ramp_01",
+        "semantic_label": "folder_ramp_01",
+        "shape": "box",
+        "size": [
+          0.66,
+          0.38,
+          0.0195
+        ],
+        "pose": {
+          "position": [
+            -0.24,
+            0.0,
+            0.1285638325082968
+          ],
+          "euler_xyz": [
+            0.0,
+            21.0,
+            0.0
+          ]
+        },
+        "fixed": true,
+        "motion": {
+          "type": "none"
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/folder_ramp_01.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/collision/folder_ramp_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/collision/folder_ramp_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.22,
+        "restitution": 0.03,
+        "mass": 0.45,
+        "linear_damping": 0.012,
+        "angular_damping": 0.018,
+        "ccd_enabled": false,
+        "disable_sleep": false,
+        "contact_offset": 0.0012,
+        "camera_focus": false,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.66,
+          0.38,
+          0.0195
+        ],
+        "collision_geometry": "dimension_matched_box_proxy"
+      },
+      {
+        "name": "t17_projectile",
+        "asset_id": "can_ocean_tonic",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "can_ocean_tonic",
+        "semantic_label": "can_ocean_tonic",
+        "shape": "box",
+        "size": [
+          0.066,
+          0.066,
+          0.1236
+        ],
+        "pose": {
+          "position": [
+            -0.37,
+            -0.055,
+            0.22485760554088385
+          ],
+          "euler_xyz": [
+            90.0,
+            0.0,
+            0.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.8402223838474816,
+            0.0,
+            -0.32253115459077025
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/beverage_can_ocean_tonic.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.035,
+        "restitution": 0.03,
+        "mass": 0.115,
+        "linear_damping": 0.011500000000000002,
+        "angular_damping": 1.5326280000000005e-05,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "cylinder",
+        "collision_proxy_radius": 0.033,
+        "collision_proxy_height": 0.1236,
+        "collision_geometry": "dimension_matched_cylinder_proxy"
+      },
+      {
+        "name": "t17_target",
+        "asset_id": "book_thick_ochre_architecture",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "book_thick_ochre_architecture",
+        "semantic_label": "book_thick_ochre_architecture",
+        "shape": "box",
+        "size": [
+          0.27,
+          0.19,
+          0.052
+        ],
+        "pose": {
+          "position": [
+            0.26157562825214326,
+            -0.025,
+            0.0272
+          ],
+          "euler_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thick_ochre_architecture.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.24,
+        "restitution": 0.03,
+        "mass": 0.52,
+        "linear_damping": 0.052000000000000005,
+        "angular_damping": 0.0003227004444444445,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.27,
+          0.19,
+          0.052
+        ],
+        "collision_geometry": "dimension_matched_box_proxy"
+      }
+    ],
+    "event_spec": {
+      "event_sequence": [
+        "gravity_release",
+        "ramp_motion",
+        "path_divergence",
+        "target_contact_or_bypass",
+        "edge_event_or_settle"
+      ],
+      "outcomes": [
+        "hits_target",
+        "glances_target",
+        "bypasses_target",
+        "leaves_table"
+      ],
+      "required_contact_pairs": [
+        [
+          "t17_projectile",
+          "t17_ramp"
+        ]
+      ],
+      "actuated_objects": [],
+      "passive_objects": [
+        "t17_projectile",
+        "t17_target"
+      ],
+      "target_asset": "book_thick",
+      "ramp_angle_deg": 21.0,
+      "release_speed_mps": 0.9,
+      "critical_object_names": [
+        "t17_projectile",
+        "t17_target"
+      ],
+      "release_height_model": "exact rotated plane plus cylinder support radius; 0.6mm vertical clearance"
+    },
+    "runtime_forces": [],
+    "top_z": 0.0,
+    "source_code_sha256": "1183e1c46717f69efdbebf898618108a6c3f33cd5fec54cd351ded1229182d70",
+    "scene_module_sha256": "33a0d7b0218f32613dbb3da1141166f6fb5312a07d1242dc4940477a71ac7bc5",
+    "scene_overrides": {
+      "dt": 0.0020833333333333333,
+      "substeps": 4,
+      "gravity": [
+        0,
+        0,
+        -9.81
+      ],
+      "use_gjk_collision": true,
+      "enable_multi_contact": true,
+      "box_box_detection": false,
+      "iterations": 120,
+      "ls_iterations": 80,
+      "noslip_iterations": 10,
+      "constraint_timeconst": 0.003,
+      "raytracing": false
+    },
+    "media": {
+      "fps": 30,
+      "frames": 210,
+      "resolution": [
+        854,
+        480
+      ],
+      "codec": "h264",
+      "spp": 32
+    },
+    "physics": {
+      "dt": 0.0020833333333333333,
+      "substeps": 4,
+      "steps_per_video_frame": 16,
+      "warmup_seconds": 0,
+      "initial_velocity_is_only_applied_once_before_first_step": true
+    },
+    "measured_properties": {
+      "tabletop_collision_slab": {
+        "geom_friction": [
+          0.5199999809265137
+        ]
+      },
+      "t17_ramp": {
+        "geom_friction": [
+          0.2199999988079071
+        ]
+      },
+      "t17_projectile": {
+        "mass_kg": 0.115,
+        "dof_damping": [
+          0.011500000022351742,
+          0.011500000022351742,
+          0.011500000022351742,
+          1.5326280845329165e-05,
+          1.5326280845329165e-05,
+          1.5326280845329165e-05
+        ],
+        "initial_velocity_readback": [
+          0.8402223587036133,
+          0.0,
+          -0.32253116369247437
+        ],
+        "geom_friction": [
+          0.03500000014901161
+        ]
+      },
+      "t17_target": {
+        "mass_kg": 0.52,
+        "dof_damping": [
+          0.052000001072883606,
+          0.052000001072883606,
+          0.052000001072883606,
+          0.000322700449032709,
+          0.000322700449032709,
+          0.000322700449032709
+        ],
+        "geom_friction": [
+          0.23999999463558197
+        ]
+      }
+    }
+  },
+  "physics_qa": {
+    "status": "PASS",
+    "classification": "CALIBRATION_ONLY",
+    "formal_eligible": false,
+    "formal_video_count": 0,
+    "event_type": "T17",
+    "depth": 2,
+    "checks": {
+      "finite": true,
+      "penetration_below_2mm": true,
+      "settled_last_08s": true,
+      "angularly_settled": true,
+      "required_initial_support_contact": true,
+      "initial_state_valid": true
+    },
+    "motion_m": {
+      "t17_projectile": 0.5117211938036312,
+      "t17_target": 0.009845841615737691
+    },
+    "first_contact_times_s": {
+      "t17_target|tabletop_collision_slab": 0.016666666666666666,
+      "t17_projectile|t17_ramp": 0.041666666666666664,
+      "t17_projectile|t17_target": 0.41875,
+      "t17_projectile|tabletop_collision_slab": 0.45833333333333337
+    },
+    "max_penetration_m": 0.000999288633465767,
+    "worst_contact": {
+      "a": "t17_target",
+      "b": "t17_projectile",
+      "penetration_m": 0.000999288633465767,
+      "force_N": [
+        -0.0,
+        -0.0,
+        0.0
+      ],
+      "step": 9,
+      "frame": 12
+    },
+    "tail_speed_mps": 6.790671925336474e-05,
+    "tail_angular_radps": 0.0014517333719326635,
+    "causal_labels_status": "engineering observations; all adjacent counterfactual boundaries still required"
+  },
+  "cameras": {
+    "cam01": {
+      "position": [
+        0.0,
+        -1.7,
+        1.4
+      ],
+      "look_at": [
+        -0.08,
+        0.08,
+        0.04
+      ],
+      "fov_deg": 47.0,
+      "role": "high_oblique_side"
+    },
+    "cam02": {
+      "position": [
+        -1.5,
+        -0.1,
+        1.05
+      ],
+      "look_at": [
+        -0.12,
+        0.04,
+        0.16
+      ],
+      "fov_deg": 50.0,
+      "role": "folder_front"
+    },
+    "cam03": {
+      "position": [
+        1.0,
+        0.7,
+        0.95
+      ],
+      "look_at": [
+        -0.08,
+        0.02,
+        0.13
+      ],
+      "fov_deg": 55.0,
+      "role": "opposite_diagonal"
+    }
+  },
+  "camera_rig_revision": "user_three_distinct_angles_v2",
+  "background_camera_revision": "r1_static_obstruction_clearance",
+  "base_cameras": {
+    "cam01": {
+      "position": [
+        0.0,
+        -1.7,
+        1.4
+      ],
+      "look_at": [
+        -0.08,
+        0.08,
+        0.04
+      ],
+      "fov_deg": 47.0,
+      "role": "high_oblique_side"
+    },
+    "cam02": {
+      "position": [
+        -1.5,
+        -0.1,
+        1.05
+      ],
+      "look_at": [
+        -0.12,
+        0.04,
+        0.16
+      ],
+      "fov_deg": 50.0,
+      "role": "folder_front"
+    },
+    "cam03": {
+      "position": [
+        1.0,
+        0.7,
+        0.95
+      ],
+      "look_at": [
+        -0.08,
+        0.02,
+        0.13
+      ],
+      "fov_deg": 55.0,
+      "role": "opposite_diagonal"
+    }
+  },
+  "actual_cameras": {
+    "cam01": {
+      "camera_mode": "fixed_view",
+      "position": [
+        0.0,
+        -1.7,
+        1.4
+      ],
+      "look_at": [
+        -0.08,
+        0.08,
+        0.08
+      ],
+      "fov": 47.0,
+      "near": 0.022174760427116233,
+      "far": 20.0,
+      "res": [
+        854,
+        480
+      ],
+      "distance_to_look_at": 2.217476042711623,
+      "pose_sanitize_reason": "",
+      "pose_set_after_create": false,
+      "pose_set_method": "",
+      "raytracing_spp": 32,
+      "raytracing_denoise": true
+    },
+    "cam02": {
+      "camera_mode": "fixed_view",
+      "position": [
+        -1.5,
+        -0.1,
+        1.05
+      ],
+      "look_at": [
+        -0.12,
+        0.04,
+        0.16
+      ],
+      "fov": 50.0,
+      "near": 0.016480594649465777,
+      "far": 20.0,
+      "res": [
+        854,
+        480
+      ],
+      "distance_to_look_at": 1.6480594649465776,
+      "pose_sanitize_reason": "",
+      "pose_set_after_create": false,
+      "pose_set_method": "",
+      "raytracing_spp": 32,
+      "raytracing_denoise": true
+    },
+    "cam03": {
+      "camera_mode": "fixed_view",
+      "position": [
+        1.0,
+        0.7,
+        0.95
+      ],
+      "look_at": [
+        -0.08,
+        0.02,
+        0.13
+      ],
+      "fov": 55.0,
+      "near": 0.015169706655041158,
+      "far": 20.0,
+      "res": [
+        854,
+        480
+      ],
+      "distance_to_look_at": 1.5169706655041157,
+      "pose_sanitize_reason": "",
+      "pose_set_after_create": false,
+      "pose_set_method": "",
+      "raytracing_spp": 32,
+      "raytracing_denoise": true
+    }
+  },
+  "camera_visibility": {
+    "status": "PASS",
+    "method": "all-frame projected oriented proxy bounds; natural object-to-object occlusion permitted in user-approved rig",
+    "static_background_occlusion": "requires four-background visual preproduction approval",
+    "cameras": {
+      "cam01": {
+        "status": "PASS",
+        "failures": [],
+        "failure_count": 0
+      },
+      "cam02": {
+        "status": "PASS",
+        "failures": [],
+        "failure_count": 0
+      },
+      "cam03": {
+        "status": "PASS",
+        "failures": [],
+        "failure_count": 0
+      }
+    }
+  },
+  "user_camera_approval_date": "2026-09-10",
+  "fps": 30,
+  "frames": 210,
+  "resolution": [
+    854,
+    480
+  ],
+  "duration_s": 7,
+  "spp": 32,
+  "codec": "h264",
+  "gpu": "3",
+  "video_hashes": {
+    "cam01": "e594fea032705dff2498a3233999d751e452fdf52864629a9f3cb12a58f38652",
+    "cam02": "bb79a14a5786b433e780a30167a18937ae82af351c9fbfd32b4be1809f00cadb",
+    "cam03": "48d836f21141d9c7a8c056af46a42155dbbe0c3e791fa397878aa29e0910f7c3"
+  },
+  "renderer_code_sha256": "3df2ff37d95eca790d42061b4a6b30641e7abcae4a7e229052fd6cd94db8089d",
+  "no_physics_resimulation_per_camera": true
+}

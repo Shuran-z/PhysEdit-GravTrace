@@ -1,0 +1,711 @@
+{
+  "purpose": "FORMAL_CANDIDATE",
+  "formal_video_count": 0,
+  "source_trajectory": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/calibration/t16o_11d2fc029b43bf673e8b/trajectory.json.gz",
+  "source_sha256": "79f8893b422c36516d835650aef7bd4ace2648bc381c5ef6844dbadcd04098fd",
+  "source_config": {
+    "revision": "t16_52800_r12",
+    "seed": 160920,
+    "background_id": "bg02_physics_lab",
+    "gravity_id": "g03_earth",
+    "gravity": 9.81,
+    "background_entry": {
+      "display_name": "physics laboratory bench / pegboard",
+      "reference_order": 2,
+      "reference_image": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/reference_images/02_lab_T01V2_initial.png",
+      "reference_image_sha256": "f6ba7e362b4c3d2e3b5203ddf64ce6df13a7588734ec74ff12ac9234c15243b7",
+      "reference_source_config": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T01_v2_7s/configs/visual_preview2/T01V2__bg02_physics_lab__g03_earth__slope_chain__a150__mu260__u320__r001/cam01.json",
+      "reference_source_manifest": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/backgrounds_v4/manifests/physics_lab_bench_v4.json",
+      "profile": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/candidates/floor_realism_v3/profiles/bg02_physics_lab.json",
+      "profile_sha256": "7ccca4b19d4cbd3f4361908fe368fc65045930c63d487fb0ddaf70f14a1be688",
+      "manifest": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg02_physics_lab/manifests/physics_lab_bench_v4.json",
+      "manifest_sha256": "4c3f8111059af6db7345bab1484d0371a981617263de9a4c9d14176995b73f03",
+      "asset_lock": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/candidates/floor_realism_v3/locks/bg02_physics_lab.lock.json",
+      "asset_lock_sha256": "c3ca600955f060cf56e6d9323adff97c405b15400f68eb1e982b21e45e84f079",
+      "geometry_revision": "physics_lab_bench_v4_reference_layout",
+      "geometry_sha256": "92c57a7e7facd7bd1968049c39dc826e919c000d8e6d7b7aff6ff147457839a2",
+      "material_revision": "lab_material_realism_v1",
+      "default_background_anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "background_anchor": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "parameters": {
+      "withdrawal_distance_m": 0.0975,
+      "folder_angle_deg": 68.0,
+      "target_x_m": 0.2,
+      "receiver_gap_m": 0.06000000000000003,
+      "receiver2_x_m": 0.30000000000000004,
+      "receiver2_mass_kg": 0.115,
+      "layout_shift_x_m": 0.1,
+      "repeat_y_m": -0.0002
+    },
+    "support_origin": [
+      -0.24666171908571485,
+      0.11979999999999999,
+      0.0956
+    ],
+    "top_z": 0.0,
+    "objects": [
+      {
+        "name": "tabletop_collision_slab",
+        "shape": "box",
+        "size": [
+          1.42,
+          0.76,
+          0.064
+        ],
+        "pose": {
+          "position": [
+            0.0,
+            0.0,
+            -0.032
+          ],
+          "euler_xyz": [
+            0,
+            0,
+            0
+          ]
+        },
+        "fixed": true,
+        "motion": {
+          "type": "none"
+        },
+        "visualization": false,
+        "collision": true,
+        "friction": 0.9,
+        "restitution": 0.01,
+        "camera_focus": false
+      },
+      {
+        "name": "folder",
+        "asset_id": "folder_board_01",
+        "asset_catalog_family": "t06_t10_realism_v8",
+        "category": "folder_board_01",
+        "semantic_label": "folder_board_01",
+        "shape": "box",
+        "size": [
+          0.58,
+          0.34,
+          0.0195
+        ],
+        "pose": {
+          "position": [
+            -0.2513640879093856,
+            0.11979999999999999,
+            0.2731357321101735
+          ],
+          "euler_xyz": [
+            0.0,
+            -68.0,
+            0.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/folder_board_01.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/collision/folder_board_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/collision/folder_board_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.1,
+        "restitution": 0.03,
+        "mass": 0.32,
+        "linear_damping": 0.032,
+        "angular_damping": 0.0008042315555555556,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.58,
+          0.34,
+          0.0195
+        ],
+        "collision_geometry": "dimension_matched_box_proxy",
+        "damping_model": {
+          "velocity_decay_rate_per_s": 0.1,
+          "inertia_mean_kg_m2": 0.008042315555555556,
+          "approximation": "mean solid-box inertia for isotropic rotational drag"
+        }
+      },
+      {
+        "name": "support_book",
+        "asset_id": "book_thick_ochre_architecture",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "book_thick_ochre_architecture",
+        "semantic_label": "book_thick_ochre_architecture",
+        "shape": "box",
+        "size": [
+          0.27,
+          0.19,
+          0.052
+        ],
+        "pose": {
+          "position": [
+            -0.24666171908571485,
+            0.11979999999999999,
+            0.0956
+          ],
+          "euler_xyz": [
+            90.0,
+            0.0,
+            90.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thick_ochre_architecture.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.1,
+        "restitution": 0.03,
+        "mass": 2.0,
+        "linear_damping": 0.2,
+        "angular_damping": 0.0012411555555555558,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.27,
+          0.19,
+          0.052
+        ],
+        "collision_geometry": "dimension_matched_box_proxy",
+        "damping_model": {
+          "velocity_decay_rate_per_s": 0.1,
+          "inertia_mean_kg_m2": 0.012411555555555558,
+          "approximation": "mean solid-box inertia for isotropic rotational drag"
+        }
+      },
+      {
+        "name": "receiver1",
+        "asset_id": "book_thin_blue_chemistry",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "book_thin_blue_chemistry",
+        "semantic_label": "book_thin_blue_chemistry",
+        "shape": "box",
+        "size": [
+          0.21,
+          0.148,
+          0.014
+        ],
+        "pose": {
+          "position": [
+            0.30000000000000004,
+            0.11979999999999999,
+            0.1056
+          ],
+          "euler_xyz": [
+            0.0,
+            -90.0,
+            0.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thin_blue_chemistry.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.18,
+        "restitution": 0.03,
+        "mass": 0.12,
+        "linear_damping": 0.012,
+        "angular_damping": 4.413333333333333e-05,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.21,
+          0.148,
+          0.014
+        ],
+        "collision_geometry": "dimension_matched_box_proxy",
+        "damping_model": {
+          "velocity_decay_rate_per_s": 0.1,
+          "inertia_mean_kg_m2": 0.0004413333333333333,
+          "approximation": "mean solid-box inertia for isotropic rotational drag"
+        }
+      },
+      {
+        "name": "receiver2",
+        "asset_id": "can_ruby_citrus",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "can_ruby_citrus",
+        "semantic_label": "can_ruby_citrus",
+        "shape": "box",
+        "size": [
+          0.066,
+          0.066,
+          0.1236
+        ],
+        "pose": {
+          "position": [
+            0.4,
+            0.11979999999999999,
+            0.062400000000000004
+          ],
+          "euler_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/beverage_can_ruby_citrus.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.25,
+        "restitution": 0.03,
+        "mass": 0.115,
+        "linear_damping": 0.011500000000000002,
+        "angular_damping": 1.5326280000000005e-05,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "cylinder",
+        "collision_proxy_radius": 0.033,
+        "collision_proxy_height": 0.1236,
+        "collision_geometry": "dimension_matched_cylinder_proxy",
+        "damping_model": {
+          "velocity_decay_rate_per_s": 0.1,
+          "inertia_mean_kg_m2": 0.00015326280000000004,
+          "approximation": "mean solid-box inertia for isotropic rotational drag"
+        }
+      }
+    ],
+    "scene_overrides": {
+      "dt": 0.0020833333333333333,
+      "substeps": 4,
+      "gravity": [
+        0,
+        0,
+        -9.81
+      ],
+      "use_gjk_collision": true,
+      "enable_multi_contact": true,
+      "box_box_detection": false,
+      "iterations": 120,
+      "ls_iterations": 80,
+      "noslip_iterations": 10,
+      "constraint_timeconst": 0.003,
+      "raytracing": false
+    },
+    "source_registry": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/registry.json",
+    "source_registry_sha256": "2a97e215db2102a4c0c17aace29dd592ac4bddf40e2991cd3289f8782ce9b5c6",
+    "media": {
+      "fps": 30,
+      "frames": 210,
+      "resolution": [
+        854,
+        480
+      ],
+      "codec": "h264",
+      "spp": 32
+    },
+    "physics": {
+      "dt": 0.0020833333333333333,
+      "substeps": 4,
+      "steps_per_video_frame": 16,
+      "warmup_seconds": 0.4
+    },
+    "source_code_sha256": "f11043b43406a8c012b3038861161ff42d8ffa5386b1fffcdafaf3e3861020c5",
+    "measured_physical_properties": {
+      "tabletop_collision_slab": {
+        "geom_friction": [
+          0.8999999761581421
+        ]
+      },
+      "folder": {
+        "mass_kg": 0.32,
+        "geom_friction": [
+          0.10000000149011612
+        ],
+        "dof_damping": [
+          0.03200000151991844,
+          0.03200000151991844,
+          0.03200000151991844,
+          0.0008042315603233874,
+          0.0008042315603233874,
+          0.0008042315603233874
+        ]
+      },
+      "support_book": {
+        "mass_kg": 2.0,
+        "geom_friction": [
+          0.10000000149011612
+        ],
+        "dof_damping": [
+          0.20000000298023224,
+          0.20000000298023224,
+          0.20000000298023224,
+          0.001241155550815165,
+          0.001241155550815165,
+          0.001241155550815165
+        ]
+      },
+      "receiver1": {
+        "mass_kg": 0.12,
+        "geom_friction": [
+          0.18000000715255737
+        ],
+        "dof_damping": [
+          0.012000000104308128,
+          0.012000000104308128,
+          0.012000000104308128,
+          4.413333226693794e-05,
+          4.413333226693794e-05,
+          4.413333226693794e-05
+        ]
+      },
+      "receiver2": {
+        "mass_kg": 0.115,
+        "geom_friction": [
+          0.25
+        ],
+        "dof_damping": [
+          0.011500000022351742,
+          0.011500000022351742,
+          0.011500000022351742,
+          1.5326280845329165e-05,
+          1.5326280845329165e-05,
+          1.5326280845329165e-05
+        ]
+      }
+    }
+  },
+  "physics_qa": {
+    "status": "PASS",
+    "checks": {
+      "finite": true,
+      "penetration_below_2mm": true,
+      "initial_drift_below_2mm": true,
+      "warmup_stable": true,
+      "settled_last_08s": true,
+      "initial_support_contact": true,
+      "trigger_after_initial_state": true,
+      "all_objects_initially_stable": true,
+      "angularly_settled": true,
+      "no_explosive_speed": true,
+      "no_causal_shortcut": true,
+      "no_forbidden_initial_contact": true,
+      "objects_remain_in_workspace": true
+    },
+    "depth": 0,
+    "outcome": "supported",
+    "folder_final_plane_angle_deg": 60.04942143773434,
+    "folder_final_near_horizontal": false,
+    "motion_m": {
+      "folder": 0.013102436973642724,
+      "support_book": 0.04532725431218356,
+      "receiver1": 7.450580596923828e-09,
+      "receiver2": 7.450580596923828e-09
+    },
+    "folder_angles_deg": [
+      66.63303906506475,
+      60.04942143773434,
+      60.04942143773434
+    ],
+    "fall_frame": null,
+    "first_contacts": {
+      "folder|tabletop_collision_slab": 0,
+      "support_book|tabletop_collision_slab": 0,
+      "folder|support_book": 0,
+      "receiver1|tabletop_collision_slab": 0,
+      "receiver2|tabletop_collision_slab": 0
+    },
+    "first_contact_times_s": {
+      "folder|tabletop_collision_slab": 0.0020833333333333333,
+      "support_book|tabletop_collision_slab": 0.0020833333333333333,
+      "folder|support_book": 0.0020833333333333333,
+      "receiver1|tabletop_collision_slab": 0.0020833333333333333,
+      "receiver2|tabletop_collision_slab": 0.0020833333333333333
+    },
+    "max_penetration_m": 1.675073872320354e-05,
+    "worst_contact": {
+      "a": "tabletop_collision_slab",
+      "b": "folder",
+      "penetration_m": 1.675073872320354e-05,
+      "force_N": [
+        1.7740060091018677,
+        0.6685358881950378,
+        2.7131166458129883
+      ],
+      "step": 1,
+      "frame": 76
+    },
+    "initial_drift_m": 0.0002199491055446019,
+    "tail_speed_mps": 0.009087534212845019,
+    "tail_angular_speed_radps": 0.047561927649328754,
+    "peak_speed_mps": 0.08533014755531786,
+    "causal_shortcut": false,
+    "warmup": {
+      "folder_drift_m": 0.004114270974040682,
+      "folder_angle_deg": 66.63452665097553
+    },
+    "formal_eligible": false
+  },
+  "cameras": {
+    "cam01": {
+      "position": [
+        0.0,
+        -1.7,
+        1.4
+      ],
+      "look_at": [
+        -0.08,
+        0.08,
+        0.04
+      ],
+      "fov_deg": 47.0,
+      "role": "high_oblique_side"
+    },
+    "cam02": {
+      "position": [
+        -1.5,
+        -0.1,
+        1.05
+      ],
+      "look_at": [
+        -0.12,
+        0.04,
+        0.16
+      ],
+      "fov_deg": 50.0,
+      "role": "folder_front"
+    },
+    "cam03": {
+      "position": [
+        1.0,
+        -0.7,
+        0.95
+      ],
+      "look_at": [
+        -0.08,
+        0.02,
+        0.13
+      ],
+      "fov_deg": 55.0,
+      "role": "opposite_front_diagonal_clear_of_instrument_panel"
+    }
+  },
+  "camera_rig_revision": "user_three_distinct_angles_v2",
+  "background_camera_revision": "r1_static_obstruction_clearance",
+  "base_cameras": {
+    "cam01": {
+      "position": [
+        0.0,
+        -1.7,
+        1.4
+      ],
+      "look_at": [
+        -0.08,
+        0.08,
+        0.04
+      ],
+      "fov_deg": 47.0,
+      "role": "high_oblique_side"
+    },
+    "cam02": {
+      "position": [
+        -1.5,
+        -0.1,
+        1.05
+      ],
+      "look_at": [
+        -0.12,
+        0.04,
+        0.16
+      ],
+      "fov_deg": 50.0,
+      "role": "folder_front"
+    },
+    "cam03": {
+      "position": [
+        1.0,
+        0.7,
+        0.95
+      ],
+      "look_at": [
+        -0.08,
+        0.02,
+        0.13
+      ],
+      "fov_deg": 55.0,
+      "role": "opposite_diagonal"
+    }
+  },
+  "actual_cameras": {
+    "cam01": {
+      "camera_mode": "fixed_view",
+      "position": [
+        0.0,
+        -1.7,
+        1.4
+      ],
+      "look_at": [
+        -0.08,
+        0.08,
+        0.08
+      ],
+      "fov": 47.0,
+      "near": 0.022174760427116233,
+      "far": 20.0,
+      "res": [
+        854,
+        480
+      ],
+      "distance_to_look_at": 2.217476042711623,
+      "pose_sanitize_reason": "",
+      "pose_set_after_create": false,
+      "pose_set_method": "",
+      "raytracing_spp": 32,
+      "raytracing_denoise": true
+    },
+    "cam02": {
+      "camera_mode": "fixed_view",
+      "position": [
+        -1.5,
+        -0.1,
+        1.05
+      ],
+      "look_at": [
+        -0.12,
+        0.04,
+        0.16
+      ],
+      "fov": 50.0,
+      "near": 0.016480594649465777,
+      "far": 20.0,
+      "res": [
+        854,
+        480
+      ],
+      "distance_to_look_at": 1.6480594649465776,
+      "pose_sanitize_reason": "",
+      "pose_set_after_create": false,
+      "pose_set_method": "",
+      "raytracing_spp": 32,
+      "raytracing_denoise": true
+    },
+    "cam03": {
+      "camera_mode": "fixed_view",
+      "position": [
+        1.0,
+        -0.7,
+        0.95
+      ],
+      "look_at": [
+        -0.08,
+        0.02,
+        0.13
+      ],
+      "fov": 55.0,
+      "near": 0.015353175567289002,
+      "far": 20.0,
+      "res": [
+        854,
+        480
+      ],
+      "distance_to_look_at": 1.5353175567289001,
+      "pose_sanitize_reason": "",
+      "pose_set_after_create": false,
+      "pose_set_method": "",
+      "raytracing_spp": 32,
+      "raytracing_denoise": true
+    }
+  },
+  "camera_visibility": {
+    "status": "PASS",
+    "method": "all-frame projected oriented proxy bounds; natural object-to-object occlusion permitted in user-approved rig",
+    "static_background_occlusion": "requires four-background visual preproduction approval",
+    "cameras": {
+      "cam01": {
+        "status": "PASS",
+        "failures": [],
+        "failure_count": 0
+      },
+      "cam02": {
+        "status": "PASS",
+        "failures": [],
+        "failure_count": 0
+      },
+      "cam03": {
+        "status": "PASS",
+        "failures": [],
+        "failure_count": 0
+      }
+    }
+  },
+  "user_camera_approval_date": "2026-09-10",
+  "fps": 30,
+  "frames": 210,
+  "resolution": [
+    854,
+    480
+  ],
+  "duration_s": 7,
+  "spp": 32,
+  "codec": "h264",
+  "gpu": "3",
+  "video_hashes": {
+    "cam01": "efff5e2c29b301472b07ac6140d07310fcb0eee35e75cbf28222076d4bfda852",
+    "cam02": "327497772f7d0d44c70518a263b6643bcd75a88291b0a65ccf351adff0474933",
+    "cam03": "13a70e0185e8425fee3da8f33c5deb02408b3a27ef7b53628e5bc67a15fd3a6f"
+  },
+  "renderer_code_sha256": "1e11470d20985ae26ac46d6e78bc8acc5c29a211b12e271cb1b8b9b5d5e1b66b",
+  "no_physics_resimulation_per_camera": true
+}

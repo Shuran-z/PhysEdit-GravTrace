@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "routed-inventory",
+      "title": "Selected inventory and readiness",
+      "queries": [
+        {
+          "id": "routing",
+          "source": {
+            "label": "Joint split v3 routing snapshot",
+            "files": [
+              "event_pool_routing.jsonl",
+              "inventory_audit.json"
+            ],
+            "caveats": [
+              "Inventory references do not certify decoding or physical quality. The train/validation/ID split is not finalized."
+            ]
+          },
+          "columns": [
+            "trajectories",
+            "video_references",
+            "duplicate_record_ids",
+            "cross_pool_group_conflicts"
+          ],
+          "rows": [
+            {
+              "trajectories": 22801,
+              "video_references": 68403,
+              "duplicate_record_ids": 0,
+              "cross_pool_group_conflicts": 0
+            }
+          ],
+          "reportingPeriod": "2026-10-09 local routing snapshot"
+        }
+      ]
+    },
+    {
+      "id": "catalog-audit",
+      "title": "Main repository catalog and camera matching",
+      "queries": [
+        {
+          "id": "catalog",
+          "source": {
+            "label": "Main repository catalog snapshot",
+            "files": [
+              "catalog/files.jsonl.gz",
+              "catalog/releases.json"
+            ],
+            "caveats": [
+              "Only the main repository is included. Versions are not deduplicated across releases. Live remote access returned HTTP 401. Camera completeness does not verify synchronization or video content."
+            ]
+          },
+          "columns": [
+            "mp4_paths",
+            "complete_camera_groups",
+            "incomplete_camera_groups",
+            "t12_complete_groups"
+          ],
+          "rows": [
+            {
+              "mp4_paths": 46153,
+              "complete_camera_groups": 15370,
+              "incomplete_camera_groups": 42,
+              "t12_complete_groups": 880
+            }
+          ],
+          "reportingPeriod": "2026-10-10 catalog snapshot",
+          "methods": [
+            {
+              "language": "calculation",
+              "code": "Group video paths by parent directory and filename prefix before __cam01/__cam02/__cam03, permitting descriptive camera suffixes. Complete groups contain all three camera IDs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "release-gates",
+      "title": "T03 and T13 release evidence",
+      "queries": [
+        {
+          "id": "release-docs",
+          "source": {
+            "label": "Local release documentation",
+            "files": [
+              "2026-10-10 dataset README",
+              "t03_repair_r035/manifest.json",
+              "t13_release_20260919/visual_freeze_gate_20260919.json"
+            ],
+            "caveats": [
+              "The T03 README reports 880 completed trajectories, but final server acceptance was not independently verified. The T13 failure is a September 19 historical gate, not a fresh server status."
+            ]
+          },
+          "summary": "T03 has a documented completed replacement release that is not yet published; its historical repair queue contains 17 entries. T13 remains absent from the routed inventory, and the inspected historical visual release gate failed."
+        }
+      ]
+    }
+  ]
+}

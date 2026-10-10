@@ -1,0 +1,2288 @@
+{
+  "schema": "isaac_t16_t20_13200_v1",
+  "event": "T18",
+  "sample_id": "T18__bg03_neutral_studio__g03_earth__value_0.8__global_00",
+  "classification": "CALIBRATION_ONLY",
+  "formal_video_count": 0,
+  "background_id": "bg03_neutral_studio",
+  "gravity_id": "g03_earth",
+  "gravity": [
+    0,
+    0,
+    -9.81
+  ],
+  "objects": [
+    {
+      "name": "tabletop_collision_slab",
+      "shape": "box",
+      "size": [
+        1.42,
+        0.76,
+        0.064
+      ],
+      "pose": {
+        "position": [
+          0.0,
+          0.0,
+          -0.032
+        ],
+        "euler_xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "fixed": true,
+      "visualization": false,
+      "friction": 0.52,
+      "restitution": 0.01
+    },
+    {
+      "name": "t18_book_00",
+      "asset_id": "book_textbook_navy_physics",
+      "asset_catalog_family": "t16_t20_realistic_v4",
+      "category": "book_textbook_navy_physics",
+      "semantic_label": "book_textbook_navy_physics",
+      "shape": "box",
+      "size": [
+        0.245,
+        0.178,
+        0.032
+      ],
+      "pose": {
+        "position": [
+          0.0,
+          -0.0015,
+          0.017
+        ],
+        "euler_xyz": [
+          0.0,
+          0.0,
+          -0.45
+        ]
+      },
+      "fixed": false,
+      "motion": {
+        "type": "physics",
+        "initial_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_navy_physics.obj",
+      "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+      "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+      "preserve_mesh_material": true,
+      "visualization": true,
+      "collision": true,
+      "friction": 0.27,
+      "restitution": 0.015,
+      "mass": 0.4,
+      "linear_damping": 0.04000000000000001,
+      "angular_damping": 0.00020607333333333332,
+      "ccd_enabled": true,
+      "disable_sleep": true,
+      "contact_offset": 0.0012,
+      "camera_focus": true,
+      "collision_visual_alignment": "catalog_authored_same_origin",
+      "collision_proxy": "box",
+      "collision_proxy_size": [
+        0.245,
+        0.178,
+        0.032
+      ],
+      "collision_geometry": "dimension_matched_box_proxy"
+    },
+    {
+      "name": "t18_book_01",
+      "asset_id": "book_textbook_burgundy_mechanics",
+      "asset_catalog_family": "t16_t20_realistic_v4",
+      "category": "book_textbook_burgundy_mechanics",
+      "semantic_label": "book_textbook_burgundy_mechanics",
+      "shape": "box",
+      "size": [
+        0.245,
+        0.178,
+        0.032
+      ],
+      "pose": {
+        "position": [
+          0.0,
+          0.0015,
+          0.049800000000000004
+        ],
+        "euler_xyz": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fixed": false,
+      "motion": {
+        "type": "physics",
+        "initial_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_burgundy_mechanics.obj",
+      "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+      "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+      "preserve_mesh_material": true,
+      "visualization": true,
+      "collision": true,
+      "friction": 0.27,
+      "restitution": 0.015,
+      "mass": 0.4,
+      "linear_damping": 0.04000000000000001,
+      "angular_damping": 0.00020607333333333332,
+      "ccd_enabled": true,
+      "disable_sleep": true,
+      "contact_offset": 0.0012,
+      "camera_focus": true,
+      "collision_visual_alignment": "catalog_authored_same_origin",
+      "collision_proxy": "box",
+      "collision_proxy_size": [
+        0.245,
+        0.178,
+        0.032
+      ],
+      "collision_geometry": "dimension_matched_box_proxy"
+    },
+    {
+      "name": "t18_book_02",
+      "asset_id": "book_textbook_forest_botany",
+      "asset_catalog_family": "t16_t20_realistic_v4",
+      "category": "book_textbook_forest_botany",
+      "semantic_label": "book_textbook_forest_botany",
+      "shape": "box",
+      "size": [
+        0.245,
+        0.178,
+        0.032
+      ],
+      "pose": {
+        "position": [
+          0.008,
+          -0.0015,
+          0.0826
+        ],
+        "euler_xyz": [
+          0.0,
+          0.0,
+          0.45
+        ]
+      },
+      "fixed": false,
+      "motion": {
+        "type": "physics",
+        "initial_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_forest_botany.obj",
+      "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+      "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+      "preserve_mesh_material": true,
+      "visualization": true,
+      "collision": true,
+      "friction": 0.27,
+      "restitution": 0.015,
+      "mass": 0.4,
+      "linear_damping": 0.04000000000000001,
+      "angular_damping": 0.00020607333333333332,
+      "ccd_enabled": true,
+      "disable_sleep": true,
+      "contact_offset": 0.0012,
+      "camera_focus": true,
+      "collision_visual_alignment": "catalog_authored_same_origin",
+      "collision_proxy": "box",
+      "collision_proxy_size": [
+        0.245,
+        0.178,
+        0.032
+      ],
+      "collision_geometry": "dimension_matched_box_proxy"
+    },
+    {
+      "name": "t18_book_03",
+      "asset_id": "book_thin_blue_chemistry",
+      "asset_catalog_family": "t16_t20_realistic_v4",
+      "category": "book_thin_blue_chemistry",
+      "semantic_label": "book_thin_blue_chemistry",
+      "shape": "box",
+      "size": [
+        0.21,
+        0.148,
+        0.014
+      ],
+      "pose": {
+        "position": [
+          0.008,
+          0.0015,
+          0.10640000000000002
+        ],
+        "euler_xyz": [
+          0.0,
+          0.0,
+          -0.45
+        ]
+      },
+      "fixed": false,
+      "motion": {
+        "type": "physics",
+        "initial_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thin_blue_chemistry.obj",
+      "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj",
+      "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj",
+      "preserve_mesh_material": true,
+      "visualization": true,
+      "collision": true,
+      "friction": 0.27,
+      "restitution": 0.015,
+      "mass": 0.24,
+      "linear_damping": 0.024,
+      "angular_damping": 8.826666666666665e-05,
+      "ccd_enabled": true,
+      "disable_sleep": true,
+      "contact_offset": 0.0012,
+      "camera_focus": true,
+      "collision_visual_alignment": "catalog_authored_same_origin",
+      "collision_proxy": "box",
+      "collision_proxy_size": [
+        0.21,
+        0.148,
+        0.014
+      ],
+      "collision_geometry": "dimension_matched_box_proxy"
+    },
+    {
+      "name": "t18_book_04",
+      "asset_id": "book_thick_ochre_architecture",
+      "asset_catalog_family": "t16_t20_realistic_v4",
+      "category": "book_thick_ochre_architecture",
+      "semantic_label": "book_thick_ochre_architecture",
+      "shape": "box",
+      "size": [
+        0.27,
+        0.19,
+        0.052
+      ],
+      "pose": {
+        "position": [
+          0.008,
+          -0.0015,
+          0.14020000000000002
+        ],
+        "euler_xyz": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fixed": false,
+      "motion": {
+        "type": "physics",
+        "initial_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thick_ochre_architecture.obj",
+      "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+      "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+      "preserve_mesh_material": true,
+      "visualization": true,
+      "collision": true,
+      "friction": 0.27,
+      "restitution": 0.015,
+      "mass": 0.52,
+      "linear_damping": 0.052000000000000005,
+      "angular_damping": 0.0003227004444444445,
+      "ccd_enabled": true,
+      "disable_sleep": true,
+      "contact_offset": 0.0012,
+      "camera_focus": true,
+      "collision_visual_alignment": "catalog_authored_same_origin",
+      "collision_proxy": "box",
+      "collision_proxy_size": [
+        0.27,
+        0.19,
+        0.052
+      ],
+      "collision_geometry": "dimension_matched_box_proxy"
+    },
+    {
+      "name": "t18_book_05",
+      "asset_id": "book_textbook_navy_physics",
+      "asset_catalog_family": "t16_t20_realistic_v4",
+      "category": "book_textbook_navy_physics",
+      "semantic_label": "book_textbook_navy_physics",
+      "shape": "box",
+      "size": [
+        0.245,
+        0.178,
+        0.032
+      ],
+      "pose": {
+        "position": [
+          0.008,
+          0.0015,
+          0.18300000000000005
+        ],
+        "euler_xyz": [
+          0.0,
+          0.0,
+          0.45
+        ]
+      },
+      "fixed": false,
+      "motion": {
+        "type": "physics",
+        "initial_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_navy_physics.obj",
+      "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+      "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+      "preserve_mesh_material": true,
+      "visualization": true,
+      "collision": true,
+      "friction": 0.27,
+      "restitution": 0.015,
+      "mass": 0.4,
+      "linear_damping": 0.04000000000000001,
+      "angular_damping": 0.00020607333333333332,
+      "ccd_enabled": true,
+      "disable_sleep": true,
+      "contact_offset": 0.0012,
+      "camera_focus": true,
+      "collision_visual_alignment": "catalog_authored_same_origin",
+      "collision_proxy": "box",
+      "collision_proxy_size": [
+        0.245,
+        0.178,
+        0.032
+      ],
+      "collision_geometry": "dimension_matched_box_proxy"
+    }
+  ],
+  "background_objects": [
+    {
+      "instance_id": "neutral_studio_v1",
+      "category": "background_stage",
+      "pose": {
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "euler_xyz": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/neutral_studio_v1.obj",
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/neutral_studio_v1.obj",
+      "collision_mesh_path": null,
+      "resolved_mesh": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/neutral_studio_v1.obj",
+      "is_proxy": false,
+      "decor_collision_policy": "visual_only",
+      "bbox": {
+        "min": [
+          -2.2,
+          -1.8,
+          -0.75
+        ],
+        "max": [
+          2.2,
+          1.15,
+          2.1
+        ],
+        "extent": [
+          4.4,
+          2.95,
+          2.85
+        ]
+      },
+      "name": "neutral_studio_v1"
+    }
+  ],
+  "background_anchor": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "lighting": {
+    "raytracing_env_map": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/hdri/ferndale_studio_03_2k_gain_0p72.hdr",
+    "raytracing_env_map_required": true,
+    "raytracing_env_encoding": "linear",
+    "raytracing_env_euler": [
+      0,
+      0,
+      25
+    ],
+    "raytracing_lights_local": [
+      {
+        "pos": [
+          -0.8,
+          -2.35,
+          2.25
+        ],
+        "color": [
+          1.0,
+          0.98,
+          0.95
+        ],
+        "intensity": 3.8,
+        "radius": 0.18
+      },
+      {
+        "pos": [
+          0.96,
+          -2.08,
+          1.82
+        ],
+        "color": [
+          0.88,
+          0.93,
+          1.0
+        ],
+        "intensity": 1.55,
+        "radius": 0.22
+      }
+    ]
+  },
+  "background_freeze_id": "ebb_t01_reference_four_backgrounds_floor_realism_v3_20260829",
+  "source": {
+    "objects": [
+      {
+        "name": "t18_book_00",
+        "asset_id": "book_textbook_navy_physics",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "book_textbook_navy_physics",
+        "semantic_label": "book_textbook_navy_physics",
+        "shape": "box",
+        "size": [
+          0.245,
+          0.178,
+          0.032
+        ],
+        "pose": {
+          "position": [
+            0.0,
+            -0.0015,
+            0.017
+          ],
+          "euler_xyz": [
+            0.0,
+            0.0,
+            -0.45
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_navy_physics.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.27,
+        "restitution": 0.015,
+        "mass": 0.4,
+        "linear_damping": 0.04000000000000001,
+        "angular_damping": 0.00020607333333333332,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.245,
+          0.178,
+          0.032
+        ],
+        "collision_geometry": "dimension_matched_box_proxy"
+      },
+      {
+        "name": "t18_book_01",
+        "asset_id": "book_textbook_burgundy_mechanics",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "book_textbook_burgundy_mechanics",
+        "semantic_label": "book_textbook_burgundy_mechanics",
+        "shape": "box",
+        "size": [
+          0.245,
+          0.178,
+          0.032
+        ],
+        "pose": {
+          "position": [
+            0.0,
+            0.0015,
+            0.049800000000000004
+          ],
+          "euler_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_burgundy_mechanics.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.27,
+        "restitution": 0.015,
+        "mass": 0.4,
+        "linear_damping": 0.04000000000000001,
+        "angular_damping": 0.00020607333333333332,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.245,
+          0.178,
+          0.032
+        ],
+        "collision_geometry": "dimension_matched_box_proxy"
+      },
+      {
+        "name": "t18_book_02",
+        "asset_id": "book_textbook_forest_botany",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "book_textbook_forest_botany",
+        "semantic_label": "book_textbook_forest_botany",
+        "shape": "box",
+        "size": [
+          0.245,
+          0.178,
+          0.032
+        ],
+        "pose": {
+          "position": [
+            0.008,
+            -0.0015,
+            0.0826
+          ],
+          "euler_xyz": [
+            0.0,
+            0.0,
+            0.45
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_forest_botany.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.27,
+        "restitution": 0.015,
+        "mass": 0.4,
+        "linear_damping": 0.04000000000000001,
+        "angular_damping": 0.00020607333333333332,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.245,
+          0.178,
+          0.032
+        ],
+        "collision_geometry": "dimension_matched_box_proxy"
+      },
+      {
+        "name": "t18_book_03",
+        "asset_id": "book_thin_blue_chemistry",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "book_thin_blue_chemistry",
+        "semantic_label": "book_thin_blue_chemistry",
+        "shape": "box",
+        "size": [
+          0.21,
+          0.148,
+          0.014
+        ],
+        "pose": {
+          "position": [
+            0.008,
+            0.0015,
+            0.10640000000000002
+          ],
+          "euler_xyz": [
+            0.0,
+            0.0,
+            -0.45
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thin_blue_chemistry.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.27,
+        "restitution": 0.015,
+        "mass": 0.24,
+        "linear_damping": 0.024,
+        "angular_damping": 8.826666666666665e-05,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.21,
+          0.148,
+          0.014
+        ],
+        "collision_geometry": "dimension_matched_box_proxy"
+      },
+      {
+        "name": "t18_book_04",
+        "asset_id": "book_thick_ochre_architecture",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "book_thick_ochre_architecture",
+        "semantic_label": "book_thick_ochre_architecture",
+        "shape": "box",
+        "size": [
+          0.27,
+          0.19,
+          0.052
+        ],
+        "pose": {
+          "position": [
+            0.008,
+            -0.0015,
+            0.14020000000000002
+          ],
+          "euler_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thick_ochre_architecture.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.27,
+        "restitution": 0.015,
+        "mass": 0.52,
+        "linear_damping": 0.052000000000000005,
+        "angular_damping": 0.0003227004444444445,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.27,
+          0.19,
+          0.052
+        ],
+        "collision_geometry": "dimension_matched_box_proxy"
+      },
+      {
+        "name": "t18_book_05",
+        "asset_id": "book_textbook_navy_physics",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "book_textbook_navy_physics",
+        "semantic_label": "book_textbook_navy_physics",
+        "shape": "box",
+        "size": [
+          0.245,
+          0.178,
+          0.032
+        ],
+        "pose": {
+          "position": [
+            0.008,
+            0.0015,
+            0.18300000000000005
+          ],
+          "euler_xyz": [
+            0.0,
+            0.0,
+            0.45
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_navy_physics.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.27,
+        "restitution": 0.015,
+        "mass": 0.4,
+        "linear_damping": 0.04000000000000001,
+        "angular_damping": 0.00020607333333333332,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.245,
+          0.178,
+          0.032
+        ],
+        "collision_geometry": "dimension_matched_box_proxy"
+      }
+    ],
+    "runtime_forces": [
+      {
+        "name": "pull_selected_book_000",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0012028,
+          0.0,
+          0.0
+        ],
+        "frame_start": 32,
+        "frame_end": 32,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_001",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0048041,
+          0.0,
+          0.0
+        ],
+        "frame_start": 33,
+        "frame_end": 33,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_002",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0107821,
+          0.0,
+          0.0
+        ],
+        "frame_start": 34,
+        "frame_end": 34,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_003",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0191008,
+          0.0,
+          0.0
+        ],
+        "frame_start": 35,
+        "frame_end": 35,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_004",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0297104,
+          0.0,
+          0.0
+        ],
+        "frame_start": 36,
+        "frame_end": 36,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_005",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0425469,
+          0.0,
+          0.0
+        ],
+        "frame_start": 37,
+        "frame_end": 37,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_006",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0575332,
+          0.0,
+          0.0
+        ],
+        "frame_start": 38,
+        "frame_end": 38,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_007",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0745792,
+          0.0,
+          0.0
+        ],
+        "frame_start": 39,
+        "frame_end": 39,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_008",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0935822,
+          0.0,
+          0.0
+        ],
+        "frame_start": 40,
+        "frame_end": 40,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_009",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.1144281,
+          0.0,
+          0.0
+        ],
+        "frame_start": 41,
+        "frame_end": 41,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_010",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.1369915,
+          0.0,
+          0.0
+        ],
+        "frame_start": 42,
+        "frame_end": 42,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_011",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.1611366,
+          0.0,
+          0.0
+        ],
+        "frame_start": 43,
+        "frame_end": 43,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_012",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.1867182,
+          0.0,
+          0.0
+        ],
+        "frame_start": 44,
+        "frame_end": 44,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_013",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.2135826,
+          0.0,
+          0.0
+        ],
+        "frame_start": 45,
+        "frame_end": 45,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_014",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.2415681,
+          0.0,
+          0.0
+        ],
+        "frame_start": 46,
+        "frame_end": 46,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_015",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.2705064,
+          0.0,
+          0.0
+        ],
+        "frame_start": 47,
+        "frame_end": 47,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_016",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.3002235,
+          0.0,
+          0.0
+        ],
+        "frame_start": 48,
+        "frame_end": 48,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_017",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.3305407,
+          0.0,
+          0.0
+        ],
+        "frame_start": 49,
+        "frame_end": 49,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_018",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.3612757,
+          0.0,
+          0.0
+        ],
+        "frame_start": 50,
+        "frame_end": 50,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_019",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.3922435,
+          0.0,
+          0.0
+        ],
+        "frame_start": 51,
+        "frame_end": 51,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_020",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.4232579,
+          0.0,
+          0.0
+        ],
+        "frame_start": 52,
+        "frame_end": 52,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_021",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.4541325,
+          0.0,
+          0.0
+        ],
+        "frame_start": 53,
+        "frame_end": 53,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_022",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.4846815,
+          0.0,
+          0.0
+        ],
+        "frame_start": 54,
+        "frame_end": 54,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_023",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.5147213,
+          0.0,
+          0.0
+        ],
+        "frame_start": 55,
+        "frame_end": 55,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_024",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.5440711,
+          0.0,
+          0.0
+        ],
+        "frame_start": 56,
+        "frame_end": 56,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_025",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.5725544,
+          0.0,
+          0.0
+        ],
+        "frame_start": 57,
+        "frame_end": 57,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_026",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.6,
+          0.0,
+          0.0
+        ],
+        "frame_start": 58,
+        "frame_end": 58,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_027",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.6262428,
+          0.0,
+          0.0
+        ],
+        "frame_start": 59,
+        "frame_end": 59,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_028",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.6511248,
+          0.0,
+          0.0
+        ],
+        "frame_start": 60,
+        "frame_end": 60,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_029",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.6744967,
+          0.0,
+          0.0
+        ],
+        "frame_start": 61,
+        "frame_end": 61,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_030",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.6962176,
+          0.0,
+          0.0
+        ],
+        "frame_start": 62,
+        "frame_end": 62,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_031",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7161571,
+          0.0,
+          0.0
+        ],
+        "frame_start": 63,
+        "frame_end": 63,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_032",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7341951,
+          0.0,
+          0.0
+        ],
+        "frame_start": 64,
+        "frame_end": 64,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_033",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7502233,
+          0.0,
+          0.0
+        ],
+        "frame_start": 65,
+        "frame_end": 65,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_034",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7641452,
+          0.0,
+          0.0
+        ],
+        "frame_start": 66,
+        "frame_end": 66,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_035",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.775877,
+          0.0,
+          0.0
+        ],
+        "frame_start": 67,
+        "frame_end": 67,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_036",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7853484,
+          0.0,
+          0.0
+        ],
+        "frame_start": 68,
+        "frame_end": 68,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_037",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7925021,
+          0.0,
+          0.0
+        ],
+        "frame_start": 69,
+        "frame_end": 69,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_038",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7972953,
+          0.0,
+          0.0
+        ],
+        "frame_start": 70,
+        "frame_end": 70,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_039",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7996992,
+          0.0,
+          0.0
+        ],
+        "frame_start": 71,
+        "frame_end": 71,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_040",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7996992,
+          0.0,
+          0.0
+        ],
+        "frame_start": 72,
+        "frame_end": 72,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_041",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7972953,
+          0.0,
+          0.0
+        ],
+        "frame_start": 73,
+        "frame_end": 73,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_042",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7925021,
+          0.0,
+          0.0
+        ],
+        "frame_start": 74,
+        "frame_end": 74,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_043",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7853484,
+          0.0,
+          0.0
+        ],
+        "frame_start": 75,
+        "frame_end": 75,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_044",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.775877,
+          0.0,
+          0.0
+        ],
+        "frame_start": 76,
+        "frame_end": 76,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_045",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7641452,
+          0.0,
+          0.0
+        ],
+        "frame_start": 77,
+        "frame_end": 77,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_046",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7502233,
+          0.0,
+          0.0
+        ],
+        "frame_start": 78,
+        "frame_end": 78,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_047",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7341951,
+          0.0,
+          0.0
+        ],
+        "frame_start": 79,
+        "frame_end": 79,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_048",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.7161571,
+          0.0,
+          0.0
+        ],
+        "frame_start": 80,
+        "frame_end": 80,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_049",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.6962176,
+          0.0,
+          0.0
+        ],
+        "frame_start": 81,
+        "frame_end": 81,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_050",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.6744967,
+          0.0,
+          0.0
+        ],
+        "frame_start": 82,
+        "frame_end": 82,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_051",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.6511248,
+          0.0,
+          0.0
+        ],
+        "frame_start": 83,
+        "frame_end": 83,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_052",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.6262428,
+          0.0,
+          0.0
+        ],
+        "frame_start": 84,
+        "frame_end": 84,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_053",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.6,
+          0.0,
+          0.0
+        ],
+        "frame_start": 85,
+        "frame_end": 85,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_054",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.5725544,
+          0.0,
+          0.0
+        ],
+        "frame_start": 86,
+        "frame_end": 86,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_055",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.5440711,
+          0.0,
+          0.0
+        ],
+        "frame_start": 87,
+        "frame_end": 87,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_056",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.5147213,
+          0.0,
+          0.0
+        ],
+        "frame_start": 88,
+        "frame_end": 88,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_057",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.4846815,
+          0.0,
+          0.0
+        ],
+        "frame_start": 89,
+        "frame_end": 89,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_058",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.4541325,
+          0.0,
+          0.0
+        ],
+        "frame_start": 90,
+        "frame_end": 90,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_059",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.4232579,
+          0.0,
+          0.0
+        ],
+        "frame_start": 91,
+        "frame_end": 91,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_060",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.3922435,
+          0.0,
+          0.0
+        ],
+        "frame_start": 92,
+        "frame_end": 92,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_061",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.3612757,
+          0.0,
+          0.0
+        ],
+        "frame_start": 93,
+        "frame_end": 93,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_062",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.3305407,
+          0.0,
+          0.0
+        ],
+        "frame_start": 94,
+        "frame_end": 94,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_063",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.3002235,
+          0.0,
+          0.0
+        ],
+        "frame_start": 95,
+        "frame_end": 95,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_064",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.2705064,
+          0.0,
+          0.0
+        ],
+        "frame_start": 96,
+        "frame_end": 96,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_065",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.2415681,
+          0.0,
+          0.0
+        ],
+        "frame_start": 97,
+        "frame_end": 97,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_066",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.2135826,
+          0.0,
+          0.0
+        ],
+        "frame_start": 98,
+        "frame_end": 98,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_067",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.1867182,
+          0.0,
+          0.0
+        ],
+        "frame_start": 99,
+        "frame_end": 99,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_068",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.1611366,
+          0.0,
+          0.0
+        ],
+        "frame_start": 100,
+        "frame_end": 100,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_069",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.1369915,
+          0.0,
+          0.0
+        ],
+        "frame_start": 101,
+        "frame_end": 101,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_070",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.1144281,
+          0.0,
+          0.0
+        ],
+        "frame_start": 102,
+        "frame_end": 102,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_071",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0935822,
+          0.0,
+          0.0
+        ],
+        "frame_start": 103,
+        "frame_end": 103,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_072",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0745792,
+          0.0,
+          0.0
+        ],
+        "frame_start": 104,
+        "frame_end": 104,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_073",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0575332,
+          0.0,
+          0.0
+        ],
+        "frame_start": 105,
+        "frame_end": 105,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_074",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0425469,
+          0.0,
+          0.0
+        ],
+        "frame_start": 106,
+        "frame_end": 106,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_075",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0297104,
+          0.0,
+          0.0
+        ],
+        "frame_start": 107,
+        "frame_end": 107,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_076",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0191008,
+          0.0,
+          0.0
+        ],
+        "frame_start": 108,
+        "frame_end": 108,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_077",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0107821,
+          0.0,
+          0.0
+        ],
+        "frame_start": 109,
+        "frame_end": 109,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_078",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0048041,
+          0.0,
+          0.0
+        ],
+        "frame_start": 110,
+        "frame_end": 110,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      },
+      {
+        "name": "pull_selected_book_079",
+        "target": "t18_book_01",
+        "force_world": [
+          -0.0012028,
+          0.0,
+          0.0
+        ],
+        "frame_start": 111,
+        "frame_end": 111,
+        "profile": "continuous_sine_squared",
+        "speed_limit_mps": 0.35,
+        "travel_limit_m": 0.24
+      }
+    ],
+    "camera_center": [
+      0.0,
+      0.0,
+      0.09990000000000002
+    ],
+    "critical_look_at": [
+      0.0,
+      0.0,
+      0.19980000000000003
+    ],
+    "meta": {
+      "event_sequence": [
+        "continuous_pull_force",
+        "selected_book_sliding",
+        "support_overlap_change",
+        "passive_upper_book_response",
+        "stack_cascade_or_restabilization"
+      ],
+      "outcomes": [
+        "static_friction_holds",
+        "localized_rearrangement",
+        "multi_book_cascade"
+      ],
+      "required_contact_pairs": [
+        [
+          "t18_book_00",
+          "t18_book_01"
+        ],
+        [
+          "t18_book_01",
+          "t18_book_02"
+        ],
+        [
+          "t18_book_02",
+          "t18_book_03"
+        ],
+        [
+          "t18_book_03",
+          "t18_book_04"
+        ],
+        [
+          "t18_book_04",
+          "t18_book_05"
+        ]
+      ],
+      "actuated_objects": [
+        "t18_book_01"
+      ],
+      "passive_objects": [
+        "t18_book_02",
+        "t18_book_03",
+        "t18_book_04",
+        "t18_book_05"
+      ],
+      "book_count": 6,
+      "extracted_book_name": "t18_book_01",
+      "extraction_index_zero_based": 1,
+      "supported_book_names": [
+        "t18_book_02",
+        "t18_book_03",
+        "t18_book_04",
+        "t18_book_05"
+      ],
+      "upper_motion_contract": "gravity_and_rigid_contact_only",
+      "initial_upper_offset_m": 0.008,
+      "gravity_force_scale": 1.0,
+      "applied_force_newton": 0.8,
+      "critical_object_names": [
+        "t18_book_00",
+        "t18_book_01",
+        "t18_book_02",
+        "t18_book_03",
+        "t18_book_04",
+        "t18_book_05"
+      ],
+      "continuous_actuator": "Genesis engineering r02 sine squared, speed/travel limited"
+    }
+  },
+  "parameter": {
+    "source_parameter": {
+      "name": "gravity_conditioned_book_pull_force",
+      "unit": "N"
+    },
+    "value": 0.8
+  },
+  "event_spec": {
+    "event_sequence": [
+      "continuous_pull_force",
+      "selected_book_sliding",
+      "support_overlap_change",
+      "passive_upper_book_response",
+      "stack_cascade_or_restabilization"
+    ],
+    "outcomes": [
+      "static_friction_holds",
+      "localized_rearrangement",
+      "multi_book_cascade"
+    ],
+    "required_contact_pairs": [
+      [
+        "t18_book_00",
+        "t18_book_01"
+      ],
+      [
+        "t18_book_01",
+        "t18_book_02"
+      ],
+      [
+        "t18_book_02",
+        "t18_book_03"
+      ],
+      [
+        "t18_book_03",
+        "t18_book_04"
+      ],
+      [
+        "t18_book_04",
+        "t18_book_05"
+      ]
+    ],
+    "actuated_objects": [
+      "t18_book_01"
+    ],
+    "passive_objects": [
+      "t18_book_02",
+      "t18_book_03",
+      "t18_book_04",
+      "t18_book_05"
+    ],
+    "book_count": 6,
+    "extracted_book_name": "t18_book_01",
+    "extraction_index_zero_based": 1,
+    "supported_book_names": [
+      "t18_book_02",
+      "t18_book_03",
+      "t18_book_04",
+      "t18_book_05"
+    ],
+    "upper_motion_contract": "gravity_and_rigid_contact_only",
+    "initial_upper_offset_m": 0.008,
+    "gravity_force_scale": 1.0,
+    "applied_force_newton": 0.8,
+    "critical_object_names": [
+      "t18_book_00",
+      "t18_book_01",
+      "t18_book_02",
+      "t18_book_03",
+      "t18_book_04",
+      "t18_book_05"
+    ],
+    "continuous_actuator": "Genesis engineering r02 sine squared, speed/travel limited"
+  },
+  "media": {
+    "width": 854,
+    "height": 480,
+    "fps": 30,
+    "frames": 210
+  },
+  "cameras": {
+    "cam01": {
+      "position": [
+        0.0,
+        -1.7,
+        1.4
+      ],
+      "look_at": [
+        -0.08,
+        0.08,
+        0.08
+      ],
+      "fov_deg": 47.0,
+      "role": "high_oblique_side"
+    },
+    "cam02": {
+      "position": [
+        -1.5,
+        -0.1,
+        1.05
+      ],
+      "look_at": [
+        -0.12,
+        0.04,
+        0.16
+      ],
+      "fov_deg": 50.0,
+      "role": "folder_front"
+    },
+    "cam03": {
+      "position": [
+        1.0,
+        0.7,
+        0.95
+      ],
+      "look_at": [
+        -0.08,
+        0.02,
+        0.13
+      ],
+      "fov_deg": 55.0,
+      "role": "opposite_diagonal"
+    }
+  },
+  "camera_status": "SOURCE_RIG_PORTED_VISUAL_QA_PENDING",
+  "physics": {
+    "outer_dt": 0.0020833333333333333,
+    "outer_steps_per_frame": 16,
+    "substeps": 4,
+    "warmup_s": 0.4,
+    "solver_position_iterations": 32,
+    "solver_velocity_iterations": 8
+  },
+  "dependencies": {
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/registry.json": "2a97e215db2102a4c0c17aace29dd592ac4bddf40e2991cd3289f8782ce9b5c6",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/catalog.json": "dac3136e905df88d33765aad89a9ab25480dfdd369e487b6cd1e849e8b1f88ef",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/physics_core/assets.py": "72f9cc22880b31e1521b5a425df3c69a5d585c7dee14c973dc87ff406ccf5d89",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/physics_core/placement.py": "8dc3b9e1ad03e6bb7d61c72d5a603f0f1c0d965004ae6ecba47c4531ba838128",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/manifests/neutral_studio_v1.json": "bab6526b250813b8524ab8ef5e1caa70fd9b35da569bed3efaf949dbd634247d",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/candidates/floor_realism_v3/profiles/bg03_neutral_studio.json": "bc397da52e6ea3645346d433310f19ba9bf8d253a2cb2d32eaa334084b154df6",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/candidates/floor_realism_v3/locks/bg03_neutral_studio.lock.json": "79cad1e74b61357d84121be622325483c5d37a176790688a5a391490afda029e",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/reference_images/03_studio_T01V2_initial.png": "a78ce95649605cca9562f856cc12c27da523369394404e208f3952fff97f924a",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/neutral_studio_v1.mtl": "317389915b647367b587fc169fb9ccfbcbe4b86ea03d0f693d81cb8103215344",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_plaster_basecolor.png": "312294df6d301e705d7a4977e2f6f127781f7be00484701bf9887fc355876723",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_plaster_roughness.png": "98db7cd77c3182bcd5d962268fa32895a8b50e0c7ffee0a50f697ed03d5d864b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_plaster_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_plaster_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_cyclorama_basecolor.png": "8826233c07c95a8f65187e6011a0810dfef91f67d90d0b23a8babb5df5f9b05c",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_cyclorama_roughness.png": "9082cdcb46bbf25c0f68966aaba6c2c7a517e9e99c94c33ff11e1a98d4658eba",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_cyclorama_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_cyclorama_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_oak_basecolor.png": "fc1e7bbbaf4ecf7210f023676f2f39138135092fe5c6e5693f7e17593b977942",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_oak_roughness.png": "70b26473b8baca171731a1b4b5ea7b1d2b41df48bfc734c5e268ab0436ab9f42",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_oak_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_oak_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_laminate_basecolor.png": "3179c897c8b69f7f4cc7220bf941ded843978dca4e96728236176d62ae921237",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_laminate_roughness.png": "08ac51a7bf56c12330f6bdb78010be0a09ad766fb619cf603e74e6130df77b76",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_laminate_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_laminate_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_metal_basecolor.png": "5030d08f7a356e83ee8fbd3ef5bdbce9afdc7c6586b4ad81c5b48aac50255f67",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_metal_roughness.png": "54a4f21e217695389cf5fa4bafbe6409d4ac8268f923e2f689aab43652feb0cb",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_metal_metallic.png": "cabf8af6e460c65a9230ac06a2477186bd5798aa9e932b59056d9022748a750e",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_metal_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_lab_panel_basecolor.png": "71e8b5fd77c8ddfcdd44c53ffe001a0522ae91d4f76f6c91683b0242493b2ab8",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_lab_panel_roughness.png": "a58b63688b63203f0d369d8e072046623c9d223825f076efba70a7ef97283336",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_lab_panel_metallic.png": "d62cb7ab3a83f8fb69e095275e78565b353e7b2b74a98e0646839f261aff5e91",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_lab_panel_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_concrete_basecolor.png": "b71e27774a847a9f55b840338b22d76dce2c3fe86b1912ffd8b2ccdebad0b308",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_concrete_roughness.png": "2d7b53336a8a9c928c9707954b39967dfe66dec7426658b6feb7598f704b4cc3",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_concrete_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_concrete_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_books_basecolor.png": "2aa33f03dbd2a567fc67778c5661333cff67abdb627985f7c277f21729ebe1fe",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_books_roughness.png": "8f812baa971e15b30353befb8866e12db1107098cc6130a94d636069c4b6e477",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_books_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_books_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/neutral_studio_v1.obj": "b139a4ae02be854cc5b9f83c031f5fb5d648012ed992e360c158b3997a52d5f3",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/hdri/ferndale_studio_03_2k_gain_0p72.hdr": "49dfe488c7187a06ae6853ace3ba9139a36cccd4246cde59e14ac70679e67126",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_books_basecolor.png": "2aa33f03dbd2a567fc67778c5661333cff67abdb627985f7c277f21729ebe1fe",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_books_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_books_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_books_roughness.png": "8f812baa971e15b30353befb8866e12db1107098cc6130a94d636069c4b6e477",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_concrete_basecolor.png": "b71e27774a847a9f55b840338b22d76dce2c3fe86b1912ffd8b2ccdebad0b308",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_concrete_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_concrete_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_concrete_roughness.png": "2d7b53336a8a9c928c9707954b39967dfe66dec7426658b6feb7598f704b4cc3",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_cyclorama_basecolor.png": "8826233c07c95a8f65187e6011a0810dfef91f67d90d0b23a8babb5df5f9b05c",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_cyclorama_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_cyclorama_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_cyclorama_roughness.png": "9082cdcb46bbf25c0f68966aaba6c2c7a517e9e99c94c33ff11e1a98d4658eba",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_lab_panel_basecolor.png": "71e8b5fd77c8ddfcdd44c53ffe001a0522ae91d4f76f6c91683b0242493b2ab8",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_lab_panel_metallic.png": "d62cb7ab3a83f8fb69e095275e78565b353e7b2b74a98e0646839f261aff5e91",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_lab_panel_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_lab_panel_roughness.png": "a58b63688b63203f0d369d8e072046623c9d223825f076efba70a7ef97283336",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_laminate_basecolor.png": "3179c897c8b69f7f4cc7220bf941ded843978dca4e96728236176d62ae921237",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_laminate_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_laminate_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_laminate_roughness.png": "08ac51a7bf56c12330f6bdb78010be0a09ad766fb619cf603e74e6130df77b76",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_metal_basecolor.png": "5030d08f7a356e83ee8fbd3ef5bdbce9afdc7c6586b4ad81c5b48aac50255f67",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_metal_metallic.png": "cabf8af6e460c65a9230ac06a2477186bd5798aa9e932b59056d9022748a750e",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_metal_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_metal_roughness.png": "54a4f21e217695389cf5fa4bafbe6409d4ac8268f923e2f689aab43652feb0cb",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_oak_basecolor.png": "fc1e7bbbaf4ecf7210f023676f2f39138135092fe5c6e5693f7e17593b977942",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_oak_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_oak_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_oak_roughness.png": "70b26473b8baca171731a1b4b5ea7b1d2b41df48bfc734c5e268ab0436ab9f42",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_plaster_basecolor.png": "312294df6d301e705d7a4977e2f6f127781f7be00484701bf9887fc355876723",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_plaster_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_plaster_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_plaster_roughness.png": "98db7cd77c3182bcd5d962268fa32895a8b50e0c7ffee0a50f697ed03d5d864b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/scenes/T18_book_friction/__init__.py": "28bd3a98f3ae90e47256931cd9371ade5eb436ebcb51dd3e8b3dee6e65f1d30f",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_formal_52800_v1/t17_t18_engineering.py": "1183e1c46717f69efdbebf898618108a6c3f33cd5fec54cd351ded1229182d70",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_formal_52800_v1/render_preview.py": "1e11470d20985ae26ac46d6e78bc8acc5c29a211b12e271cb1b8b9b5d5e1b66b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_navy_physics.obj": "e75b1ce9d457dcc4eec613e985c4ebbd22a7fadef4c1eb87e564b154f3cc045f",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_navy_physics.mtl": "8c8b44910baf57a5a19c4fa2147c056bcf60f87137c5d9767e44f20e0c52be37",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_navy_physics_front.png": "e60fe7ad2ca8a98b0ce83ae97348701d4218ce037eec8c62e4fcf78293efbaac",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_cover_roughness.png": "c38672df15510c82c532ec228e43e4dd3936412f98895dcbbe88f2e027d87f49",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_cover_metallic.png": "0f4b1668d119f77ceb6b86645573f088ab2341d7b284314d5df0be7226ea5d91",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_cover_normal.png": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_navy_physics_back.png": "de71ee770f8d5af2884c6ba4c07d25ca6e42855c2950b61868b85f5f0d6ba235",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_navy_physics_spine.png": "653d7a5c85f579553573ca39e2af38c77c6fbde558addcc4551b766c6753361c",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_navy_physics_pages.png": "b0fcfd83cd00ff28ad10bf000ccc8b0cdfd8c982bc38562639870a0aee4c9101",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_pages_roughness.png": "a3885364aa0f739bd3af6a8700612998ef06adadbd037a483e907ab680d9fa26",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_pages_metallic.png": "0f4b1668d119f77ceb6b86645573f088ab2341d7b284314d5df0be7226ea5d91",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_pages_normal.png": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_navy_physics_page_shadow.png": "fcb679c37efd6992587e532924f495d2debaa0662ba5e9611b2da2457c91212a",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.obj": "3ff7fe3de43121ec4ae601fecad6fb0e6ae202154668f90689d74f27f0341f35",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_textbook_01_collision.mtl": "bdd501ed31ab81598ccdc9a1f6932803c25172546c2c7af56d79b218b2f39c46",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_burgundy_mechanics.obj": "e1f90ffb1c0144e9afb0a369448159f3b06ab739faef942afa620dd28491b708",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_burgundy_mechanics.mtl": "d9acf5583f40563caf28ba7331f7bc66360b92db4ee4ce7c408309add6e47e3b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_burgundy_mechanics_front.png": "d5b14800f0e7399a00875b98f15c48c01db82df01abad971921792721f211fa6",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_burgundy_mechanics_back.png": "dda27b78f25f559e49170d5cc2180f2f86aaa9ae945a65e0457ab58e43f91ca2",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_burgundy_mechanics_spine.png": "a53edb08cc1e273ef86f337d528226849298010b0b866b8fac58271204a831db",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_burgundy_mechanics_pages.png": "ca799b2d74595082a4e05e2d81cadd3c375483050f675829e209cf49981b4b71",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_burgundy_mechanics_page_shadow.png": "ec01f076e0874d9bcffe4ab8cde32ab35f06fbd047e75781155b6f2d16b662e9",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_forest_botany.obj": "71a6ec016e38c1f48c3a6386252a7c4d77bb9e94588481ecc04bf80c8162dda7",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_textbook_forest_botany.mtl": "76ea1c8cf39932594890865f3ace9ac635e94736361409ffb7bc4eb3f2fcf3fe",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_forest_botany_front.png": "9789c82311659bfe8746167eb46cf9d9f45f000a0f94bca841126929c9cd60f5",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_forest_botany_back.png": "3c746ac4681865a13c7fcd3370a5366a8062c420b75d439529f1e17811618e02",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_forest_botany_spine.png": "f170f7f01e5fdbc36aac8a4bfe41841f06a7a57ae49cadbc9862a6d2b4a57e0f",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_forest_botany_pages.png": "1488afd92805be4dd3c7393f677b29fd4180c3718cf5dedaa3044287a9c8ebea",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_forest_botany_page_shadow.png": "23bf271f0bfdca9109785e71afc745016d3e5bd0697703ec07c2c58b468e823a",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thin_blue_chemistry.obj": "5b4b9942daa9eb50a22a24a02435d0dcb33d0906caf5180ddc2a6b05cd18f1a5",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thin_blue_chemistry.mtl": "7c2b9c1ea53cb8d7de086ad287c23ddf55a5e0d3f3c9db545c379a82e99f28d9",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_blue_chemistry_front.png": "1b676317d6fc39551eaad31badbec0a1be25114dcfa7f7844217ddbe44fa8c96",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_blue_chemistry_back.png": "395271908add57072fdbef1bf8c73aa09510551010a8beec48d58f94a71810e7",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_blue_chemistry_spine.png": "2f344fd7589e1ee5a6d73d86036ecc6e0b235422f934fae0b274c39b407ca84e",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_blue_chemistry_pages.png": "5448f9b163c393f380150f49854470044952649797c8abe371a7bb1eea2e3f84",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_blue_chemistry_page_shadow.png": "73bc8c0c9daa8c58850031ec602c0f69819c866267b4b5d0a13d91f6be98e540",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj": "cb7c7cc86844d222ec036c12cef29aa965c1cac547e2d8ba840b0d4df65561a3",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.mtl": "bdd501ed31ab81598ccdc9a1f6932803c25172546c2c7af56d79b218b2f39c46",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thick_ochre_architecture.obj": "fb5908495e40659e59eb8fdaffbb9fc6184dc1094de44450d0cf1da90dfc64fc",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thick_ochre_architecture.mtl": "0a2bff8f1e9bc3e93021df19e9be0a728fe9ef1146688b8cd2aeb8d8c3e28994",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_ochre_architecture_front.png": "30558ea0802a103e8a57a02a8ecb1866c31de5001d16a28de8ab21abb5a2ebe7",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_ochre_architecture_back.png": "ab2a8a21ec8c43dc6b60204d10d7d1918db49c90387955f5358a16dff4b43fbd",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_ochre_architecture_spine.png": "1d507e6b68d364e480ea4bb8ca54cb03cb4490c44c489b3dc7134ac3db934fdf",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_ochre_architecture_pages.png": "f64862491aa2aa83f3f8d66e79670a54b5003e3bc0014f8a61955d1e3ffeb8bf",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_ochre_architecture_page_shadow.png": "7e2e7ceef7e139e351604d3dffda6f31cd0b4411094352b87c44ccc49f2701a3",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj": "713b803bb1ff69532e1ba0544b4ad519a5e0e6303e1303cb215e2db0eb3da3eb",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.mtl": "bdd501ed31ab81598ccdc9a1f6932803c25172546c2c7af56d79b218b2f39c46"
+  },
+  "production": {
+    "target_videos": 13200,
+    "role": "GLOBAL_ANCHOR",
+    "anchor_index": 0,
+    "cell": "T18__bg03_neutral_studio__g03_earth",
+    "formal_admission": "PENDING_CELL_BOUNDARIES_AND_VISUAL_REVIEW"
+  }
+}

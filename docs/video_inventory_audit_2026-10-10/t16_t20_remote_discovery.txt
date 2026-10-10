@@ -1,0 +1,246 @@
+RUN_STATE iew02 camera v2, requested full T16 formal rendering, then
+requested OFFLINE server execution and simultaneous T17/T18 engineering tasks.
+Only physical GPUs0,1,2,3; NEVER4,5. T16 has priority; T17/T18 engineering may
+run concurrently, replacing the previous strict sequential engineering plan.
+
+Server root DATA/offline/t16_20260910_v1:
+- Detached watchdog PID4161782 (PPID1), supervisor4161784; GPUs0,1,2.
+- Immutable source/, run_config.json contains 296 hashed frozen inputs.
+- Actively searching/validating all three adjacent boundaries under 5 gravities.
+- Full-chain PASS found independently for moon, Mars, Earth with r12:
+  distance .44, target-x -.16, receiver2-x -.04, can .115kg, X shift .10,
+  angle68, substeps4, timeconst .003. This is not yet a complete 44-set.
+- Four-background preproduction is running alongside boundary search.
+  IMPORTANT: when preproduction/summary.json appears, inspect initial/final PNGs
+  for all 3 cameras in all 4 rooms. Then and only then write
+  preproduction/visual_qa.json with status PASS and backgrounds mapping each ID
+  to {metadata_sha256: the corresponding preproduction metadata hash} plus
+  reviewer evidence. The offline controller waits for this visual gate before
+  candidate batch rendering. No user permission is needed for our visual QA.
+- Pipeline: calibration -> 44 physics per cell with 17 global +27 boundaries ->
+  3 cameras per passed trajectory -> full decode/hash/visibility QA -> all20cell
+  contract audit -> formal_manifest.json. Until final audit, formal count is0.
+- Resume immutable controller in the SAME root to reuse content-addressed
+  complete samples. Partial attempts preserved with retry suffix. GPUlocks are
+  inherited by child jobs, preventing overlap if parent crashes. Crash watchdog
+  retries up to3; declared QA failures go to quarantine and require actual fixes.
+- Source offline_t16.py currently reports calibration JSON count including
+  full_found/validated records; use t16o_*.json for actual calibration counts.
+- All server work survives SSH/local app disconnection. Local video syncing
+  requires this computer to reconnect. No automatic server reboot startup yet.
+
+Server root DATA/offline/t17_t18_engineering_20260910_v1:
+- Detached watchdog4188703, supervisor4188704, shared GPU3 lock.
+- T17 and T18 each have 15 engineering probes (5 gravities x3 offsets/forces).
+- Engineering runner uses each event's real Rev2 scene builder with canonical
+  assets and current frozen registry, corrected mass-scaled damping/proxies.
+- T17: ramp motion -> path/contact/bypass -> target response; one declared
+  initial velocity before first step; no poses/velocities scripted per frame.
+- T18: fixed BW01/seed160911 book stack; continuous bounded pull of one book,
+  passive upper-book physics. Only force value varies within each 3-point scan.
+- First PASS depth>=2 per event is rendered to videos/T17_engineering_preview
+  or T18_engineering_preview, then decoded and checksummed automatically.
+- These are engineering observations, not formal labels. Next work remains:
+  meaningful event-specific 3 boundary groups, all prefixes, four backgrounds,
+  full 44-set admission and final2640/event pipeline. Do not claim T17/T18 formal
+  production is already implemented or substitute T16 labels.
+
+Current local scripts: offline_t16.py, offline_watchdog.py, offline_t17_t18.py,
+t17_t18_engineering.py, render_preview.py, verify_review.py, t16_pipeline.py r12.
+Running immutable snapshots MUST NOT be edited; make new version for repairs.
+Latest explicit user scope T16-T18; T19/T20 are not authorized for batch launch.
+
+## Latest user steering: three distinct camera directions
+
+User says review02 cam01/cam02 look like the same angle at different distances.
+Explicitly requests one moved to the front and three well-separated directions.
+Camera revision v2 fully rendered and delivered on SAME probe_release_r07_44 cache.
+Current render_preview.py cameras: cam01 [0,-1.70,1.40] high oblique side;
+cam02 [-1.50,-.10,1.05] looking toward folder front; cam03 [1,.70,.95]
+opposite diagonal. Pairwise horizontal separations approximately 87/120/154°.
+GPU0 camera render PID3615555 completed successfully; now free for project jobs.
+Stills DATA/review/review02_camera_v2_stills; log of the same name in DATA/logs.
+Coarse dispatcher 2656909 was paused, its three children finished, then stopped.
+Resumed coarse batch on GPU1,2 under PID3564388; fullbaseline remains on GPU3.
+Do not restart obsolete cameras in future renders. Preserve old videos as v1.
+Delivered 2026-09-10: C:\Users\raobn\Desktop\仿真\T16_review02_三角度_v2
+ZIP: C:\Users\raobn\Desktop\仿真\T16_review02_三角度_v2.zip
+Subfolder review_02_release_camera_v2 contains cam01/cam02/cam03.mp4,
+metadata.json, media_qa.json, source trajectory and 9 inspection PNGs.
+All 3 complete 210-frame videos PASS decode/format/black-frame/local SHA checks.
+Source hash equals original review02; cam01 video is identical to original.
+Front and opposite views visually checked at initial/final frames. Front view
+initially occludes small receivers behind folder; side view supplies visibility.
+User APPROVED v2 on 2026-09-10. Default future rendering uses this v2 camera rig.
+
+User authorizes continued generation and timely local delivery. Each event:
+4 frozen backgrounds × 5 gravities × 44 trajectories × 3 synchronized views =
+2,640 videos. Complete T16 before T17, then T18. Old Rev2 3,000-video plan is
+obsolete. Only physical GPUs 0,1,2,3 may be used; NEVER use GPUs 4 or 5.
+
+## Locations
+
+Workspace: C:\Users\raobn\Desktop\仿真\t16_52800
+SSH alias: p25-4090
+ASE: /home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer
+PROJECT: ASE/everyday_bifurcation_T16_formal_52800_v1
+DATA: /data_cached/wangzijun_p25/t16_formal_52800_20260909
+Python: /home/wangzijun_p25/miniconda3/envs/genesis/bin/python
+LD_LIBRARY_PATH: /home/wangzijun_p25/miniconda3/envs/genesis/lib/python3.10/site-packages/nvidia/cu13/lib
+
+Read ASE/AGENTS.md; preserve existing assets, projects and outputs, no sudo.
+Contract: ASE/manifests/ebb_formal_generation_contract_v1.json
+Active registry: ASE/configs/frozen_backgrounds_v2/registry.json
+Freeze: ebb_t01_reference_four_backgrounds_floor_realism_v3_20260829.
+All four locks previously passed 245 checks. Do not use Rev2's stale snapshot.
+Canonical assets: ASE/realistic_assets/catalog.json.
+Read-only implementation dependencies: ASE/everyday_bifurcation_T16_T20_rev2.
+
+## Delivered and actual formal count
+
+FORMAL: T16 0/2640; T17/T18 0/2640. Offline selection/scheduler is now running;
+T17/T18 engineering probes are running. See top section for current state.
+DELIVERED PREVIEWS: 4 independently simulated trajectories / 15 delivered video
+files (12 original + 3 v2 rerenders; cam01 duplicated, so 14 distinct videos).
+Every video is 854×480, 30fps, 210 frames, 7s, H.264 High/yuv420p, no audio,
+RayTracer SPP32. Each trajectory cache is replayed into 3 cameras, not resimulated.
+All delivered files passed full decode/black-frame/format/hash checks and local
+SHA-256 checks. Initial/final PNGs inspected. Previews do not count as formal.
+
+First two trajectories (support held / folder falls without downstream transfer):
+C:\Users\raobn\Desktop\仿真\T16_机位检查_20260909
+ZIP: C:\Users\raobn\Desktop\仿真\T16_2轨迹_6视频_20260909.zip
+Sources: probe_hold_r07 → review_01_hold;
+probe_release_r07_44 → review_02_release.
+
+NEW two complete transfer trajectories:
+C:\Users\raobn\Desktop\仿真\T16_完整传递检查_20260909
+ZIP: C:\Users\raobn\Desktop\仿真\T16_完整传递_2轨迹_6视频_20260909.zip
+- probe_transfer_r10_d → full_chain_review_r10_d: can .115kg, contacts
+  folder→book 2.20833s, book→can 2.44583s, can displacement .10074m,
+  penetration .0014115m, all gates PASS.
+- probe_transfer_r11_c → full_chain_review_r11_c: can .040kg, contacts
+  2.21875s / 2.41042s, can displacement .10053m, penetration .0012688m,
+  all gates PASS.
+Three final views of each inspected: toppled can/book visible, folder partly
+overhangs the table but stable. Full trajectory caches included locally.
+Server manifest: DATA/review/review_delivery_manifest_20260909.jsonl (5 rows).
+
+Cameras remain reference-inspired, NOT proven identical to original extrinsics.
+User approved v2 despite tiny white light sliver in cam01 upper-right. Preserve
+approved view. Original references:
+C:\Users\raobn\.codex\visualizations\2026\09\09\01a08564-e956-7942-9d95-b653823284cc\video_contact_sheet.jpg
+The frozen background has a round table, different from the original small table.
+
+## Active work (inspect live files; counts below are a snapshot)
+
+coarse_r08_all20: 160 old-r08 withdrawal calibration samples across all 20
+background/gravity cells. Current supervisor PID 3564388, physical GPUs 1,2.
+Latest inspected: 138 finished = 125 PASS / 13 FAIL, 2 running, 20 pending.
+DATA/batches/coarse_r08_all20/summary.json, manifest.jsonl, completed.txt, failed.txt.
+Current log DATA/logs/coarse_r08_resume_gpu12.log.
+ALL CALIBRATION_ONLY: r08 used the old target layout and high angular damping.
+
+fullbaseline_r10_5g: 15 repeats (5 gravities × 3 independent simulations) of the
+successful r10 baseline. Supervisor PID 3318301 completed on GPU3: 9 PASS depth3,
+6 FAIL, none running or pending. Moon/Mars/Earth all 3 repeats PASS. GPU3 free.
+High gravity repeats have depth2 and 2.00-2.19mm penetration (over 2mm gate);
+very-high gravity repeats fail penetration too, first has depth1 and 2.18mm.
+Do not reuse this baseline blindly for formal high-gravity cells or relax gates.
+Read DATA/batches/fullbaseline_r10_5g/summary.json
+and DATA/logs/fullbaseline_r10_5g.log. Source snapshot is r10, not current project.
+
+Completed GPU3 supervisors:
+transfer_r09 PID2697213; transfer_r10 PID2915705; transfer_r11 PID2956675.
+See DATA/batches/transfer_r*/summary.json, source/, and associated logs.
+r11 mass probes: .015kg FAIL; .040 and .075kg PASS depth3.
+Only the first passing depth3 per specialized batch is automatically rendered.
+
+Scheduling:
+Original supervisor 2235873 stalled after 10 samples because GPUs had other T03/
+Isaac jobs. Scheduler was changed from "used VRAM <512MiB" to "free VRAM >=8GiB".
+It shares allowed GPUs without modifying other jobs. Intermediate supervisor
+2606544 was paused while its children finished, then safely replaced. Recovered
+manifest rows 0014–0017 from completed QA/cache. Existing outputs preserved.
+One project simulation/render per GPU, enforced by DATA/gpu_N.lock. No manual
+GPU3 job while the baseline holds its lock. Disk guard: refuse new jobs below
+10GiB free. Batch physics uses immutable source snapshots and verifies their
+hash against plan.json. Current project source can evolve without changing
+running batch physics. Avoid duplicate launches.
+
+Heartbeat t16-t17-t18 ACTIVE every 30 minutes in this thread; continue useful work,
+sync completed videos and notify on meaningful results/failures. Pause only when
+all authorized delivery is complete or user requests it.
+
+## Physics fixes and evidence
+
+Current local/server t16_pipeline.py is r12. Never edit old batch source snapshots.
+r12 adds independent receiver2 X, optional whole-layout X shift, repeat Y offset,
+solver controls, initial forbidden contact/workspace gates and event_graph.json.
+render_preview now supports candidate output roots, preserves user v2 cameras,
+records effective sanitized camera poses (cam01 look_at Z clamps to.08), and
+checks all-frame projected bounds. Media verifier accepts candidate output roots.
+Only bounded forces act on the support book; no dynamic pose/velocity setters.
+DT=1/480s, 4 internal substeps, 16 steps per video frame, .4s warmup.
+Force actuator starts .8s: smooth 2.4s withdrawal, XY PD gains 300/25,
+per-axis cap 1.2*m*g; supporting book mass 2kg. Runtime parameters are read back.
+
+r05 disabled special box-box detection, fixing explosive penetrations. GJK on.
+r06 long-axis angle was wrongly interpreted as plane tilt; old labels need audit.
+Corrected measure still finds transient rotation in r06, but it did not end flat.
+r07 uses plane-normal tilt; table friction .90, folder/support .10, support book
+Euler [90,0,90] (height .19), objects Y=.12. Strong pull actually lays folder down.
+r08 horizontal can receiver failed to propagate motion.
+r09 receiver1 became a thin upright book (.12kg, height .21m), receiver2 an upright
+can (.115kg). First transfer worked; can remained almost stationary.
+r09 added actual mass/friction assertions, initial stability for all objects,
+angular settling, peak speed, no-shortcut checks, per-step contact/force samples.
+Audit DATA/reports/physics_label_audit_r09.json rejects r07_a's shortcut.
+
+r10 fixed dimensioned damping: reference .018 N*m*s/rad for every object was
+excessive for light-object inertia. New damping = .10/s × mass (linear),
+.10/s × mean solid-box inertia (isotropic angular approximation). Actual DOF
+damping read back and asserted. Full book→can transfer became possible.
+Exact contact times use raw sampled contacts. Generic depth1 = rotation, not a
+claim of lying flat; final plane angle/near-horizontal fact is separate.
+Raw contacts sample every DT, not every internal substep; don't overstate resolution.
+r10 gaps: .02 PASS depth2; .05 depth3 but FAIL at 5.32mm penetration; .08 PASS
+depth3 and delivered. Never weaken the 2mm gate to accept .05.
+r11 adds --receiver2-mass; successful .040/.075kg variants at gap .08.
+
+Strong baseline: distance .44, target-x -.16, gap2 .08, angle68, default can .115kg.
+All frozen support profiles have same tabletop size 1.42×.76×.064, top0 after anchor.
+Some high-g r08 .16/.22 samples slide off the LEFT edge into unbounded free fall
+(no background floor in physics); reject them. Consider whole-layout X shift
++.15m for table margin, then revalidate. Other failures are penetration/settling.
+
+## Next required work
+
+1. Inspect baseline five-gravity repeat results and coarse sweep completion.
+   Deliver any new verified previews promptly; do not inflate formal count.
+2. Establish robust full/partial/subcritical coverage and three measured adjacent
+   boundaries. Candidates A=withdrawal distance, B=first-receiver position,
+   C=second-receiver gap or mass. Don't change mass and gap within one group.
+   For B, current target-x also moves receiver2 via derived gap: add independent
+   receiver2-x before claiming a first-receiver-only intervention.
+3. Add formal event graphs, initial forbidden-contact and workspace bounds gates,
+   recorded repeat perturbations, boundary search/selection, provenance/split IDs.
+   44 per background/gravity = 17 global + 3 boundaries × 3 theta levels ×
+   3 repeats. Keep each counterfactual group's nuisance parameters and seed fixed.
+4. Four-background × three-camera preproduction and visibility QA are required
+   before formal admission. Camera feedback takes priority when received.
+5. Build resumable formal workers using validated boundaries and exact counts;
+   complete T16 880 trajectories / 2640 videos, then actual T17 and T18 mechanics.
+   T17/T18 must follow their event requirements, not reuse T16 dynamics.
+
+
+{"root": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_physics_v3_bg4_integrated/reports", "files": [{"name": "live_status.json", "size": 298}, {"name": "project_validation.json", "size": 380}]}
+{"root": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_physics_v3_bg4_integrated/qa", "files": []}
+{"root": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_physics_v3_bg4_integrated/manifests", "files": [{"name": "smoke_worker_gpu2.jsonl", "size": 2963}, {"name": "smoke_worker_gpu0.jsonl", "size": 17640}, {"name": "smoke_worker_gpu1.jsonl", "size": 3217}, {"name": "smoke_gpu2.txt", "size": 89}, {"name": "smoke_gpu1.txt", "size": 164}, {"name": "smoke_gpu0.txt", "size": 169}, {"name": "smoke_probe_r03.txt", "size": 82}, {"name": "planned_matrix.csv", "size": 159364}]}
+{"root": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/reports", "files": [{"name": "repair_report_20260908.md", "size": 6465}, {"name": "changed_files_sha256.json", "size": 2970}, {"name": "changes.patch", "size": 60549}, {"name": "repair_final_audit_20260908.json", "size": 4064}, {"name": "repair_regression_tests_20260908.txt", "size": 1141}, {"name": "live_status.json", "size": 164}, {"name": "project_validation.json", "size": 443}, {"name": "status_snapshot.json", "size": 1192}]}
+{"root": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/qa", "files": []}
+{"root": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/manifests", "files": [{"name": "pilot_calibration_worker_gpu0.jsonl", "size": 494006}, {"name": "pilot_calibration_worker_gpu3.jsonl", "size": 497863}, {"name": "pilot_calibration_worker_gpu1.jsonl", "size": 499441}, {"name": "pilot_calibration_worker_gpu2.jsonl", "size": 498738}, {"name": "pilot_calibration_gpu3.txt", "size": 15618}, {"name": "pilot_calibration_gpu2.txt", "size": 15618}, {"name": "pilot_calibration_gpu1.txt", "size": 15618}, {"name": "pilot_calibration_gpu0.txt", "size": 15618}]}
+{"root": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/reports", "entries": ["physics_label_audit_r09.json"]}
+{"root": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline", "entries": ["ready_index.json", "t16_layout_probe_20260912_v2", "t16_layout_probe_20260914_v5", "t16_20260910_v1", "t16_layout_probe_20260913_v4", "t17_t18_engineering_20260910_v1", "t16_layout_probe_20260912_v3", "t16_layout_probe_20260912_v1", "t17_t18_boundaries_20260910_v1"]}
+{"root": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/deliveries", "entries": ["T16_candidate_delta_20260911_2200.json", "T16_candidate_delta_20260913_0034.zip", "T16_candidate_delta_20260911_2015.zip", "T16_candidate_delta_20260911_1930.zip", "T16_candidate_delta_20260911_2233.zip", "T16_candidate_delta_20260913_0034.json", "T16_candidate_delta_20260915_0016.zip", "T16_candidates_20260911_1255.zip", "T16_candidate_delta_20260913_1546.json", "T16_candidate_delta_20260911_2126.zip", "T16_candidate_delta_20260914_2341.json", "T16_candidate_delta_20260911_2015.json", "T16_candidate_delta_20260911_2200.zip", "T16_candidate_delta_20260911_2233.json", "T16_candidate_delta_20260912_1347.zip", "T16_candidate_delta_20260912_1630.zip", "T16_candidate_delta_20260912_1314.zip", "T16_candidate_delta_20260913_1546.zip", "T16_candidates_20260911_1255.json", "T16_candidate_delta_20260912_1314.json", "T16_candidate_delta_20260912_1118.zip", "T16_candidate_delta_20260912_1630.json", "T16_candidate_delta_20260914_2341.zip", "T16_candidate_delta_20260912_1118.json", "T16_candidate_delta_20260911_1930.json", "T16_candidate_delta_20260911_2126.json", "T16_candidate_delta_20260912_1347.json", "T16_candidate_delta_20260915_0016.json"]}
+{"root": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/batches", "entries": ["transfer_r11", "transfer_r09", "fullbaseline_r10_5g", "transfer_r10", "coarse_r08_all20", "formal_solver_r12_smoke"]}

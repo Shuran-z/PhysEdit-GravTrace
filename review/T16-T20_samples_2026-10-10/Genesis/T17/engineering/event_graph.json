@@ -1,0 +1,29 @@
+{
+  "event_type": "T17",
+  "depth": 2,
+  "nodes": [
+    {
+      "id": "ramp_motion",
+      "contact_time_s": 0.041666666666666664,
+      "evidence": "ramp contact and projectile displacement >15mm"
+    },
+    {
+      "id": "target_contact",
+      "contact_time_s": 0.41875,
+      "parents": [
+        "ramp_motion"
+      ]
+    }
+  ],
+  "classification": "CALIBRATION_ONLY",
+  "definition": [
+    "gravity_release",
+    "ramp_motion",
+    "path_divergence",
+    "target_contact_or_bypass",
+    "edge_event_or_settle"
+  ],
+  "contact_sample_dt_s": 0.0020833333333333333,
+  "state_sample_dt_s": 0.03333333333333333,
+  "requires_counterfactual_validation": true
+}

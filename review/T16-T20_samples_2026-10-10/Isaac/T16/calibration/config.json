@@ -1,0 +1,951 @@
+{
+  "schema": "isaac_t16_t20_13200_v1",
+  "event": "T16",
+  "sample_id": "T16__bg03_neutral_studio__g03_earth__value_0.03__global_01",
+  "classification": "CALIBRATION_ONLY",
+  "formal_video_count": 0,
+  "background_id": "bg03_neutral_studio",
+  "gravity_id": "g03_earth",
+  "gravity": [
+    0,
+    0,
+    -9.81
+  ],
+  "objects": [
+    {
+      "name": "tabletop_collision_slab",
+      "shape": "box",
+      "size": [
+        1.42,
+        0.76,
+        0.064
+      ],
+      "pose": {
+        "position": [
+          0.0,
+          0.0,
+          -0.032
+        ],
+        "euler_xyz": [
+          0,
+          0,
+          0
+        ]
+      },
+      "fixed": true,
+      "motion": {
+        "type": "none"
+      },
+      "visualization": false,
+      "collision": true,
+      "friction": 0.9,
+      "restitution": 0.01,
+      "camera_focus": false
+    },
+    {
+      "name": "folder",
+      "asset_id": "folder_board_01",
+      "asset_catalog_family": "t06_t10_realism_v8",
+      "category": "folder_board_01",
+      "semantic_label": "folder_board_01",
+      "shape": "box",
+      "size": [
+        0.58,
+        0.34,
+        0.0195
+      ],
+      "pose": {
+        "position": [
+          -0.35136408790938556,
+          0.12,
+          0.2731357321101735
+        ],
+        "euler_xyz": [
+          0.0,
+          -68.0,
+          0.0
+        ]
+      },
+      "fixed": false,
+      "motion": {
+        "type": "physics",
+        "initial_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/folder_board_01.obj",
+      "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/collision/folder_board_01_collision.obj",
+      "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/collision/folder_board_01_collision.obj",
+      "preserve_mesh_material": true,
+      "visualization": true,
+      "collision": true,
+      "friction": 0.1,
+      "restitution": 0.03,
+      "mass": 0.32,
+      "linear_damping": 0.032,
+      "angular_damping": 0.0008042315555555556,
+      "ccd_enabled": true,
+      "disable_sleep": true,
+      "contact_offset": 0.0012,
+      "camera_focus": true,
+      "collision_visual_alignment": "catalog_authored_same_origin",
+      "collision_proxy": "box",
+      "collision_proxy_size": [
+        0.58,
+        0.34,
+        0.0195
+      ],
+      "collision_geometry": "dimension_matched_box_proxy",
+      "damping_model": {
+        "velocity_decay_rate_per_s": 0.1,
+        "inertia_mean_kg_m2": 0.008042315555555556,
+        "approximation": "mean solid-box inertia for isotropic rotational drag"
+      }
+    },
+    {
+      "name": "support_book",
+      "asset_id": "book_thick_ochre_architecture",
+      "asset_catalog_family": "t16_t20_realistic_v4",
+      "category": "book_thick_ochre_architecture",
+      "semantic_label": "book_thick_ochre_architecture",
+      "shape": "box",
+      "size": [
+        0.27,
+        0.19,
+        0.052
+      ],
+      "pose": {
+        "position": [
+          -0.34666171908571486,
+          0.12,
+          0.0956
+        ],
+        "euler_xyz": [
+          90.0,
+          0.0,
+          90.0
+        ]
+      },
+      "fixed": false,
+      "motion": {
+        "type": "physics",
+        "initial_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thick_ochre_architecture.obj",
+      "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+      "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+      "preserve_mesh_material": true,
+      "visualization": true,
+      "collision": true,
+      "friction": 0.1,
+      "restitution": 0.03,
+      "mass": 2.0,
+      "linear_damping": 0.2,
+      "angular_damping": 0.0012411555555555558,
+      "ccd_enabled": true,
+      "disable_sleep": true,
+      "contact_offset": 0.0012,
+      "camera_focus": true,
+      "collision_visual_alignment": "catalog_authored_same_origin",
+      "collision_proxy": "box",
+      "collision_proxy_size": [
+        0.27,
+        0.19,
+        0.052
+      ],
+      "collision_geometry": "dimension_matched_box_proxy",
+      "damping_model": {
+        "velocity_decay_rate_per_s": 0.1,
+        "inertia_mean_kg_m2": 0.012411555555555558,
+        "approximation": "mean solid-box inertia for isotropic rotational drag"
+      }
+    },
+    {
+      "name": "receiver1",
+      "asset_id": "book_thin_blue_chemistry",
+      "asset_catalog_family": "t16_t20_realistic_v4",
+      "category": "book_thin_blue_chemistry",
+      "semantic_label": "book_thin_blue_chemistry",
+      "shape": "box",
+      "size": [
+        0.21,
+        0.148,
+        0.014
+      ],
+      "pose": {
+        "position": [
+          -0.16,
+          0.12,
+          0.1056
+        ],
+        "euler_xyz": [
+          0.0,
+          -90.0,
+          0.0
+        ]
+      },
+      "fixed": false,
+      "motion": {
+        "type": "physics",
+        "initial_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thin_blue_chemistry.obj",
+      "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj",
+      "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj",
+      "preserve_mesh_material": true,
+      "visualization": true,
+      "collision": true,
+      "friction": 0.18,
+      "restitution": 0.03,
+      "mass": 0.12,
+      "linear_damping": 0.012,
+      "angular_damping": 4.413333333333333e-05,
+      "ccd_enabled": true,
+      "disable_sleep": true,
+      "contact_offset": 0.0012,
+      "camera_focus": true,
+      "collision_visual_alignment": "catalog_authored_same_origin",
+      "collision_proxy": "box",
+      "collision_proxy_size": [
+        0.21,
+        0.148,
+        0.014
+      ],
+      "collision_geometry": "dimension_matched_box_proxy",
+      "damping_model": {
+        "velocity_decay_rate_per_s": 0.1,
+        "inertia_mean_kg_m2": 0.0004413333333333333,
+        "approximation": "mean solid-box inertia for isotropic rotational drag"
+      }
+    },
+    {
+      "name": "receiver2",
+      "asset_id": "can_ruby_citrus",
+      "asset_catalog_family": "t16_t20_realistic_v4",
+      "category": "can_ruby_citrus",
+      "semantic_label": "can_ruby_citrus",
+      "shape": "box",
+      "size": [
+        0.066,
+        0.066,
+        0.1236
+      ],
+      "pose": {
+        "position": [
+          -0.039999999999999994,
+          0.12,
+          0.062400000000000004
+        ],
+        "euler_xyz": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "fixed": false,
+      "motion": {
+        "type": "physics",
+        "initial_velocity": [
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/beverage_can_ruby_citrus.obj",
+      "preserve_mesh_material": true,
+      "visualization": true,
+      "collision": true,
+      "friction": 0.25,
+      "restitution": 0.03,
+      "mass": 0.115,
+      "linear_damping": 0.011500000000000002,
+      "angular_damping": 1.5326280000000005e-05,
+      "ccd_enabled": true,
+      "disable_sleep": true,
+      "contact_offset": 0.0012,
+      "camera_focus": true,
+      "collision_visual_alignment": "catalog_authored_same_origin",
+      "collision_proxy": "cylinder",
+      "collision_proxy_radius": 0.033,
+      "collision_proxy_height": 0.1236,
+      "collision_geometry": "dimension_matched_cylinder_proxy",
+      "damping_model": {
+        "velocity_decay_rate_per_s": 0.1,
+        "inertia_mean_kg_m2": 0.00015326280000000004,
+        "approximation": "mean solid-box inertia for isotropic rotational drag"
+      }
+    }
+  ],
+  "background_objects": [
+    {
+      "instance_id": "neutral_studio_v1",
+      "category": "background_stage",
+      "pose": {
+        "position": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "euler_xyz": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/neutral_studio_v1.obj",
+      "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/neutral_studio_v1.obj",
+      "collision_mesh_path": null,
+      "resolved_mesh": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/neutral_studio_v1.obj",
+      "is_proxy": false,
+      "decor_collision_policy": "visual_only",
+      "bbox": {
+        "min": [
+          -2.2,
+          -1.8,
+          -0.75
+        ],
+        "max": [
+          2.2,
+          1.15,
+          2.1
+        ],
+        "extent": [
+          4.4,
+          2.95,
+          2.85
+        ]
+      },
+      "name": "neutral_studio_v1"
+    }
+  ],
+  "background_anchor": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "lighting": {
+    "raytracing_env_map": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/hdri/ferndale_studio_03_2k_gain_0p72.hdr",
+    "raytracing_env_map_required": true,
+    "raytracing_env_encoding": "linear",
+    "raytracing_env_euler": [
+      0,
+      0,
+      25
+    ],
+    "raytracing_lights_local": [
+      {
+        "pos": [
+          -0.8,
+          -2.35,
+          2.25
+        ],
+        "color": [
+          1.0,
+          0.98,
+          0.95
+        ],
+        "intensity": 3.8,
+        "radius": 0.18
+      },
+      {
+        "pos": [
+          0.96,
+          -2.08,
+          1.82
+        ],
+        "color": [
+          0.88,
+          0.93,
+          1.0
+        ],
+        "intensity": 1.55,
+        "radius": 0.22
+      }
+    ]
+  },
+  "background_freeze_id": "ebb_t01_reference_four_backgrounds_floor_realism_v3_20260829",
+  "source": {
+    "revision": "t16_52800_r12",
+    "seed": 160909,
+    "background_id": "bg03_neutral_studio",
+    "gravity_id": "g03_earth",
+    "gravity": 9.81,
+    "background_entry": {
+      "display_name": "neutral studio / clean beige cyclorama and black table",
+      "reference_order": 3,
+      "reference_image": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/reference_images/03_studio_T01V2_initial.png",
+      "reference_image_sha256": "a78ce95649605cca9562f856cc12c27da523369394404e208f3952fff97f924a",
+      "reference_source_config": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T01_v2_7s/configs/visual_preview2/T01V2__bg03_neutral_studio__g03_earth__slope_chain__a150__mu260__u320__r001/cam01.json",
+      "reference_source_manifest": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/backgrounds_v1/manifests/neutral_studio_v1.json",
+      "profile": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/candidates/floor_realism_v3/profiles/bg03_neutral_studio.json",
+      "profile_sha256": "bc397da52e6ea3645346d433310f19ba9bf8d253a2cb2d32eaa334084b154df6",
+      "manifest": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/manifests/neutral_studio_v1.json",
+      "manifest_sha256": "bab6526b250813b8524ab8ef5e1caa70fd9b35da569bed3efaf949dbd634247d",
+      "asset_lock": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/candidates/floor_realism_v3/locks/bg03_neutral_studio.lock.json",
+      "asset_lock_sha256": "79cad1e74b61357d84121be622325483c5d37a176790688a5a391490afda029e",
+      "geometry_revision": "neutral_studio_v1_reference_layout",
+      "geometry_sha256": "b139a4ae02be854cc5b9f83c031f5fb5d648012ed992e360c158b3997a52d5f3",
+      "material_revision": "neutral_studio_v1",
+      "default_background_anchor": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "background_anchor": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "parameters": {
+      "withdrawal_distance_m": 0.03,
+      "folder_angle_deg": 68.0,
+      "target_x_m": -0.16,
+      "receiver_gap_m": 0.08,
+      "receiver2_x_m": null,
+      "receiver2_mass_kg": 0.115,
+      "layout_shift_x_m": 0.0,
+      "repeat_y_m": 0.0
+    },
+    "support_origin": [
+      -0.34666171908571486,
+      0.12,
+      0.0956
+    ],
+    "top_z": 0.0,
+    "objects": [
+      {
+        "name": "tabletop_collision_slab",
+        "shape": "box",
+        "size": [
+          1.42,
+          0.76,
+          0.064
+        ],
+        "pose": {
+          "position": [
+            0.0,
+            0.0,
+            -0.032
+          ],
+          "euler_xyz": [
+            0,
+            0,
+            0
+          ]
+        },
+        "fixed": true,
+        "motion": {
+          "type": "none"
+        },
+        "visualization": false,
+        "collision": true,
+        "friction": 0.9,
+        "restitution": 0.01,
+        "camera_focus": false
+      },
+      {
+        "name": "folder",
+        "asset_id": "folder_board_01",
+        "asset_catalog_family": "t06_t10_realism_v8",
+        "category": "folder_board_01",
+        "semantic_label": "folder_board_01",
+        "shape": "box",
+        "size": [
+          0.58,
+          0.34,
+          0.0195
+        ],
+        "pose": {
+          "position": [
+            -0.35136408790938556,
+            0.12,
+            0.2731357321101735
+          ],
+          "euler_xyz": [
+            0.0,
+            -68.0,
+            0.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/folder_board_01.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/collision/folder_board_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/collision/folder_board_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.1,
+        "restitution": 0.03,
+        "mass": 0.32,
+        "linear_damping": 0.032,
+        "angular_damping": 0.0008042315555555556,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.58,
+          0.34,
+          0.0195
+        ],
+        "collision_geometry": "dimension_matched_box_proxy",
+        "damping_model": {
+          "velocity_decay_rate_per_s": 0.1,
+          "inertia_mean_kg_m2": 0.008042315555555556,
+          "approximation": "mean solid-box inertia for isotropic rotational drag"
+        }
+      },
+      {
+        "name": "support_book",
+        "asset_id": "book_thick_ochre_architecture",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "book_thick_ochre_architecture",
+        "semantic_label": "book_thick_ochre_architecture",
+        "shape": "box",
+        "size": [
+          0.27,
+          0.19,
+          0.052
+        ],
+        "pose": {
+          "position": [
+            -0.34666171908571486,
+            0.12,
+            0.0956
+          ],
+          "euler_xyz": [
+            90.0,
+            0.0,
+            90.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thick_ochre_architecture.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.1,
+        "restitution": 0.03,
+        "mass": 2.0,
+        "linear_damping": 0.2,
+        "angular_damping": 0.0012411555555555558,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.27,
+          0.19,
+          0.052
+        ],
+        "collision_geometry": "dimension_matched_box_proxy",
+        "damping_model": {
+          "velocity_decay_rate_per_s": 0.1,
+          "inertia_mean_kg_m2": 0.012411555555555558,
+          "approximation": "mean solid-box inertia for isotropic rotational drag"
+        }
+      },
+      {
+        "name": "receiver1",
+        "asset_id": "book_thin_blue_chemistry",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "book_thin_blue_chemistry",
+        "semantic_label": "book_thin_blue_chemistry",
+        "shape": "box",
+        "size": [
+          0.21,
+          0.148,
+          0.014
+        ],
+        "pose": {
+          "position": [
+            -0.16,
+            0.12,
+            0.1056
+          ],
+          "euler_xyz": [
+            0.0,
+            -90.0,
+            0.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thin_blue_chemistry.obj",
+        "collision_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj",
+        "mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.18,
+        "restitution": 0.03,
+        "mass": 0.12,
+        "linear_damping": 0.012,
+        "angular_damping": 4.413333333333333e-05,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "box",
+        "collision_proxy_size": [
+          0.21,
+          0.148,
+          0.014
+        ],
+        "collision_geometry": "dimension_matched_box_proxy",
+        "damping_model": {
+          "velocity_decay_rate_per_s": 0.1,
+          "inertia_mean_kg_m2": 0.0004413333333333333,
+          "approximation": "mean solid-box inertia for isotropic rotational drag"
+        }
+      },
+      {
+        "name": "receiver2",
+        "asset_id": "can_ruby_citrus",
+        "asset_catalog_family": "t16_t20_realistic_v4",
+        "category": "can_ruby_citrus",
+        "semantic_label": "can_ruby_citrus",
+        "shape": "box",
+        "size": [
+          0.066,
+          0.066,
+          0.1236
+        ],
+        "pose": {
+          "position": [
+            -0.039999999999999994,
+            0.12,
+            0.062400000000000004
+          ],
+          "euler_xyz": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "fixed": false,
+        "motion": {
+          "type": "physics",
+          "initial_velocity": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        "visual_mesh_path": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/beverage_can_ruby_citrus.obj",
+        "preserve_mesh_material": true,
+        "visualization": true,
+        "collision": true,
+        "friction": 0.25,
+        "restitution": 0.03,
+        "mass": 0.115,
+        "linear_damping": 0.011500000000000002,
+        "angular_damping": 1.5326280000000005e-05,
+        "ccd_enabled": true,
+        "disable_sleep": true,
+        "contact_offset": 0.0012,
+        "camera_focus": true,
+        "collision_visual_alignment": "catalog_authored_same_origin",
+        "collision_proxy": "cylinder",
+        "collision_proxy_radius": 0.033,
+        "collision_proxy_height": 0.1236,
+        "collision_geometry": "dimension_matched_cylinder_proxy",
+        "damping_model": {
+          "velocity_decay_rate_per_s": 0.1,
+          "inertia_mean_kg_m2": 0.00015326280000000004,
+          "approximation": "mean solid-box inertia for isotropic rotational drag"
+        }
+      }
+    ],
+    "scene_overrides": {
+      "dt": 0.0020833333333333333,
+      "substeps": 4,
+      "gravity": [
+        0,
+        0,
+        -9.81
+      ],
+      "use_gjk_collision": true,
+      "enable_multi_contact": true,
+      "box_box_detection": false,
+      "iterations": 120,
+      "ls_iterations": 80,
+      "noslip_iterations": 10,
+      "constraint_timeconst": 0.003,
+      "raytracing": false
+    },
+    "source_registry": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/registry.json",
+    "source_registry_sha256": "2a97e215db2102a4c0c17aace29dd592ac4bddf40e2991cd3289f8782ce9b5c6",
+    "media": {
+      "fps": 30,
+      "frames": 210,
+      "resolution": [
+        854,
+        480
+      ],
+      "codec": "h264",
+      "spp": 32
+    },
+    "physics": {
+      "dt": 0.0020833333333333333,
+      "substeps": 4,
+      "steps_per_video_frame": 16,
+      "warmup_seconds": 0.4
+    },
+    "source_code_sha256": "f11043b43406a8c012b3038861161ff42d8ffa5386b1fffcdafaf3e3861020c5"
+  },
+  "parameter": {
+    "withdrawal_distance_m": 0.03
+  },
+  "event_spec": {
+    "chain": [
+      "folder",
+      "receiver1",
+      "receiver2"
+    ],
+    "trigger": "folder_plane_angle_decrease_15deg",
+    "actuated": "support_book"
+  },
+  "media": {
+    "width": 854,
+    "height": 480,
+    "fps": 30,
+    "frames": 210
+  },
+  "cameras": {
+    "cam01": {
+      "position": [
+        0.0,
+        -1.7,
+        1.4
+      ],
+      "look_at": [
+        -0.08,
+        0.08,
+        0.08
+      ],
+      "fov_deg": 47.0,
+      "role": "high_oblique_side"
+    },
+    "cam02": {
+      "position": [
+        -1.5,
+        -0.1,
+        1.05
+      ],
+      "look_at": [
+        -0.12,
+        0.04,
+        0.16
+      ],
+      "fov_deg": 50.0,
+      "role": "folder_front"
+    },
+    "cam03": {
+      "position": [
+        1.0,
+        0.7,
+        0.95
+      ],
+      "look_at": [
+        -0.08,
+        0.02,
+        0.13
+      ],
+      "fov_deg": 55.0,
+      "role": "opposite_diagonal"
+    }
+  },
+  "camera_status": "SOURCE_RIG_PORTED_VISUAL_QA_PENDING",
+  "physics": {
+    "outer_dt": 0.0020833333333333333,
+    "outer_steps_per_frame": 16,
+    "substeps": 4,
+    "warmup_s": 0.4,
+    "solver_position_iterations": 32,
+    "solver_velocity_iterations": 8
+  },
+  "dependencies": {
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/registry.json": "2a97e215db2102a4c0c17aace29dd592ac4bddf40e2991cd3289f8782ce9b5c6",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/catalog.json": "dac3136e905df88d33765aad89a9ab25480dfdd369e487b6cd1e849e8b1f88ef",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/physics_core/assets.py": "72f9cc22880b31e1521b5a425df3c69a5d585c7dee14c973dc87ff406ccf5d89",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/physics_core/placement.py": "8dc3b9e1ad03e6bb7d61c72d5a603f0f1c0d965004ae6ecba47c4531ba838128",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/manifests/neutral_studio_v1.json": "bab6526b250813b8524ab8ef5e1caa70fd9b35da569bed3efaf949dbd634247d",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/candidates/floor_realism_v3/profiles/bg03_neutral_studio.json": "bc397da52e6ea3645346d433310f19ba9bf8d253a2cb2d32eaa334084b154df6",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/candidates/floor_realism_v3/locks/bg03_neutral_studio.lock.json": "79cad1e74b61357d84121be622325483c5d37a176790688a5a391490afda029e",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/configs/frozen_backgrounds_v2/reference_images/03_studio_T01V2_initial.png": "a78ce95649605cca9562f856cc12c27da523369394404e208f3952fff97f924a",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/neutral_studio_v1.mtl": "317389915b647367b587fc169fb9ccfbcbe4b86ea03d0f693d81cb8103215344",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_plaster_basecolor.png": "312294df6d301e705d7a4977e2f6f127781f7be00484701bf9887fc355876723",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_plaster_roughness.png": "98db7cd77c3182bcd5d962268fa32895a8b50e0c7ffee0a50f697ed03d5d864b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_plaster_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_plaster_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_cyclorama_basecolor.png": "8826233c07c95a8f65187e6011a0810dfef91f67d90d0b23a8babb5df5f9b05c",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_cyclorama_roughness.png": "9082cdcb46bbf25c0f68966aaba6c2c7a517e9e99c94c33ff11e1a98d4658eba",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_cyclorama_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_cyclorama_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_oak_basecolor.png": "fc1e7bbbaf4ecf7210f023676f2f39138135092fe5c6e5693f7e17593b977942",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_oak_roughness.png": "70b26473b8baca171731a1b4b5ea7b1d2b41df48bfc734c5e268ab0436ab9f42",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_oak_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_oak_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_laminate_basecolor.png": "3179c897c8b69f7f4cc7220bf941ded843978dca4e96728236176d62ae921237",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_laminate_roughness.png": "08ac51a7bf56c12330f6bdb78010be0a09ad766fb619cf603e74e6130df77b76",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_laminate_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_laminate_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_metal_basecolor.png": "5030d08f7a356e83ee8fbd3ef5bdbce9afdc7c6586b4ad81c5b48aac50255f67",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_metal_roughness.png": "54a4f21e217695389cf5fa4bafbe6409d4ac8268f923e2f689aab43652feb0cb",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_metal_metallic.png": "cabf8af6e460c65a9230ac06a2477186bd5798aa9e932b59056d9022748a750e",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_metal_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_lab_panel_basecolor.png": "71e8b5fd77c8ddfcdd44c53ffe001a0522ae91d4f76f6c91683b0242493b2ab8",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_lab_panel_roughness.png": "a58b63688b63203f0d369d8e072046623c9d223825f076efba70a7ef97283336",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_lab_panel_metallic.png": "d62cb7ab3a83f8fb69e095275e78565b353e7b2b74a98e0646839f261aff5e91",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_lab_panel_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_concrete_basecolor.png": "b71e27774a847a9f55b840338b22d76dce2c3fe86b1912ffd8b2ccdebad0b308",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_concrete_roughness.png": "2d7b53336a8a9c928c9707954b39967dfe66dec7426658b6feb7598f704b4cc3",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_concrete_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_concrete_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_books_basecolor.png": "2aa33f03dbd2a567fc67778c5661333cff67abdb627985f7c277f21729ebe1fe",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_books_roughness.png": "8f812baa971e15b30353befb8866e12db1107098cc6130a94d636069c4b6e477",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_books_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/../textures/bg_books_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/geometry/neutral_studio_v1.obj": "b139a4ae02be854cc5b9f83c031f5fb5d648012ed992e360c158b3997a52d5f3",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/hdri/ferndale_studio_03_2k_gain_0p72.hdr": "49dfe488c7187a06ae6853ace3ba9139a36cccd4246cde59e14ac70679e67126",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_books_basecolor.png": "2aa33f03dbd2a567fc67778c5661333cff67abdb627985f7c277f21729ebe1fe",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_books_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_books_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_books_roughness.png": "8f812baa971e15b30353befb8866e12db1107098cc6130a94d636069c4b6e477",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_concrete_basecolor.png": "b71e27774a847a9f55b840338b22d76dce2c3fe86b1912ffd8b2ccdebad0b308",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_concrete_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_concrete_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_concrete_roughness.png": "2d7b53336a8a9c928c9707954b39967dfe66dec7426658b6feb7598f704b4cc3",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_cyclorama_basecolor.png": "8826233c07c95a8f65187e6011a0810dfef91f67d90d0b23a8babb5df5f9b05c",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_cyclorama_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_cyclorama_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_cyclorama_roughness.png": "9082cdcb46bbf25c0f68966aaba6c2c7a517e9e99c94c33ff11e1a98d4658eba",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_lab_panel_basecolor.png": "71e8b5fd77c8ddfcdd44c53ffe001a0522ae91d4f76f6c91683b0242493b2ab8",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_lab_panel_metallic.png": "d62cb7ab3a83f8fb69e095275e78565b353e7b2b74a98e0646839f261aff5e91",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_lab_panel_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_lab_panel_roughness.png": "a58b63688b63203f0d369d8e072046623c9d223825f076efba70a7ef97283336",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_laminate_basecolor.png": "3179c897c8b69f7f4cc7220bf941ded843978dca4e96728236176d62ae921237",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_laminate_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_laminate_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_laminate_roughness.png": "08ac51a7bf56c12330f6bdb78010be0a09ad766fb619cf603e74e6130df77b76",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_metal_basecolor.png": "5030d08f7a356e83ee8fbd3ef5bdbce9afdc7c6586b4ad81c5b48aac50255f67",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_metal_metallic.png": "cabf8af6e460c65a9230ac06a2477186bd5798aa9e932b59056d9022748a750e",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_metal_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_metal_roughness.png": "54a4f21e217695389cf5fa4bafbe6409d4ac8268f923e2f689aab43652feb0cb",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_oak_basecolor.png": "fc1e7bbbaf4ecf7210f023676f2f39138135092fe5c6e5693f7e17593b977942",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_oak_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_oak_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_oak_roughness.png": "70b26473b8baca171731a1b4b5ea7b1d2b41df48bfc734c5e268ab0436ab9f42",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_plaster_basecolor.png": "312294df6d301e705d7a4977e2f6f127781f7be00484701bf9887fc355876723",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_plaster_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_plaster_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/realistic_assets/backgrounds/bg03_neutral_studio/textures/bg_plaster_roughness.png": "98db7cd77c3182bcd5d962268fa32895a8b50e0c7ffee0a50f697ed03d5d864b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_formal_52800_v1/t16_pipeline.py": "f11043b43406a8c012b3038861161ff42d8ffa5386b1fffcdafaf3e3861020c5",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_formal_52800_v1/render_preview.py": "1e11470d20985ae26ac46d6e78bc8acc5c29a211b12e271cb1b8b9b5d5e1b66b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/folder_board_01.obj": "6d56da86b0c856f5d9b5d52c8249df39dbe68648cdd64e77c63cbbeced551d94",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/folder_board_01.mtl": "5629b23f75ecff64f59e34953d8db43754e63e2eb7fbcd92f381fbda675654e4",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_plastic_basecolor.png": "e8dc7460f9a7c6e94cbdfa6f6e63d45de33bcc33426e7bd09cdd94077aa41651",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_plastic_roughness.png": "54a4f21e217695389cf5fa4bafbe6409d4ac8268f923e2f689aab43652feb0cb",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_plastic_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_plastic_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_edge_basecolor.png": "d036e211c0fb21180dd13ee0b9248386f01a0b5963a5a277801cecd136245849",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_edge_roughness.png": "6674ce63058ec4c6fa9ab17f80a5c36a167d27f0707eb6f19b044da9ff40ad66",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_edge_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_edge_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_label_basecolor.png": "d89ca5a4676d663ca869ff7f57cb1215220421a1101c0a2d978b427f95518ce1",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_label_roughness.png": "cabf8af6e460c65a9230ac06a2477186bd5798aa9e932b59056d9022748a750e",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_label_metallic.png": "c8b6bb3e837f846489438b47ae42f3960b820a17095ea66df3c5fa00fcd60665",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/folders/../textures/folder_label_normal.png": "86993e9276b669289b91c2563b704bd0116c0c59af1949f08c79bfc2e2e8ff9b",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/collision/folder_board_01_collision.obj": "d748057a37cbd8affbfa2f113cae0f6e3f4c7661a4869eda52419292b4407ca7",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t06_t10_realism_v8/collision/folder_board_01_collision.mtl": "9b336e723db7bcaa795a801a63768d6f1d179184ddd61179480da70804d100ae",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thick_ochre_architecture.obj": "fb5908495e40659e59eb8fdaffbb9fc6184dc1094de44450d0cf1da90dfc64fc",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thick_ochre_architecture.mtl": "0a2bff8f1e9bc3e93021df19e9be0a728fe9ef1146688b8cd2aeb8d8c3e28994",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_ochre_architecture_front.png": "30558ea0802a103e8a57a02a8ecb1866c31de5001d16a28de8ab21abb5a2ebe7",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_cover_roughness.png": "c38672df15510c82c532ec228e43e4dd3936412f98895dcbbe88f2e027d87f49",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_cover_metallic.png": "0f4b1668d119f77ceb6b86645573f088ab2341d7b284314d5df0be7226ea5d91",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_cover_normal.png": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_ochre_architecture_back.png": "ab2a8a21ec8c43dc6b60204d10d7d1918db49c90387955f5358a16dff4b43fbd",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_ochre_architecture_spine.png": "1d507e6b68d364e480ea4bb8ca54cb03cb4490c44c489b3dc7134ac3db934fdf",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_ochre_architecture_pages.png": "f64862491aa2aa83f3f8d66e79670a54b5003e3bc0014f8a61955d1e3ffeb8bf",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_pages_roughness.png": "a3885364aa0f739bd3af6a8700612998ef06adadbd037a483e907ab680d9fa26",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_pages_metallic.png": "0f4b1668d119f77ceb6b86645573f088ab2341d7b284314d5df0be7226ea5d91",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../../everyday_assets_v7/textures/book_pages_normal.png": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_ochre_architecture_page_shadow.png": "7e2e7ceef7e139e351604d3dffda6f31cd0b4411094352b87c44ccc49f2701a3",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.obj": "713b803bb1ff69532e1ba0544b4ad519a5e0e6303e1303cb215e2db0eb3da3eb",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thick_01_collision.mtl": "bdd501ed31ab81598ccdc9a1f6932803c25172546c2c7af56d79b218b2f39c46",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thin_blue_chemistry.obj": "5b4b9942daa9eb50a22a24a02435d0dcb33d0906caf5180ddc2a6b05cd18f1a5",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/book_thin_blue_chemistry.mtl": "7c2b9c1ea53cb8d7de086ad287c23ddf55a5e0d3f3c9db545c379a82e99f28d9",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_blue_chemistry_front.png": "1b676317d6fc39551eaad31badbec0a1be25114dcfa7f7844217ddbe44fa8c96",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_blue_chemistry_back.png": "395271908add57072fdbef1bf8c73aa09510551010a8beec48d58f94a71810e7",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_blue_chemistry_spine.png": "2f344fd7589e1ee5a6d73d86036ecc6e0b235422f934fae0b274c39b407ca84e",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_blue_chemistry_pages.png": "5448f9b163c393f380150f49854470044952649797c8abe371a7bb1eea2e3f84",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/books/../textures/book_blue_chemistry_page_shadow.png": "73bc8c0c9daa8c58850031ec602c0f69819c866267b4b5d0a13d91f6be98e540",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.obj": "cb7c7cc86844d222ec036c12cef29aa965c1cac547e2d8ba840b0d4df65561a3",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/everyday_assets_v7/collision/book_thin_01_collision.mtl": "bdd501ed31ab81598ccdc9a1f6932803c25172546c2c7af56d79b218b2f39c46",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/beverage_can_ruby_citrus.obj": "d5c18c5a332406344a4be7d8f9891f09f27516b00e4776eb2fb14d42695bebc9",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/beverage_can_ruby_citrus.mtl": "956ffb9e9a3346cbaf408702378d28a9cb79ff3cc43b1b53111bf280f11a382f",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/../textures/can_ruby_citrus_print.png": "7428bad7572e1ed9fb5684d2dff409e40d4ad028d3cffee847e06d1e74981c61",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/../../everyday_assets_v7/textures/can_print_roughness.png": "2a9fb7de85d489f8dd80c5c837a09befb757c6b7fb04f43eabca93f73b2691c1",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/../../everyday_assets_v7/textures/can_print_metallic.png": "f2cc792906ba0650b7e30aadaa043c3d2db80c92f14d4b62f6206a1f55bc3db2",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/../../everyday_assets_v7/textures/can_print_normal.png": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/../../everyday_assets_v7/textures/can_metal_basecolor.png": "76c1ceae50feea210d271deb89043084c2919fac6274c1bcad2b9f5a01ab4964",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/../../everyday_assets_v7/textures/can_metal_roughness.png": "5a9c7136acfbcf74b05b955f159b8cacfef28735e951eec2d93bab1cbe6a6e29",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/../../everyday_assets_v7/textures/can_metal_metallic.png": "92d103ae3b35360d5c817ca0287ddaf222ce4889a230003c99128f0c56eef900",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/../../everyday_assets_v7/textures/can_metal_normal.png": "9f434a0f8f97d5cd291c118eceb20bcaff796e8ba49034620802353fdbf77242",
+    "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/assets_generated/t16_t20_realistic_v4_20260816/cans/../../everyday_assets_v7/textures/can_groove_basecolor.png": "656def91adce25e123f6056c7a1f31d0e6fd05e56437b9ca7605ae92db5ed062"
+  },
+  "production": {
+    "target_videos": 13200,
+    "role": "GLOBAL_ANCHOR",
+    "anchor_index": 1,
+    "cell": "T16__bg03_neutral_studio__g03_earth",
+    "formal_admission": "PENDING_CELL_BOUNDARIES_AND_VISUAL_REVIEW"
+  }
+}

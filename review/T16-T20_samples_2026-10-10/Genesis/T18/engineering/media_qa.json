@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "classification": "CAMERA_REVIEW_ONLY",
+  "formal_video_count": 0,
+  "files": {
+    "cam01": {
+      "status": "PASS",
+      "checks": {
+        "one_video_no_audio": true,
+        "codec": true,
+        "resolution": true,
+        "pixel_format": true,
+        "fps": true,
+        "frames": true,
+        "duration": true,
+        "sha256": true,
+        "full_decode": true,
+        "no_black_frames": true
+      },
+      "size_bytes": 60069,
+      "decoded_frames": 210,
+      "min_mean": 136.1650679807442,
+      "min_std": 50.72588052631542,
+      "decode_stderr": "",
+      "sha256": "a7928486b69a51e560db8fe1a916a41b6e09e6a6e923cded3e2eb69370c7eec2"
+    },
+    "cam02": {
+      "status": "PASS",
+      "checks": {
+        "one_video_no_audio": true,
+        "codec": true,
+        "resolution": true,
+        "pixel_format": true,
+        "fps": true,
+        "frames": true,
+        "duration": true,
+        "sha256": true,
+        "full_decode": true,
+        "no_black_frames": true
+      },
+      "size_bytes": 75286,
+      "decoded_frames": 210,
+      "min_mean": 102.01079885506115,
+      "min_std": 60.08729182264007,
+      "decode_stderr": "",
+      "sha256": "4f2795bf20ee8ab98391b8ceac54233fd2fa64c0aea988ecdfc31356f761b448"
+    },
+    "cam03": {
+      "status": "PASS",
+      "checks": {
+        "one_video_no_audio": true,
+        "codec": true,
+        "resolution": true,
+        "pixel_format": true,
+        "fps": true,
+        "frames": true,
+        "duration": true,
+        "sha256": true,
+        "full_decode": true,
+        "no_black_frames": true
+      },
+      "size_bytes": 84220,
+      "decoded_frames": 210,
+      "min_mean": 76.64767922196201,
+      "min_std": 51.236005905927534,
+      "decode_stderr": "",
+      "sha256": "133406640d6d88508ccba7a587cb8eaed3c19da423942e2c11327df616fea249"
+    }
+  },
+  "source_physics_qa": "PASS"
+}

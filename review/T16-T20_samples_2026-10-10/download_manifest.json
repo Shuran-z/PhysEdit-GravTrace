@@ -1,0 +1,437 @@
+{
+  "note": "Representative previews, not a formal release. Isaac samples are CALIBRATION_ONLY.",
+  "files": [
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_minus/cam01.mp4",
+      "local": "Genesis/T16/minus/cam01.mp4",
+      "bytes": 93086,
+      "sha256": "7fa9cd5b860c525729b986e28674769993c0ec897442771335d2515696d46a3a"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_minus/cam02.mp4",
+      "local": "Genesis/T16/minus/cam02.mp4",
+      "bytes": 90682,
+      "sha256": "0a4ed4343642f145b1753427421ffd4a0437fd7a28aa9ba417e0823ae5310502"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_minus/cam03.mp4",
+      "local": "Genesis/T16/minus/cam03.mp4",
+      "bytes": 103584,
+      "sha256": "1e37956c298bee8a4c54ff20de833cc8c56836b4468349259562917c8de0b8f6"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_minus/metadata.json",
+      "local": "Genesis/T16/minus/metadata.json",
+      "bytes": 20689,
+      "sha256": "22988ad298ff357a9ee94378979354c6e987a17808c9b7b8ed0c99dc9ffe02fa"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_minus/media_qa.json",
+      "local": "Genesis/T16/minus/media_qa.json",
+      "bytes": 1895,
+      "sha256": "9d31370aaac0b7980c333126c4607c53afc284fc04321dd3d09acabfe4d64e42"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_minus/camera_visibility.json",
+      "local": "Genesis/T16/minus/camera_visibility.json",
+      "bytes": 536,
+      "sha256": "ce18f50fe746ade8914d280be3ad4c5616ed0b19d07ee92a65ba41e03535f784"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_minus/event_graph.json",
+      "local": "Genesis/T16/minus/event_graph.json",
+      "bytes": 553,
+      "sha256": "87ebe48f74064eebe292bbacd1fab4778937237a9460fb35e09a529ec75e5902"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_star/cam01.mp4",
+      "local": "Genesis/T16/star/cam01.mp4",
+      "bytes": 94402,
+      "sha256": "efff5e2c29b301472b07ac6140d07310fcb0eee35e75cbf28222076d4bfda852"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_star/cam02.mp4",
+      "local": "Genesis/T16/star/cam02.mp4",
+      "bytes": 95482,
+      "sha256": "327497772f7d0d44c70518a263b6643bcd75a88291b0a65ccf351adff0474933"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_star/cam03.mp4",
+      "local": "Genesis/T16/star/cam03.mp4",
+      "bytes": 104847,
+      "sha256": "13a70e0185e8425fee3da8f33c5deb02408b3a27ef7b53628e5bc67a15fd3a6f"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_star/metadata.json",
+      "local": "Genesis/T16/star/metadata.json",
+      "bytes": 20697,
+      "sha256": "986f7383c0967da67bbc717b76bae5ec2e927f83248b0afacd8948a8f4b612a1"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_star/media_qa.json",
+      "local": "Genesis/T16/star/media_qa.json",
+      "bytes": 1896,
+      "sha256": "84b17e93b8cfa65d4e7a16b00f87e5cb5867c7fc241167d65c7cb565003ef05a"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_star/camera_visibility.json",
+      "local": "Genesis/T16/star/camera_visibility.json",
+      "bytes": 536,
+      "sha256": "ce18f50fe746ade8914d280be3ad4c5616ed0b19d07ee92a65ba41e03535f784"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_star/event_graph.json",
+      "local": "Genesis/T16/star/event_graph.json",
+      "bytes": 553,
+      "sha256": "2eb2a2a62cd7d913a358f1dab039da0ed8d3297e84dd48d6aa1bdeb115afdc99"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_plus/cam01.mp4",
+      "local": "Genesis/T16/plus/cam01.mp4",
+      "bytes": 117485,
+      "sha256": "e59bf0eb32581c4c394bf89e5a68f1c294c477bf15aefe4e82c42255f5130de7"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_plus/cam02.mp4",
+      "local": "Genesis/T16/plus/cam02.mp4",
+      "bytes": 119709,
+      "sha256": "628b8e05c3d5c350b5ae317bf89851473354c83d5c1d650f83d3e278ae045143"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_plus/cam03.mp4",
+      "local": "Genesis/T16/plus/cam03.mp4",
+      "bytes": 122915,
+      "sha256": "b8552cc3204911e9b5116f5ddc8b6766d7ada71cbcff5f997e8cf2331e65aac1"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_plus/metadata.json",
+      "local": "Genesis/T16/plus/metadata.json",
+      "bytes": 20705,
+      "sha256": "f1c6ce8ae7165605755d11dfac76354a0b7014564d00b26d96c61d84768f05f9"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_plus/media_qa.json",
+      "local": "Genesis/T16/plus/media_qa.json",
+      "bytes": 1898,
+      "sha256": "2a390c64c435e04f9c326b02165c3de41dd7065742ab548667f1ff60cbf62770"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_plus/camera_visibility.json",
+      "local": "Genesis/T16/plus/camera_visibility.json",
+      "bytes": 536,
+      "sha256": "ce18f50fe746ade8914d280be3ad4c5616ed0b19d07ee92a65ba41e03535f784"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t16_20260910_v1/videos/T16__bg02_physics_lab__g03_earth__distance_r0_plus/event_graph.json",
+      "local": "Genesis/T16/plus/event_graph.json",
+      "bytes": 737,
+      "sha256": "a2c7da1cf07655e77807ab87f584189a890f4b52e209d5a3af1727cd75886343"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T17_engineering_preview/cam01.mp4",
+      "local": "Genesis/T17/engineering/cam01.mp4",
+      "bytes": 56577,
+      "sha256": "e594fea032705dff2498a3233999d751e452fdf52864629a9f3cb12a58f38652"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T17_engineering_preview/cam02.mp4",
+      "local": "Genesis/T17/engineering/cam02.mp4",
+      "bytes": 61354,
+      "sha256": "bb79a14a5786b433e780a30167a18937ae82af351c9fbfd32b4be1809f00cadb"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T17_engineering_preview/cam03.mp4",
+      "local": "Genesis/T17/engineering/cam03.mp4",
+      "bytes": 63951,
+      "sha256": "48d836f21141d9c7a8c056af46a42155dbbe0c3e791fa397878aa29e0910f7c3"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T17_engineering_preview/metadata.json",
+      "local": "Genesis/T17/engineering/metadata.json",
+      "bytes": 16943,
+      "sha256": "ca06d273d44db91a4c3907ff3fe9e1d1c720ad53eb367759b3aae7ee57357a79"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T17_engineering_preview/media_qa.json",
+      "local": "Genesis/T17/engineering/media_qa.json",
+      "bytes": 1898,
+      "sha256": "ff4d9fa443852a22c0fc4dbcfee730967010d5790fe92c091ab6de36b6d39d70"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T17_engineering_preview/camera_visibility.json",
+      "local": "Genesis/T17/engineering/camera_visibility.json",
+      "bytes": 536,
+      "sha256": "ce18f50fe746ade8914d280be3ad4c5616ed0b19d07ee92a65ba41e03535f784"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T17_engineering_preview/event_graph.json",
+      "local": "Genesis/T17/engineering/event_graph.json",
+      "bytes": 660,
+      "sha256": "790bc3017ff33d352f552fa94625590dbce6c17d287d3d8bcde0eee57d26b890"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T18_engineering_preview/cam01.mp4",
+      "local": "Genesis/T18/engineering/cam01.mp4",
+      "bytes": 60069,
+      "sha256": "a7928486b69a51e560db8fe1a916a41b6e09e6a6e923cded3e2eb69370c7eec2"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T18_engineering_preview/cam02.mp4",
+      "local": "Genesis/T18/engineering/cam02.mp4",
+      "bytes": 75286,
+      "sha256": "4f2795bf20ee8ab98391b8ceac54233fd2fa64c0aea988ecdfc31356f761b448"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T18_engineering_preview/cam03.mp4",
+      "local": "Genesis/T18/engineering/cam03.mp4",
+      "bytes": 84220,
+      "sha256": "133406640d6d88508ccba7a587cb8eaed3c19da423942e2c11327df616fea249"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T18_engineering_preview/metadata.json",
+      "local": "Genesis/T18/engineering/metadata.json",
+      "bytes": 52711,
+      "sha256": "b43faa77f0fd07becba608292be541a7baf8cda26c80e94c32ada07a4850fb99"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T18_engineering_preview/media_qa.json",
+      "local": "Genesis/T18/engineering/media_qa.json",
+      "bytes": 1897,
+      "sha256": "a86929ec241cbb94000e83bbd82836b3943c6873a60b3ff7142b7fdb7c04b077"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T18_engineering_preview/camera_visibility.json",
+      "local": "Genesis/T18/engineering/camera_visibility.json",
+      "bytes": 536,
+      "sha256": "ce18f50fe746ade8914d280be3ad4c5616ed0b19d07ee92a65ba41e03535f784"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/t16_formal_52800_20260909/offline/t17_t18_boundaries_20260910_v1/videos/T18_engineering_preview/event_graph.json",
+      "local": "Genesis/T18/engineering/event_graph.json",
+      "bytes": 956,
+      "sha256": "67e75156959dc75d2180675c6ddba0bdf06c831563586232d6bdc508fad88afb"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t17_video/T17_repair_t17_video_01/videos_720/T17_repair_t17_video_01__cam01.mp4",
+      "local": "Genesis/T17/repair_1/cam01.mp4",
+      "bytes": 198306,
+      "sha256": "486d64a8e519bfdb2cb3e5c50841cd18ae08f028a97525b8445a1d2314f67b29"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t17_video/T17_repair_t17_video_01/videos_720/T17_repair_t17_video_01__cam02.mp4",
+      "local": "Genesis/T17/repair_1/cam02.mp4",
+      "bytes": 177064,
+      "sha256": "df853582351c7f4d906b7a446b4c391d7ce08f392ba01b1aea55cd9d0283011f"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t17_video/T17_repair_t17_video_01/videos_720/T17_repair_t17_video_01__cam03.mp4",
+      "local": "Genesis/T17/repair_1/cam03.mp4",
+      "bytes": 191344,
+      "sha256": "e21c6524e23819eb7134cf62a3b92f6bff99831a08d00b222cd9ba8486670b19"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t17_video/T17_repair_t17_video_02/videos_720/T17_repair_t17_video_02__cam01.mp4",
+      "local": "Genesis/T17/repair_2/cam01.mp4",
+      "bytes": 180803,
+      "sha256": "664fc359e9101df314226e7fad752ce6ccdd58cdc356a28eddb36eb17eaedee6"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t17_video/T17_repair_t17_video_02/videos_720/T17_repair_t17_video_02__cam02.mp4",
+      "local": "Genesis/T17/repair_2/cam02.mp4",
+      "bytes": 173216,
+      "sha256": "4d327e9bbf3d06cf321393018067df56186fd9f0dcc985485ba919bb6d753685"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t17_video/T17_repair_t17_video_02/videos_720/T17_repair_t17_video_02__cam03.mp4",
+      "local": "Genesis/T17/repair_2/cam03.mp4",
+      "bytes": 183176,
+      "sha256": "591e5b3962ef95290a990fbb5f460a8a7e55c0a50d6ef5b31fd0dbdda4f15524"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t18_video/T18_repair_t18_video_01/videos_720/T18_repair_t18_video_01__cam01.mp4",
+      "local": "Genesis/T18/repair_1/cam01.mp4",
+      "bytes": 223079,
+      "sha256": "8aa8761a2ac511ee84408f6ce690c661ad873ecafeffaa9e1eb024f4079ce9a8"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t18_video/T18_repair_t18_video_01/videos_720/T18_repair_t18_video_01__cam02.mp4",
+      "local": "Genesis/T18/repair_1/cam02.mp4",
+      "bytes": 206896,
+      "sha256": "779f8c8381ed0f64ac19d0f27613a064f52bc008db73ebda4430d8af6a8e3c75"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t18_video/T18_repair_t18_video_01/videos_720/T18_repair_t18_video_01__cam03.mp4",
+      "local": "Genesis/T18/repair_1/cam03.mp4",
+      "bytes": 342649,
+      "sha256": "26eadfa1f91094c57f33f6465feec8d3b0d0a09bcb8c56357198bdd1ee9a6ae6"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t18_video/T18_repair_t18_video_02/videos_720/T18_repair_t18_video_02__cam01.mp4",
+      "local": "Genesis/T18/repair_2/cam01.mp4",
+      "bytes": 339031,
+      "sha256": "d13bb2d6f52025176af121c8a5e0e9a5f05495f3008f34d1d23db0ec79e753a8"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t18_video/T18_repair_t18_video_02/videos_720/T18_repair_t18_video_02__cam02.mp4",
+      "local": "Genesis/T18/repair_2/cam02.mp4",
+      "bytes": 293873,
+      "sha256": "51385bf0cfba783a2b4f0c5de66b28147ae7c5aec1098c5f9323d98118da60cb"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t18_video/T18_repair_t18_video_02/videos_720/T18_repair_t18_video_02__cam03.mp4",
+      "local": "Genesis/T18/repair_2/cam03.mp4",
+      "bytes": 570854,
+      "sha256": "a0568edefb39e856c3a6721149a2572d39e32ca330532125beb6923da7066a8c"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_framed_v3/T19R2__BW15__g03_earth__T19_repair_pair001__A__s3325200432__repair_framed_v3__r03_rev2_repair_20260908/videos_720/T19R2__BW15__g03_earth__T19_repair_pair001__A__s3325200432__repair_framed_v3__r03_rev2_repair_20260908__cam01.mp4",
+      "local": "Genesis/T19/repair_1/cam01.mp4",
+      "bytes": 159994,
+      "sha256": "c94a17da6e1f63c060624209872ee55be97f5b4ad9746c8879f9d1ec4b1ed377"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_framed_v3/T19R2__BW15__g03_earth__T19_repair_pair001__A__s3325200432__repair_framed_v3__r03_rev2_repair_20260908/videos_720/T19R2__BW15__g03_earth__T19_repair_pair001__A__s3325200432__repair_framed_v3__r03_rev2_repair_20260908__cam02.mp4",
+      "local": "Genesis/T19/repair_1/cam02.mp4",
+      "bytes": 166574,
+      "sha256": "0e277588aac0d0a5c8feaacaf5c3ef4b4cc6f8ca3c10ab62009ede8a6669494c"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_framed_v3/T19R2__BW15__g03_earth__T19_repair_pair001__A__s3325200432__repair_framed_v3__r03_rev2_repair_20260908/videos_720/T19R2__BW15__g03_earth__T19_repair_pair001__A__s3325200432__repair_framed_v3__r03_rev2_repair_20260908__cam03.mp4",
+      "local": "Genesis/T19/repair_1/cam03.mp4",
+      "bytes": 186112,
+      "sha256": "5b92ccb9ac9dc54182c6cee377484836e5e98581688c94d448c3dfb70bcd9afa"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_framed_v3/T19R2__BW15__g03_earth__T19_repair_pair001__B__s3325200432__repair_framed_v3__r03_rev2_repair_20260908/videos_720/T19R2__BW15__g03_earth__T19_repair_pair001__B__s3325200432__repair_framed_v3__r03_rev2_repair_20260908__cam01.mp4",
+      "local": "Genesis/T19/repair_2/cam01.mp4",
+      "bytes": 167250,
+      "sha256": "c8ac41a533caa1d44cf45ecbb7d40faf43ca96842754a23d55883998d0e0d03e"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_framed_v3/T19R2__BW15__g03_earth__T19_repair_pair001__B__s3325200432__repair_framed_v3__r03_rev2_repair_20260908/videos_720/T19R2__BW15__g03_earth__T19_repair_pair001__B__s3325200432__repair_framed_v3__r03_rev2_repair_20260908__cam02.mp4",
+      "local": "Genesis/T19/repair_2/cam02.mp4",
+      "bytes": 228375,
+      "sha256": "55b1da6573c968b340d4d53f772f62b07b53abdddfd912227ed2c643f2de484c"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_framed_v3/T19R2__BW15__g03_earth__T19_repair_pair001__B__s3325200432__repair_framed_v3__r03_rev2_repair_20260908/videos_720/T19R2__BW15__g03_earth__T19_repair_pair001__B__s3325200432__repair_framed_v3__r03_rev2_repair_20260908__cam03.mp4",
+      "local": "Genesis/T19/repair_2/cam03.mp4",
+      "bytes": 202952,
+      "sha256": "b29ba6810e5e8ccbce991653044d7a03e9c21579919815cf3d4d74a6449d54f7"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t20_video/T20_repair_t20_video_01/videos_720/T20_repair_t20_video_01__cam01.mp4",
+      "local": "Genesis/T20/repair_1/cam01.mp4",
+      "bytes": 200726,
+      "sha256": "f17e8f2d9ad8b95073ed60030dbf4a098621eea416b0fc36ad183f95952a30f2"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t20_video/T20_repair_t20_video_01/videos_720/T20_repair_t20_video_01__cam02.mp4",
+      "local": "Genesis/T20/repair_1/cam02.mp4",
+      "bytes": 170430,
+      "sha256": "70564dc94cc1013514fd94305ea10f47789593cdd72abebc20faef8245969b59"
+    },
+    {
+      "source": "/home/wangzijun_p25/liyuhan/phydataset/ase_asset_importer/everyday_bifurcation_T16_T20_rev2/outputs/repair_t20_video/T20_repair_t20_video_01/videos_720/T20_repair_t20_video_01__cam03.mp4",
+      "local": "Genesis/T20/repair_1/cam03.mp4",
+      "bytes": 181675,
+      "sha256": "75933d946b503e1893ff853935afbc1281934576876cbb52c1319b1d8378d9a5"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T16/T16__bg03_neutral_studio__g03_earth__value_0.03__global_01/cam01.mp4",
+      "local": "Isaac/T16/calibration/cam01.mp4",
+      "bytes": 431019,
+      "sha256": "8fcae4526a91363a638647cd27865623a3c2adf695bf33cad78d3586a9cb65fe"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T16/T16__bg03_neutral_studio__g03_earth__value_0.03__global_01/cam02.mp4",
+      "local": "Isaac/T16/calibration/cam02.mp4",
+      "bytes": 370586,
+      "sha256": "6fce86e7ab8e548e178d089d3cf038887e8300aea38ecd70bf564b48976c972c"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T16/T16__bg03_neutral_studio__g03_earth__value_0.03__global_01/cam03.mp4",
+      "local": "Isaac/T16/calibration/cam03.mp4",
+      "bytes": 204129,
+      "sha256": "b5228bf82ef96921464240a3b7008eac27ec397b7bc0e4d25498f6a748aa703a"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T16/T16__bg03_neutral_studio__g03_earth__value_0.03__global_01/config.json",
+      "local": "Isaac/T16/calibration/config.json",
+      "bytes": 52571,
+      "sha256": "d133db5ae1fd91b12c4bf02dde6b6f1cfc16b62dad1fecbde0e27ef879f530b7"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T17/T17__bg03_neutral_studio__g03_earth__value_-0.0225__global_07/cam01.mp4",
+      "local": "Isaac/T17/calibration/cam01.mp4",
+      "bytes": 467745,
+      "sha256": "f1d78a3d092000724f6a0d66fb53e57718ef0d4e48ca70b729122941a00a0a63"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T17/T17__bg03_neutral_studio__g03_earth__value_-0.0225__global_07/cam02.mp4",
+      "local": "Isaac/T17/calibration/cam02.mp4",
+      "bytes": 227034,
+      "sha256": "db7ab357b43ca3943a64ac07136c6aff4f09b0ad91d3013cf4ab514d926c4a5c"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T17/T17__bg03_neutral_studio__g03_earth__value_-0.0225__global_07/cam03.mp4",
+      "local": "Isaac/T17/calibration/cam03.mp4",
+      "bytes": 239436,
+      "sha256": "4764c50232dec701f14665d26b3826b485365d929d82d1441ce73653895535e4"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T17/T17__bg03_neutral_studio__g03_earth__value_-0.0225__global_07/config.json",
+      "local": "Isaac/T17/calibration/config.json",
+      "bytes": 42798,
+      "sha256": "ce183a11aca52b703e0529bf5b5d8f9c602c39b3731317be0d72b7439d36ba0e"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T18/T18__bg03_neutral_studio__g03_earth__value_0.8__global_00/cam01.mp4",
+      "local": "Isaac/T18/calibration/cam01.mp4",
+      "bytes": 327983,
+      "sha256": "d90c2be98344501a096b2d35c22d34a4143da502ed0207b4b6f309a103690a13"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T18/T18__bg03_neutral_studio__g03_earth__value_0.8__global_00/cam02.mp4",
+      "local": "Isaac/T18/calibration/cam02.mp4",
+      "bytes": 223086,
+      "sha256": "49bd04b5f8535314e37e87f2303820c317bc06a53c208d1617aba0269880b42c"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T18/T18__bg03_neutral_studio__g03_earth__value_0.8__global_00/cam03.mp4",
+      "local": "Isaac/T18/calibration/cam03.mp4",
+      "bytes": 269993,
+      "sha256": "676b498bc373e322a4e951125054176f993b0b2b4d12fd9c1b3277161ac5b08a"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T18/T18__bg03_neutral_studio__g03_earth__value_0.8__global_00/config.json",
+      "local": "Isaac/T18/calibration/config.json",
+      "bytes": 84961,
+      "sha256": "8027126fbca7bbd61daf2dae81af1107383e60314eecde315add815553cd7067"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T19/T19__bg03_neutral_studio__g03_earth__value_-0.0175__global_07/cam01.mp4",
+      "local": "Isaac/T19/calibration/cam01.mp4",
+      "bytes": 273817,
+      "sha256": "81f4f6ce0a725a835c9dd174d867d66d22b6a3693f927dd3105b6f3852c9408d"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T19/T19__bg03_neutral_studio__g03_earth__value_-0.0175__global_07/cam02.mp4",
+      "local": "Isaac/T19/calibration/cam02.mp4",
+      "bytes": 227473,
+      "sha256": "76fd1d17d64f91706e4d7f222dd09be1f43b166e4952e2eca3504eb03ac2d0b2"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T19/T19__bg03_neutral_studio__g03_earth__value_-0.0175__global_07/cam03.mp4",
+      "local": "Isaac/T19/calibration/cam03.mp4",
+      "bytes": 252400,
+      "sha256": "caf7f89a806b60b1ed65bd1bf07c48f916982b7962b7809aef5b5fcbb2c32ef7"
+    },
+    {
+      "source": "/data_cached/wangzijun_p25/isaac_out/Isaac_T16-T19_Dataset/T19/T19__bg03_neutral_studio__g03_earth__value_-0.0175__global_07/config.json",
+      "local": "Isaac/T19/calibration/config.json",
+      "bytes": 33394,
+      "sha256": "dc1b581c1d44b1501dd96299f663394248d3c1a74d7a9c1019335c4d895206b9"
+    }
+  ]
+}

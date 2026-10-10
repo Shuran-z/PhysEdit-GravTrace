@@ -1,0 +1,45 @@
+{
+  "event_type": "T18",
+  "depth": 3,
+  "nodes": [
+    {
+      "id": "selected_book_slides",
+      "motion_m": 0.02977473456598785
+    },
+    {
+      "id": "upper_book_response",
+      "objects": [
+        "t18_book_02",
+        "t18_book_03",
+        "t18_book_04",
+        "t18_book_05"
+      ],
+      "parents": [
+        "selected_book_slides"
+      ]
+    },
+    {
+      "id": "multi_book_response",
+      "objects": [
+        "t18_book_02",
+        "t18_book_03",
+        "t18_book_04",
+        "t18_book_05"
+      ],
+      "parents": [
+        "upper_book_response"
+      ]
+    }
+  ],
+  "classification": "CALIBRATION_ONLY",
+  "definition": [
+    "continuous_pull_force",
+    "selected_book_sliding",
+    "support_overlap_change",
+    "passive_upper_book_response",
+    "stack_cascade_or_restabilization"
+  ],
+  "contact_sample_dt_s": 0.0020833333333333333,
+  "state_sample_dt_s": 0.03333333333333333,
+  "requires_counterfactual_validation": true
+}

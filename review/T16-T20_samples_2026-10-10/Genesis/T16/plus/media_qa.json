@@ -1,0 +1,71 @@
+{
+  "status": "PASS",
+  "classification": "FORMAL_CANDIDATE",
+  "formal_video_count": 0,
+  "files": {
+    "cam01": {
+      "status": "PASS",
+      "checks": {
+        "one_video_no_audio": true,
+        "codec": true,
+        "resolution": true,
+        "pixel_format": true,
+        "fps": true,
+        "frames": true,
+        "duration": true,
+        "sha256": true,
+        "full_decode": true,
+        "no_black_frames": true
+      },
+      "size_bytes": 117485,
+      "decoded_frames": 210,
+      "min_mean": 99.93755773484257,
+      "min_std": 36.22192496083182,
+      "decode_stderr": "",
+      "sha256": "e59bf0eb32581c4c394bf89e5a68f1c294c477bf15aefe4e82c42255f5130de7"
+    },
+    "cam02": {
+      "status": "PASS",
+      "checks": {
+        "one_video_no_audio": true,
+        "codec": true,
+        "resolution": true,
+        "pixel_format": true,
+        "fps": true,
+        "frames": true,
+        "duration": true,
+        "sha256": true,
+        "full_decode": true,
+        "no_black_frames": true
+      },
+      "size_bytes": 119709,
+      "decoded_frames": 210,
+      "min_mean": 88.61723832292479,
+      "min_std": 46.977892293053536,
+      "decode_stderr": "",
+      "sha256": "628b8e05c3d5c350b5ae317bf89851473354c83d5c1d650f83d3e278ae045143"
+    },
+    "cam03": {
+      "status": "PASS",
+      "checks": {
+        "one_video_no_audio": true,
+        "codec": true,
+        "resolution": true,
+        "pixel_format": true,
+        "fps": true,
+        "frames": true,
+        "duration": true,
+        "sha256": true,
+        "full_decode": true,
+        "no_black_frames": true
+      },
+      "size_bytes": 122915,
+      "decoded_frames": 210,
+      "min_mean": 100.26581528103044,
+      "min_std": 57.54844468659442,
+      "decode_stderr": "",
+      "sha256": "b8552cc3204911e9b5116f5ddc8b6766d7ada71cbcff5f997e8cf2331e65aac1"
+    }
+  },
+  "source_physics_qa": "PASS"
+}

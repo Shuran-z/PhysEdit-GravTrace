@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "genesis-current",
+      "title": "Genesis production and engineering state",
+      "queries": [
+        {
+          "id": "live-genesis",
+          "source": {
+            "label": "p25 live filesystem and saved status records",
+            "files": [
+              "t16_t20_live_audit.json",
+              "t16_t20_live_checks.txt",
+              "t16_t20_remote_status.txt"
+            ],
+            "caveats": [
+              "Read-only inspection on 2026-10-10. Saved run summaries were last updated in September. No videos were decoded or visually certified in this inspection. File counts include candidates, not accepted formal data."
+            ]
+          },
+          "summary": "T16 contains 617 complete camera directories and 1851 videos, with 616 saved media QA PASS records; its summary reports NEEDS_REPAIR and zero formal videos. T17 and T18 each have 40 passing boundary probes in one background, with zero formal videos. Inspected T19/T20 repairs are small validation batches. No matching generation workers were found in the process check."
+        }
+      ]
+    },
+    {
+      "id": "isaac-current",
+      "title": "Isaac file completeness and acceptance status",
+      "queries": [
+        {
+          "id": "live-isaac",
+          "source": {
+            "label": "p25 Isaac completion records",
+            "files": [
+              "t16_t20_live_audit.json"
+            ],
+            "caveats": [
+              "Each configuration is classified CALIBRATION_ONLY. Nonempty file existence does not prove successful decoding or scientific QA. T20 has no planned Isaac quota in the current protocol."
+            ]
+          },
+          "columns": [
+            "event",
+            "videos",
+            "three_view_groups",
+            "formal_videos"
+          ],
+          "rows": [
+            {
+              "event": "T16",
+              "videos": 2640,
+              "three_view_groups": 880,
+              "formal_videos": 0
+            },
+            {
+              "event": "T17",
+              "videos": 2640,
+              "three_view_groups": 880,
+              "formal_videos": 0
+            },
+            {
+              "event": "T18",
+              "videos": 2640,
+              "three_view_groups": 880,
+              "formal_videos": 0
+            },
+            {
+              "event": "T19",
+              "videos": 2640,
+              "three_view_groups": 880,
+              "formal_videos": 0
+            }
+          ],
+          "reportingPeriod": "Read-only server inspection 2026-10-10"
+        }
+      ]
+    }
+  ]
+}

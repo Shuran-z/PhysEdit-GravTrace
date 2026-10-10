@@ -1,0 +1,7 @@
+AUDIT_PATHS []
+T16_MEDIA_QA {'PASS': 616}
+PROJECT everyday_bifurcation_T16_T20_rev2 mp4 111 latest 2026-09-08T13:45:36.593188+00:00
+TOP_OUTPUTS ['repair_framed', 'repair_calibration', 'repair6_calibration', 'repair_framed_v3', 'repair4_calibration', 'repair2_calibration', 'repair_diagnostics_20260908', 'repair_framed_v2', 'repair_t18_video', 'repair3_calibration', 'repair_preview', 'repair_video', 'repair5_calibration', 'repair_t20_video', 'repair_t17_video', 'pilot_calibration', 'smoke']
+PROJECT everyday_bifurcation_T16_T20_physics_v3_bg4_integrated mp4 20 latest 2026-08-31T13:58:37.645192+00:00
+TOP_OUTPUTS ['smoke']
+MATCHING_WORKERS []

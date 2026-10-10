@@ -1,0 +1,16 @@
+{
+  "event_type": "T16",
+  "depth": 0,
+  "nodes": [],
+  "physics_qa_status": "PASS",
+  "contact_sample_dt_s": 0.0020833333333333333,
+  "state_sample_dt_s": 0.03333333333333333,
+  "definition": [
+    "supported",
+    "folder rotates after support withdrawal",
+    "folder transfers to upright book",
+    "book transfers to upright can"
+  ],
+  "causality_evidence": "measured temporal contacts and motion; counterfactual evidence is validated at group level",
+  "source_config_sha256": "dac55ae56826ee61fe8ec303a249204261b0078be457aade8edcb36754e35a6c"
+}

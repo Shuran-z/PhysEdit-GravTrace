@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "method": "all-frame projected oriented proxy bounds; natural object-to-object occlusion permitted in user-approved rig",
+  "static_background_occlusion": "requires four-background visual preproduction approval",
+  "cameras": {
+    "cam01": {
+      "status": "PASS",
+      "failures": [],
+      "failure_count": 0
+    },
+    "cam02": {
+      "status": "PASS",
+      "failures": [],
+      "failure_count": 0
+    },
+    "cam03": {
+      "status": "PASS",
+      "failures": [],
+      "failure_count": 0
+    }
+  }
+}

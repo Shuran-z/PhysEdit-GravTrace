@@ -1,0 +1,898 @@
+{
+  "plan_version": "joint-event-v3-20261009",
+  "target_counts": {
+    "train": {
+      "genesis": 33792,
+      "isaac": 13248,
+      "total": 47040
+    },
+    "val": {
+      "genesis": 4224,
+      "isaac": 1656,
+      "total": 5880
+    },
+    "test_id": {
+      "genesis": 4224,
+      "isaac": 1656,
+      "total": 5880
+    },
+    "test_ood_1": {
+      "genesis": 5280,
+      "isaac": 960,
+      "total": 6240
+    },
+    "test_ood_2": {
+      "genesis": 5280,
+      "isaac": 2640,
+      "total": 7920
+    }
+  },
+  "target_total_videos": 72960,
+  "inventory_total_videos": 68403,
+  "inventory_pool_videos": {
+    "train_pool": {
+      "genesis": 40395,
+      "isaac": 16560
+    },
+    "test_ood_1": {
+      "genesis": 4992,
+      "isaac": 960
+    },
+    "test_ood_2": {
+      "genesis": 2856,
+      "isaac": 2640
+    }
+  },
+  "cross_pool_conflict_keys": [],
+  "quarantined_records": 0,
+  "known_metric_development_items_by_new_pool": {
+    "test_ood_1": 435,
+    "train_pool": 514,
+    "test_ood_2": 89
+  },
+  "event_inventory": [
+    {
+      "event_id": "T01",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 100,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T01",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 960,
+      "inventory_videos": 960,
+      "inventory_trajectories": 320,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 960,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 98,
+      "qa_status_counts": {
+        "visual_qa_pending": 320
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T02",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 90,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T02",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 960,
+      "inventory_videos": 960,
+      "inventory_trajectories": 320,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 960,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 42,
+      "qa_status_counts": {
+        "visual_qa_pending": 320
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T03",
+      "engine": "genesis",
+      "pool": "test_ood_1",
+      "target_videos": 2640,
+      "inventory_videos": 1422,
+      "inventory_trajectories": 474,
+      "nominal_shortfall_videos": 1218,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 1422,
+      "missing_any_metadata_reference_trajectories": 474,
+      "without_non_config_sidecar_reference_trajectories": 474,
+      "known_source_groups": 95,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 474
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T03",
+      "engine": "isaac",
+      "pool": "test_ood_1",
+      "target_videos": 960,
+      "inventory_videos": 960,
+      "inventory_trajectories": 320,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 960,
+      "missing_any_metadata_reference_trajectories": 320,
+      "without_non_config_sidecar_reference_trajectories": 320,
+      "known_source_groups": 92,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 320
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T04",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 97,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T04",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 960,
+      "inventory_videos": 960,
+      "inventory_trajectories": 320,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 960,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 63,
+      "qa_status_counts": {
+        "visual_qa_pending": 320
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T05",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 99,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T05",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 960,
+      "inventory_videos": 960,
+      "inventory_trajectories": 320,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 960,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 64,
+      "qa_status_counts": {
+        "visual_qa_pending": 320
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T06",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 880,
+      "known_source_groups": 220,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T06",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 960,
+      "inventory_videos": 960,
+      "inventory_trajectories": 320,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 960,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 80,
+      "qa_status_counts": {
+        "visual_qa_pending": 320
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T07",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 92,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T07",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 960,
+      "inventory_videos": 960,
+      "inventory_trajectories": 320,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 960,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 56,
+      "qa_status_counts": {
+        "visual_qa_pending": 320
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T08",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 93,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T08",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 960,
+      "inventory_videos": 960,
+      "inventory_trajectories": 320,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 960,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 40,
+      "qa_status_counts": {
+        "visual_qa_pending": 320
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T09",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 880,
+      "known_source_groups": 220,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T09",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 960,
+      "inventory_videos": 960,
+      "inventory_trajectories": 320,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 960,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 80,
+      "qa_status_counts": {
+        "visual_qa_pending": 320
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T10",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 880,
+      "known_source_groups": 220,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T10",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 960,
+      "inventory_videos": 960,
+      "inventory_trajectories": 320,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 960,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 80,
+      "qa_status_counts": {
+        "visual_qa_pending": 320
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T11",
+      "engine": "genesis",
+      "pool": "test_ood_2",
+      "target_videos": 2640,
+      "inventory_videos": 720,
+      "inventory_trajectories": 240,
+      "nominal_shortfall_videos": 1920,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 720,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 59,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 240
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T11",
+      "engine": "isaac",
+      "pool": "test_ood_2",
+      "target_videos": 0,
+      "inventory_videos": 0,
+      "inventory_trajectories": 0,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 0,
+      "qa_status_counts": {},
+      "zero_target_is_intentional": true,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T12",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 212,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T12",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 0,
+      "inventory_videos": 0,
+      "inventory_trajectories": 0,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 0,
+      "qa_status_counts": {},
+      "zero_target_is_intentional": true,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T13",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 0,
+      "inventory_trajectories": 0,
+      "nominal_shortfall_videos": 2640,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 0,
+      "qa_status_counts": {},
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T13",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 0,
+      "inventory_videos": 0,
+      "inventory_trajectories": 0,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 0,
+      "qa_status_counts": {},
+      "zero_target_is_intentional": true,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T14",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 5,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T14",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 0,
+      "inventory_videos": 0,
+      "inventory_trajectories": 0,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 0,
+      "qa_status_counts": {},
+      "zero_target_is_intentional": true,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T15",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 105,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 880
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T15",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 0,
+      "inventory_videos": 0,
+      "inventory_trajectories": 0,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 0,
+      "qa_status_counts": {},
+      "zero_target_is_intentional": true,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T16",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 3588,
+      "inventory_trajectories": 1196,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 948,
+      "legacy_scan_videos": 3588,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 300,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 1196
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T16",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 880,
+      "known_source_groups": 100,
+      "qa_status_counts": {
+        "ENGINEERING_COMPLETE_VISUAL_QA_PENDING": 844,
+        "VIDEO_FILES_COMPLETE": 36
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T17",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 3237,
+      "inventory_trajectories": 1079,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 597,
+      "legacy_scan_videos": 3237,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 300,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 1079
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T17",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 880,
+      "known_source_groups": 100,
+      "qa_status_counts": {
+        "VIDEO_FILES_COMPLETE": 510,
+        "ENGINEERING_COMPLETE_VISUAL_QA_PENDING": 370
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T18",
+      "engine": "genesis",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 1890,
+      "inventory_trajectories": 630,
+      "nominal_shortfall_videos": 750,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 1890,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 299,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 630
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T18",
+      "engine": "isaac",
+      "pool": "train_pool",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 880,
+      "known_source_groups": 100,
+      "qa_status_counts": {
+        "ENGINEERING_COMPLETE_VISUAL_QA_PENDING": 386,
+        "VIDEO_FILES_COMPLETE": 494
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T19",
+      "engine": "genesis",
+      "pool": "test_ood_2",
+      "target_videos": 2640,
+      "inventory_videos": 2136,
+      "inventory_trajectories": 712,
+      "nominal_shortfall_videos": 504,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 2136,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 297,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 712
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T19",
+      "engine": "isaac",
+      "pool": "test_ood_2",
+      "target_videos": 2640,
+      "inventory_videos": 2640,
+      "inventory_trajectories": 880,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 2640,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 880,
+      "known_source_groups": 100,
+      "qa_status_counts": {
+        "ENGINEERING_COMPLETE_VISUAL_QA_PENDING": 727,
+        "VIDEO_FILES_COMPLETE": 153
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T20",
+      "engine": "genesis",
+      "pool": "test_ood_1",
+      "target_videos": 2640,
+      "inventory_videos": 3570,
+      "inventory_trajectories": 1190,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 930,
+      "legacy_scan_videos": 3570,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 300,
+      "qa_status_counts": {
+        "release_specific_not_reaudited": 1190
+      },
+      "zero_target_is_intentional": false,
+      "actual_usable_videos": null
+    },
+    {
+      "event_id": "T20",
+      "engine": "isaac",
+      "pool": "test_ood_1",
+      "target_videos": 0,
+      "inventory_videos": 0,
+      "inventory_trajectories": 0,
+      "nominal_shortfall_videos": 0,
+      "nominal_surplus_videos": 0,
+      "legacy_scan_videos": 0,
+      "nonlegacy_inventory_videos_not_QA_certified": 0,
+      "missing_any_metadata_reference_trajectories": 0,
+      "without_non_config_sidecar_reference_trajectories": 0,
+      "known_source_groups": 0,
+      "qa_status_counts": {},
+      "zero_target_is_intentional": true,
+      "actual_usable_videos": null
+    }
+  ],
+  "final_train_val_id_assignment": "pending_numeric_intervals_labels_QA_and_group_coverage",
+  "trajectory_completeness": "not_verified_from_references",
+  "limitations": [
+    "Inventory may include legacy, calibration-only and visual-QA-pending files.",
+    "Surplus videos in one event do not fill shortages in another event.",
+    "No new media/state reads, decoding, remote checks or physical QA.",
+    "v2 per-point groups do not enforce the new continuous-interval rule.",
+    "Known same-case cross-engine links are not complete verified configuration matching.",
+    "Prior metric development exposure persists after changing event holdouts."
+  ],
+  "sidecar_recovery": {
+    "attempted_records": 794,
+    "records_with_catalog_candidates": 794,
+    "records_with_state_or_metadata_candidates": 794,
+    "content_validation": "not_read_or_verified"
+  },
+  "source_sha256": {
+    "D:\\sysu\\大三\\物理数据集\\PhysEdit-GravTrace\\docs\\joint_split_v3\\plan.json": "7b9ef72bf3c988e9183932d9f2dde0b9a0670a8a2e58358d05602cd4cdf9b0d2",
+    "D:\\sysu\\大三\\物理数据集\\dataset_splits_v2\\all_selected_trajectories.jsonl": "376a19f7a155b1d67fa9cf2f766b8cd1d16fcb30b5f571ef31313d4df49d56ca",
+    "D:\\sysu\\大三\\物理数据集\\PhysEdit-GravTrace\\docs\\phyediting\\sampling_audit15.json": "3b16def5fb5acc7661eff61988df088c408eef884f37beea77e4298642b7cdc3"
+  },
+  "catalog_source_sha256": {
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo_info.json": "56342d1b96db98d7213ba42b12b81480917afca8998c2414c42dc2047dca4a54",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__checksums.json": "2cd4a654f4864051be9c5dcedd241d8e296e54b48bb8f2ab08d7998c7a8e63ee",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__data__T01_T05.json": "4f5624519a6c54da56e9508b9b84258897527aeccd3826072c75c8869b0f0dee",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__data__T03.json": "02c31f847db19cfb1494472d6f9197bdad58ef2f0e906088ee07f883c7d8fc11",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__data__T06.json": "9a0efae89a51d07d8defd0f4b802c3372edfa3d086af216b4cfa8eed7bdc040e",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__data__T07.json": "a6b88ae59c92db7f73b7ae254596e6734c1047131c9fc5d97ef26a98e9899175",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__data__T08.json": "e0bbaa1c1858548bb4e202e128a577261db6e2ba1f49e64cd0797701ac15bd8f",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__data__T09.json": "27be6d220a7b505d4d3779b82d3624428499f860d2b8ec65a3a5b8a49bde0517",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__data__T10.json": "af3cce860ffc136cd07ea83421410f229014ea7a396012b98d4928274b61f6e4",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__data__T12.json": "fb13a18ddf9a2d371f30aab716c85124c938da2d6eabfb8f1551e435e521c3d7",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__data__T14.json": "e00a7e62b8c37a867238f1a067dc5def167d78c2a29afc735e6749017bc1d0bb",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__data__T16_T20.json": "babcf5f3d44a61482c235178a24e6c294ef8af3a37f6c9ea46ca163d5a6c9c37",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__metadata.json": "f08bceceeb0301ab700dc9edf90c8c5e075646c798389240e26369e03e43ed28",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__qa.json": "686dc378231d1a7c1b04ddcf2c5ec4476d9f58f1cb6369ee96247f8ca6736627",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__staging__t02.json": "50a89b3a782525b7c91e79b21932281575bd33030676fed64389e6e0a2ee399d",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__staging__t04_t05.json": "0466b47f6fb8c64d90b357b1f10a1a0315b0436310f6bb3faf67cc4d9f0cca26",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__staging__t11.json": "fe32ef97ea5b49479605dc3cc0a0777087c86fd341b08b486f992ae383e0dd55",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phyeditingvideo__tree__T01__formal_52800_v2_full_chain.json": "48d7d13885aa784a20a6131a55e65c25abf4e9ffe244ab8a7faea57dc1ebbedb",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2_info.json": "a193c0287d8c05f58d16cea73c289f65278a6b77a34a2f3662423ecf30b557e1",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2__tree__data__T01.json": "e8bcd3ccf87473c995f24f61fcd7c4223ed857c8ccf6d7e48a4eb30663b51142",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2__tree__data__T02.json": "d1578fc626177d9acb9f2301970ceb4b6a4f7302c0ea55a72ab28f3c3f5834c3",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2__tree__data__T03.json": "1abc364e9749a9e3148dc1b3f57e8ef1d629b1034f97ecce5eb9d9a8a2e3ddb5",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2__tree__data__T04.json": "755a1ec5788689c03dd2f0fdf79c936db037a3b7fcf45137c54dcea9cf0d7510",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2__tree__data__T05.json": "475a10b27e88d16c71fb84437896f7cc7c2dc148c7c58d83a368128ae60386d0",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2__tree__data__T06.json": "cca24fdc42b40b4f33b012b1a67f8c32825d35bc2acf5250c5bfd0dab9f340dd",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2__tree__data__T07.json": "91da7651b3f8bf8caedfa464bda7aaa599f725380db9a5ea2f69500665819486",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2__tree__data__T08.json": "0f64b51c0b05c08a2111e40fe549f88d23821970f80e41a3056ea1b3acd18918",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2__tree__data__T09.json": "bc7e436af7067d6a935beb977499322e7371ae6ab3a4d4b0118a26d6d42ef5e4",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2__tree__data__T10.json": "788f629381bdea22e70b9b678ff8a2bf33871f61d83043a27b6cf6e294400d3d",
+    "D:\\sysu\\大三\\物理数据集\\hf_audit_20261002\\phy2__tree__data__T15.json": "8e2413136a835de2e96fe3a4274c32189cbbd207a04b801604c4c4ec2175e620"
+  }
+}
