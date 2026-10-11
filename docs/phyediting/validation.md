@@ -1,18 +1,13 @@
 # PhyEditing evaluation
 
-The primary known-velocity development protocol reaches 1.11% mean / 6.2% maximum over 1038 successful fits. The centred-offset common-observation control reaches 0.89% / 8.99% over 1036/1038. These are separate protocols, not a chronological performance comparison.
+The accepted frozen pipeline uses SAM3.1 with integer image boundaries, visible-outline projection and the original anchor fitter. Inversion tuning is complete. Initial velocity is estimated jointly; no reference velocity is supplied.
 
-Unknown-velocity default results are 2.88% / 19.83% at 30fps; 15fps has 845/1038 successful fits, mean 3.17%, maximum 34.16%. This scope does not yet meet the requested maximum error. No independent untouched physics-setting test has been completed.
+Across all **1038 original single-view 30fps cases and 13918 observation frames**, mean relative gravity error is **2.704381%**, median **2.037109%**, p95 **7.473846%**, maximum **15.983240%**. Failure rate is **0%** and coverage **100%**. There are 1028/1038 cases within 10% and 1038/1038 within 20%. The user accepted this accuracy to preserve method simplicity; this is not a claim of maximum error below 10%. No subpixel refinement or further inversion tuning is planned.
 
-Same-frame comparisons retain failed items and report event, gravity, camera and physics-group statistics. Six neural depth models and 2D controls have aligned retained observations and declared velocity bounds; geometry/spin/drag representation and residual-unit differences remain. Oracle-depth references receive extra truth information and cannot support a claim of global optimality.
+These are inspected development data, not an untouched test. Background variants share physics groups and must not be counted as independent physical experiments. [Frozen aggregate evidence](sam31_frozen_result.json) includes event, gravity and camera statistics and source-result hashes; per-item research records remain local. The known-initial-velocity development protocol previously reached 1.11% mean / 6.2% maximum and is a separate information setting.
 
-## Evidence
+## Next evaluation
 
-- `common_observations.json`: known-velocity common observations.
-- `offset_comparison.json`: offset and frame-rate controls.
-- `bounded_2d.json`, `bounded_depth.json`: bounded unknown-velocity baselines.
-- `vggt_common_result.json`: supersedes cached VGGT results after exact-input alignment.
-- `sampling_audit15.json`: coverage limitations at 15fps.
-- `generation_summary.json`: generation pipeline outputs; generated-video quality is not yet at target.
+Freeze the current predictions before comparing direct 2D inversion and DepthPro, DA-V2 Metric, ZoeDepth, MoGe-2, UniDepthV2 and VGGT. Give each method the same declared camera, geometry and initial prompts; unknown-velocity methods must not receive reference velocity. Align actual observation frames and decoded pixels, report any representation or loss differences, and retain all failed items in the original coverage denominator. Existing known-velocity comparisons do not substitute for this frozen unknown-velocity comparison. Oracle-depth references receive extra truth and must be labelled accordingly.
 
-Trial logs and unsuccessful algorithm variants are archived locally; they do not change default predictions. Publication claims must preserve protocol, coverage and held-out limitations.
+Report event, gravity, camera and physics-group summaries. Evaluate untouched physics settings without retuning, then verify the video-generation pipeline. Training remains last. Current evidence does not establish global optimality. Exploratory failures and trial logs remain local.

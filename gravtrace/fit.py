@@ -181,11 +181,10 @@ class _Problem:
                      centres=launch) for phi in seeds or np.linspace(-np.pi, np.pi, 8, endpoint=False)]
 
     def predict(self, h: dict, x: np.ndarray) -> np.ndarray:
-        """Image box [x0, y0, x1, y1] spanned by the projected corners in each frame."""
+        """Image box [x0, y0, x1, y1] of the visible projected outline."""
         g, t0, extras = np.exp(x[0]), x[1], x[2:]
         tau = np.maximum(self.t + t0, 0.0)  # held in the initial state until release
-        uv = self.camera.project(self.points(tau, h["centres"](tau, g, extras)))
-        return np.hstack([uv.min(axis=1), uv.max(axis=1)])
+        return self.camera.project_box(self.points(tau, h["centres"](tau, g, extras)))
 
     def points(self, tau: np.ndarray, centres: np.ndarray) -> np.ndarray:
         """World corners (frames, corners, 3) at times tau given the centre trajectory."""
